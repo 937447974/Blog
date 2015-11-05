@@ -1,4 +1,4 @@
-在WWDC 2013上，苹果公司推出了JavaScriptCore框架，如果感兴趣的苹果可以查看[WWDC 2013: Integrating JavaScript into Native Apps](https://developer.apple.com/videos/play/wwdc2013-615/)。这是一个基于JavaScript的框架，完美的以面向对象的方式实现js和oc的交互。
+在WWDC 2013上，苹果公司推出了JavaScriptCore框架，如果感兴趣的朋友可以查看[WWDC 2013: Integrating JavaScript into Native Apps](https://developer.apple.com/videos/play/wwdc2013-615/)。这是一个基于JavaScript的框架，它完美的以面向对象的方式实现js和oc的交互。
 
 JavaScriptCore涉及到几个核心类：
 
@@ -8,18 +8,18 @@ JavaScriptCore涉及到几个核心类：
 - **JSVirtualMachine**：JSVirtualMachine为JavaScript的运行提供了底层资源；
 - **JSExport**：协议，oc和js的通信协议。
 
-JavaScriptCore让OC和JS自动完成适配。由于js是单线程的，JavaScriptCore的操作也是线程安全的。
+JavaScriptCore让OC和JS自动完成交互。由于js是单线程的，JavaScriptCore的操作也是线程安全的。
 
->开发过程中需要引入的代码：`#import <JavaScriptCore/JavaScriptCore.h>`
+>开发过程中需要引入的库：`#import <JavaScriptCore/JavaScriptCore.h>`
 
 #JSContext
 
-JSContext是一个JavaScript的执行环境，所有的JavaScript的执行都是基于这个环境。JSContext同时也管理JavaScript对象的生命周期，每一个JSValue都和
-JSContext强引用关联。
+JSContext是JavaScript的执行环境，所有的JavaScript的执行都是基于这个环境。JSContext同时也管理JavaScript对象的生命周期，每一个JSValue都和JSContext强引用关联。
 
 JSContext通过`- (JSValue *)evaluateScript:(NSString *)script;`执行JavaScript方法，并返回一个JSValue对象。
 
 ```
+// 初始化
 JSContext *context = [[JSContext alloc] init];
 context = [JSContext currentContext];
 ```
@@ -64,7 +64,7 @@ JSValue是JavaScript和Object-C之间互换的桥梁，它提供了多种方法�
 
 #JSExport
 
-JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Objective-C编程里可不能脱离类和继承了写代码。所以JavaScriptCore就提供了JSExport作为两种语言的互通协议。JSExport中没有约定任何的方法，连可选的(@optional)都没有，但是所有继承了该协议(@protocol)的协议（注意不是Objective-C的类(@interface)）中定义的方法，都可以在JSContext中被使用。
+JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Objective-C编程里可不能脱离类和继承写代码。所以JavaScriptCore就提供了JSExport作为两种语言的互通协议。JSExport中没有约定任何的方法，连可选的(@optional)都没有，但是所有继承了该协议(@protocol)的协议（注意不是Objective-C的类(@interface)）中定义的方法，都可以在JSContext中被使用。
 
 简单点说就是你定义的类要想在JSContext中被使用，就像下面这样写。
 
@@ -128,11 +128,11 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 
 ```
 
-> 以下关于JavaScriptCore的测试只显示核心代码，为节约篇幅，不在显示整个文件的代码。
+> 以下关于JavaScriptCore的测试为节约篇幅只显示核心代码，不在显示整个文件的代码。
 
 #函数
 
-你还可以在JSContext中添加函数，这里我们添加一个递归算法计算`1*2*3*....*n`。
+你还可以在JSContext中添加函数，这里我们通过jS实现一个递归算法计算`1*2*3*....*n`。
 
 ```
 #pragma mark 函数测试
@@ -153,7 +153,7 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 
 各种数据类型可以转换，Objective-C的Block也可以传入JSContext中当做JavaScript的方法使用。
 
->如果你不懂上面是Blocks，可以阅读我的博文《[Blocks Programming](http://blog.csdn.net/y550918116j/article/details/48767315)》
+>如果你不懂什么是Blocks，可以阅读我的博文《[Blocks Programming](http://blog.csdn.net/y550918116j/article/details/48767315)》
 
 这里我们通过Blocks实现如下需求：
 
@@ -189,8 +189,8 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 
 其中有几个值得注意的地方：
 
-1. 在Blocks内，想获得JSContext时，需用`[JSContext currentContext]`获得，见创建user类的实现；
-2. 在Block内不要直接使用其外部定义的JSValue，应该将其当做参数传入到Block中，否则会造成循环引用使得内存无法被正确释放，见修改name值的实现。
+1. 在Blocks内，想获得JSContext时，需用`[JSContext currentContext]`获得，详见创建user类的实现；
+2. 在Block内不要直接使用其外部定义的JSValue，应该将其当做参数传入到Block中，否则会造成循环引用使得内存无法被正确释放，详见修改name值的实现。
 
 #异常处理
 
@@ -217,6 +217,86 @@ Objective-C和Swift的异常会在运行时被Xcode捕获，而在JSContext中�
 ```
 
 #JSExport协议
+
+上面我们使用Blocks实现了类的创建和属性的赋值。下面我们使用JSExport来创建可维护User类，其实现的需求如下。
+
+1. 创建一个类user，其中包含name和qq属性。
+2. 修改属性name的值，即`user.name = newName;` 
+
+首先我们根据JSExport协议制作User类，下面是核心代码。
+
+User.h
+
+```
+//
+//  User.h
+//  UIWebView
+//
+//  Created by yangjun on 15/11/5.
+//  Copyright © 2015年 六月. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+
+/** JavaScript可调的协议*/
+@protocol UserProtocol <JSExport>
+
+@property (nonatomic, copy) NSString *name; ///< 姓名
+@property (nonatomic, copy) NSString *qq;   ///< qq号码
+
+- (NSString *)description; // 打印信息
+
+@end
+
+/** 用户*/
+@interface User : NSObject <UserProtocol>
+
+@end
+```
+
+这里定义了UserProtocol协议，其实现JSExport协议。在这个协议中，我们声明了需要暴露给js的属性和方法。
+
+接下来声明了一个User类，然后让它实现UserProtocol即可。由于我们在协议中定义了相关属性和方法，在User类中只需实现方法，对于属性需要使用@synthesize通知编译器实现getter/setter方法。下面是User.m的核心代码
+
+```
+//
+//  User.m
+//  UIWebView
+//
+//  Created by yangjun on 15/11/5.
+//  Copyright © 2015年 六月. All rights reserved.
+//
+
+#import "User.h"
+
+@implementation User
+
+// 由于属性在代理里面，需要通知编译器实现getter/setter方法
+@synthesize name,qq;
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"name:%@; qq:%@", self.name, self.qq];
+}
+
+@end
+```
+
+使用XCTestCase测试。
+
+```
+- (void)testJSExport {
+    User *user = [[User alloc] init];
+    self.context[@"user"] = user; // 对象绑定
+    // 修改值
+    user.name = @"阳君";
+    [self.context evaluateScript:@"user.qq = 937447974"];
+    // 打印
+    NSLog(@"oc:%@", user); //由于继承NSObJect，会自动调用description方法
+    JSValue *description = [self.context evaluateScript:@"user.description()"];
+    NSLog(@"js:%@", description);
+}
+```
 
 &#160;
 
