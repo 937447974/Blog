@@ -1,0 +1,23 @@
+#按位运算符
+
+&#160;
+
+----------
+
+#其他
+
+##参考资料
+
+ [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
+
+##文档修改记录
+
+| 时间 | 描述 |
+| ---- | ---- |
+| 2015-11-1 | 根据 [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)中的Classes and Structures总结 |
+
+&#160;
+
+----------
+
+版权所有：http://blog.csdn.net/y550918116j
