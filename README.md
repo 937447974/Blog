@@ -36,8 +36,6 @@ CSDN博客地址:http://blog.csdn.net/y550918116j
 
 [错误处理(Error Handling)](https://github.com/937447974/Blog/blob/master/Swift/错误处理(Error Handling).md)
 
-[高级符号(Advanced Operators)](https://github.com/937447974/Blog/blob/master/Swift/高级符号(Advanced Operators).md)
-
 [高级运算符(Advanced Operators)](https://github.com/937447974/Blog/blob/master/Swift/高级运算符(Advanced Operators).md)
 
 [](https://github.com/937447974/Blog/blob/master/Swift/)
