@@ -233,7 +233,7 @@ JavaScriptUtil.m
 1. 使用documentView.webView.mainFrame.javaScriptContext可以从UIWebView中获取JSContext。
 2. 使用JSContext的exceptionHandler监听js运行的错误；
 3. 为JSContext注入JavaScriptUtil，并设为app。方便js直接调用。
-4. 以SeniorVC指向JavaScriptUtil的代理，可再SeniorVC接受js发出的数据。
+4. 以SeniorVC指向JavaScriptUtil的代理，可在SeniorVC接受js发出的数据。
 
 相信你也发现了我使用了一个新的html页面Senior.html。这个页面我们是使用的基础篇的index.html制造的。然后我们修改了里面核心js代码。
 
@@ -294,7 +294,7 @@ for (int i = 0; i < count ; i++) {
 
 ##自定义UIWebView
 
-接下来我们制造我们自己UITableView，并可回调网络的加载进度，这里我使用的类名为ProgressWebView。
+接下来我们制造我们自己的UITableView，并可回调网络的加载进度，这里我使用的类名为ProgressWebView。
 
 ```
 //
@@ -334,9 +334,9 @@ for (int i = 0; i < count ; i++) {
 @end
 ```
 
-这里面有一个代理方法，和两个参数totalCount和receivedCount，这两个参数的主要作用是记录当前请求需要加载的资源数，和已完成资源数。代理方法的主要作用是为了通知SeniorVC网络的加载情况。
+这里面有一个代理方法，和两个参数totalCount和receivedCount，这两个参数的主要作用是记录当前请求需要加载的资源数和已完成资源数。代理方法的主要作用是为了通知SeniorVC网络的加载情况。
 
-ProgressWebView.m
+接下来是ProgressWebView.m。
 
 ```
 //
@@ -381,7 +381,7 @@ ProgressWebView.m
 @end
 ```
 
-当你想调用私有方法时，为保证代码的完成性，需要使用super通知父类。这里我们就保留了两个方法。
+当你想调用私有方法时，为保证代码的完成性，需要使用super通知父类。这里我们就暴露了两个方法。
 
 ```
 // 暴露UIWebView的私有方法
@@ -393,7 +393,7 @@ ProgressWebView.m
 @end
 ```
 
-在回调的时候，由于UIWebView已经有了代理，为节约开发，我们直接使用这个代理。只需向下转型即可。
+在回调的时候，由于UIWebView已经有了代理，为提高开发效率以及代码完成性，我们直接使用这个代理。只需向下转型即可。
 
 ```
 id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delegate;
@@ -582,8 +582,6 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 [WWDC 2013: Integrating JavaScript into Native Apps](https://developer.apple.com/videos/play/wwdc2013-615/)
 
 [iOS与JS交互实战篇（ObjC版）](http://mp.weixin.qq.com/s?__biz=MzIzMzA4NjA5Mw==&mid=214063688&idx=1&sn=903258ec2d3ae431b4d9ee55cb59ed89&scene=18#rd)
-
-[iOS7新JavaScriptCore框架入门介绍](http://www.cnblogs.com/ider/p/introduction-to-ios7-javascriptcore-framework.html)
 
 ##文档修改记录
 
