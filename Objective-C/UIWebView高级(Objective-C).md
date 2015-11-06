@@ -102,7 +102,154 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20151106115610840)
 
+##制造JavaScript协议
+
+我们使用JSExport制造要暴露给JS调用的协议以及工具类JavaScriptUtil。
+
+JavaScriptUtil.h
+
+```
+//
+//  JavaScriptUtil.h
+//  UIWebView
+//
+//  Created by yangjun on 15/11/6.
+//  Copyright © 2015年 六月. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+
+/// 暴露给js使用的协议
+@protocol JavaScriptDelegate <NSObject, JSExport>
+
+- (void)jsCallOC:(NSString *)params;
+
+@end
+
+/// js对应的oc实现类
+@interface JavaScriptUtil : NSObject <JavaScriptDelegate>
+
+@property (nonatomic, weak) id<JavaScriptDelegate> javaScriptDelegate; ///< 代理
+
+@end
+```
+
+这里使用了代理模式，思想就是JavaScript->JavaScriptUtil->SeniorVC。
+
+>知道注意的是，在JavaScriptDelegate中禁止使用@optional属性，使用了这个属性后，js则无法调用。
+
+JavaScriptUtil.m
+
+```
+//
+//  JavaScriptUtil.m
+//  UIWebView
+//
+//  Created by yangjun on 15/11/6.
+//  Copyright © 2015年 六月. All rights reserved.
+//
+
+#import "JavaScriptUtil.h"
+
+@implementation JavaScriptUtil
+
+- (void)jsCallOC:(NSString *)params {
+    if ([self.javaScriptDelegate respondsToSelector:@selector(jsCallOC:)]) {
+        [self.javaScriptDelegate jsCallOC:params];
+    }
+}
+
+@end
+```
+
+##实现交互
+
+接下来，我们改造SeniorVC。
+
+```
+#import "SeniorVC.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "JavaScriptUtil.h"
+
+@interface SeniorVC () <UIWebViewDelegate, JavaScriptDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView; ///< UIWebView
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView; ///< 进度条
+@property (nonatomic, strong) JSContext *jsContext; ///< JSContext
+
+@end
+
+@implementation SeniorVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    // 获取JSContext
+    self.jsContext = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    // 通过exceptionHandler捕获js错误
+    self.jsContext.exceptionHandler = ^(JSContext *con, JSValue *exception) {
+        NSLog(@"exception:%@", exception);
+        con.exception = exception;
+    };
+    // 注入JavaScriptUtil
+    JavaScriptUtil *jSUtil = [[JavaScriptUtil alloc] init];
+    jSUtil.javaScriptDelegate = self;
+    self.jsContext[@"app"] = jSUtil;
+   
+    self.webView.delegate = self;// 代理
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Senior" withExtension:@"html"];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url]; // url的位置
+    [self.webView loadRequest:urlRequest]; // 加载页面
+
+}
+
+#pragma mark - JavaScriptDelegate
+- (void)jsCallOC:(NSString *)params {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSString *js = [NSString stringWithFormat:@"ocCallJS('%@')", params];
+    [self.jsContext evaluateScript:js];
+    // 或
+    // [self.webView stringByEvaluatingJavaScriptFromString:js];
+}
+@end
+```
+
+这里设计到几个技术点。
+
+1. 使用documentView.webView.mainFrame.javaScriptContext可以从UIWebView中获取JSContext。
+2. 使用JSContext的exceptionHandler监听js运行的错误；
+3. 为JSContext注入JavaScriptUtil，并设为app。方便js直接调用。
+4. 以SeniorVC指向JavaScriptUtil的代理，可再SeniorVC接受js发出的数据。
+
+相信你也发现了我使用了一个新的html页面Senior.html。这个页面我们是使用的基础篇的index.html制造的。然后我们修改了里面核心js代码。
+
+```js
+<script>
+    // $解析器
+    function $ (ele) {
+        return document.querySelector(ele);
+    };
+
+    // 点击确定按钮
+    function onClickButton() {
+        app.jsCallOC(input.value); // JS通知UIWebView
+    }
+
+    // UIWebView调用JS
+    function ocCallJS(params) {
+        show.innerHTML = params;
+    }
+</script>
+```
+
+运行项目，则可在真机上看见神奇的交互效果。
 &#160;
+
+#进度条
+
+
 
 ----------
 
