@@ -1,3 +1,13 @@
+[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+
+[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)
+
+[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
+
+[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
+
+----------
+
 在WWDC 2013上，苹果公司推出了JavaScriptCore框架，如果感兴趣的朋友可以查看[WWDC 2013: Integrating JavaScript into Native Apps](https://developer.apple.com/videos/play/wwdc2013-615/)。这是一个基于JavaScript的框架，它完美的以面向对象的方式实现js和oc的交互。
 
 JavaScriptCore涉及到几个核心类：
@@ -317,6 +327,7 @@ User.h
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-5 | 关于JavaScriptCore的相关介绍 |
+| 2015-11-6 | 增加相关文章的链接《[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)》、《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》、《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》和《[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)》。|
 
 &#160;
 

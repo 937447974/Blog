@@ -1,3 +1,13 @@
+[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+
+[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)
+
+[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
+
+[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
+
+----------
+
 当你在项目中想嵌入网页时，可以使用UIWebView类嵌入Web内容。你只需要创建一个UIWebView对象，并将它附加到一个view窗口。你还可以使用这个类来执行页面历史的前进或后退。
 
 本篇博文主要介绍关于UIWebView的基础，包括：加载网页、实现代理以及JS和OC的互相调用。
@@ -328,6 +338,7 @@ js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。o
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-3 | 根据Objective-C中的UIWebView API总结 |
+| 2015-11-6 | 增加相关文章的链接《[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)》、《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》、《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》和《[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)》。|
 
 &#160;
 

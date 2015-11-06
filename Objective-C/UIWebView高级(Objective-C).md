@@ -4,7 +4,7 @@
 
 [JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
 
-[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
 
 ----------
 
@@ -587,8 +587,7 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-11-4 | 根据Objective-C中的UIWebView API总结。 |
-| 2015-11-4 | 增加关于进度条的实现。 |
+| 2015-11-6 | 运用苹果推出的JavaScriptCore实现JS和OC交互；升级进度条，能够更加精确的捕捉网页加载的进度。|
 
 &#160;
 

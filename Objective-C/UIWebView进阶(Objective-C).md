@@ -1,4 +1,10 @@
-[UIWebView基础(Objective-C )](http://blog.csdn.net/y550918116j/article/details/49619847)
+[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+
+[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)
+
+[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
+
+[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
 
 ----------
 
@@ -448,6 +454,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 | ---- | ---- |
 | 2015-11-4 | 根据Objective-C中的UIWebView API总结。 |
 | 2015-11-4 | 增加关于进度条的实现。 |
+| 2015-11-6 | 增加相关文章的链接《[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)》、《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》、《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》和《[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)》。|
 
 &#160;
 
