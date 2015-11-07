@@ -94,7 +94,7 @@
 
 搭建后的核心部分如下，这里我使用的VC名为BaseVC。
 
-```Oc
+```objective-c
 //
 //  BaseVC.m
 //  WebView
@@ -129,7 +129,7 @@
 
 然后我们改造BaseVC的viewDidLoad方法。
 
-```oc
+```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 找到index.html的路径
@@ -141,7 +141,7 @@
 
 由于我们的html页面在项目里面，我们可以直接使用[NSBundle mainBundle]去寻找。如果你使用的是网咯连接“www.baidu.com”,你可以这样获得NSURL。
 
-```oc
+```objective-c
 url = [NSURL URLWithString:@"www.baidu.com"];
 ```
 
@@ -155,7 +155,7 @@ url = [NSURL URLWithString:@"www.baidu.com"];
 
 UIWebView也有代理，如果你不懂什么是代理模式，查阅我的博文《[ 23设计模式之代理模式(Proxy)](http://blog.csdn.net/y550918116j/article/details/48605595)》。我们在UIWebViewDelegate发现了四个方法。
 
-```oc
+```objective-c
 __TVOS_PROHIBITED @protocol UIWebViewDelegate <NSObject>
 
 @optional
@@ -176,7 +176,7 @@ __TVOS_PROHIBITED @protocol UIWebViewDelegate <NSObject>
 
 现在我们改造BaseVC。下面都只显示核心代码，不重要的代码不显示。
 
-```oc
+```objective-c
 @interface BaseVC () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView; ///< UIWebView
@@ -221,7 +221,7 @@ __TVOS_PROHIBITED @protocol UIWebViewDelegate <NSObject>
 
 运行后你会看到如下的输出,也体现了三种回调的顺序。如果你看到了其他输出信息，我想你可能出错了，请查阅前面的介绍，修改后再运行。
 
-```
+```objective-c
 webView:shouldStartLoadWithRequest:navigationType:
 webViewDidStartLoad:
 webViewDidFinishLoad:
@@ -249,7 +249,7 @@ js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。o
 
 接下来就是改造oc和js了。在BaseVC添加oc接受js调用的方法体，和改写`- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType`。
 
-```oc
+```objective-c
 #pragma mark - js调OC
 - (void)jsCallOC:(NSString *)params {
     NSLog(@"%@:%@", NSStringFromSelector(_cmd), params);
