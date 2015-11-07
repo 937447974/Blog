@@ -54,14 +54,14 @@ Ctrl + L:将插入点置于窗口正中
 
 
 <table>
-   <tr colspan="2">
-      <td >John</td>
+   <tr >
+      <td colspan="2">John</td>
       <td>Smith</td>
       <td>123 Main St.</td>
       <td>Springfield</td>
    </tr>
    <tr>
-      
+      <td></td>
       <td>Jones</td>
       <td>456 Pine St.</td>
       <td>Dover</td>
