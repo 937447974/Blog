@@ -27,7 +27,7 @@
 
 我们使用新的UIViewController，命名为SeniorVC。我已经为大家搭建了基础代码。
 
-```
+```objective-c
 //
 //  SeniorVC.m
 //  UIWebView
@@ -120,7 +120,7 @@
 
 JavaScriptUtil.h
 
-```
+```objective-c
 //
 //  JavaScriptUtil.h
 //  UIWebView
@@ -153,7 +153,7 @@ JavaScriptUtil.h
 
 JavaScriptUtil.m
 
-```
+```objective-c
 //
 //  JavaScriptUtil.m
 //  UIWebView
@@ -179,7 +179,7 @@ JavaScriptUtil.m
 
 接下来，我们改造SeniorVC。
 
-```
+```objective-c
 #import "SeniorVC.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "JavaScriptUtil.h"
@@ -265,7 +265,7 @@ JavaScriptUtil.m
 
 >如果你不知道什么是runtime机制，详见我的博文《[Objective-C Runtime Classes](http://blog.csdn.net/y550918116j/article/details/48664237)》。
 
-```
+```objective-c
 id userClass = objc_getClass("UIWebView");
 u_int count;// unsigned int
 Method *methods= class_copyMethodList(userClass, &count);// 所有方法,只包含实例方法）
@@ -281,7 +281,7 @@ for (int i = 0; i < count ; i++) {
 
 分析打印出的方法，我们发现了这几个方法。
 
-```
+```objective-c
 方法名:webView:identifierForInitialRequest:fromDataSource:; 返回类型@; 参数:@20@0:4@8@12@16
 方法名:webView:resource:didFinishLoadingFromDataSource:; 返回类型v; 参数:v20@0:4@8@12@16
 方法名:webView:resource:didFailLoadingWithError:fromDataSource:; 返回类型v; 参数:v24@0:4@8@12@16@20
@@ -296,7 +296,7 @@ for (int i = 0; i < count ; i++) {
 
 接下来我们制造我们自己的UITableView，并可回调网络的加载进度，这里我使用的类名为ProgressWebView。
 
-```
+```objective-c
 //
 //  ProgressWebView.h
 //  UIWebView
@@ -338,7 +338,7 @@ for (int i = 0; i < count ; i++) {
 
 接下来是ProgressWebView.m。
 
-```
+```objective-c
 //
 //  ProgressWebView.m
 //  UIWebView
@@ -383,7 +383,7 @@ for (int i = 0; i < count ; i++) {
 
 当你想调用私有方法时，为保证代码的完成性，需要使用super通知父类。这里我们就暴露了两个方法。
 
-```
+```objective-c
 // 暴露UIWebView的私有方法
 @interface UIWebView()
 
@@ -395,7 +395,7 @@ for (int i = 0; i < count ; i++) {
 
 在回调的时候，由于UIWebView已经有了代理，为提高开发效率以及代码完成性，我们直接使用这个代理。只需向下转型即可。
 
-```
+```objective-c
 id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delegate;
 [pDelegate webView:self didReceivedCount:self.receivedCount totalCount:self.totalCount];
 ```
@@ -406,7 +406,7 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 
 先上代码，再详解。
 
-```
+```objective-c
 //
 //  SeniorVC.m
 //  UIWebView

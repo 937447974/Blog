@@ -73,3 +73,43 @@ Ctrl + L:将插入点置于窗口正中
       <td>Lincoln</td>
    </tr>
 </table>
+
+
+
+```objective-c
+(function(){ 
+    var ypsi = function(){
+        var post = function(url, gid){
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4){
+                    // console.log(req.responseText);
+                    var o = JSON.parse(req.responseText);
+                    var text = gid + "\t" + o["errmsg"];
+                    var size = o["data"] ? o["data"]["size"] : null;
+                    if(size) text += "\t" + (size / 1024 / 1024);
+                    console.log(text);
+                }
+            }
+            req.open("POST", url, true);
+            req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            req.send("gid=" + gid)
+        };
+        
+        var lastday = GM_getValue("yunpan-lastday", "");
+        var today = (new Date()).format("YYYYMMdd");
+        GM_setValue("yunpan-lastday", today);
+        if(lastday && lastday == today ){
+            console.log("Today signed.");
+        } else {
+            var groups = document.querySelectorAll("#groupPanel .group-item");
+            [].forEach.call(groups, function(e){
+                var gid = e.dataset["gid"];
+                post("/group/signIn", gid);
+            });
+        }
+        console.log("done");
+    };
+    setTimeout(ypsi, 3000);
+})();
+```

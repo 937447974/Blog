@@ -30,7 +30,7 @@
 
 这里我使用的控制器为AdvancedVC。
 
-```oc
+```objective-c
 //
 //  AdvancedVC.m
 //  UIWebView
@@ -62,7 +62,7 @@
 
 我们使用大家都熟悉的百度做测试，加载网页“https://www.baidu.com”。
 
-```oc
+```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -71,7 +71,7 @@
     [self.webView loadRequest:urlRequest]; // 加载页面
 }
 
-```
+```objective-c
 
 运行项目后，大家会发现一个错误。错误信息为
 
@@ -112,7 +112,7 @@ NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9802)
 
 滑动屏幕到顶部时，再向上滑动，你会看到背景色，你可以通过backgroundColor自定义背景色。
 
-```
+```objective-c
 self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 ```
 
@@ -120,7 +120,7 @@ self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 
 上面说的，你可以滑动到顶部看到背景色，这里有一个弹跳效果。也就是你看见背景色，松开手指看到的效果。这里你可以禁用这种效果。
 
-```
+```objective-c
 self.webView.scrollView.bounces = NO;
 ```
 
@@ -129,7 +129,7 @@ self.webView.scrollView.bounces = NO;
 默认情况下UIWebView加载HTML页面后，会以页面的原始大小进行显示，亦即如果页面的大小超出UIWebView视口大小，UIWebView会出现滚动效果，而且用户只能通过滚动页面来查看不同区域的内容，不能使用手指的捏合手势来放大或缩小页面。通过设置
 
 
-```
+```objective-c
 self.webView.scalesPageToFit = YES ;
 ```
 
@@ -142,7 +142,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 在viewDidLoad方法中添加如下代码,这里我们清空了所有cookies。
 
-```oc
+```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -164,7 +164,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 清除UIWebView的缓存使用了NSURLCache对象，在这里我们使用`removeAllCachedResponses `清楚所有缓存。
 
-```oc
+```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -195,7 +195,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 在AdvancedVC添加如下代码
 
-```oc
+```objective-c
 #pragma mark 刷新
 - (IBAction)reload:(id)sender {
     NSLog(@"%d", self.webView.loading);
@@ -222,7 +222,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 在AdvancedVC添加如下代码
 
-```
+```objective-c
 #pragma mark 去上一页
 - (IBAction)goBack:(id)sender {
     // 可以去上一页时，执行去上一页操作
@@ -259,7 +259,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 然后将控件指向AdvancedVC，并实现UIVWebView的代理，完成后代码如下。
 
-```oc
+```objective-c
 //
 //  AdvancedVC.m
 //  UIWebView
@@ -365,7 +365,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 这里我只展示核心代码：
 
-```
+```objective-c
 @interface AdvancedVC () <UIWebViewDelegate>
 {
     CGFloat _startLoadingCount;  ///< 要加载的链接数
