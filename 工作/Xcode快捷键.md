@@ -26,8 +26,7 @@
 | ⌘0 | 显示/隐藏 左侧 tool panel |
 | ⇧⌘Y | 显示/隐藏 控制台 |
 | ⌥⌘0 | 显示/隐藏 右侧 tool panel |
-| ⌥⌘1 | 显示右侧 the file inspector |
-| ⌥⌘2 | 显示右侧 quick help inspector |
+| ⌥⌘1-6 | 打开右侧导航栏 |
 | ⇧⌘J | 在项目导航中定位当前文件（Reveal in Project Navigator） |
 | ⌘J | 焦点切换（Move Focus），可快速定位到编辑界面 |
 
