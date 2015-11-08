@@ -22,6 +22,10 @@
 | UIScreenEdgePanGestureRecognizer | 滑动响应 | 
 | UILongPressGestureRecognizer | 长点击响应 |
 
+在StoryBoard控件处你可以看见这些控件。
+
+![UITapGestureRecognizer-6](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110806.png)
+
 打开UITapGestureRecognizer类，你会看到如下的通用方法和属性，这里我们只介绍其中比较重要的。
 
 - `- (instancetype)initWithTarget:(nullable id)target action:(nullable SEL)action`：初始化时，并添加响应的VC和方法体。如
@@ -68,15 +72,108 @@ typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
 ```
 
 - `- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)otherGestureRecognizer`：当otherGestureRecognizer的手势响应跳过时才执行当前手势的响应。
+- `- (NSUInteger)numberOfTouches`: 用户触摸的手指数。 
 
-// individual UIGestureRecognizer subclasses may provide subclass-specific location information. see individual subclasses for details
-- (CGPoint)locationInView:(nullable UIView*)view;                                // a generic single-point location for the gesture. usually the centroid of the touches involved
+#项目准备
 
-- (NSUInteger)numberOfTouches;                                          // number of touches involved for which locations can be queried
-- (CGPoint)locationOfTouch:(NSUInteger)touchIndex inView:(nullable UIView*)view; // the location of a particular touch
+##创建项目
+
+创建一个单一项目GestureRecognizer
+
+![UITapGestureRecognizer-3](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110803.png)
+
+这里我使用了两个View，一个是界面直接拉去手势识别器的测试，一个是通过代码添加手势识别器的测试。当然你不一定要跟我一样，在这里我还使用了tab控件，是为了讲解进阶和高级做准备的。两个View和最底层的View最好使用不同的颜色做区分，有助于提示你，你正在那个界面做手势操作。
+
+##核心类
+
+我们使用的核心类是BaseVC。下面是核心代码。
+
+```objective-c
+//
+//  BaseVC.m
+//  GestureRecognizer
+//
+//  Created by yangjun on 15/11/8.
+//  Copyright © 2015年 六月. All rights reserved.
+//
+
+#import "BaseVC.h"
+
+@interface BaseVC ()
+
+@property (weak, nonatomic) IBOutlet UIView *gestureView;     ///< 手势界面(视图添加)
+@property (weak, nonatomic) IBOutlet UIView *gestureCodeView; ///< 手势界面(代码添加)
 
 @end
 
+@implementation BaseVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    BOOL codeHidden = NO; // YES视图测试，NO代码测试
+    self.gestureView.hidden = !codeHidden;
+    self.gestureCodeView.hidden = codeHidden;
+    self.gestureCodeView.userInteractionEnabled = YES; // 开启手势响应
+    
+}
+
+@end
+```
+
+在BaseVC中，我们通过View的hidden控制当前是做试图添加的手势测试还是代码添加的手势测试。将BaseVC和试图连接起来后，运行项目。
+
+![UITapGestureRecognizer-4](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110804.png)
+
+#UITapGestureRecognizer
+
+UITapGestureRecognizer是单点击的手势识别器，你也可以理解为短点击手势识别器，如UIButton的点击响应。
+
+在UITapGestureRecognizer中有如下属性。
+
+- `@property (nonatomic) NSUInteger  numberOfTapsRequired`: 用户点击的次数，默认为1；
+- `@property (nonatomic) NSUInteger  numberOfTouchesRequired __TVOS_PROHIBITED`:用户使用的手指数，默认1；
+
+使用视图添加手势后，你可以通过设置栏设置相关属性。
+
+![UITapGestureRecognizer-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110805.png)
+
+在代码中添加方法体，然后连接运行即可看见效果。
+
+```objective-c
+#pragma mark UITapGestureRecognizer 点击
+- (IBAction)tapAction:(UITapGestureRecognizer *)sender {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"点击数:%lu; 手指数:%lu", (unsigned long)sender.numberOfTapsRequired, (unsigned long)sender.numberOfTouchesRequired);
+    CGPoint location = [sender locationInView:self.view];
+    NSLog(@"点击的位置:%@", NSStringFromCGPoint(location));
+}
+```
+
+当然你也可以直接在viewDidLoad方法中代码添加UITapGestureRecognizer。
+
+```objective-c
+//UITapGestureRecognizer 短点击
+UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];// 初始化指定回调target和方法action
+tapGR.numberOfTapsRequired = 1; // 手指连续点击的次数，默认1
+tapGR.numberOfTouchesRequired = 1; // 有几个手指点击，默认1
+[self.gestureCodeView addGestureRecognizer:tapGR];
+```
+
+>你只需修改codeHidden的值即可切换storyboard测试还是代码测试。为节约篇幅，以后会直接显示响应的方法体和代码添加手势的相关代码。
+
+#UILongPressGestureRecognizer
+
+与短点击相对应的还有长点击手势UILongPressGestureRecognizer。
+
+在UILongPressGestureRecognizer中有如下属性。
+
+- `@property (nonatomic) NSUInteger numberOfTapsRequired`: 长点击响应前点击次数,默认0；
+- `@property (nonatomic) NSUInteger numberOfTouchesRequired __TVOS_PROHIBITED`: 用户触摸的手指数，默认1；
+- `@property (nonatomic) CFTimeInterval minimumPressDuration`: 长按最低时间，默认0.5秒；
+- `@property (nonatomic) CGFloat allowableMovement`: 手指长按期间可移动的区域，默认10像素。
+
+使用视图添加手势后，你可以通过设置栏设置相关属性。
 
 
 
