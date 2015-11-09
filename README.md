@@ -26,6 +26,9 @@ Objective-C和Swift都支持的相关开发文档。
 
 [手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/Objective-C/手势识别进阶(Objective-C).md)
 
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/Objective-C/手势识别高级(Objective-C).md)
+
+
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
