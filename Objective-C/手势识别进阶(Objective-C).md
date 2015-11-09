@@ -1,5 +1,9 @@
 [手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)
 
+[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)
+
+[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)
+
 ----------
 
 在上一篇博文，我们已经讲解了关于手势识别的基础知识。这篇博文我们会实现下列需求。
@@ -223,7 +227,8 @@ self.gestureView.transform = CGAffineTransformMakeTranslation(translatedPoint.x,
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-11-8 | 使用苹果手势识别器实现很炫的旋转、缩放和移动为一体的动效 |
+| 2015-11-08 | 使用苹果手势识别器实现很炫的旋转、缩放和移动为一体的动效 |
+| 2015-11-09 | 添加相应链接[手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)、[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)和[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)|
 
 &#160;
 

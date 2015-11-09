@@ -1,3 +1,11 @@
+[手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)
+
+[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)
+
+[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)
+
+----------
+
 #UIGestureRecognizer
 
 手势识别器是识别用户在界面的触摸响应，它能帮助我们更好的响应用户的触摸行为，实现更好的交互效果。如一个按钮的点击，就是一个手势响应。手势的核心是UIGestureRecognizer，它是具体手势识别器的一个抽象基类。它的工作原理如图所示。
@@ -417,7 +425,8 @@ panGR.maximumNumberOfTouches = 1; // 最多响应的手指，默认UINT_MAX
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-11-8 | 苹果手势识别基础总结 |
+| 2015-11-08 | 苹果手势识别基础总结 |
+| 2015-11-09 | 添加相应链接[手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)、[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)和[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)|
 
 &#160;
 
