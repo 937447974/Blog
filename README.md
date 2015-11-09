@@ -4,6 +4,12 @@ CSDN博客地址:http://blog.csdn.net/y550918116j
 
 QQ:937447974
 
+##IOS
+
+Objective-C和Swift都支持的相关开发文档。
+
+[IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/IOS多线程.md)
+
 ##Objective-C
 
 关于Objective-C开发的相关文档。
