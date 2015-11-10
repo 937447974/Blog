@@ -85,7 +85,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [技术进阶-IOS](https://github.com/937447974/Blog/blob/master/工作/技术进阶-IOS.md)
 
-[Mac JAVA SE安装](https://github.com/937447974/Blog/blob/master/工作/Mac%20JAVA%20SE安装.md)
+[Mac系统安装JavaSE](https://github.com/937447974/Blog/blob/master/工作/Mac系统安装JavaSE.md)
 
 [GitHub桌面版.md](https://github.com/937447974/Blog/blob/master/工作/GitHub桌面版.md)
 
