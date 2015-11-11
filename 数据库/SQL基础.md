@@ -210,6 +210,26 @@ describe user;
 
 ![DDl-7](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111107.png)
 
+##使用Drop语句删除表
+
+在使用数据库中的表时经常需要删除一些不需要的表，删除表需要使用drop table 语句来完成。具体语句如下：
+
+```sql
+drop table (if exists) table_name;
+```
+
+删除表的语句非常简单，只需要指定要删除的表名，即可删除该表。if exists代表表存在时才删除，也可以不写。
+
+下面就利用上面删除表的语句来删除user表。
+
+```sql
+-- 查看库中的存在的表
+show tables;
+-- 删除user表
+drop table if exists user;
+-- 查看删除user表后，库中的存在的表
+show tables;
+```
 
 
 &#160;
