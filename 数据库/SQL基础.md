@@ -113,6 +113,47 @@ create table user (
     name varchar(20),
     createTime timestamp
 );
+-- 查看表结构
+describe user；
+```
+
+![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+
+##使用Alter语句修改表
+
+如果要对已经创建好的表进行修改，那么就需要使用alter talbe 语句来修改。修改表的基本语法如下：
+
+```sql
+alter table table_name
+add column_name | modify column_name|drop column column_name;
+```
+
+- add: 用于向表中添加列；
+- modify：用于修改表中已经存在的列的信息。
+- drop column_name:删除表中的列，在删除表中的列时要经常加上cascade constraints，是要把与该列有关的约束也一并删除掉。
+
+###增加列
+
+在user表中增加列地址address，字段类型是varchar2。
+
+```sql
+-- 增加列address
+alter table user
+add address varchar(50);
+-- 查看表结构
+describe user；
+```
+
+###修改字段类型
+
+将address的类型改为number类型。
+
+```
+-- 修改列address类型
+altre table user
+modify address int;
+-- 查看表结构
+describe user；
 ```
 
 
