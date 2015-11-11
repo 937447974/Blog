@@ -308,6 +308,57 @@ describe user;
 
 ![DDl-11](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111110.png)
 
+##CHECK约束
+
+CHECK约束是检查约束，能够规定每一个列能够输入的值，以保证数据的正确性。
+
+###创建表时添加check约束
+
+创建check约束的语句就是在创建表的语句后面加上如下语句完成的。
+
+```sql
+constraint constraint_name check(condition)
+```
+
+- condition 检查约束的条件，检查约束的条件要建立在具体的字段中。
+
+下面在创建user表时，设置userID必须大于0。
+
+```sql
+-- 创建user表并设置userID为主键
+create table user (
+    userID int,
+    qq varchar(15),
+    name varchar(20),
+    createTime timestamp,
+    check(userID > 0)
+);
+-- 查看表结构
+describe user;
+```
+
+> 在mysql中，check约束不起任何作用。
+
+###在修改数据表时添加check约束
+
+在修改数据表时添加check约束的方法比较简单。
+
+```sql
+alter table table_name
+add constraint constraint_name check(condition);
+```
+
+###移除check约束
+
+移除check约束也与移除其他约束一样，只要知道check约束的名字，就快要移除check约束。
+
+```sql
+alter table table
+drop constraint constraint_name;
+```
+
+##UNION约束
+
 &#160;
 
 ----------
