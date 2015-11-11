@@ -259,6 +259,8 @@ create table user (
 describe user;
 ```
 
+![DDl-9](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111109.png)
+
 ##创建表后设置主键约束
 
 在创建表时如果没有创建主键约束，可以再修改表时为表添加主键约束。添加主键约束的语法如下。
@@ -281,6 +283,8 @@ add primary key(qq);
 describe user;
 ```
 
+![DDl-10](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111111.png)
+
 ##移除主键约束
 
 如果需要移除表中现有的主键约束，可以使用如下所示的语句完成：
@@ -302,15 +306,7 @@ drop primary key;
 describe user;
 ```
 
-ALTER TABLE `sms` DROP PRIMARY KEY;
-
-create table user (
-    userID int,
-    qq varchar(15),
-    name varchar(20),
-    createTime timestamp
-);
-
+![DDl-11](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111110.png)
 
 &#160;
 
