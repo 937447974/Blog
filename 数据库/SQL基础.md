@@ -144,6 +144,8 @@ add address varchar(50);
 describe user;
 ```
 
+![DDl-2](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111103.png)
+
 你还可以指定添加到某个字段后
 
 ```sql
@@ -153,6 +155,8 @@ add address2 varchar(50) after userID;
 -- 查看表结构
 describe user;
 ```
+
+![DDl-3](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111105.png)
 
 ###修改字段类型
 
@@ -166,6 +170,8 @@ change address address int;
 describe user;
 ```
 
+![DDl-4](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111102.png)
+
 ###修改字段名
 
 运用上面的sql语句还可以修改字段名。
@@ -178,6 +184,8 @@ change address addresses int;
 describe user;
 ```
 
+![DDl-5](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111106.png)
+
 ###修改字段顺序
 
 ```sql
@@ -187,6 +195,8 @@ modify addresses int after userID;
 -- 查看表结构
 describe user;
 ```
+
+![DDl-6](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111103.png)
 
 ###删除字段
 
@@ -198,6 +208,7 @@ alter table user drop address2;
 describe user;
 ```
 
+![DDl-7](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111107.png)
 
 
 
