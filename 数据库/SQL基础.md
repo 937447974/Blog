@@ -132,7 +132,7 @@ add column_name | modify column_name|drop column column_name;
 - modify：用于修改表中已经存在的列的信息。
 - drop column_name:删除表中的列，在删除表中的列时要经常加上cascade constraints，是要把与该列有关的约束也一并删除掉。
 
-###增加列
+###增加字段
 
 在user表中增加列地址address，字段类型是varchar2。
 
@@ -141,19 +141,61 @@ add column_name | modify column_name|drop column column_name;
 alter table user
 add address varchar(50);
 -- 查看表结构
-describe user；
+describe user;
+```
+
+你还可以指定添加到某个字段后
+
+```sql
+-- 增加字段address，并在userID字段后
+alter table user
+add address2 varchar(50) after userID;
+-- 查看表结构
+describe user;
 ```
 
 ###修改字段类型
 
 将address的类型改为number类型。
 
-```
+```sql
 -- 修改列address类型
-altre table user
-modify address int;
+alter table user   
+change address address int;
 -- 查看表结构
-describe user；
+describe user;
+```
+
+###修改字段名
+
+运用上面的sql语句还可以修改字段名。
+
+```sql
+-- 修改address字段名为addresses
+alter table user   
+change address addresses int;
+-- 查看表结构
+describe user;
+```
+
+###修改字段顺序
+
+```sql
+-- 字段addresses移动字段userID后
+alter table user   
+modify addresses int after userID;
+-- 查看表结构
+describe user;
+```
+
+###删除字段
+
+```sql
+-- 删除字段addresses
+alter table user drop addresses;
+alter table user drop address2;
+-- 查看表结构
+describe user;
 ```
 
 
