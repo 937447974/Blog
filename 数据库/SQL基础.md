@@ -1,4 +1,5 @@
 >注意：本篇博文主要讲解oracle上的sql知识，然后是在mysql做测试。
+>sql语法是不区分大小写的。
 
 #SQL-数据库沟通的语言标准
 
@@ -114,7 +115,7 @@ create table user (
     createTime timestamp
 );
 -- 查看表结构
-describe user；
+describe user;
 ```
 
 ![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
@@ -230,6 +231,85 @@ drop table if exists user;
 -- 查看删除user表后，库中的存在的表
 show tables;
 ```
+
+![DDl-8](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111108.png)
+
+#约束的使用
+
+约束是保证数据库表中数据的完整性和一致性的手段，在Oracle主要有5种约束，即主键约束、外键约束、唯一约束、检查约束和非空约束。
+
+##主键约束
+
+主键约束在每个表中只有一个，但是一个主键约束可以由数据表中多个列组成。主键约束有两种方式创建，一种是在创建表时设置约束，一种是创建后使用约束。下面还是使用前面的user表来讲解。
+
+###创建表时创建主键约束
+
+在创建表时就创建主键约束，只需要使用primary key（字段名）即可完成约束，这里我们让userID位主键。如果要使用多个字段设置为组合主键，只需primary key（字段名1，字段名2...）即可。
+
+```sql
+-- 创建user表并设置userID为主键
+create table user (
+    userID int,
+    qq varchar(15),
+    name varchar(20),
+    createTime timestamp,
+    primary key(userID)
+);
+-- 查看表结构
+describe user;
+```
+
+##创建表后设置主键约束
+
+在创建表时如果没有创建主键约束，可以再修改表时为表添加主键约束。添加主键约束的语法如下。
+
+```sql
+alter table table_name
+add constraints constraint_name primary key(column_name);
+```
+
+- constraint_name:约束的名称。
+- column_name：主键约束指定数据表中列名。
+
+下面我们将qq设为主键。
+
+```sql
+-- 设置user表中的qq字段为主键
+alter table user
+add primary key(qq);
+-- 查看表结构
+describe user;
+```
+
+##移除主键约束
+
+如果需要移除表中现有的主键约束，可以使用如下所示的语句完成：
+
+```sql
+alter table table_name
+drop constraint constraint_name;
+```
+
+- constraint_name：要移除的约束名称，这个名称可以是在表中任意约束的名称。
+
+下面我们移除user表中主键。
+
+```sql
+-- 移除user表的主键
+alter table user
+drop primary key;
+-- 查看表结构
+describe user;
+```
+
+ALTER TABLE `sms` DROP PRIMARY KEY;
+
+create table user (
+    userID int,
+    qq varchar(15),
+    name varchar(20),
+    createTime timestamp
+);
 
 
 &#160;
