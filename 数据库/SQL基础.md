@@ -325,7 +325,7 @@ constraint constraint_name check(condition)
 下面在创建user表时，设置userID必须大于0。
 
 ```sql
--- 创建user表并设置userID为主键
+-- 创建user表并设置userID约束大于0
 create table user (
     userID int,
     qq varchar(15),
@@ -357,7 +357,78 @@ alter table table
 drop constraint constraint_name;
 ```
 
-##UNION约束
+##UNIQUE约束
+
+unique约束称为唯一约束，可以设置在表中输入的字段值都是唯一的，这个约束和之前学习的主键约束非常相似。不同的是唯一约束在一个表中可以有多个，而主键约束在一个表中只能有一个。
+
+###在创建表时添加unique约束
+
+在创建表时可以为表中的字段直接添加unique约束，具体的创建方法是在创建表的语句后面加上下面的语句。
+
+```sql
+constraint constraint_name unique(column_name);
+```
+
+下面设置user表中的userID为唯一约束。
+
+```sql
+-- 创建user表并设置userID为唯一约束
+create table user (
+    userID int,
+    name varchar(20),
+    qq varchar(15),   
+    createTime timestamp,
+    constraint uk_userID unique(userID)
+);
+-- 查看表结构
+describe user;
+```
+
+###在修改表时添加unique约束
+
+修改表时添加unique约束也是在alter table语句后面加上如下语句完成的。
+
+```sql
+add constraint constraint_name unique(column_name);
+```
+
+下面添加user表的qq为唯一约束。
+
+```sql
+-- 修改表的qq为唯一约束
+alter table user
+add constraint uk_qq unique(qq);
+-- 查看表结构
+describe user;
+```
+
+也可使用
+```sql
+alter table user
+add uk_qq unique(qq);
+```
+
+>如果不指定约束名，mysql默认用字段名为唯一约束名。
+
+
+###移除唯一约束
+
+移除union约束的方法也和移除其他约束一样。
+
+```sql
+alter table table_name
+drop constraint constraint_name;
+```
+
+这里移除user表的qq唯一约束。
+
+```sql
+-- 移除user表中qq的唯一约束
+alter table user
+drop index uk_qq;
+-- 查看表结构
+describe user;
+```
 
 &#160;
 
