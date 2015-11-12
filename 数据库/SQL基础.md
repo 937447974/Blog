@@ -26,7 +26,7 @@ sql语言可以分为4类：
 
 ##数据控制语言（DCL）
 
-数据控制语言（DCS）是对数据库中的对象权限进行权限设置和取消等操作，但是只有数据库的系统管理员才有权力去执行对数据库对象权限的操作。使用DCL可以为数据库中不同的用户设置不同的权限，这样也能够提高数据库的安全性。
+数据控制语言（DCL）是对数据库中的对象权限进行权限设置和取消等操作，但是只有数据库的系统管理员才有权力去执行对数据库对象权限的操作。使用DCL可以为数据库中不同的用户设置不同的权限，这样也能够提高数据库的安全性。
 
 #数据库中支持的数据类型
 
@@ -63,7 +63,7 @@ sql语言可以分为4类：
 | :---- | :---- | :---- | 
 | blob | 最多可以存放4GB | 存储二进制数据 |
 | clob | 最多可以存放4GB | 存储字符串数据 |
-| bfile | 大小与操作系统有关 | 用来吧非结构化的二进制数据存储在数据库以外的操作系统中 |
+| bfile | 大小与操作系统有关 | 用来把非结构化的二进制数据存储在数据库以外的操作系统中 |
 
 #数据定义语言（DDl）
 
@@ -71,12 +71,13 @@ DDL主要包括数据库对象的创建（create）、删除（drop）和修改�
 
 ##数据库操作
 
-- show databases：列出数据库
-- use database_name：使用database_name数据库
-- create database data_name：创建名为data_name的数据库
-- drop database data_name：删除一个名为data_name的数据库
-- show tables：查看有那些表。
-- DESCRIBE table_name：查看table_name表的表结构。
+- show databases：列出数据库；
+- use database_name：使用database_name数据库；
+- create database data_name：创建名为data_name的数据库；
+- drop database data_name：删除一个名为data_name的数据库；
+- show tables：查看有那些表；
+- show create table_name: 查看创建table_name表的sql语句；
+- describe table_name：查看table_name表的表结构。
 
 ##使用create语句创建表
 
@@ -353,7 +354,7 @@ add constraint constraint_name check(condition);
 移除check约束也与移除其他约束一样，只要知道check约束的名字，就快要移除check约束。
 
 ```sql
-alter table table
+alter table table_name
 drop constraint constraint_name;
 ```
 
@@ -407,6 +408,7 @@ describe user;
 ![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111202.png)
 
 也可使用
+
 ```sql
 alter table user
 add uk_qq unique(qq);
@@ -555,7 +557,7 @@ select * from user;
 
 ![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111208.png)
 
-上面介绍的这种添加数据的方式是目标数据表已经存在，也就是user表时创建好的，如果想不创建表就直接通过源数据表在添加数据的同时创建表也是可以的。具体语法如下：
+上面介绍的这种添加数据的方式是目标数据表已经存在，也就是user表是创建好的，如果想不创建表就直接通过源数据表在添加数据的同时创建表也是可以的。具体语法如下：
 
 ```sql
 create table table_name as 
@@ -661,6 +663,8 @@ where userid = 1;
 select * from user;
 ```
 
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111213.png)
+
 ###删除表中全部记录
 
 删除表中的全部记录就是不使用[where condition]子句来完成操作。下面删除user表中的所有记录。
@@ -672,11 +676,90 @@ delete from user;
 select * from user;
 ```
 
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111214.png)
 
+##SELECT 查询数据
 
+数据查询语言也称为DQL，这部分内会会在下一篇博文详细介绍。这里主要介绍SELECT语句的基本用法。SELECT的一般语法如下：
 
+```sql
+select column_name1,column_name2... 
+from table_name
+where[condition];
+```
 
+- column_name1：代表的是数据表中的字段名，可以是多个字段也可以是一个字段。还可以用“*”代替查询所有的字段。
+- where[condition]：代表查询的条件。
 
+###查询表中全部数据
+
+这里查询user表中的全部数据。
+
+```sql
+-- 查询所有数据
+select * from user;
+```
+
+###查询表中某一字段的数据
+
+查询表中某一个字段的数据可以直接在select语句后面指定要查询的字段名。这里查询user表中的name字段。
+
+```sql
+-- 查询name字段
+select name from user;
+```
+
+###根据条件查询数据
+
+根据条件查询数据就是使用where子句来完成操作，下面查询user表中的userid=1的name字段。
+
+```sql
+-- 根据userid=1条件，查询user表中的name字段
+select name
+from user
+where userid = 1;
+```
+
+##其他数据操作语句
+
+在oracle中除了上面讲述的insert、update、delete、select语句之外，还有merge、truncate、lock table等语句。这里讲解常用的merge和truncate语句的使用。
+
+###truncate语句
+
+truncate语句和delete语句一样都是用来删除数据表中的数据的，二者的区别在于。
+
+1. truncate只能删除全部数据，而delete可以删除部分数据；
+2. truncate删除数据要比delete快。
+
+具体的语法如下。
+
+```sql
+truncate table table_name;
+```
+
+###merge语句
+
+merge语句与update语句的功能类似，都是修改数据表中的数据，但是使用merge可以同时进行增加和修改的操作。具体语法如下：
+
+```sql
+merge [into] table_name1
+using table_name2
+on (condtiion)
+when matched then merge_update_clause
+when not matched then merge_insert_clause;
+```
+
+- table_name1:要修改或添加的表。
+- table_name2:参照的更新的表。
+- condition：table_name1和table_name2之间的关系；
+- merge_update_clause：如果参照表table_name2中的调节匹配，就执行更新操作的sql语句；
+- merge_insert_clause：如果条件不匹配，就执行增加操作的sql语句。
+
+> 这里merge_update_clause和merge_insert_clause都是可以省略的，当是在实际操作中会有一个，否则merge就没有意义了。
+
+#数据控制语言（DCL）
+
+数据控制离不开数据库的使用者，数据控制语言主要就是对数据库使用者赋予和撤销访问数据库的权限的设置，主要包括授予权限要使用的语句grant和收回权限的语句revoke。
 
 &#160;
 
@@ -693,10 +776,12 @@ select * from user;
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-10 | sql基础 |
-| 2015-11-12 | unique唯一约束、not null非空约束 |
+| 2015-11-12 | unique唯一约束、not null非空约束、数据操作语言（DML）和数据查询语言（DQL）、数据控制语言（DCL）章节 |
 
 &#160;
 
 ----------
 
-版权所有：http://blog.csdn.net/y550918116j
+版权所有
+CSDN：http://blog.csdn.net/y550918116j
+GitHub：https://github.com/937447974/Blog
