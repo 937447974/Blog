@@ -778,10 +778,8 @@ when not matched then merge_insert_clause;
 | 2015-11-10 | sql基础 |
 | 2015-11-12 | unique唯一约束、not null非空约束、数据操作语言（DML）和数据查询语言（DQL）、数据控制语言（DCL）章节 |
 
-&#160;
+##版权所有
 
-----------
-
-版权所有
 CSDN：http://blog.csdn.net/y550918116j
+
 GitHub：https://github.com/937447974/Blog
