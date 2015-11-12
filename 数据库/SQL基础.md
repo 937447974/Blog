@@ -455,6 +455,8 @@ create table user (
 describe user;
 ```
 
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111204.png)
+
 ###修改表时设置not null约束
 
 在修改表时设置not null 约束，也不需要再使用add关键字来添加约束，只要使用modify关键字就可以设置表中字段的not null约束。
@@ -473,6 +475,8 @@ modify qq varchar(15) not null;
 -- 查看表结构
 describe user;
 ```
+
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111205.png)
 
 ###取消not null约束
 
@@ -493,6 +497,80 @@ modify qq varchar(15) null;
 describe user;
 ```
 
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111206.png)
+
+#数据操作语言（DML）和数据查询语言（DQL）
+
+DML也就是用来操作数据库中数据所使用的语言，对数据库中的数据操作无非就是对数据进行增加、删除、修改和查询的操作。
+
+##INSERT添加数据
+
+在创建好数据表之后，添加数据是首先要做的工作。在给表中添加数据时要与表中字段类型相匹配，也就是说字符串类型的字段只能添加字符串类型的数据。向表中添加数据的一般语法如下：
+
+```sql
+insert into talbe_name(column_name1,column_name2...)
+values(data1,data2...);
+```
+
+- column_name1:字段名。
+- data1：要添加的数据，与column_name1对应。
+
+###直接添加数据
+
+直接添加数据，使用上面的语法。这里我们为user表中添加一条记录。
+
+```
+-- 添加一条记录
+insert into user(name,qq)
+values('阳君', '937447974');
+-- 查询所有数据
+select * from user;
+```
+
+###通过其他数据表向表中添加数据
+
+如果在数据库中需要新创建一个数据表，但是这个表中的数据又与其他表中的数据相似，那么就可以直接把其他表中的数据添加到新创建的数据表中。具体语法如下：
+
+```sql
+insert into talbe_name1(column_name1, column_name2...)
+select column_name1,column_name2... from table_name2;
+```
+
+- talbe_name1:要插入数据的表名。
+- talbe_name2:数据的来源表。
+
+>要确保列的个数和列的数据类型都一致。
+
+这里将user表中的数据再次插入user表中。
+
+```sql
+-- 从表中添加数据
+insert into user(name,qq)
+select name,qq from user;
+-- 查询所有数据
+select * from user;
+```
+
+上面介绍的这种添加数据的方式是目标数据表已经存在，也就是user表时创建好的，如果想不创建表就直接通过源数据表在添加数据的同时创建表也是可以的。具体语法如下：
+
+```sql
+create table table_name as 
+select column_name1,column_name2... from source_table;
+```
+
+- table_name:要创建的表名；
+- source_name:创建目标表时数据的来源表。这里可以指定字段，也可以用“*”代表来源表的所有字段。
+
+这里我们通过这种方式创建user2表，字段取user表中的name和qq。
+
+```sql
+-- 创建表的同时插入数据
+create table user2
+as select name,qq from user;
+-- 查询所有数据
+select * from user2;
+```
+
 &#160;
 
 ----------
@@ -508,7 +586,7 @@ describe user;
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-10 | sql基础 |
-| 2015-11-12 | unique唯一约束 |
+| 2015-11-12 | unique唯一约束、not null非空约束 |
 
 &#160;
 
