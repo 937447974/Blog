@@ -527,6 +527,8 @@ values('阳君', '937447974');
 select * from user;
 ```
 
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111207.png)
+
 ###通过其他数据表向表中添加数据
 
 如果在数据库中需要新创建一个数据表，但是这个表中的数据又与其他表中的数据相似，那么就可以直接把其他表中的数据添加到新创建的数据表中。具体语法如下：
@@ -551,6 +553,8 @@ select name,qq from user;
 select * from user;
 ```
 
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111208.png)
+
 上面介绍的这种添加数据的方式是目标数据表已经存在，也就是user表时创建好的，如果想不创建表就直接通过源数据表在添加数据的同时创建表也是可以的。具体语法如下：
 
 ```sql
@@ -569,6 +573,63 @@ create table user2
 as select name,qq from user;
 -- 查询所有数据
 select * from user2;
+```
+
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111209.png)
+
+##UPDATE修改数据
+
+修改数据也是经常要使用的，在已经存在数据的表中修改数据使用update语句即可完成。
+
+```sql
+update table_name 
+set column_name1=data1,column_name2=data2...
+[where condition];
+```
+
+- column_name1:要修改数据列的字段名，可以是一个或多个；
+- data1：要赋给字段的新值，这个值的数据类型要与表中字段的数据类型一致；
+- where：条件，这里如果省略where语句，那么就意味着要修改表中该字段的所有值，如果加上where语句，则修改部分数据。
+
+下面引入user表的初始数据。
+
+```sql
+-- 创建user表
+create table user (
+    userID int,
+    name varchar(20),
+    qq varchar(15)
+);
+-- 插入数据
+insert into user(userID,name,qq) values('1','阳君','937447974');
+insert into user(userID,name,qq) values('2','阳君','937447974');
+-- 显示所有数据
+select * from user;
+```
+
+###修改表中指定字段的全部值
+
+修改表中的全部值就是使用不带where字句的语句完成。下面修改user表中name为'yangjun';
+
+```sql
+-- user表中name字段的值都改为'yangjun'
+update user
+set name='yangjun';
+-- 显示所有数据
+select * from user;
+```
+
+###根据条件修改表中指定字段的值
+
+根据条件修改表中的数据使用where字句来完成。下面修改userID=1的name值为'阳君'。
+
+```sql
+-- 修改userID=1的name值为'阳君'
+update user
+set name = '阳君'
+where userID = 1;
+-- 显示所有数据
+select * from user;
 ```
 
 &#160;
