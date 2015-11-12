@@ -76,7 +76,7 @@ DDL主要包括数据库对象的创建（create）、删除（drop）和修改�
 - create database data_name：创建名为data_name的数据库；
 - drop database data_name：删除一个名为data_name的数据库；
 - show tables：查看有那些表；
-- show create table_name: 查看创建table_name表的sql语句；
+- show create table table_name: 查看创建table_name表的sql语句；
 - describe table_name：查看table_name表的表结构。
 
 ##使用create语句创建表
