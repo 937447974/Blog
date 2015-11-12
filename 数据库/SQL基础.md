@@ -384,6 +384,8 @@ create table user (
 describe user;
 ```
 
+![DDl-12](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111201.png)
+
 ###在修改表时添加unique约束
 
 修改表时添加unique约束也是在alter table语句后面加上如下语句完成的。
@@ -401,6 +403,8 @@ add constraint uk_qq unique(qq);
 -- 查看表结构
 describe user;
 ```
+
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111202.png)
 
 也可使用
 ```sql
@@ -430,6 +434,65 @@ drop index uk_qq;
 describe user;
 ```
 
+![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111203.png)
+
+##NOT NULL 约束
+
+Not null 约束就是非空约束，经常会在创建表时添加非空约束以确保字段必须要输入值。该约束和之前的约束不同，是直接在创建列时设置字段的非空约束。
+
+###创建not null约束
+
+创建not null约束的语法在创建表时就已经解释过了，这里创建user表时，设置name非空。
+
+```sql
+-- 创建user表并设置name字段非空
+create table user (
+    userID int,
+    name varchar(20) not null,
+    qq varchar(15)
+);
+-- 查看表结构
+describe user;
+```
+
+###修改表时设置not null约束
+
+在修改表时设置not null 约束，也不需要再使用add关键字来添加约束，只要使用modify关键字就可以设置表中字段的not null约束。
+
+```sql
+alter table table_name
+modify column not null;
+```
+
+这里设置user表中qq非空。
+
+```sql
+-- 设置user表的qq字段非空
+alter table user
+modify qq varchar(15) not null;
+-- 查看表结构
+describe user;
+```
+
+###取消not null约束
+
+对于非空约束不需要要删除，如果要取消某个列非空的约束，直接使用modify语句把该列的not null写成null即可。
+
+```sql
+alter table table_name
+modify column null;
+```
+
+下面取消user表中qq字段非空的非空约束。
+
+```sql
+-- 取消user表的qq字段非空约束
+alter table user
+modify qq varchar(15) null;
+-- 查看表结构
+describe user;
+```
+
 &#160;
 
 ----------
@@ -445,6 +508,7 @@ describe user;
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-10 | sql基础 |
+| 2015-11-12 | unique唯一约束 |
 
 &#160;
 
