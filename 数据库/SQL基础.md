@@ -527,7 +527,7 @@ values('阳君', '937447974');
 select * from user;
 ```
 
-![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111207.png)
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111207.png)
 
 ###通过其他数据表向表中添加数据
 
@@ -553,7 +553,7 @@ select name,qq from user;
 select * from user;
 ```
 
-![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111208.png)
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111208.png)
 
 上面介绍的这种添加数据的方式是目标数据表已经存在，也就是user表时创建好的，如果想不创建表就直接通过源数据表在添加数据的同时创建表也是可以的。具体语法如下：
 
@@ -575,7 +575,7 @@ as select name,qq from user;
 select * from user2;
 ```
 
-![DDl](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111209.png)
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111209.png)
 
 ##UPDATE修改数据
 
@@ -607,6 +607,8 @@ insert into user(userID,name,qq) values('2','阳君','937447974');
 select * from user;
 ```
 
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111211.png)
+
 ###修改表中指定字段的全部值
 
 修改表中的全部值就是使用不带where字句的语句完成。下面修改user表中name为'yangjun';
@@ -614,10 +616,12 @@ select * from user;
 ```sql
 -- user表中name字段的值都改为'yangjun'
 update user
-set name='yangjun';
+set name = 'yangjun';
 -- 显示所有数据
 select * from user;
 ```
+
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111210.png)
 
 ###根据条件修改表中指定字段的值
 
@@ -631,6 +635,48 @@ where userID = 1;
 -- 显示所有数据
 select * from user;
 ```
+
+![DML](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111212.png)
+
+##DELETE删除数据
+
+经常要删除数据表中一些没有用的数据，删除数据要使用delete关键字来完成。使用它可以根据条件删除指定的数据，也可以删除表中的全部数据。一般语法如下：
+
+```sql
+delete from table_name 
+[where condition];
+```
+
+其中，[where condition]子句是可以省略的，如果省略了[where condition]子句，就意味着删除数据表中的全部数据，如果加上[where condition]子句就可以根据条件删除表中的数据。
+
+###根据条件删除表中的记录
+
+根据条件删除表中的记录就是使用[where condition]子句来完成，下面就删除user表中userID为1的记录。
+
+```sql
+-- 使用条件删除数据
+delete from user
+where userid = 1;
+-- 显示所有数据
+select * from user;
+```
+
+###删除表中全部记录
+
+删除表中的全部记录就是不使用[where condition]子句来完成操作。下面删除user表中的所有记录。
+
+```sql
+-- 删除所有数据
+delete from user;
+-- 显示所有数据
+select * from user;
+```
+
+
+
+
+
+
 
 &#160;
 
