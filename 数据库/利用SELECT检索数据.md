@@ -456,8 +456,7 @@ create table qq (
   user_id int not null,
   qq varchar(15),
   primary key(id),
-  constraint unique(id),
-  constraint foreign key(user_id) references user(id)
+  constraint foreign key(user_id) references user(id) on delete cascade
 );
 -- 插入数据
 insert into user(name, age) values('阳君', 24);
