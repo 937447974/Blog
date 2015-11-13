@@ -69,7 +69,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)
 
-[](https://github.com/937447974/Blog/blob/master/数据库/)
+[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)
 
 [](https://github.com/937447974/Blog/blob/master/数据库/)
 
