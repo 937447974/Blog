@@ -1,3 +1,15 @@
+[MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
+
+[数据库的准则(范式)](https://github.com/937447974/Blog/blob/master/数据库/数据库的准则(范式).md)
+
+[SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)
+
+[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)
+
+[SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
+
+-----
+
 >注意：本篇博文主要讲解oracle上的sql知识，然后是在mysql做测试。
 >sql语法是不区分大小写的。
 
@@ -861,6 +873,9 @@ when not matched then merge_insert_clause;
 | 2015-11-10 | sql基础 |
 | 2015-11-12 | unique唯一约束、not null非空约束、数据操作语言（DML）和数据查询语言（DQL）、数据控制语言（DCL）章节 |
 | 2015-11-13 | 目录添加序号,添加章节“4.2 外键约束” |
+| 2015-11-14 | 增加博文[MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)、[数据库的准则(范式)](https://github.com/937447974/Blog/blob/master/数据库/数据库的准则(范式).md)、[SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)、[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)、[SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)的相关链接 |
+
+-----
 
 ##版权所有
 
