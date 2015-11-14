@@ -1,5 +1,7 @@
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
 
+[数据库的准则(范式)](https://github.com/937447974/Blog/blob/master/数据库/数据库的准则(范式).md)
+
 [SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)
 
 [利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)
