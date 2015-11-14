@@ -1,3 +1,13 @@
+[MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
+
+[SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)
+
+[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)
+
+[SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
+
+-----
+
 >注意：本篇博文主要讲解oracle上的sql知识，然后是在mysql做测试。
 >sql语法是不区分大小写的。
 
@@ -643,18 +653,44 @@ select * from user right join qq on user.id = qq.user_id;
 
 >union关键字的作用是连接两个结果集，并去除重复的数据。
 
-##7.5 (+)的使用
+##7.5 多表连接
+
+多表连接常用的关键字是union和union all。
+
+###7.5.1 union
+
+union：连接两个结果集的同时去除重复数据。
+
+```sql
+select * from user
+union 
+select * from user;
+```
+
+###7.5.1 union all
+
+union all：连接两个结果集的同时不去除重复数据。
+
+```sql
+select * from user
+union all
+select * from user;
+```
+
+>union all比union查询的速度快。
+
+##7.6 (+)的使用
 
 在oracle中使用外连接，有一种比较特殊的表示方法，利用“(+)”表示外连接。虽然这种方式可以是实现外连接，当是oracle还是不建议使用。"(+)"主要在非主表的一方，并且使用where语句不能存在join关键字。
 
-###7.5.1 左外连接使用(+)
+###7.6.1 左外连接使用(+)
 
 ```sql
 select * from user u, qq q
 where u.id = q.user_id(+);
 ```
 
-###7.5.2 右外连接使用(+)
+###7.6.2 右外连接使用(+)
 
 ```sql
 select * from user u, qq q
@@ -681,6 +717,7 @@ where u.id(+) = q.user_id;
 | ---- | ---- |
 | 2015-11-12 | 完成到“6 使用子查询”章节前 |
 | 2015-11-13 | 完成文章 |
+| 2015-11-14 | 增加7.5章节关于多表连接的介绍；增加其他文章的链接。 |
 
 ##版权所有
 
