@@ -1,4 +1,12 @@
 
+[MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
+
+[SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)
+
+[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)
+
+[SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
+
 -----
 
 >注意：本篇博文主要讲解oracle上的sql知识，然后是在mysql做测试。
