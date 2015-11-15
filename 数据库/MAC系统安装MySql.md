@@ -13,7 +13,7 @@
 MAC下安装MySql
 
 先安装Homebrew
-在命令行运行ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+在命令行运行`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 会自动安装。安装完毕后，就可以执行下列命令
 
