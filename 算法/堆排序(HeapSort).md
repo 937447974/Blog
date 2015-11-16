@@ -1,0 +1,291 @@
+**堆排序(HeapSort)**，与归并排序一样，但不同于插入排序的是，堆排序的时间复杂度是O(nlgn)，空间复杂度是O(n)。而与插入排序相同，但不同于归并排序的是，堆排序同样具有空间原址性：任何时候都只需要常数个额外的元素空间存储临时数据。
+
+堆排序引入的算法设计技巧：使用一种我们称为“堆”的数据结构来进行信息管理。堆不仅用于堆排序中，而且它也可以构造一种有效的优先队列。
+
+虽然“堆”这一词源自堆排序，但是目前它已经被引申为“垃圾收集存储机制”，例如在Java和Lisp语言中所定义的。强调一下，这里使用的堆不是垃圾收集存储，而是堆数据结构。
+
+#1 堆
+
+##1.1 堆的定义
+
+（二叉）堆是一个数组，它可以被看成一个近似的完成二叉树。树上的每一个结点对应数组的一个元素。除了最底层外，该树是完全充满的，而且是从左向右填充。表示堆的数组A两个属性：A.length表示给出元素的个数，heapSize表示有多少个堆元素存储在该数组中。也就是说，虽然A[0..A.length-1]可能存有数据，但只有A[0..A.heapSize]中存放的是堆的有效元素，这里，
+
+**0 <= A.heapSize <= A.length**
+
+**树的根节点是A[0]**
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111501.gif)
+ 
+##1.2 最大堆和最小堆 
+
+二叉堆可以分为两种形式：最大堆和最小堆。在这两种堆中，节点的值都是满足堆的性质，但一些细节定义则有所差异。
+
+在最大堆中，最大堆性质是指除了根以外的所有节点i都要满足：
+
+**A[parent(i)] >= A[i]**
+
+也就是说，某个节点的值至多与其父结点一样大。因此，堆的最大元素存放在根节点中；并且，在任一子树中，该子树所包含的所有节点的值都不大于该子树根节点的值。
+
+最小堆的组织方式正好相反：最小堆性质是指除了根以外的所有节点i都有
+
+**A[parent(i)] <= A[i]**
+
+最小堆中的最小元素存放根节点中。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111502.png)
+
+在堆排序算法中，我们使用的是最大堆，源于最小堆可以自行研究。
+
+#2 结点
+
+树的根结点是A[0]。这样给定一个下标i，我们就很容易计算得到它的父结点、左结点和右结点的下标。我们使用数组搭建堆的结构，这里运用到了HeapSort类。HeapSort类代码如下。
+
+```swift
+//
+//  HeapSort.swift
+//  HeapSort
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/11/15.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
+
+import Foundation
+
+/// 堆排序
+class HeapSort: NSObject {
+    
+    /// 数组
+    private var list:Array<Int> = []
+    /// 堆长度
+    private var heapSize = 0
+    
+    //MARK: 初始化
+    init(list:[Int]) {
+        self.list = list
+    }
+    
+    // MARK: - 父节点
+    private func parent(i:Int) -> Int {
+        return (i + 1) / 2 - 1
+    }
+    
+    // MARK: 左节点
+    private func left(i:Int) -> Int {
+        return 2 * i + 1
+    }
+    
+    // MARK: 右节点
+    private func right(i:Int) -> Int {
+        return 2 * i + 2
+    }
+    
+}
+```
+
+这里我们使用数组list记录堆，并使用heapSize记录堆的有效长度。
+
+#3 维护堆的性质
+
+在HeapSort添加maxHeapify方法体。
+
+```swift
+// MARK: 维护最大堆
+private func maxHeapify(i:Int) {
+    // 最大堆的基础算法，使用“逐级下降”原理，时间复杂度O(h树高)
+    let l = self.left(i)
+    let r = self.right(i)
+    var largest = i
+    // 找出最大的那个数
+    if l < heapSize && self.list[l] > self.list[largest] {
+        largest = l
+    }
+    if r < heapSize && self.list[r] > self.list[largest] {
+        largest = r
+    }
+    // 是否需要改变
+    if largest != i {
+        self.exchange(i, change: largest)
+        self.maxHeapify(largest)
+    }
+}
+
+// MARK: 交换节点
+private func exchange(i:Int, change:Int) {
+    let tempI:Int = self.list[i]
+    self.list[i] = self.list[change]
+    self.list[change] = tempI
+}
+```
+
+maxHeapify是用于维护最大堆性质的重要过程。它的输入为一个下标i。在调用maxHeapify的时候，我们假定根结点的left(i)和right(i)的二叉树都是最大堆。但这时list[i]有可能小于其孩子，这样就违背了最大堆的性质。maxHeapify通过让list[i]的值在最大堆中“逐级下降”，从而使得下标i为根结点的子树重新遵循最大堆的性质。
+
+#4 建堆
+
+我们可以用自底向上的方法利用maxHeapify把一个大小为n=list.count的数组list[0...n-1]转换为最大堆。子数组list[(n/2)+1..n]中的元素都是树德叶结点。每个叶结点都可以看成只包含含一个元素的堆。过程buildMaxHeap对树中的其他结点都调用一次maxHeapify。
+
+在HeapSort中添加方法buildMaxHeap。
+
+```swift
+// MARK: - 建立最大堆
+private func buildMaxHeap() {
+    // 时间复杂度O(n)
+    self.heapSize = self.list.count
+    for(var i = self.list.count / 2; i >= 0; i--) {
+        self.maxHeapify(i)
+    }
+}
+```
+
+#5 堆排序算法
+
+初始时候，堆排序算法利用buildMaxHeap将list建成最大堆。因为数组中的最大元素总是在根结点list[0]中，我们把她与list[n-1]进行互换，我们可以让该元素放到正确的位置。
+
+这时候，如果我们从堆中去掉结点n-1(这里通过减少heapSize的值来实现)，剩余的结点中，原来根的孩子结点仍然是最大堆，而新的根结点可能会违背最大堆的性质。为了维护最大堆的性质，我们要做的就是调用maxHeapify(0)，从而在list[0, heapSize]构造一个新的最大堆。
+
+堆排序算法会不断重复这一过程，直到堆的大小从heapSize-1降到0。
+
+在HeapSort中的方法heapSort实现如下。
+
+```swift
+// MARK: - 堆排序
+/// 堆排序
+///
+/// - returns: [Int]
+func heapSort() -> [Int]{
+    // 排序结果为从小到大
+    self.buildMaxHeap()
+    let heap = self.list // 存储最大堆
+    for(var i = self.heapSize - 1; i > 0; i--) {
+        // 最后一个位置保存堆最大的数
+        self.exchange(i, change: 0)
+        self.heapSize--
+        self.maxHeapify(0)
+    }
+    let heapSort = self.list
+    self.list = heap // 恢复最大堆
+    return heapSort
+}
+```
+
+#6 优先队列
+
+堆排序时一个优先的算法，但是在实际应用中，还有更快的排序算法。尽管如此，堆这一数据结构仍然有很多应用。这里我们介绍堆的一种应用优先队列。和堆一样，优先队列也有两种形式：最大优先队列和最小优先队列。这里只介绍基于最大堆的最大优先队列。
+
+##6.1 返回最大的元素
+
+在HeapSort中使用方法maxiMum实现返回最大的元素。
+
+```swift
+// MARK: 返回最大值
+/// 返回最大值
+///
+/// - returns: Int?
+func maxiMum() -> Int? {
+    return self.list.first
+}
+```
+
+##6.2 返回最大元素的同时并删除
+
+在HeapSort中使用方法maxiMum实现返回最大元素的同时并删除。
+
+```swift
+// MARK: - 返回最大值的同时删除最大值
+/// 返回最大值的同时删除最大值
+///
+/// - returns: void
+func extractMax() -> Int? {
+    let max = self.list.first
+    if max != nil {
+        // 删除最大值，后重新维护最大堆
+        self.list[0] = self.list.last!
+        self.list.removeLast()
+        self.heapSize = self.list.count
+        self.maxHeapify(0)
+    }
+    return max
+}
+```
+
+##6.3 插入一个元素
+
+在HeapSort中使用方法maxiMum实现插入一个元素，插入元素后，堆还是最大堆。
+
+```swift
+// MARK: 插入一个元素
+/// 插入一个元素
+///
+/// - parameter x : 要插入的元素
+///
+/// - returns: void
+func insert(x:Int) {
+    self.list.append(x)
+    self.buildMaxHeap()
+    
+}
+```
+
+#5 测试
+
+##5.1 测试代码
+
+``` swift
+var list:[Int] = []
+for(var i = 0; i < 10; i+=2) {
+    list.append(i)
+}
+for(var i = 9; i > 0; i-=2) {
+    list.append(i)
+}
+let heap = HeapSort(list: list)
+
+print("堆排序:\(heap.heapSort())")
+
+print("堆最大值:\(heap.maxiMum())")
+
+print("提取堆最大值并删除:\(heap.extractMax())")
+print("堆排序:\(heap.heapSort())")
+
+heap.insert(2)// 插入一个元素
+print("堆排序:\(heap.heapSort())")
+```
+
+##5.2 结果
+
+```
+堆排序:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+堆最大值:Optional(9)
+提取堆最大值并删除:Optional(9)
+堆排序:[0, 1, 2, 3, 4, 5, 6, 7, 8]
+堆排序:[0, 1, 2, 2, 3, 4, 5, 6, 7, 8]
+```
+
+&#160;
+
+----------
+
+#其他
+
+##源代码
+
+https://github.com/937447974/Algorithms
+
+##参考资料
+
+算法导论
+
+##文档修改记录
+
+| 时间 | 描述 |
+| ---- | ---- |
+| 2015-11-15 | 博文完成 |
+
+##版权所有
+
+CSDN：http://blog.csdn.net/y550918116j
+
+GitHub：https://github.com/937447974/Blog
+
