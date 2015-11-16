@@ -1,6 +1,6 @@
-# Blog
-
 CSDN博客地址:http://blog.csdn.net/y550918116j
+
+GitHub博客地址:https://github.com/937447974/Blog
 
 姓名：阳君
 
@@ -8,15 +8,15 @@ QQ：937447974
 
 职位：IOS攻城师
 
-如果你对我的博客感兴趣，并想持续获得本人最新的博客源文件，欢迎持续关注。
+如果你对我的博客感兴趣，并想持续获得本人最新的博客源文件，欢迎点击右上角的Fork按钮。
 
-##IOS
+#1 IOS
 
 Objective-C和Swift都支持的相关开发文档。
 
 [IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/IOS多线程.md)
 
-##Objective-C
+#2 Objective-C
 
 关于Objective-C开发的相关文档。
 
@@ -41,7 +41,7 @@ Objective-C和Swift都支持的相关开发文档。
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 
-##Swift
+#3 Swift
 
 关于Swift的相关文档。
 
@@ -69,7 +69,11 @@ Objective-C和Swift都支持的相关开发文档。
 
 [](https://github.com/937447974/Blog/blob/master/Swift/)
 
-##数据库
+#4 算法
+
+[堆排序(HeapSort)](https://github.com/937447974/Blog/blob/master/算法/堆排序(HeapSort).md)
+
+#5 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
 
@@ -81,7 +85,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
 
-##综合
+#6 综合
 
 一些综合性文档。
 
@@ -94,7 +98,7 @@ Objective-C和Swift都支持的相关开发文档。
 [](https://github.com/937447974/Blog/blob/master/综合/)
 [](https://github.com/937447974/Blog/blob/master/综合/)
 
-##工作
+#7 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
 
@@ -104,11 +108,15 @@ Objective-C和Swift都支持的相关开发文档。
 
 [GitHub桌面版.md](https://github.com/937447974/Blog/blob/master/工作/GitHub桌面版.md)
 
-##Resources
+#8 其他
+
+##8.1 学习资料
+
+一些学习文档。
+
+##8.2 Resources
 
 博客的相关资源文件。
 
-##学习资料
 
-一些学习文档。
 
