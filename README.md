@@ -71,7 +71,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 #4 算法
 
-[堆排序(HeapSort)](https://github.com/937447974/Blog/blob/master/算法/堆排序(HeapSort).md)
+[堆排序](https://github.com/937447974/Blog/blob/master/算法/堆排序.md)
 
 #5 数据库
 
