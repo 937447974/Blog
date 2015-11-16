@@ -73,6 +73,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [堆排序](https://github.com/937447974/Blog/blob/master/算法/堆排序.md)
 
+[快速排序](https://github.com/937447974/Blog/blob/master/算法/快速排序.md)
+
 #5 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
