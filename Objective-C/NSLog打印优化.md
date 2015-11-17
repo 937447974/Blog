@@ -1,6 +1,6 @@
-#1 需求
+#1 NSLog
 
-在开发过程中，我们会使用NSLog打印一些日志，如果在NSArray中有中文字符时，如下。
+在开发过程中，我们会使用NSLog打印一些日志，如果在NSArray或NSDictionary中有中文字符时，如下。
 
 ```objc
 NSArray *array = [NSArray arrayWithObjects:@"阳君", nil];
@@ -10,10 +10,124 @@ dict = [NSDictionary dictionaryWithObjectsAndKeys:array, @"name", @"937447974", 
 NSLog(@"%@", dict);
 ```
 
-打印出来会显示Unicode码。这样很不便于开发过程的打印。
+打印出来会显示Unicode码。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111701.png)
+
+如图这样很不利于开发过程的调试。如果你说这样很好，你看的懂，那你牛逼！
+
+#2 NSLog打印优化
+
+通过分析打印的实质是调用了NSArray或NSDictionary对象的`- (NSString *)descriptionWithLocale:(id)locale`方法。我们只需重写这个方法即可。
+
+这里使用了类NSLog+Extension。+号可以告诉大家，这是一个扩展类。
+
+NSLog+Extension.h代码如下
+
+```objc
+//
+//  NSLog+Extension.h
+//  NSLog
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/11/17.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+/** 数组NSLog打印扩展*/
+@interface NSArray (NSLogExtension)
+
+@end
+
+/** 字典NSLog打印扩展*/
+@interface NSDictionary (NSLogExtension)
+
+@end
+```
+
+NSLog+Extension.m代码如下
+
+```objc
+//
+//  NSLog+Extension.m
+//  NSLog
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/11/17.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
+
+#import "NSLog+Extension.h"
+
+#pragma mark -  NSLog打印辅助方法
+id logExtension(id obj) {
+    id tempObj = obj;
+    // 遇到NSArray或NSDictionary的子类，内容后移\t
+    if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]]) {
+        NSString *str = [NSString stringWithFormat:@"%@", obj];
+        str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@"\n\t"];
+        tempObj = str;
+    }
+    return tempObj;
+}
 
 
+#pragma mark - 数组NSLog打印扩展
+@implementation NSArray (NSLogExtension)
 
+#pragma mark 数组打印
+- (NSString *)descriptionWithLocale:(id)locale {
+    NSMutableString *str = [NSMutableString stringWithString:@"(\n"];
+    // 遍历数组的所有元素
+    for (id obj in self) {
+        [str appendFormat:@"\t%@,\n", logExtension(obj)];
+    }
+    [str appendString:@")"];
+    return str;
+}
+
+@end
+
+#pragma mark - 字典NSLog打印扩展
+@implementation NSDictionary (NSLogExtension)
+
+#pragma mark 字典打印
+- (NSString *)descriptionWithLocale:(id)locale {
+    __block NSMutableString *str = [NSMutableString stringWithString:@"{\n"];
+    // 遍历字典的所有键值对，采用并发输出
+    [self enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [str appendFormat:@"\t%@ = %@,\n", key, logExtension(obj)];
+    }];
+    [str appendString:@"}"];
+    // 删掉最后一个,
+    NSRange range = [str rangeOfString:@"," options:NSBackwardsSearch];
+    [str deleteCharactersInRange:range];
+    return str;
+}
+
+@end
+
+```
+
+我们使用字符串拼接的方式返回要打印的字符串。这里使用了函数logExtension，主要是因为在数组中包含字典或数组时，要让显示数据后移'\t'。
+
+#3 测试
+
+再次运行前面的测试代码，打印输出
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111702.png)
+
+可以发现两个的打印结果格式没有太大差异，但是优化后的打印看着就是爽。
+
+#4 小结
+
+本博文讲解了工作中的常用的NSLog打印优化，其实还有一种就是将数据转换为NSString再查看。但是没有格式，数据庞大时，不利于查看，如果你有兴趣可以查看的的博文《[JSON解析](http://blog.csdn.net/y550918116j/article/details/49002701)》。
 
 &#160;
 

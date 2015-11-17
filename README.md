@@ -16,9 +16,6 @@ Objective-C和Swift都支持的相关开发文档。
 
 [IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/IOS多线程.md)
 
-[NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/NSLog打印优化.md)
-
-
 #2 Objective-C
 
 关于Objective-C开发的相关文档。
@@ -39,6 +36,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [UIWindow简单介绍](https://github.com/937447974/Blog/blob/master/Objective-C/UIWindow简单介绍.md)
 
+[NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/NSLog打印优化.md)
 
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
