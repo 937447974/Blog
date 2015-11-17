@@ -107,19 +107,21 @@ id logExtension(id obj) {
     [str appendString:@"}"];
     // 删掉最后一个,
     NSRange range = [str rangeOfString:@"," options:NSBackwardsSearch];
-    [str deleteCharactersInRange:range];
+    // 保护机制找到才删除
+    if (range.location > 0 && range.location < str.length) {
+        [str deleteCharactersInRange:range];
+    }
     return str;
 }
 
 @end
-
 ```
 
 我们使用字符串拼接的方式返回要打印的字符串。这里使用了函数logExtension，主要是因为在数组中包含字典或数组时，要让显示数据后移'\t'。
 
 #3 测试
 
-再次运行前面的测试代码，打印输出
+只需引入文件，无须在类中引入头文件。再次运行前面的测试代码，打印输出
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111702.png)
 
