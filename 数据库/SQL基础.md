@@ -864,7 +864,7 @@ when not matched then merge_insert_clause;
 
 ##参考资料
 
-[ORACLE从入门到精通](https://github.com/937447974/Blog/blob/master/学习资料/ORACLE从入门到精通.pdf)
+[ORACLE从入门到精通](https://github.com/937447974/LearningMaterials/blob/master/ORACLE从入门到精通.pdf)
 
 ##文档修改记录
 
