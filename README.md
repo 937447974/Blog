@@ -113,7 +113,9 @@ Objective-C和Swift都支持的相关开发文档。
 
 [Mac系统安装JavaSE](https://github.com/937447974/Blog/blob/master/工作/Mac系统安装JavaSE.md)
 
-[GitHub桌面版.md](https://github.com/937447974/Blog/blob/master/工作/GitHub桌面版.md)
+[GitHub桌面版](https://github.com/937447974/Blog/blob/master/工作/GitHub桌面版.md)
+
+[Git移除敏感数据](https://github.com/937447974/Blog/blob/master/工作/Git移除敏感数据.md)
 
 #8 其他
 
