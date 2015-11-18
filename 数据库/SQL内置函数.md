@@ -561,7 +561,7 @@ select sum(age) from user;
 
 ##参考资料
 
-[ORACLE从入门到精通](https://github.com/937447974/Blog/blob/master/学习资料/ORACLE从入门到精通.pdf)
+[ORACLE从入门到精通](https://github.com/937447974/LearningMaterials/blob/master/ORACLE从入门到精通.pdf)
 
 [MySQL 获得当前日期时间(以及时间的转换)](http://blog.sina.com.cn/s/blog_6d39dc6f0100m7eo.html)
 
