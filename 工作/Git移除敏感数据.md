@@ -85,6 +85,8 @@ yangjundeMac-mini:Test yangjun$ git filter-branch --force --index-filter 'git rm
 yangjundeMac-mini:Test yangjun$ git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch test' --prune-empty --tag-name-filter cat -- --all
 ```
 
+> test改为.会清楚所有缓存和本地数据，无法版本回滚，谨慎使用。
+
 ##2.2 防止再次提交
 
 有的时候项目中需要一定的数据，我们又不想提交到版本库里面，可以创建一个.gitignore文件，告诉git，这些数据不用提交。
@@ -138,7 +140,9 @@ $ bfg --replace-text passwords.txt
 
 #4 小结
 
-本篇博文讲解了怎么在版本库中删除不需要的文件，给项目瘦身。如果你正在使用git，或你周围的小伙伴也在使用git，希望你向他们推荐这篇文章。
+本篇博文讲解了怎么在版本库中删除不需要的文件，给项目瘦身。如果你正在使用git，或你周围的小伙伴也在使用git，希望你向他们推荐这篇文章。下面是我清理项目前后的效果图。
+
+
 &#160;
 
 ----------
