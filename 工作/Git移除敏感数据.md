@@ -142,6 +142,7 @@ $ bfg --replace-text passwords.txt
 
 本篇博文讲解了怎么在版本库中删除不需要的文件，给项目瘦身。如果你正在使用git，或你周围的小伙伴也在使用git，希望你向他们推荐这篇文章。下面是我清理项目前后的效果图。
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/201511902.jpg)&#160;&#160;![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/201511901.jpg)
 
 &#160;
 
