@@ -119,6 +119,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [Git移除敏感数据](https://github.com/937447974/Blog/blob/master/工作/Git移除敏感数据.md)
 
+[ZSH安装](https://github.com/937447974/Blog/blob/master/工作/ZSH安装.md)
+
 #8 其他
 
 ##8.1 学习资料
