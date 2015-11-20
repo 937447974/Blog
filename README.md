@@ -82,11 +82,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [二叉搜索树](https://github.com/937447974/Blog/blob/master/算法/二叉搜索树.md)
 
-[红黑树的性质](https://github.com/937447974/Blog/blob/master/算法/红黑树的性质.md)
+[红黑树](https://github.com/937447974/Blog/blob/master/算法/红黑树.md)
 
-[红黑树的操作](https://github.com/937447974/Blog/blob/master/算法/红黑树的操作.md)
-
-[红黑树的实现](https://github.com/937447974/Blog/blob/master/算法/红黑树的实现.md)
 
 #5 数据库
 
