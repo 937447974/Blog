@@ -38,7 +38,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [UIWindow简单介绍](https://github.com/937447974/Blog/blob/master/Objective-C/UIWindow简单介绍.md)
 
-[NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/NSLog打印优化.md)
+[NSLog打印优化](https://github.com/937447974/Blog/blob/master/Objective-C/NSLog打印优化.md)
 
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
 [](https://github.com/937447974/Blog/blob/master/Objective-C/)
