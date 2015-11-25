@@ -86,6 +86,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [B树](https://github.com/937447974/Blog/blob/master/算法/B树.md)
 
+[字符串匹配](https://github.com/937447974/Blog/blob/master/算法/字符串匹配.md)
+
 #5 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
