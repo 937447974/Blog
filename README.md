@@ -88,6 +88,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [字符串匹配](https://github.com/937447974/Blog/blob/master/算法/字符串匹配.md)
 
+[数组(交OR并)](https://github.com/937447974/Blog/blob/master/算法/数组(交OR并).md)
+
 #5 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
