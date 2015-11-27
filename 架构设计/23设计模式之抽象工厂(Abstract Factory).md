@@ -23,7 +23,7 @@
 
 #4 类图
 
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112702.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112702.png)
 
 #5 代码实现
 
