@@ -1,5 +1,20 @@
 ![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
+#1 概述
+
+
+#2 适用性
+
+
+#3 参与者
+
+
+#4 类图
+
+![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112701.png)
+
+#5 代码实现
+
 &#160;
 
 ----------
