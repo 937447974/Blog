@@ -72,7 +72,11 @@ Objective-C和Swift都支持的相关开发文档。
 
 [](https://github.com/937447974/Blog/blob/master/Swift/)
 
-#4 算法
+#4 架构设计
+
+[23设计模式之目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
+
+#5 算法
 
 [堆排序](https://github.com/937447974/Blog/blob/master/算法/堆排序.md)
 
@@ -90,7 +94,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [数组(交OR并)](https://github.com/937447974/Blog/blob/master/算法/数组(交OR并).md)
 
-#5 数据库
+#6 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
 
@@ -102,7 +106,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
 
-#6 综合
+#7 综合
 
 一些综合性文档。
 
@@ -115,7 +119,7 @@ Objective-C和Swift都支持的相关开发文档。
 [](https://github.com/937447974/Blog/blob/master/综合/)
 [](https://github.com/937447974/Blog/blob/master/综合/)
 
-#7 工作
+#8 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
 
@@ -131,15 +135,6 @@ Objective-C和Swift都支持的相关开发文档。
 
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
 
-#8 其他
-
-##8.1 学习资料
-
-一些学习文档。
-
-##8.2 Resources
-
-博客的相关资源文件。
 
 
 
