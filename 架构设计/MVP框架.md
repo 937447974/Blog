@@ -28,7 +28,7 @@ MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地�
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112801.png)
 
-#4 架构实现。
+#4 架构实现
 
 相关搭建项目环节就不介绍了，直接显示最核心的过程。
 
