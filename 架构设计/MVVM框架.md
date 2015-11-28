@@ -27,7 +27,7 @@ WPF的数据绑定与Presentation Model相结合是非常好的做法,使得开�
  
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112802.png)
 
-#4 架构实现。
+#4 架构实现
 
 #4.1 搭建项目
 
