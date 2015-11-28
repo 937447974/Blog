@@ -80,6 +80,8 @@ Objective-C和Swift都支持的相关开发文档。
 
 [MVP框架](https://github.com/937447974/Blog/blob/master/架构设计/MVP框架.md)
 
+[MVVM框架](https://github.com/937447974/Blog/blob/master/架构设计/MVVM框架.md)
+
 #5 算法
 
 [堆排序](https://github.com/937447974/Blog/blob/master/算法/堆排序.md)
