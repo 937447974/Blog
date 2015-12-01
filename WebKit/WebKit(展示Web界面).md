@@ -195,7 +195,7 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 运行即可看到效果。
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120102.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120102.jpg)
 
 #2 网络页面展示
 
@@ -238,7 +238,7 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 运行项目可看见百度首页。
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120103.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120103.jpg)
 
 &#160;
 
