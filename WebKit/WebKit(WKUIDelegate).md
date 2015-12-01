@@ -1,4 +1,22 @@
-在WWDC2014中，苹果推出了最新的iOS8系统，其中也伴随着很多控件的更新与升级。其中全新的WebKit库让人很是兴奋。本文也将讲解使用WebKit中更新的WKWebView控件加载网页、以及和javascript交互。它很好的解决了UIWebView存在的内存、加载速度等诸多问题。
+[WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(展示Web界面).md)
+
+[WebKit(WKScriptMessageHandler)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(WKScriptMessageHandler).md)
+
+[WebKit(WKUIDelegate)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(WKUIDelegate).md)
+
+[WebKit(WKNavigationDelegate)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(WKNavigationDelegate).md)
+
+[WebKit(刷新)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(刷新).md)
+
+[WebKit(导航)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(导航).md)
+
+[WebKit(浏览记录)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(浏览记录).md)
+
+[WebKit(进度条)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(进度条).md)
+
+------
+
+在上一篇《[WebKit(WKScriptMessageHandler)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(WKScriptMessageHandler).md)》博文中，最后我们运行项目后，发现并没有在app上看见alert弹出框，其实这不是一个bug。而是苹果WebKit库的又一升级。
 
 > WebKit的核心就是WKWebView控件。
 
