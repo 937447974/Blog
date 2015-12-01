@@ -27,6 +27,11 @@
 WKScriptMessageHandler其实就是一个遵循的协议，它能让网页通过JS把消息发送给OC。其中协议方法。
 
 ```objc
+/*! @abstract Invoked when a script message is received from a webpage.
+ @param userContentController The user content controller invoking the
+ delegate method.
+ @param message The script message received.
+ */
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message;
 ```
 
@@ -37,13 +42,13 @@ WKScriptMessageHandler其实就是一个遵循的协议，它能让网页通过J
 WKUserContentController有两个核心方法，也是它的核心功能。
 
 1. `- (void)addUserScript:(WKUserScript *)userScript;`: js注入，即向网页中注入我们的js方法，这是一个非常强大的功能，开发中要慎用。
-2. `- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;`：添加供js调用oc的桥梁。这里的name对应WKScriptMessage中的name，多数情况我们认为它就是方法名。
+2. `- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;`：添加供js调用oc的桥梁。这里的name对应WKScriptMessage中的name，多数情况下我们认为它就是方法名。
 
 ##1.3 WKScriptMessage
 
 WKScriptMessage就是js通知oc的数据。其中有两个核心属性用的很多。
 
-1. `@property (nonatomic, readonly, copy) NSString *name;` ：对应`- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;`添加的name
+1. `@property (nonatomic, readonly, copy) NSString *name;` ：对应`- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;`添加的name。
 2. `@property (nonatomic, readonly, copy) id body;`：携带的核心数据。
 
 js调用时只需
@@ -86,7 +91,7 @@ window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
 
 ##2.2 实现WKScriptMessageHandler
 
-在当前页面引入WKScriptMessageHandler并实现即可。
+在当前页面引入WKScriptMessageHandler，并实现WKScriptMessageHandler协议即可。
 
 ```objc
 @interface YJBaseVC () <WKScriptMessageHandler>
@@ -109,7 +114,7 @@ window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
 
 ##2.3 改造index.html页面
 
-修改index.html的
+修改index.html的onClickButton()方法。
 
 ```js
 // 点击确定按钮
@@ -129,7 +134,7 @@ function onClickButton() {
 
 ##2.4 测试交互
 
-我们在viewDidLoad完成测试，加载index.html页面。
+我们在viewDidLoad使用index.html页面完成测试。
 
 ```objc
 - (void)viewDidLoad {
@@ -182,11 +187,27 @@ function ocCallJS(params) {
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120104.jpg)
 
+并在控制台看见如下打印信息。
 
+```
+2015-12-01 20:16:08.567 WebKit[5034:1216608] 方法名:jsCallOC
+2015-12-01 20:16:08.568 WebKit[5034:1216608] 参数:{
+    data = "\U9633\U541b";
+    list =     (
+        1,
+        2,
+        3
+    );
+    name = "\U9633\U541b";
+    qq = 937447974;
+}
+```
 
-##3.6 WKUserScript JS注入
+#4 WKUserScript JS注入
 
-WKUserScript就是帮助我们完成JS注入的类，它能帮助我们在页面填充前或js填充完成后调用。核心方法。
+##4.1 WKUserScript核心方法
+
+在WebKit框架中，我们还可以预先添加JS方法，供其他人员调用。WKUserScript就是帮助我们完成JS注入的类，它能帮助我们在页面填充前或js填充完成后调用。核心方法。
 
 ```objc
 /*! @abstract Returns an initialized user script that can be added to a @link WKUserContentController @/link.
@@ -197,151 +218,43 @@ WKUserScript就是帮助我们完成JS注入的类，它能帮助我们在页面
 - (instancetype)initWithSource:(NSString *)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly;
 ```
 
-WKUserScript的运行需依托WKUserContentController。
+##4.2 WKUserScriptInjectionTime枚举
 
-再次改造viewDidLoad方法。
+在WKUserScriptInjectionTime枚举中有两个状态。
+
+1. WKUserScriptInjectionTimeAtDocumentStart：js加载前执行。
+2. WKUserScriptInjectionTimeAtDocumentEnd：js加载后执行。
+
+##4.3 js注入
+
+WKUserScript的运行需依托WKUserContentController，接下来我们就为WKWebView注入一个js执行完毕后执行的alert方法。
+
+改造`- (WKWebView *)webView`方法。
 
 ```objc
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // js配置
-    WKUserContentController *userContentController = [[WKUserContentController alloc] init];
-    [userContentController addScriptMessageHandler:self name:@"jsCallOC"];
-    // js注入，注入一个ale方法，会显示一个弹出框。
-    NSString *javaScriptSource = @"function ale() { alert(\"WKUserScript注入js\");}";
-    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:NO];// forMainFrameOnly:NO(全局窗口)，yes（只限主窗口）
-    [userContentController addUserScript:userScript];
-
-    // WKWebView的配置
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    configuration.userContentController = userContentController;
-    
-    // 显示网页
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.frame  configuration:configuration];
-    [self.view addSubview:self.webView];
-    
-    // 找到index.html的路径
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url]; // url的位置
-    [self.webView loadRequest:urlRequest]; // 加载页面
+#pragma mark - get方法
+- (WKWebView *)webView {
+    if (_webView == nil) {
+        // js配置
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        [userContentController addScriptMessageHandler:self name:@"jsCallOC"];
+        // js注入，注入一个alert方法，页面加载完毕弹出一个对话框。
+        NSString *javaScriptSource = @"alert(\"WKUserScript注入js\");";
+        WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];// forMainFrameOnly:NO(全局窗口)，yes（只限主窗口）
+        [userContentController addUserScript:userScript];
+        
+        // WKWebView的配置
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        configuration.userContentController = userContentController;
+        
+        // 显示WKWebView
+        _webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];
+        [self.view addSubview:_webView];
+    }
+    return _webView;
 }
 ```
 
-这里改写了html页面的ale()方法，并在js执行完毕后注入，这样会覆盖html中的ale()方法。
-
-#4 对话框
-
-运行项目你会发现点击警告框、选择框和输入框这三个按钮都没有任何作用，这是因为WebKit库想让我们自己去
-实现这些方法，给用户更好的体验。
-
-##4.1 WKUIDelegate
-
-WKUIDelegate就是为了UI元素存在的，其中有几个协议。
-
-```objc
-// 新建WKWebView
-- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures;
-
-// 关闭WKWebView
-- (void)webViewDidClose:(WKWebView *)webView NS_AVAILABLE(10_11, 9_0);
-
-// 对应js的Alert方法
-/**
- *  web界面中有弹出警告框时调用
- *
- *  @param webView           实现该代理的webview
- *  @param message           警告框中的内容
- *  @param frame             主窗口
- *  @param completionHandler 警告框消失调用
- */
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler;
-
-// 对应js的confirm方法
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler;
-
-// 对应js的prompt方法
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * __nullable result))completionHandler;
-```
-
-##4.2 实现WKUIDelegate
-
-下面就来实现这几个协议，让我们的项目完整起来。
-
-```objc
-@interface YJBaseVC () <WKScriptMessageHandler, WKUIDelegate>
-
-
-// 设置WKUIDelegate代理
-self.webView.UIDelegate = self;
-
-
-#pragma mark - WKUIDelegate
-#pragma mark 新建webView
-- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
-    NSLog(@"%s",__FUNCTION__);
-    return webView;
-}
-
-#pragma mark 关闭webView
-- (void)webViewDidClose:(WKWebView *)webView {
-    NSLog(@"%s",__FUNCTION__);
-}
-
-#pragma mark alert弹出框
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-    NSLog(@"%s",__FUNCTION__);
-    // 确定按钮
-    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler();
-    }];
-    // alert弹出框
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:alertAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-#pragma mark Confirm选择框
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(nonnull NSString *)message initiatedByFrame:(nonnull WKFrameInfo *)frame completionHandler:(nonnull void (^)(BOOL))completionHandler {
-    NSLog(@"%s",__FUNCTION__);
-    // 按钮
-    UIAlertAction *alertActionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        // 返回用户选择的信息
-        completionHandler(NO);
-    }];
-    UIAlertAction *alertActionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler(YES);
-    }];
-    // alert弹出框
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:alertActionCancel];
-    [alertController addAction:alertActionOK];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-#pragma mark TextInput输入框
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(nonnull NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(nonnull WKFrameInfo *)frame completionHandler:(nonnull void (^)(NSString * _Nullable))completionHandler {
-    NSLog(@"%s",__FUNCTION__);
-    // alert弹出框
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:nil preferredStyle:UIAlertControllerStyleAlert];
-    // 输入框
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = defaultText;
-    }];
-    // 确定按钮
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // 返回用户输入的信息
-        UITextField *textField = alertController.textFields.firstObject;
-        completionHandler(textField.text);
-    }]];
-    // 显示
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-```
-
-#5 小结
-
-在本篇博文讲解了WebKit的相关基础知识，针对大多数的项目已完全够用。其中包含了js和oc交互、js注入到网页和自定义对话框。
 &#160;
 
 ----------
