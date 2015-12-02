@@ -44,7 +44,7 @@
 - (void)initUIBarButtonItem {
     // 右边
     UIBarButtonItem *reloadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reload:)];
-    self.navigationItem.rightBarButtonItem = searchItem;
+    self.navigationItem.rightBarButtonItem = reloadItem;
 }
 ```
 
