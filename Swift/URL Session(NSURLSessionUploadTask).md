@@ -1,3 +1,16 @@
+[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSession).md)
+
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
+
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+
+----
 
 
 &#160;
@@ -7,8 +20,6 @@
 #其他
 
 ##参考资料
-
-[NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html)
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 

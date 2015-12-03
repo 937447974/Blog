@@ -1,6 +1,18 @@
-在2013年的9月18日，苹果公司发布了关于NSURLSession的框架，这个框架是随着IOS7推出的。它和IOS7以前推出的NSURLConnection是一样的作用，可以理解为NSURLConnection的升级版。它能帮助我们更细腻化的监听网络交互的各种状态。
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
 
-NSURLSession的相关类是在Foundation框架中，你可以使用它们完成一系列的网络交互。这些类组成URL加载系统。
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+
+----
+
+在2013年，苹果公司发布了关于NSURLSession的框架，这个框架是随着IOS7一起推出的。它和IOS7以前推出的NSURLConnection是一样的作用，可以理解为NSURLConnection的升级版。它能帮助我们更细腻化的监听网络交互的各种状态。
+
+NSURLSession的相关类是在Foundation框架中，你可以使用它们完成一系列的网络交互。
 
 #1 NSURLSession
 
