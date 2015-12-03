@@ -1,5 +1,7 @@
 ![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
+
+
 &#160;
 
 ----------
@@ -13,6 +15,8 @@
 ##参考资料
 
 [NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/clm/NSURLSession/sharedSession)
+
+[URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
 ##文档修改记录
 
