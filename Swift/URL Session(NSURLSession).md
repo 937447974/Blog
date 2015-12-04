@@ -102,7 +102,7 @@ NSURLSession基于不同的业务会使用不同的工作模式，这些工作�
 
 ##参考资料
 
-[NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/clm/NSURLSession/sharedSession)
+[NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html)
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
