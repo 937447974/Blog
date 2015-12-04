@@ -6,12 +6,11 @@
 
 [URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
 
-[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+[URL Session(Cache)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
 
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+[URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
 
 ----
-
 
 &#160;
 
