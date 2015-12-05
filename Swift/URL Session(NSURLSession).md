@@ -60,7 +60,7 @@ NSURLSession基于不同的业务会使用不同的工作模式，这些工作�
 
 #3 层次结构
 
-关于整个系统主要分为五大类，如图所示。
+关于整个系统主要分为六大类，如图所示。
 
 ![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120301.png)
 
