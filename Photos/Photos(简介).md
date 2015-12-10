@@ -46,7 +46,7 @@ PHAsset和PHAssetChangeRequest记录照片和视频的修改记录，并将他�
 - PHContentEditingInputRequestOptions：使用PHContentEditingInputRequestOptions描述PHContentEditingInput。
 - PHContentEditingOutput：读取PHAsset的修改。
 - PHFetchOptions：检索PHAsset, PHCollection, PHAssetCollection和PHCollectionList。
-- PHFetchResult：一个数组，记录相关实体。
+- PHFetchResult：检索的结果集。
 - PHFetchResultChangeDetails：记录两次相同检索的差异。
 - PHImageManager：加载PHAsset的管理器。
     - PHCachingImageManager：缓存PHAsset的管理器。
