@@ -52,21 +52,30 @@ QQ：937447974
 #<a id="IOS"/>1 IOS
 
 ##<a id="Objective-C"/>1.1 Objective-C
+
 ##<a id="Swift"/>1.2 Swift
+
 ##<a id="Cocoa Touch Layer"/>1.3 Cocoa Touch Layer
+
 ###<a id="PhotosUI"//>1.3.1 PhotosUI
+
 ###<a id="UIKit"/>1.3.2 UIKit
+
 ##<a id="Media Layer"/>1.4 Media Layer
+
 ###<a id="Photos"/> 1.4.1 Photos
+
 ##<a id="Core Services Layer"/>1.5 Core Services Layer
+
 ###<a id="JavaScriptCore"/>1.5.1 JavaScriptCore
+
 ###<a id="WebKit"/>1.5.2 WebKit
+
 ##<a id="Core OS Layer"/>1.6 Core OS Layer
+
 ###<a id="System"/>1.6.1 System
 
-Objective-C和Swift都支持的相关开发文档。
-
-[IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/IOS多线程.md)
+[IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/Core%20OS%20Layer/System/IOS多线程.md)
 
 ##1.1 
 
