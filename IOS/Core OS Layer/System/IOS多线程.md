@@ -193,7 +193,7 @@ for (var i = 0; i<10; i++) {
 
 ##参考资料
 
-[Grand Central Dispatch (GCD) Reference](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/doc/uid/TP40008079)
+[Grand Central Dispatch (GCD) Reference](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html)
 
 ##文档修改记录
 
@@ -201,8 +201,8 @@ for (var i = 0; i<10; i++) {
 | ---- | ---- |
 | 2015-09-23 | GCD编程 |
 
-&#160;
+##版权所有
 
-----------
+CSDN：http://blog.csdn.net/y550918116j
 
-版权所有：http://blog.csdn.net/y550918116j
+GitHub：https://github.com/937447974/Blog
