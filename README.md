@@ -12,9 +12,44 @@ QQ：937447974
 
 ---
 
+**1. [IOS](#1)**
+
+1.1 Object-C
+
+1.2 Swift
+
+1.3 Cocoa Touch Layer 
+
+- PhotosUI
+ 
+- UIKit
+
+1.2 Media Layer
+
+- Photos
+
+1.3 Core Services Layer
+
+- JavaScriptCore
+- WebKit
+
+1.4 Core OS Layer
+
+- System
+
+**2. 架构设计**
+
+**3. 算法**
+
+**4. 数据库**
+
+**5. 工作**
+
+**6. 综合**
+
 ---
 
-#1 IOS
+#<a id="1"></a>1 IOS
 
 Objective-C和Swift都支持的相关开发文档。
 
@@ -164,19 +199,6 @@ Objective-C和Swift都支持的相关开发文档。
 
 [SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
 
-#5 综合
-
-一些综合性文档。
-
-[一个百度员工的离职感悟](https://github.com/937447974/Blog/blob/master/综合/一个百度员工的离职感悟.md)
-
-[三十年后，你有多少钱](https://github.com/937447974/Blog/blob/master/综合/三十年后，你有多少钱.md)
-
-[](https://github.com/937447974/Blog/blob/master/综合/)
-[](https://github.com/937447974/Blog/blob/master/综合/)
-[](https://github.com/937447974/Blog/blob/master/综合/)
-[](https://github.com/937447974/Blog/blob/master/综合/)
-
 #6 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
@@ -192,3 +214,16 @@ Objective-C和Swift都支持的相关开发文档。
 [ZSH安装](https://github.com/937447974/Blog/blob/master/工作/ZSH安装.md)
 
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
+
+#5 综合
+
+一些综合性文档。
+
+[一个百度员工的离职感悟](https://github.com/937447974/Blog/blob/master/综合/一个百度员工的离职感悟.md)
+
+[三十年后，你有多少钱](https://github.com/937447974/Blog/blob/master/综合/三十年后，你有多少钱.md)
+
+[](https://github.com/937447974/Blog/blob/master/综合/)
+[](https://github.com/937447974/Blog/blob/master/综合/)
+[](https://github.com/937447974/Blog/blob/master/综合/)
+[](https://github.com/937447974/Blog/blob/master/综合/)
