@@ -1,8 +1,8 @@
-[手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)
+[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别基础(Objective-C).md)
 
-[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)
+[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别进阶(Objective-C).md)
 
-[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别高级(Objective-C).md)
 
 ----------
 
@@ -13,15 +13,15 @@
 3. 使用UISwipeGestureRecognizer移动View；
 4. 同时支持缩放、旋转和移动View。
 
-#项目准备
+#1 项目准备
 
-##创建项目
+##1.1 创建项目
 
 你可以使用上一篇博文的项目，也可以使用新的项目，这里没有任何特殊要求，只是我们只使用gestureView。
 
 为了提高开发效率，我们使用拉控件的方式创建手势识别器。
 
-##核心类
+##1.2 核心类
 
 在这里我们使用的核心类为AdvancedVC。
 
@@ -61,7 +61,7 @@
 
 我已经为大家设置了几个私有变量_scale、_rotation和_translatedPoint，并设置了相应默认值，这将为以后的开发做准备。
 
-#缩放
+#2 缩放
 
 缩放gestureView使用到了UIPinchGestureRecognizer，其核心方法如下。
 
@@ -87,7 +87,7 @@
 2. 我们的UIPinchGestureRecognizer控制的View不是gestureView，而是self.view。这是为了在gestureView的外部也可通过手势缩放gestureView；
 3. 手势结束时要记录缩放的比例。
 
-#旋转
+#3 旋转
 
 旋转gestureView使用了UIRotationGestureRecognizer，其核心方法如下：
 
@@ -120,7 +120,7 @@
 2. rotation是以`M_PI`做比例，一个`M_PI`代表顺时针180度，这里我们使用while将其控制在-360°~360°，优化了内存；
 3. 结束时记录旋转度；
 
-#移动
+#4 移动
 
 移动gestureView使用了UIPanGestureRecognizer，核心代码如下。
 
@@ -146,7 +146,7 @@
 1. 使用CGAffineTransformMakeTranslation修改self.gestureView.transform，只需传入移动x和y的相对位移；
 2. 手势结束时记录移动的相对位移；
 
-#缩放、旋转和移动三合一
+#5 缩放、旋转和移动三合一
 
 如果你觉得只需要上面的代码就可完成三合一，那你就想的有点简单了。
 
@@ -228,10 +228,11 @@ self.gestureView.transform = CGAffineTransformMakeTranslation(translatedPoint.x,
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-08 | 使用苹果手势识别器实现很炫的旋转、缩放和移动为一体的动效 |
-| 2015-11-09 | 添加相应链接[手势识别基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49719503)、[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49720451)和[手势识别进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49743123)|
+| 2015-11-09 | 添加相应链接 |
+| 2015-12-11 | 目录添加索引 |
 
-&#160;
+##版权所有
 
-----------
+CSDN：http://blog.csdn.net/y550918116j
 
-版权所有：http://blog.csdn.net/y550918116j
+GitHub：https://github.com/937447974/Blog
