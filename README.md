@@ -51,18 +51,19 @@ QQ：937447974
 
 #<a id="IOS"/>1 IOS
 
-##<a id="Objective-C"></a>1.1 Objective-C
-##<a id="Swift"></a>1.2 Swift
-##<a id="Cocoa Touch Layer"></a>1.3 Cocoa Touch Layer
-###<a id="PhotosUI"></a>1.3.1 PhotosUI
-###<a id="UIKit"></a>1.3.2 UIKit
-##<a id="Media Layer"></a>1.4 Media Layer
-###<a id="Photos"></a> 1.4.1 Photos
-##<a id="Core Services Layer"></a>1.5 Core Services Layer
-###<a id="JavaScriptCore"></a>1.5.1 JavaScriptCore
-###<a id="WebKit"></a>1.5.2 WebKit
-##<a id="Core OS Layer"></a>1.6 Core OS Layer
-###<a id="System"></a>1.6.1 System
+##<a id="Objective-C"/>1.1 Objective-C
+##<a id="Swift"/>1.2 Swift
+##<a id="Cocoa Touch Layer"/>1.3 Cocoa Touch Layer
+###<a id="PhotosUI"//>1.3.1 PhotosUI
+###<a id="UIKit"/>1.3.2 UIKit
+##<a id="Media Layer"/>1.4 Media Layer
+###<a id="Photos"/> 1.4.1 Photos
+##<a id="Core Services Layer"/>1.5 Core Services Layer
+###<a id="JavaScriptCore"/>1.5.1 JavaScriptCore
+###<a id="WebKit"/>1.5.2 WebKit
+##<a id="Core OS Layer"/>1.6 Core OS Layer
+###<a id="System"/>1.6.1 System
+
 Objective-C和Swift都支持的相关开发文档。
 
 [IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/IOS多线程.md)
@@ -169,7 +170,7 @@ Objective-C和Swift都支持的相关开发文档。
 [WebKit(进度条)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(进度条).md)
 
 
-#<a id="架构设计"></a>2 架构设计
+#<a id="架构设计"/>2 架构设计
 
 [23设计模式之目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
 
@@ -181,7 +182,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [AOP](https://github.com/937447974/Blog/blob/master/架构设计/AOP.md)
 
-#<a id="算法"></a>3 算法
+#<a id="算法"/>3 算法
 
 [堆排序](https://github.com/937447974/Blog/blob/master/算法/堆排序.md)
 
@@ -199,7 +200,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [数组(交OR并)](https://github.com/937447974/Blog/blob/master/算法/数组(交OR并).md)
 
-#<a id="数据库"></a>4 数据库
+#<a id="数据库"/>4 数据库
 
 [MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)
 
@@ -211,7 +212,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
 
-#<a id="工作"></a>5 工作
+#<a id="工作"/>5 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
 
@@ -227,7 +228,7 @@ Objective-C和Swift都支持的相关开发文档。
 
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
 
-#<a id="综合"></a>6 综合
+#<a id="综合"/>6 综合
 
 一些综合性文档。
 
