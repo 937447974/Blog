@@ -1,10 +1,8 @@
-[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+[UIWebView基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView基础(Objective-C).md)
 
-[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)
+[UIWebView进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView进阶(Objective-C).md)
 
-[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
-
-[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
+[UIWebView高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView高级(Objective-C).md)
 
 ----------
 
@@ -13,8 +11,8 @@
 本篇博文主要介绍关于UIWebView的基础，包括：加载网页、实现代理以及JS和OC的互相调用。
 &#160;
 
-#准备工作
-##Html页面
+#1 准备工作
+##1.1 Html页面
 
 我已经为大家创建了html页面的源代码，只需要复制到记事本，并将文件名改为index.html。
 
@@ -88,7 +86,7 @@
 
 ![浏览器](http://img.blog.csdn.net/20151103175907757)
 
-##搭建项目
+##1.2 搭建项目
 
 这个地方就不详细描述了，创建一个简单项目->拉一个UIWebView到界面->UIWebView指向UIViewController的属性名。
 
@@ -123,7 +121,7 @@
 
 &#160;
 
-#显示Web页面
+#2 显示Web页面
 
 将我们创建好的index.html拉到项目中，至于位置就随你高兴了。
 
@@ -151,7 +149,7 @@ url = [NSURL URLWithString:@"www.baidu.com"];
 
 &#160;
 
-#代理UIWebViewDelegate
+#3 代理UIWebViewDelegate
 
 UIWebView也有代理，如果你不懂什么是代理模式，查阅我的博文《[ 23设计模式之代理模式(Proxy)](http://blog.csdn.net/y550918116j/article/details/48605595)》。我们在UIWebViewDelegate发现了四个方法。
 
@@ -229,7 +227,7 @@ webViewDidFinishLoad:
 
 &#160;
 
-#JS和OC互动
+#4 JS和OC互动
 
 js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。oc调js很简单，js回调oc就比较麻烦了。
 
@@ -337,11 +335,12 @@ js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。o
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-11-3 | 根据Objective-C中的UIWebView API总结 |
-| 2015-11-6 | 增加相关文章的链接《[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)》、《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》、《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》和《[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)》。|
+| 2015-11-03 | 根据Objective-C中的UIWebView API总结 |
+| 2015-11-06 | 增加相关文章的链接 |
+| 2015-12-11 | 更新相关博文链接 |
 
-&#160;
+##版权所有
 
-----------
+CSDN：http://blog.csdn.net/y550918116j
 
-版权所有：http://blog.csdn.net/y550918116j
+GitHub：https://github.com/937447974/Blog

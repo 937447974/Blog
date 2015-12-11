@@ -1,10 +1,8 @@
-[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)
+[UIWebView基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView基础(Objective-C).md)
 
-[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)
+[UIWebView进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView进阶(Objective-C).md)
 
-[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)
-
-[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)
+[UIWebView高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView高级(Objective-C).md)
 
 ----------
 
@@ -18,9 +16,9 @@
 6. 网页加载的进度条，效果如qq和微信的网页加载进度条。
 &#160;
 
-#准备工作
+#1 准备工作
 
-##搭建项目
+##1.1 搭建项目
 
 前期的项目搭建和上一篇博文一样，只是在UINavigationController添加三个按钮。运行后的界面如图所示:
 
@@ -58,7 +56,7 @@
 
 ```
 
-##显示网页
+##1.2 显示网页
 
 我们使用大家都熟悉的百度做测试，加载网页“https://www.baidu.com”。
 
@@ -102,13 +100,12 @@ NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9802)
 >这也能解决开发过程中，使用HTTP无法连接服务器的问题。
 
 ![这里写图片描述](http://img.blog.csdn.net/20151104152115623)
-&#160;
 
-#UIWebView设置
+#2 UIWebView设置
 
 下面讲解在项目过程中关于UIWebView的常用设置。
 
-##背景设置
+##2.1 背景设置
 
 滑动屏幕到顶部时，再向上滑动，你会看到背景色，你可以通过backgroundColor自定义背景色。
 
@@ -116,7 +113,7 @@ NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9802)
 self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 ```
 
-##页面滚动弹跳
+##2.2 页面滚动弹跳
 
 上面说的，你可以滑动到顶部看到背景色，这里有一个弹跳效果。也就是你看见背景色，松开手指看到的效果。这里你可以禁用这种效果。
 
@@ -124,7 +121,7 @@ self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 self.webView.scrollView.bounces = NO;
 ```
 
-##缩放
+##2.3 缩放
 
 默认情况下UIWebView加载HTML页面后，会以页面的原始大小进行显示，亦即如果页面的大小超出UIWebView视口大小，UIWebView会出现滚动效果，而且用户只能通过滚动页面来查看不同区域的内容，不能使用手指的捏合手势来放大或缩小页面。通过设置
 
@@ -136,7 +133,7 @@ self.webView.scalesPageToFit = YES ;
 UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显示内容的效果，并且用户可以用捏合动作来放大或缩小页面来查看内容。
 &#160;
 
-#清空cookies
+#3 清空cookies
 
 清空cookies使用到了NSHTTPCookieStorage类，这个类主要用于管理网络中的cookies。
 
@@ -160,7 +157,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#清除缓存
+#4 清除缓存
 
 清除UIWebView的缓存使用了NSURLCache对象，在这里我们使用`removeAllCachedResponses `清楚所有缓存。
 
@@ -185,7 +182,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#网页刷新
+#5 网页刷新
 
 在UIWebView有下列属性和方法。
 
@@ -211,7 +208,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#网页上一页和下一页
+#6 网页上一页和下一页
 
 在UIWebView有下列方法：
 
@@ -243,13 +240,13 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 将界面上方右边的两个按钮指向这两个方法体，运行项目，则能实现网页前往上一页或下一页。
 &#160;
 
-#进度条
+#7 进度条
 
-##QQ进度条分析
+##7.1 QQ进度条分析
 
 打开qq的网页浏览，发现在UINavigationController有一个很炫的进度条，初步分析使用的是UIProgressView控件，这里我们也使用这种控件，只要实现进度条的动画效果即可。如果你想实现更炫的效果，请自行研究UIProgressView。
 
-##项目改造
+##7.2 项目改造
 
 为了实现进度条，需要在界面中加一个UIProgressView控件。
 
@@ -351,7 +348,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 }
 ```
 
-##进度条实现
+##7.3 进度条实现
 
 运行项目后，我们在浏览器随意操作。发现，有的页面输出信息多，有的页面输出信息少。
 
@@ -452,12 +449,13 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-11-4 | 根据Objective-C中的UIWebView API总结。 |
-| 2015-11-4 | 增加关于进度条的实现。 |
-| 2015-11-6 | 增加相关文章的链接《[UIWebView基础(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49619847)》、《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》、《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》和《[UIWebView高级(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49684127)》。|
+| 2015-11-04 | 根据Objective-C中的UIWebView API总结。 |
+| 2015-11-04 | 增加关于进度条的实现。 |
+| 2015-11-06 | 增加相关文章的链接 |
+| 2015-12-11 | 更新相关博文链接 |
 
-&#160;
+##版权所有
 
-----------
+CSDN：http://blog.csdn.net/y550918116j
 
-版权所有：http://blog.csdn.net/y550918116j
+GitHub：https://github.com/937447974/Blog
