@@ -55,6 +55,51 @@ QQ：937447974
 
 ##<a id="Swift"/>1.2 Swift
 
+
+[方法(Methods)](https://github.com/937447974/Blog/blob/master/IOS/Swift/方法(Methods).md)
+
+[下标(Subscripts)](https://github.com/937447974/Blog/blob/master/IOS/Swift/下标(Subscripts).md)
+
+[继承(Inheritance)](https://github.com/937447974/Blog/blob/master/IOS/Swift/继承(Inheritance).md)
+
+[初始化(Initialization)](https://github.com/937447974/Blog/blob/master/IOS/Swift/初始化(Initialization).md)
+
+[销毁(Deinitialization)](https://github.com/937447974/Blog/blob/master/IOS/Swift/销毁(Deinitialization).md)
+
+[可选链(Optional Chaining)](https://github.com/937447974/Blog/blob/master/IOS/Swift/可选链(Optional%20Chaining).md)
+
+[错误处理(Error Handling)](https://github.com/937447974/Blog/blob/master/IOS/Swift/错误处理(Error%20Handling).md)
+
+[类型选择(Type Casting)](https://github.com/937447974/Blog/blob/master/IOS/Swift/类型选择(Type%20Casting).md)
+
+[协议(Protocols)](https://github.com/937447974/Blog/blob/master/IOS/Swift/协议(Protocols).md)
+
+[访问控制(Access Control).md](https://github.com/937447974/Blog/blob/master/IOS/Swift/访问控制(Access%20Control).md)
+
+[高级运算符(Advanced Operators)](https://github.com/937447974/Blog/blob/master/IOS/Swift/高级运算符(Advanced%20Operators).md)
+
+-
+
+[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(NSURLSession).md)
+
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(NSURLSessionDataTask).md)
+
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(NSURLSessionUploadTask).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(Cache).md)
+
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Swift/URL%20Session(Cookie).md)
+
+-
+
+[JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Swift/JSON解析.md)
+
+[XML解析](https://github.com/937447974/Blog/blob/master/IOS/Swift/XML解析.md)
+
+-
+
 ##<a id="Cocoa Touch Layer"/>1.3 Cocoa Touch Layer
 
 ###<a id="PhotosUI"//>1.3.1 PhotosUI
@@ -117,58 +162,6 @@ QQ：937447974
 
 [NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/NSLog打印优化.md)
 
-[](https://github.com/937447974/Blog/blob/master/Objective-C/)
-[](https://github.com/937447974/Blog/blob/master/Objective-C/)
-
-##1.2 Swift
-
-关于Swift的相关文档。
-
-[方法(Methods)](https://github.com/937447974/Blog/blob/master/Swift/方法(Methods).md)
-
-[下标(Subscripts)](https://github.com/937447974/Blog/blob/master/Swift/下标(Subscripts).md)
-
-[继承(Inheritance)](https://github.com/937447974/Blog/blob/master/Swift/继承(Inheritance).md)
-
-[初始化(Initialization)](https://github.com/937447974/Blog/blob/master/Swift/初始化(Initialization).md)
-
-[销毁(Deinitialization)](https://github.com/937447974/Blog/blob/master/Swift/销毁(Deinitialization).md)
-
-[可选链(Optional Chaining)](https://github.com/937447974/Blog/blob/master/Swift/可选链(Optional%20Chaining).md)
-
-[错误处理(Error Handling)](https://github.com/937447974/Blog/blob/master/Swift/错误处理(Error%20Handling).md)
-
-[类型选择(Type Casting)](https://github.com/937447974/Blog/blob/master/Swift/类型选择(Type%20Casting).md)
-
-[协议(Protocols)](https://github.com/937447974/Blog/blob/master/Swift/协议(Protocols).md)
-
-[访问控制(Access Control).md](https://github.com/937447974/Blog/blob/master/Swift/访问控制(Access%20Control))
-
-[高级运算符(Advanced Operators)](https://github.com/937447974/Blog/blob/master/Swift/高级运算符(Advanced%20Operators).md)
-
--
-
-[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSession).md)
-
-[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
-
-[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
-
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
-
-[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
-
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
-
--
-
-[JSON解析](https://github.com/937447974/Blog/blob/master/Swift/JSON解析.md)
-
-[XML解析](https://github.com/937447974/Blog/blob/master/Swift/XML解析.md)
-
--
-
-[](https://github.com/937447974/Blog/blob/master/Swift/)
 
 
 #<a id="架构设计"/>2 架构设计
