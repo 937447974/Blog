@@ -1,8 +1,8 @@
-[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别基础(Objective-C).md)
+[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别基础(Objective-C).md)
 
-[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别进阶(Objective-C).md)
+[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别进阶(Objective-C).md)
 
-[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别高级(Objective-C).md)
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别高级(Objective-C).md)
 
 ----------
 
