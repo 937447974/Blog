@@ -1,8 +1,8 @@
-[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别基础(Objective-C).md)
+[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(基础).md)
 
-[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别进阶(Objective-C).md)
+[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(进阶).md)
 
-[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别高级(Objective-C).md)
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(高级).md)
 
 ----------
 
@@ -428,6 +428,7 @@ panGR.maximumNumberOfTouches = 1; // 最多响应的手指，默认UINT_MAX
 | 2015-11-08 | 苹果手势识别基础总结 |
 | 2015-11-09 | 添加相应链接 |
 | 2015-12-11 | 目录添加索引 |
+| 2015-12-12 | 文章标题更新 |
 
 ##版权所有
 
