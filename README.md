@@ -67,6 +67,12 @@ QQ：937447974
 
 [UIWebView高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWebView高级(Objective-C).md)
 
+[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别基础(Objective-C).md)
+
+[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别进阶(Objective-C).md)
+
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别高级(Objective-C).md)
+
 ##<a id="Media Layer"/>1.4 Media Layer
 
 ###<a id="Photos"/> 1.4.1 Photos
@@ -107,11 +113,7 @@ QQ：937447974
 
 [Blocks Programming](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/Blocks%20Programming.md)
 
-[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别基础(Objective-C).md)
 
-[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别进阶(Objective-C).md)
-
-[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/手势识别高级(Objective-C).md)
 
 [UIWindow简单介绍](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/UIWindow简单介绍.md)
 
