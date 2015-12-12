@@ -1,8 +1,8 @@
-[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别基础(Objective-C).md)
+[手势识别基础(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(基础).md)
 
-[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别进阶(Objective-C).md)
+[手势识别进阶(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(进阶).md)
 
-[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/手势识别高级(Objective-C).md)
+[手势识别高级(Objective-C)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(高级).md)
 
 ----------
 
@@ -470,6 +470,7 @@ YJPoint.h
 | ---- | ---- |
 | 2015-11-8 | 实现手势解锁功能 |
 | 2015-12-11 | 目录添加索引 |
+| 2015-12-12 | 文章标题更新 |
 
 ##版权所有
 
