@@ -1,14 +1,14 @@
-[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSession).md)
+[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSession).md)
 
-[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDataTask).md)
 
-[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionUploadTask).md)
 
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDownloadTask).md)
 
-[URL Session(Cache)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cache).md)
 
-[URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cookie).md)
 
 ----
 
@@ -111,6 +111,7 @@ NSURLSession基于不同的业务会使用不同的工作模式，这些工作�
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-03 | 博文完成 |
+| 2015-12-12 | 更改链接 |
 
 ##版权所有
 

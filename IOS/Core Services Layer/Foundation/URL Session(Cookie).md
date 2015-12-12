@@ -1,20 +1,18 @@
-[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSession).md)
+[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSession).md)
 
-[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDataTask).md)
 
-[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionUploadTask).md)
 
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDownloadTask).md)
 
-[URL Session(Cache)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cache).md)
 
-[URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cookie).md)
 
 ----
 
 当你访问一个网站时，NSURLRequest都会帮你主动记录下来你访问的站点设置的cookie，如果Cookie存在的话，会把这些信息放在NSHTTPCookieStorage容器中共享，当你下次再访问这个站点时，NSURLRequest会拿着上次保存下来了的cookie继续去请求。
-
-
 
 cookie和缓存一样有两个类控制。
 
@@ -152,6 +150,7 @@ class YJHTTPCookieVC: UIViewController {
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-05 | 博文完成 |
+| 2015-12-12 | 更改链接 |
 
 ##版权所有
 

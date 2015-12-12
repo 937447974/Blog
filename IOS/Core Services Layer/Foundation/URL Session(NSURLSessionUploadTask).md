@@ -1,18 +1,18 @@
-[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSession).md)
+[URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSession).md)
 
-[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)
+[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDataTask).md)
 
-[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionUploadTask).md)
+[URL Session(NSURLSessionUploadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionUploadTask).md)
 
-[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDownloadTask).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDownloadTask).md)
 
-[URL Session(Cache)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cache).md)
+[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cache).md)
 
-[URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(Cookie).md)
+[URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cookie).md)
 
 ----
 
-在上一篇博文《[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/Swift/URL%20Session(NSURLSessionDataTask).md)》中讲解了怎么和服务器通信，在这篇博文向大家讲解怎么把文件上传到服务器。
+在上一篇博文《[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDataTask).md)》中讲解了怎么和服务器通信，在这篇博文向大家讲解怎么把文件上传到服务器。
 
 #1 NSURLSessionUploadTask
 
@@ -122,6 +122,7 @@ func application(application: UIApplication, handleEventsForBackgroundURLSession
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-04 | 博文完成 |
+| 2015-12-12 | 更改链接 |
 
 ##版权所有
 
