@@ -54,6 +54,10 @@ QQ：937447974
 
 ##<a id="Objective-C"/>1.1 Objective-C
 
+[Blocks Programming](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/Blocks%20Programming.md)
+
+[NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/NSLog打印优化.md)
+
 ##<a id="Swift"/>1.2 Swift
 
 
@@ -150,16 +154,6 @@ QQ：937447974
 ###<a id="System"/>1.6.1 System
 
 [IOS多线程](https://github.com/937447974/Blog/blob/master/IOS/Core%20OS%20Layer/System/IOS多线程.md)
-
-##1.1 
-
-关于Objective-C开发的相关文档。
-
-[Blocks Programming](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/Blocks%20Programming.md)
-
-[NSLog打印优化](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/NSLog打印优化.md)
-
-
 
 #<a id="架构设计"/>2 架构设计
 
