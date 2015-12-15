@@ -42,7 +42,7 @@
 #7 其他
 
 1. 有创业公司带队经验。
-2. 喜欢写博客，分享技术。博客：http://blog.csdn.net/y550918116j、https://github.com/937447974/Blog。
+2. 喜欢写博客，分享技术。博客：http://blog.csdn.net/y550918116j。
 3. 热爱开源，把自己掌握的技术分享出去。GitHub地址：https://github.com/937447974
 4. 最喜欢的网站：https://developer.apple.com/library/ios/navigation/
 
