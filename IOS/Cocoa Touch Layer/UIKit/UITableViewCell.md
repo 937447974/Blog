@@ -1,4 +1,15 @@
-[UITableViewCell](#UITableViewCell)
+**1 [UITableViewCell](#UITableViewCell)**
+
+**2 [搭建测试项目](#搭建测试项目)**
+
+**3 [实战演练](#实战演练)**
+
+1. [UITableViewCellStyle](#UITableViewCellStyle)
+2. [UITableViewCellSelectionStyle](#UITableViewCellSelectionStyle)
+3. [UITableViewCellAccessoryType](#UITableViewCellAccessoryType)
+4. [UITableViewCellSeparatorStyle](#UITableViewCellSeparatorStyle)
+5. [管理内容缩进](#管理内容缩进)
+6. [自定义Cell](#自定义Cell)
 
 ---
 
@@ -6,9 +17,9 @@
 
 UITableViewCell定义了UITableView显示时的细胞的属性和行为。UITableViewCell提供了相关属性和方法管理cell的背景和内容（text、image、和自定义的view）、选中和高亮的状态、管理附属视图和编辑模式下的视图.
 
-##<a id="搭建测试项目"/>2 搭建测试项目
+#<a id="搭建测试项目"/>2 搭建测试项目
 
-测试项目的界面可自信搭建，这里使用类YJTableViewCellTVC，为了方便，它继承了UITableViewController。
+测试项目的界面可自行搭建，这里使用类YJTableViewCellTVC，为了方便，它继承了UITableViewController。
 
 ```swift
 //
@@ -173,7 +184,9 @@ func tableViewCellWithStyle(tableView: UITableView, cellForRowAtIndexPath indexP
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121602.jpg)
 
-##<id="UITableViewCellSelectionStyle"/>3.2 UITableViewCellSelectionStyle
+##<a id="UITableViewCellSelectionStyle"/>3.2 UITableViewCellSelectionStyle
+
+UITableViewCellSelectionStyle管理用户点击cell的背景色
 
 ```swift
 func tableViewCellWithSelectionStyle(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -208,7 +221,7 @@ if cell == nil {
 }
 ```
 
-##3.3 UITableViewCellAccessoryType
+##<a id="UITableViewCellAccessoryType"/>3.3 UITableViewCellAccessoryType
 
 UITableViewCellAccessoryType可以设置Cell的附属视图。
 
@@ -244,7 +257,7 @@ func tableViewCellWithAccessoryType(tableView: UITableView, cellForRowAtIndexPat
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121603.jpg)
 
-##3.4 UITableViewCellSeparatorStyle
+##<a id="UITableViewCellSeparatorStyle"/>3.4 UITableViewCellSeparatorStyle
 
 UITableViewCellSeparatorStyle就是设置Cell上下的横线，你还可以通过tableView.separatorColor设置横线的颜色。
 
@@ -273,9 +286,9 @@ func tableViewCellWithSeparatorStyle() {
 }
 ```
 
-##3.5 管理内容缩进
+##<a id="管理内容缩进"/>3.5 管理内容缩进
 
-cell中的内容也是可以缩进的，如果目录一样。
+cell中的内容也是可以缩进的，如同目录一样。
 
 ```swift
 func tableViewCellWithManagingContentIndentation(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -295,15 +308,91 @@ func tableViewCellWithManagingContentIndentation(tableView: UITableView, cellFor
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121604.jpg)
 
-##3.6 自定义Cell
+##<a id="自定义Cell"/>3.6 自定义Cell
 
-大多数情况下，系统的Cel无法满足我们的业务需求。我们会自定义Cell，自定义Cell有两种主要的方式，一种是全代码编写；一种是通过Xib定制。这里我们使用Xib定制。
+大多数情况下，系统的Cell无法满足我们的业务需求。我们会自定义Cell，自定义Cell有两种主要的方式：一种是全代码编写；一种是通过Xib定制。这里我们使用Xib定制。
 
 ###3.6.1 xib视图
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121606.png)
 
+###3.6.2 YJSwitchTableViewCell
 
+```swift
+//
+//  YJSwitchTableViewCell.swift
+//  UI
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/12/16.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
 
+import UIKit
+
+class YJSwitchTableViewCell: UITableViewCell {
+    
+    /// 标题
+    @IBOutlet weak var titleLabel: UILabel!
+    /// 按钮
+    @IBOutlet weak var yjSwitch: UISwitch!
+    /// cell的位置
+    var indexPath: NSIndexPath?
+    /// 闭包回调
+    var handler: ((YJSwitchTableViewCell) -> Void)?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .None // 点击无颜色变化
+    }
+    
+    @IBAction func onClickSwitch(sender: AnyObject) {
+        self.handler?(self)
+    }
+    
+}
+```
+
+这里使用了handler闭包回调
+
+###3.6.3 界面展示
+
+首先注册cell。
+
+```swift
+let nib = UINib(nibName: "YJSwitchTableViewCell", bundle: nil)
+self.tableView.registerNib(nib, forCellReuseIdentifier: "YJSwitchTableViewCell")
+```
+这样就可以直接在缓存中提取cell了，如果是全代码自定义Cell可以使用。
+
+```swift
+public func registerClass(cellClass: AnyClass?, forCellReuseIdentifier identifier: String)
+```
+
+注册Cell。
+
+接下来在YJTableViewCellTVC实现`func tableViewCellWithSwitch(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell`方法。
+
+```swift
+ func tableViewCellWithSwitch(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // 注册的cell可直接提取
+        let cell = tableView.dequeueReusableCellWithIdentifier("YJSwitchTableViewCell") as! YJSwitchTableViewCell
+        cell.titleLabel.text = "\(indexPath.section)--\(indexPath.row)"
+        cell.indexPath = indexPath
+        // 监听
+        cell.handler = { (cell: YJSwitchTableViewCell) -> Void in
+            print("\(cell.yjSwitch.on):\(indexPath.section)--\(indexPath.row)")
+        }
+        return cell
+    }
+
+```
+
+运行项目查看效果图。点击相关按钮也可以在控制台看见打印的数据。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121605.jpg)
 
 &#160;
 
