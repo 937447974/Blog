@@ -1,8 +1,12 @@
-#1 UITableViewCell
+[UITableViewCell](#UITableViewCell)
+
+---
+
+#<a id="UITableViewCell"/>1 UITableViewCell
 
 UITableViewCell定义了UITableView显示时的细胞的属性和行为。UITableViewCell提供了相关属性和方法管理cell的背景和内容（text、image、和自定义的view）、选中和高亮的状态、管理附属视图和编辑模式下的视图.
 
-##2 搭建测试项目
+##<a id="搭建测试项目"/>2 搭建测试项目
 
 测试项目的界面可自信搭建，这里使用类YJTableViewCellTVC，为了方便，它继承了UITableViewController。
 
@@ -132,24 +136,174 @@ class YJTableViewCellTVC: UITableViewController {
 }
 ```
 
-报红错的代码可自行注释，会在以后实现相关方法。
+报红错的代码可自行注释，会在以后实现相关方法。运行项目看到如下效果。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121601.jpg)
+
+#<a id="实战演练"/>3 实战演练
+
+##<a id="UITableViewCellStyle"/>3.1 UITableViewCellStyle
+
+系统自带的Cell有四种样式，使用的枚举UITableViewCellStyle。
 
 ```swift
-public init(style: UITableViewCellStyle, reuseIdentifier: String?)
+func tableViewCellWithStyle(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell: UITableViewCell!
+    switch indexPath.row {
+    case 0:
+        cell  = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        cell.textLabel?.text = "Default" // 标题
+    case 1:
+        cell  = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: nil)
+        cell.textLabel?.text = "Value1" // 标题
+    case 2:
+        cell  = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: nil)
+        cell.textLabel?.text = "Value2" // 标题
+    default:
+        cell  = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
+        cell.textLabel?.text = "Subtitle" // 标题
+    }
+    cell.imageView?.image = UIImage(named: "qq") // 图片
+    cell.detailTextLabel?.text = "UITableViewCellStyle" // 描述
+    return cell
+}
 ```
 
-##1.2 复用Cell
+运行项目查看效果图。
 
-Cell可以复用，这样有助于提高内存利用率。
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121602.jpg)
+
+##<id="UITableViewCellSelectionStyle"/>3.2 UITableViewCellSelectionStyle
 
 ```swift
-// 复用cell的标示符
-var reuseIdentifier: String? { get }
+func tableViewCellWithSelectionStyle(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell: UITableViewCell!  = tableView.dequeueReusableCellWithIdentifier("SelectionStyle")
+    if cell == nil {
+        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SelectionStyle")
+    }
+    switch indexPath.row {
+    case 0:
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.textLabel?.text = "None"
+    case 1:
+        cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+        cell.textLabel?.text = "Blue"
+    case 2:
+        cell.selectionStyle = UITableViewCellSelectionStyle.Gray
+        cell.textLabel?.text = "Gray"
+    default:
+        cell.selectionStyle = UITableViewCellSelectionStyle.Default
+        cell.textLabel?.text = "Default"
+    }
+    return cell!
+}
 ```
 
+这里使用了复用，可以缓存cell，提高内存利用率以及显示效果。代码为。
+
+```swift
+var cell: UITableViewCell!  = tableView.dequeueReusableCellWithIdentifier("SelectionStyle")
+if cell == nil {
+    cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SelectionStyle")
+}
+```
+
+##3.3 UITableViewCellAccessoryType
+
+UITableViewCellAccessoryType可以设置Cell的附属视图。
+
+```swift
+func tableViewCellWithAccessoryType(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell: UITableViewCell!  = tableView.dequeueReusableCellWithIdentifier("AccessoryType")
+    if cell == nil {
+        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "AccessoryType")
+    }
+    switch indexPath.row {
+    case 0:
+        cell.accessoryType = UITableViewCellAccessoryType.None // 右变的小图标
+        cell.textLabel?.text = "None"
+    case 1:
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.textLabel?.text = "DisclosureIndicator"
+    case 2:
+        cell.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton
+        cell.textLabel?.text = "DetailDisclosureButton"
+    case 3:
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        cell.textLabel?.text = "Checkmark"
+    default:
+        cell.accessoryType = UITableViewCellAccessoryType.DetailButton
+        cell.textLabel?.text = "DetailButton"
+    }
+    cell.editingAccessoryType = cell.accessoryType // 编辑模式下的小图标，默认.None
+    return cell!
+}
+```
+
+效果图
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121603.jpg)
+
+##3.4 UITableViewCellSeparatorStyle
+
+UITableViewCellSeparatorStyle就是设置Cell上下的横线，你还可以通过tableView.separatorColor设置横线的颜色。
+
+```swift
+func tableViewCellWithSeparatorStyle() {
+    /*
+    public enum UITableViewCellSeparatorStyle : Int {
+    case None
+    case SingleLine
+    case SingleLineEtched // This separator style is only supported for grouped style table views currently
+    }
+    */
+    
+    let alertController = UIAlertController(title: "UITableViewCellSeparatorStyle", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+    alertController.addAction(UIAlertAction(title: "None", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }))
+    alertController.addAction(UIAlertAction(title: "SingleLine", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        self.tableView.separatorColor = UIColor.redColor() // 可修改线条颜色
+    }))
+    alertController.addAction(UIAlertAction(title: "SingleLineEtched", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLineEtched
+    }))
+    self.presentViewController(alertController, animated: true, completion: nil)
+}
+```
+
+##3.5 管理内容缩进
+
+cell中的内容也是可以缩进的，如果目录一样。
+
+```swift
+func tableViewCellWithManagingContentIndentation(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell: UITableViewCell!  = tableView.dequeueReusableCellWithIdentifier("MCIndentation")
+    if cell == nil {
+        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MCIndentation")
+    }
+    cell.textLabel?.text = "\(indexPath.section)--\(indexPath.row)"
+    cell.indentationLevel = indexPath.row // 缩进的级别
+    cell.indentationWidth = 10.0 * CGFloat(indexPath.section+1) // 缩进的基数,默认10.0
+    cell.shouldIndentWhileEditing = false // 编辑模式是否缩进，默认true
+    return cell!
+}
+```
+
+效果图
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121604.jpg)
+
+##3.6 自定义Cell
+
+大多数情况下，系统的Cel无法满足我们的业务需求。我们会自定义Cell，自定义Cell有两种主要的方式，一种是全代码编写；一种是通过Xib定制。这里我们使用Xib定制。
+
+###3.6.1 xib视图
 
 
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+
+
 
 &#160;
 
