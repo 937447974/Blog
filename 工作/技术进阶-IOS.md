@@ -2,7 +2,7 @@
 1. 安卓：开发过基于Android SDK4 的项目。
 2. IOS:：能使用Object-C和Swift代码开发项目。
   1. 熟练使用IOS基本控件，以及XIB、StoryBoard和纯代码编写界面。
-  2. 使用Autolayout兼容不同屏幕，并对其适配。
+  2. Autolayout兼容不同屏幕，并适配。其中涉及NSLayoutConstraint、NSLayoutYAxisAnchor和Stroyboard界面约束。
   3. 使用UIWebView和WebKit框架在APP中嵌入网页，实现混合开发。
   4. XML/Json解析。
   5. 使用NSURLSession相关框架完成和服务器通信(同步和异步)、上传、下载、缓存管理（加速webView显示）和Cookie管理。
