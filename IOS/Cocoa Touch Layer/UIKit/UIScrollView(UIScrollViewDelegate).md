@@ -4,13 +4,35 @@
 
 ---
 
-#1 UIScrollView 
+**1 [UIScrollView](#UIScrollView)**
 
-UIScrollView是一个很强大的类，它能提供比应用程序更大的空间给用户查看。如一张很大的图片，用户即可在手机上移动和捏合查看图片。
+1. [管理内容的显示](#管理内容的显示)
+2. [管理滚动](#管理滚动)
+3. [管理滚动条](#管理滚动条)
+4. [缩放和平移](#缩放和平移)
+ 
+**2 [UIScrollViewDelegate](#UIScrollViewDelegate)**
+
+1. [响应滚动](#响应滚动)
+2. [管理缩放](#管理缩放)
+3. [回到顶部](#回到顶部)
+
+**3 [实战演练](#实战演练)**
+
+1. [搭建项目](#搭建项目)
+2. [展示照片](#展示照片)
+3. [移动照片](#移动照片)
+4. [缩放照片](#缩放照片)
+
+---
+
+#<a id="UIScrollView"/>1 UIScrollView 
+
+UIScrollView是一个很强大的类，它能提供比手机界面更大的空间给用户查看。如一张很大的图片，用户即可在手机上移动和捏合查看图片。
 
 UIScrollView向下延生了三个子类UICollectionView、UITableView和UITextView。这都是我们工作中常用的View。
 
-##1.1 管理内容的显示
+##<a id="管理内容的显示"/>1.1 管理内容的显示
 
 ```swift
 // 动态设置原点，即移动
@@ -23,7 +45,7 @@ public var contentSize: CGSize
 public var contentInset: UIEdgeInsets 
 ```
 
-##1.2 管理滚动
+##<a id="管理滚动"/>1.2 管理滚动
 
 ```swift
 // 能否滚动
@@ -52,7 +74,7 @@ public var dragging: Bool { get }
 public var decelerating: Bool { get }
 ```
 
-##1.3 管理滚动条
+##<a id="管理滚动条"/>1.3 管理滚动条
 
 ```swift
 // 滚动条的样式
@@ -67,7 +89,7 @@ public var showsVerticalScrollIndicator: Bool
 public func flashScrollIndicators()
 ```
 
-##1.4 缩放和平移
+##<a id="缩放和平移"/>1.4 缩放和平移
 
 ```swift
 // 缩放的最小比例
@@ -88,11 +110,11 @@ public var zooming: Bool { get }
 public var zoomBouncing: Bool { get }
 ```
 
-#2 UIScrollViewDelegate
+#<a id="UIScrollViewDelegate"/>2 UIScrollViewDelegate
 
 UIScrollViewDelegate是UIScrollView的核心代理，我们可以通过它监听UIScrollView的相关动作。
 
-##2.1 响应滚动
+##<a id="响应滚动"/>2.1 响应滚动
 
 ```swift
 // MARK: - 滚动持续中
@@ -118,7 +140,7 @@ func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView)
 
 ```
 
-##2.2 管理缩放
+##<a id="管理缩放"/>2.2 管理缩放
 
 ```swift
 // MARK: 缩放持续中
@@ -134,7 +156,7 @@ optional public func scrollViewWillBeginZooming(scrollView: UIScrollView, withVi
 optional public func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat)
 ```
 
-##2.3 回到顶部
+##<a id="回到顶部"/>2.3 回到顶部
 
 ```swift
 // MARK: 点击顶部的时间，是否回滚到顶部
@@ -144,11 +166,11 @@ optional public func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bo
 optional public func scrollViewDidScrollToTop(scrollView: UIScrollView)
 ```
 
-#3 实战演练
+#<a id="实战演练"/>3 实战演练
 
-##3.1 搭建项目
+##<a id="搭建项目"/>3.1 搭建项目
 
-本次讲解使用纯代码的方式向大家演示怎么使用UIScrollView。这里使用了类
+本次讲解使用纯代码的方式向大家演示怎么使用UIScrollView。这里使用了类YJScrollViewDelegateVC.swift
 
 ```swift
 //
@@ -184,11 +206,101 @@ class YJScrollViewDelegateVC: UIViewController, UIScrollViewDelegate {
 }
 ```
 
+运行项目可看见如下效果图。
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121801.jpg)
 
+##<a id="展示照片"/>3.2 展示照片
 
+我们使用一张照片为大家演示缩放和移动功能，这里显示照片。
 
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+在viewDidLoad()方法中添加如下代码
+
+```swift
+// 填充UIScrollView
+self.scrollView = UIScrollView(frame: self.view.frame)
+self.view.addSubview(self.scrollView)
+self.scrollView.delegate = self
+// 图片
+let image = UIImage(named: "ScrollViewBigImage")
+self.imageView = UIImageView(image: image)
+self.scrollView.addSubview(self.imageView)
+self.scrollView.contentSize = image!.size // 可移动区域
+```
+
+> 这里设置了contentSize属性，照片才可以移动。
+
+运行项目看见如下效果图。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121802.jpg)
+
+此时你已经可以移动照片了。
+
+##<a id="移动照片"/>3.3 移动照片
+
+我们还可以通过代码动态移动照片。
+
+实现onClickScroll()方法。
+
+```swift
+// MARK: 移动
+func onClickScroll() {
+    print(__FUNCTION__)
+    var point = self.scrollView.contentOffset // 当前点
+    point.x += 100 // 向左移动100
+    point.x = point.x >= self.scrollView.contentSize.width ? 0 : point.x
+    self.scrollView.setContentOffset(point, animated: true)// 动画移动
+}
+```
+
+运行项目后点击界面的Scroll，即可看见照片动画左移。
+
+##<a id="缩放照片"/>3.4 缩放照片
+
+缩放照片会负责一点，需要借助UIScrollViewDelegate代理。
+
+###3.4.1 设置缩放比例
+
+设置缩放的最大和最小比例，在viewDidLoad()方法中添加如下代码
+
+```swift
+// 缩放
+self.scrollView.minimumZoomScale = 0.5
+self.scrollView.maximumZoomScale = 2
+```
+
+###3.4.2 实现代理
+
+UIScrollView并不知道你要缩放那个View，故需要实现代理方法。
+
+```swift
+// MARK: 返回要缩放的View
+func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?  {
+    print(__FUNCTION__)
+    return self.imageView
+}
+```
+
+###3.4.3 动画缩放
+
+UIScrollView还支持动画缩放View。
+
+实现onClickZoom()方法。
+
+```swift
+// MARK: 缩放
+func onClickZoom() {
+    print(__FUNCTION__)
+    var zoomScale = self.scrollView.zoomScale // 当前缩放
+    zoomScale += 0.5
+    if zoomScale >= self.scrollView.maximumZoomScale {
+        zoomScale = self.scrollView.minimumZoomScale
+    }
+    self.scrollView.setZoomScale(zoomScale, animated: true) // 动画缩放
+}
+```
+
+点击界面的Zoom按钮即可看见缩放动画。
 
 &#160;
 
@@ -210,7 +322,7 @@ class YJScrollViewDelegateVC: UIViewController, UIScrollViewDelegate {
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-12-03 | 博文完成 |
+| 2015-12-18 | 博文完成 |
 
 ##版权所有
 
