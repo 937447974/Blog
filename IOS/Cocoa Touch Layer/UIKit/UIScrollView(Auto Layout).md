@@ -4,6 +4,8 @@
 
 ---
 
+在工作中使用UIScrollView的时候我们通常会坐适配，也就是Auto Layout
+
 ![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
 &#160;
@@ -18,13 +20,17 @@
 
 ##参考资料
 
-[NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html)
+[UIScrollView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html)
+
+[UIScrollView And Autolayout](https://developer.apple.com/library/ios/technotes/tn2154/_index.html)
+
+[Auto Layout Guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html)
 
 ##文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-12-03 | 博文完成 |
+| 2015-12-18 | 博文完成 |
 
 ##版权所有
 
