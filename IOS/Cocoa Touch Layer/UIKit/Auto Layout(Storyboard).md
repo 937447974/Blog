@@ -6,7 +6,11 @@
 
 ---
 
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+在工作中我们也会在Storyboard中设置相关约束，这样可视化的编程更有利于后期的维护。
+
+
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121901.gif)
 
 &#160;
 
