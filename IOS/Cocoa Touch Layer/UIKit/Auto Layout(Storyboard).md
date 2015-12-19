@@ -8,7 +8,7 @@
 
 在工作中我们也会在Storyboard中设置相关约束，这样可视化的编程更有利于后期的维护。
 
-
+介绍在Storyboard怎么约束UI有点麻烦，下面用一个视频向大家演示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121901.gif)
 
@@ -24,13 +24,13 @@
 
 ##参考资料
 
-[NSURLSession](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html)
+[Auto Layout Guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html)
 
 ##文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2015-12-03 | 博文完成 |
+| 2015-12-19 | 博文完成 |
 
 ##版权所有
 
