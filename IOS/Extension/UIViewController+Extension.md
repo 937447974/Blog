@@ -14,7 +14,7 @@ import UIKit
 
 public extension UIViewController {
 
-    // MARK: - push跳转
+    // MARK: - push跳转Storyboard
     /// push跳转到Storyboard
     ///
     /// - parameter storyboardName : 故事面板名
@@ -31,6 +31,7 @@ public extension UIViewController {
         self.navigationController?.pushViewController(vc!, animated: true) // 4跳转
     }
     
+    // MARK: push跳转到Storyboard中指定UIViewController
     /// push跳转到Storyboard中指定UIViewController
     ///
     /// - parameter storyboardName : 故事面板名
