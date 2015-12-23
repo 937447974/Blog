@@ -10,24 +10,37 @@
 
 ---
 
+**1 [UICollectionViewCell](#UICollectionViewCell)**
+
+1. [Cell中的View](#Cell中的View)
+2. [管理Cell的状态](#管理Cell的状态)
+
+**2 [自定义UICollectionViewCell](#自定义UICollectionViewCell)**
+
+1. [创建xib](#创建xib)
+2. [配置xib](#配置xib)
+3. [类YJCollectionViewCell](#类YJCollectionViewCell)
+
+**3 [实战演练](#实战演练)**
+
 ---
 
-#1 UICollectionViewCell
+#<a id="UICollectionViewCell"/>1 UICollectionViewCell
 
 UICollectionViewCell就是UICollectionView显示的一个一个元素，你可以通过它定制各种精美的界面。原始样式很简单，就是常用的View。多数情况在开发中我们会自定义各种各样的通用Cell供其他人使用，这篇博文也会介绍自定义Cell。
 
-##1.1 Cell中的View
+##<a id="Cell中的View"/>1.1 Cell中的View
 
 ```
 /// 自定义控件的父View
 var contentView: UIView { get }
-/// 背景
+/// 默认背景
 var backgroundView: UIView?
 /// 选中时的背景
 var selectedBackgroundView: UIView?
 ```
 
-##1.2 管理Cell的状态
+##<a id="管理Cell的状态"/>1.2 管理Cell的状态
 
 ```swift
 /// 是否选中
@@ -36,25 +49,27 @@ var selected: Bool
 var highlighted: Bool
 ```
 
-#2 自定义UICollectionViewCell
+#<a id="自定义UICollectionViewCell"/>2 自定义UICollectionViewCell
 
 我们知道UICollectionViewCell是UICollectionReusableView的子类，而UICollectionReusableView是UICollectionView的Header和Footer。也就意味着自定义UICollectionViewCell的方式也同样适用于自定义Header和Footer。
 
 多数情况下，我们开发过程中自定义UICollectionViewCell，不是在主VC界面直接创建的，而是通过xib或者纯代码创建。这样有利于公用，以及维护。
 
-##2.1 创建xib
+这里我讲解通过xib自定义UICollectionViewCell，这也是我最喜欢的方式。
+
+##<a id="创建xib"/>2.1 创建xib
 
 创建类YJCollectionViewCell继承UICollectionViewCell，同时勾选"Also create XIB file"。这样同时创建类和xib，并且二者已经关联上了，无须我们做其他配置。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122306.png)
 
-##2.2 配置xib
+##<a id="配置xib"/>2.2 配置xib
 
 在YJCollectionViewCell.xib上UILable控件，如下所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122307.png)
 
-##2.3 类YJCollectionViewCell
+##<a id="类YJCollectionViewCell"/>2.3 类YJCollectionViewCell
 
 类YJCollectionViewCell的源码如下所示。
 
@@ -88,7 +103,7 @@ class YJCollectionViewCell: UICollectionViewCell {
 
 这样就定制了一个通用的UICollectionViewCell。
 
-#3 实战演练
+#<a id="实战演练"/>3 实战演练
 
 为了简单点演示效果，这里我使用YJCollectionViewCellVC，并且继承UICollectionViewController。
 
@@ -129,8 +144,14 @@ class YJCollectionViewCellVC: UICollectionViewController {
 }
 ```
 
-##3.1 
+这里的核心是要使用UICollectionView`func registerNib(nib: UINib?, forCellWithReuseIdentifier identifier: String)`注册xib。这样有利于UICollectionViewCell的复用。
 
+运行项目，能看到如下效果图：
+
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122308.jpg)
+
+这样就自定义了UICollectionViewCell。相信看完后，你也能自定义你所需要的UICollectionViewCell。
 &#160;
 
 ----------
