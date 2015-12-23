@@ -8,19 +8,33 @@
 
 [UICollectionViewLayout](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UICollectionViewLayout.md)
 
----
+----
 
-#1 UICollectionViewDelegateFlowLayout
+**1 [UICollectionViewDelegateFlowLayout](#UICollectionViewDelegateFlowLayout)**
+
+1. [获取Item的Size](#获取Item的Size)
+2. [获取Section的间隔](#获取Section的间隔)
+3. [获取Header和Footer的Size](#获取Header和Footer的Size)
+
+**2 [实战演练](#实战演练)**
+
+1. [界面搭建](#界面搭建)
+2. [类YJCollectionViewDelegateFlowLayoutVC](#类YJCollectionViewDelegateFlowLayoutVC)
+3. [实现UICollectionViewDelegateFlowLayout](#实现UICollectionViewDelegateFlowLayout)
+
+----
+
+#<a id="UICollectionViewDelegateFlowLayout"/>1 UICollectionViewDelegateFlowLayout
 
 UICollectionViewDelegateFlowLayout是UICollectionViewDelegate的子类，也就是说它继承了UICollectionViewDelegate的所有协议。在UICollectionViewDelegate的基础上，UICollectionViewDelegateFlowLayout增加了关于UICollectionViewFlowLayout的相关控制，让我们能够更加精细的控制视图的布局。
 
-##1.1 获取Item的Size
+##<a id="获取Item的Size"/>1.1 获取Item的Size
 
 ```swift
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
 ```
 
-##1.2 获取Section的间隔
+##<a id="获取Section的间隔"/>1.2 获取Section的间隔
 
 ```swift
 // 边间隔
@@ -33,7 +47,7 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
 ```
 
-##1.3 获取Header和Footer的Size
+##<a id="获取Header和Footer的Size"/>1.3 获取Header和Footer的Size
 
 ```swift
 // MARK: Header显示
@@ -43,13 +57,13 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
 ```
 
-#2 实战演练
+#<a id="实战演练"/>2 实战演练
 
-##2.1 界面搭建
+##<a id="界面搭建"/>2.1 界面搭建
 
 界面搭建如[UICollectionViewDataSource](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UICollectionViewDataSource.md)所示，这里不在详细解锁。
 
-##2.2 类YJCollectionViewDelegateFlowLayoutVC
+##<a id="类YJCollectionViewDelegateFlowLayoutVC"/>2.2 类YJCollectionViewDelegateFlowLayoutVC
 
 这里使用类YJCollectionViewDelegateFlowLayoutVC为搭建演示关于UICollectionViewDelegateFlowLayout的使用，下面是部分源代码。
 
@@ -126,7 +140,7 @@ class YJCollectionViewDelegateFlowLayoutVC: UIViewController, UICollectionViewDa
 }
 ```
 
-##2.3 实现UICollectionViewDelegateFlowLayout
+##<a id="实现UICollectionViewDelegateFlowLayout"/>2.3 实现UICollectionViewDelegateFlowLayout
 
 接下来实现UICollectionViewDelegateFlowLayout。
 
@@ -173,12 +187,9 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 }
 ```
 
-运行项目后，看见如下效果图。
+运行项目后，看见如下效果图，会发现每个item之间的间隔都是相等的。
 
-
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
-
-
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122305.jpg)
 
 &#160;
 
