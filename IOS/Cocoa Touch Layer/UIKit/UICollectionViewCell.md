@@ -44,9 +44,92 @@ var highlighted: Bool
 
 ##2.1 创建xib
 
+创建类YJCollectionViewCell继承UICollectionViewCell，同时勾选"Also create XIB file"。这样同时创建类和xib，并且二者已经关联上了，无须我们做其他配置。
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122306.png)
 
-![DDl-1](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+##2.2 配置xib
+
+在YJCollectionViewCell.xib上UILable控件，如下所示。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122307.png)
+
+##2.3 类YJCollectionViewCell
+
+类YJCollectionViewCell的源码如下所示。
+
+```swift
+//
+//  YJCollectionViewCell.swift
+//  UI
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/12/12.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
+
+import UIKit
+
+/// 自定义UICollectionViewCell
+class YJCollectionViewCell: UICollectionViewCell {
+
+    /// 显示内容
+    @IBOutlet weak var textLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+}
+```
+
+这样就定制了一个通用的UICollectionViewCell。
+
+#3 实战演练
+
+为了简单点演示效果，这里我使用YJCollectionViewCellVC，并且继承UICollectionViewController。
+
+```swift
+//
+//  YJCollectionViewCellVC.swift
+//  UI
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 15/12/19.
+//  Copyright © 2015年 阳君. All rights reserved.
+//
+
+import UIKit
+
+/// 自定义UICollectionViewCell
+class YJCollectionViewCellVC: UICollectionViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let nib = UINib(nibName: "YJCollectionViewCell", bundle: nil)
+        self.collectionView?.registerNib(nib, forCellWithReuseIdentifier: "customCell")
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("customCell", forIndexPath: indexPath) as! YJCollectionViewCell
+        cell.backgroundColor = UIColor.grayColor()
+        cell.textLabel.text = "\(indexPath.item)"
+        return cell
+    }
+
+}
+```
+
+##3.1 
 
 &#160;
 
