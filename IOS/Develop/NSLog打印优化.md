@@ -47,6 +47,11 @@ NSLog+Extension.h代码如下
 @interface NSDictionary (NSLogExtension)
 
 @end
+
+/** NSSet打印扩展*/
+@interface NSSet (NSLogExtension)
+
+@end
 ```
 
 NSLog+Extension.m代码如下
@@ -65,14 +70,18 @@ NSLog+Extension.m代码如下
 
 #import "NSLog+Extension.h"
 
+#if 1
+
 #pragma mark -  NSLog打印辅助方法
 id logExtension(id obj) {
     id tempObj = obj;
-    // 遇到NSArray或NSDictionary的子类，内容后移\t
-    if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]]) {
+    // 遇到NSArray、NSSet或NSDictionary的子类，内容后移\t
+    if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSSet class]]) {
         NSString *str = [NSString stringWithFormat:@"%@", obj];
         str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@"\n\t"];
         tempObj = str;
+    } else if ([obj isKindOfClass:[NSString class]]) { // NSString类型数据加双引号
+        tempObj = [NSString stringWithFormat:@"\"%@\"", obj];
     }
     return tempObj;
 }
@@ -93,6 +102,7 @@ id logExtension(id obj) {
 }
 
 @end
+
 
 #pragma mark - 字典NSLog打印扩展
 @implementation NSDictionary (NSLogExtension)
@@ -115,6 +125,31 @@ id logExtension(id obj) {
 }
 
 @end
+
+
+#pragma mark - NSSet NSLog打印扩展
+@implementation NSSet (NSLogExtension)
+
+#pragma mark NSSet打印
+- (NSString *)descriptionWithLocale:(id)locale {
+    NSMutableString *str = [NSMutableString stringWithString:@"{(\n"];
+    for (id value in self) {
+        NSLog(@"%@", value);
+        [str appendFormat:@"\t%@,\n", logExtension(value)];
+    }
+    [str appendString:@")}"];
+    // 删掉最后一个,
+    NSRange range = [str rangeOfString:@"," options:NSBackwardsSearch];
+    // 保护机制找到才删除
+    if (range.location > 0 && range.location < str.length) {
+        [str deleteCharactersInRange:range];
+    }
+    return str;
+}
+
+@end
+
+#endif
 ```
 
 我们使用字符串拼接的方式返回要打印的字符串。这里使用了函数logExtension，主要是因为在数组中包含字典或数组时，要让显示数据后移'\t'。
@@ -147,6 +182,7 @@ https://github.com/937447974/Objective-C
 | ---- | ---- |
 | 2015-11-16 | NSLog打印优化 |
 | 2015-11-19 | 修改源代码，字典遍历不使用并发，防止线程错误 |
+| 2015-12-29 | 增加NSSet打印扩展，增加对NSString的支持 |
 
 ##版权所有
 
