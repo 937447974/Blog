@@ -13,8 +13,10 @@
 import UIKit
 import Photos
 
-extension PHAssetCollection {
+/// PHAssetCollection扩展
+public extension PHAssetCollection {
     
+    // MARK: - 获取PHAsset集合
     /// 获取PHAsset集合
     ///
     /// - parameter options : PHFetchOptions?
@@ -29,6 +31,68 @@ extension PHAssetCollection {
             }
         }
         return assets
+    }
+    
+    // MARK: 存储照片
+    /// 存储照片
+    ///
+    /// - parameter image: 图片
+    ///
+    /// - returns: void
+    func creationAssetFromImage(image: UIImage, completionHandler: PHPhotoLibraryCompletionHandlerBlock = PHPhotoLibraryCompletionHandler) {
+        let changeBlock: dispatch_block_t = {
+            let assetChangeRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
+            guard let placeholderForCreatedAsset = assetChangeRequest.placeholderForCreatedAsset else {
+                // 照片生成出错
+                print("PHAssetCollection \(__FUNCTION__)")
+                return
+            }
+            guard let aCChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self) else {
+                print("PHAssetCollection \(__FUNCTION__)")
+                return
+            }
+            // 保存照片
+            aCChangeRequest.addAssets([placeholderForCreatedAsset])
+        }
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: completionHandler)
+    }
+    
+    // MARK: - 创建相薄
+    /// 创建相薄
+    ///
+    /// - parameter title: 相薄名
+    ///
+    /// - returns: void
+    class func creationWithTitle(title: String, completionHandler: PHPhotoLibraryCompletionHandlerBlock = PHPhotoLibraryCompletionHandler) {
+        let changeBlock: dispatch_block_t = {
+            PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(title)
+        }
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: completionHandler)
+    }
+    
+    // MARK: 修改专辑名
+    /// 修改相薄名
+    ///
+    /// - parameter title: 相薄名
+    ///
+    /// - returns: void
+    func renameLocalizedTitle(title: String, completionHandler: PHPhotoLibraryCompletionHandlerBlock = PHPhotoLibraryCompletionHandler) {
+        let changeBlock: dispatch_block_t = {
+            let aCChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: self)
+            aCChangeRequest?.title = title
+        }
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: completionHandler)
+    }
+    
+    // MARK: 删除PHAssetCollection
+    /// 删除专辑
+    ///
+    /// - returns: void
+    func deletes(completionHandler: PHPhotoLibraryCompletionHandlerBlock = PHPhotoLibraryCompletionHandler) {
+        let changeBlock: dispatch_block_t = {
+            PHAssetCollectionChangeRequest.deleteAssetCollections([self])
+        }
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: completionHandler)
     }
     
 }
@@ -49,6 +113,7 @@ extension PHAssetCollection {
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-26 | 博文完成 |
+| 2016-01-04 | 方法中增加闭包PHPhotoLibraryCompletionHandlerBlock |
 
 ##版权所有
 
