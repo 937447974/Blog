@@ -72,9 +72,13 @@ QQ：937447974
 
 [UICollectionView+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/UICollectionView%2BExtension.md)
 
+[PHPhotoLibrary+Extension.md](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHPhotoLibrary%2BExtension.md)
+
 [PHAssetCollection+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHAssetCollection%2BExtension.md)
 
-[PHCollectionList+Extension.md](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHCollectionList%2BExtension.md)
+[PHCollectionList+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHCollectionList%2BExtension.md)
+
+[PHAsset+Extension.md](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHAsset%2BExtension.md)
 
 ##<a id="Objective-C"/>1.3 Objective-C
 
