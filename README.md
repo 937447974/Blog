@@ -161,7 +161,20 @@ QQ：937447974
 
 ###<a id="Photos"/> 1.6.1 Photos
 
-[UIGestureRecognizer(高级)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(高级).md)
+[Photos(简介)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(简介).md)
+
+[Photos(PHObject)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHObject).md)
+
+[Photos(简介)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(简介).md)
+
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 
 ##<a id="Core Services Layer"/>1.7 Core Services Layer
 
