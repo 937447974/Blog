@@ -161,6 +161,8 @@ QQ：937447974
 
 ###<a id="Photos"/> 1.6.1 Photos
 
+[UIGestureRecognizer(高级)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(高级).md)
+
 ##<a id="Core Services Layer"/>1.7 Core Services Layer
 
 ###<a id="Foundation"/>1.7.1 Foundation
