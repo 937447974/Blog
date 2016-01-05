@@ -56,35 +56,7 @@ public enum PHAuthorizationStatus : Int {
 }
 ```
 
-#2 项目
-
-关于Photos库，我们会用一个项目向大家介绍关于Photos的一系列应用，后期也会添加PhotoUI库的相关介绍。
-
-模仿的是手机中的照片APP，当然，这里不会完全模仿，只是模仿大部分的功能，主要是介绍Photos库和PhotoUI库的相关操作
-
-##2.1 界面图
-
-创建一个空项目，改造Main.storyboard如下所示。
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121001.png)
-
-##2.2 项目结构
-
-调整项目结构如图所示
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121002.png)
-
-其中YJPhotosVC.swift控制照片，YJPhotoAlbumsVC.swift控制相薄
-
-##2.3 项目效果
-
-运行项目在手机上看见的效果图如下。
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121003.jpg)
-
-看见如图所示的效果图，证明你的项目已搭建成功。
-
-#3 用户授权
+#2 用户授权
 
 由于整个用户都是关于照片的操作，故我们可以在AppDelegate.swift授权。修改其`func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool`方法。
 

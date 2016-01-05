@@ -48,9 +48,12 @@ QQ：937447974
 
 **4 [数据库](#数据库)**
 
-**5 [工作](#工作)**
+**5 [Git](#Git)**
 
-**6 [综合](#综合)**
+**6 [工作](#工作)**
+
+**7 [综合](#综合)**
+
 
 ---
 
@@ -248,7 +251,15 @@ QQ：937447974
 
 [SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)
 
-#<a id="工作"/>5 工作
+#<a id="Git"/>5 Git
+
+[GitHub桌面版](https://github.com/937447974/Blog/blob/master/Git/GitHub桌面版.md)
+
+[SourceTree](https://github.com/937447974/Blog/blob/master/Git/SourceTree.md)
+
+[Git移除敏感数据](https://github.com/937447974/Blog/blob/master/Git/Git移除敏感数据.md)
+
+#<a id="工作"/>6 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
 
@@ -256,15 +267,11 @@ QQ：937447974
 
 [Mac系统安装JavaSE](https://github.com/937447974/Blog/blob/master/工作/Mac系统安装JavaSE.md)
 
-[GitHub桌面版](https://github.com/937447974/Blog/blob/master/工作/GitHub桌面版.md)
-
-[Git移除敏感数据](https://github.com/937447974/Blog/blob/master/工作/Git移除敏感数据.md)
-
 [ZSH安装](https://github.com/937447974/Blog/blob/master/工作/ZSH安装.md)
 
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
 
-#<a id="综合"/>6 综合
+#<a id="综合"/>7 综合
 
 一些综合性文档。
 
