@@ -175,7 +175,8 @@ QQ：937447974
 
 [Photos(PHCollectionList)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHCollectionList).md)
 
-[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[Photos(PHImageManager)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHImageManager).md)
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
