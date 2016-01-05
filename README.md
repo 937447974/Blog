@@ -167,7 +167,8 @@ QQ：937447974
 
 [Photos(简介)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(简介).md)
 
-[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[Photos(PHAsset)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAsset).md)
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
