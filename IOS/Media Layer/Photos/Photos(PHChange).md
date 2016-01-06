@@ -1,3 +1,11 @@
+[Photos(PHChange)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHChange).md)
+
+[Photos(PHObjectChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHObjectChangeDetails).md)
+
+[Photos(PHFetchResultChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHFetchResultChangeDetails).md)
+
+---
+
 当我们通过PHPhotoLibrary的`registerChangeObserver(_ observer: PHPhotoLibraryChangeObserver)`方法监听用户的照片库时，在其回调协议中`photoLibraryDidChange(_ changeInstance: PHChange)`通知当前APP。简而言之就是照片库提供PHChange对象来通知应用程序照片库的变动。
 
 #1 获取变化
