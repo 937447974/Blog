@@ -1,4 +1,10 @@
-----
+[Photos(PHChange)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHChange).md)
+
+[Photos(PHObjectChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHObjectChangeDetails).md)
+
+[Photos(PHFetchResultChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHFetchResultChangeDetails).md)
+
+---
 
 PHObjectChangeDetails主要用于记录PHObject子类数据的变动，即PHAsset、PHAssetCollection和PHCollectionList的变动。
 

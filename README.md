@@ -183,7 +183,8 @@ QQ：937447974
 
 [Photos(PHObjectChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHObjectChangeDetails).md)
 
-[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[Photos(PHFetchResultChangeDetails)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHFetchResultChangeDetails).md)
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
