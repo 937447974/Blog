@@ -48,6 +48,29 @@ weak public var delegate: PHLivePhotoViewDelegate?
 public class func livePhotoBadgeImageWithOptions(badgeOptions: PHLivePhotoBadgeOptions) -> UIImage
 ```
 
+#6 实战演示
+
+下面演示了显示并播放生活照片的源代码
+
+```swift
+if self.asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
+    let options = PHLivePhotoRequestOptions()
+    options.deliveryMode = PHImageRequestOptionsDeliveryMode.HighQualityFormat
+    options.networkAccessAllowed = true
+    options.progressHandler = { (progress: Double, error: NSError?, stop: UnsafeMutablePointer<ObjCBool>, info: [NSObject : AnyObject]?) -> Void in
+        print(progress)
+    }
+    PHImageManager.defaultManager().requestLivePhotoForAsset(self.asset, targetSize: self.targetSize(), contentMode: PHImageContentMode.AspectFit, options: options, resultHandler: { (livePhoto: PHLivePhoto?, info: [NSObject : AnyObject]?) -> Void in
+        self.livePhotoView.livePhoto = livePhoto
+        if let degradedKeyinfo = info?[PHImageResultIsDegradedKey] {
+            if !degradedKeyinfo.boolValue && !self.playing {
+                self.livePhotoView.startPlaybackWithStyle(PHLivePhotoViewPlaybackStyle.Hint)
+            }
+        }
+    })
+}
+```
+
 &#160;
 
 ----------
