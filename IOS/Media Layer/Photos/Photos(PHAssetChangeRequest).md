@@ -2,6 +2,10 @@
 
 [Photos(PHAssetCreationRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCreationRequest).md)
 
+[Photos(PHAssetCollectionChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCollectionChangeRequest).md)
+
+[Photos(PHCollectionListChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHCollectionListChangeRequest).md)
+
 ----
 
 PHAssetChangeRequest主要用于创建、删除或修改PHAsset对象。可以理解为它是沟通用户照片库中照片或视频的桥梁。
