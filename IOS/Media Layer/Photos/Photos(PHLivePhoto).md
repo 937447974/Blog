@@ -1,3 +1,9 @@
+[Photos(PHLivePhoto)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHLivePhoto).md)
+
+[PhotosUI(PHLivePhotoView)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/PhotosUI/PhotosUI(PHLivePhotoView).md)
+
+---
+
 在IOS9以后，当我们玩手机照相时会发现，明明拍的一张照片，但打开时照片会像gif一样的动，这就是PHLivePhoto对象，也就是生活照片。
 
 生活照片的展示会用到PHLivePhotoView UI对象。
