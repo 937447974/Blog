@@ -2,6 +2,10 @@
 
 [Photos(PHAssetCreationRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCreationRequest).md)
 
+[Photos(PHAssetCollectionChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCollectionChangeRequest).md)
+
+[Photos(PHCollectionListChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHCollectionListChangeRequest).md)
+
 ----
 
 PHAssetCreationRequest是PHAssetChangeRequest的子类，继承了PHAssetChangeRequest的所有属性和方法。通过它你可以更精细的创建PHAsset，如通过NSSata数据。

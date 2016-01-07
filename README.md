@@ -189,8 +189,11 @@ QQ：937447974
 
 [Photos(PHAssetCreationRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCreationRequest).md)
 
-[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
-[](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
+[Photos(PHAssetCollectionChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHAssetCollectionChangeRequest).md)
+
+[Photos(PHCollectionListChangeRequest)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(PHCollectionListChangeRequest).md)
+
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
