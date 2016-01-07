@@ -4,7 +4,49 @@
 
 ---
 
+PHLivePhotoView用于显示用户的生活照片。
 
+#1 Choosing a Live Photo to Display
+
+```swift
+public var livePhoto: PHLivePhoto?
+```
+
+#2 Managing Playback
+
+```swift
+/// 是否有声音
+public var muted: Bool
+/// 控制回放的手势
+public var playbackGestureRecognizer: UIGestureRecognizer { get }
+```
+
+#3 Responding to Playback Events
+
+```swift
+/// 开始播放生活照片
+public func startPlaybackWithStyle(playbackStyle: PHLivePhotoViewPlaybackStyle)
+/// 停止播放
+public func stopPlayback()
+```
+
+#4 Manually Playing Live Photo Content
+
+```swift
+/// 代理，监听播放开始和结束
+weak public var delegate: PHLivePhotoViewDelegate?
+```
+
+#5 Accessing User Interface Icons for Live Photos
+
+```swift
+/// 获取显示照片
+///
+/// - parameter badgeOptions : PHLivePhotoBadgeOptions
+///
+/// - returns: UIImage
+public class func livePhotoBadgeImageWithOptions(badgeOptions: PHLivePhotoBadgeOptions) -> UIImage
+```
 
 &#160;
 
