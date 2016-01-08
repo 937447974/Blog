@@ -1,3 +1,9 @@
+#1 简介
+
+在开发app的过程中任何一个项目都会用到UINavigationController，这是一个很有用的控件，它主要控制界面的跳转和导航。
+
+下面y
+
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
 &#160;
@@ -13,8 +19,6 @@
 ##参考资料
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
-
-[UINavigationController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationController_Class/index.html)
 
 ##文档修改记录
 
