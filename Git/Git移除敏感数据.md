@@ -122,9 +122,9 @@ yangjundeMac-mini:Test yangjun$ git push origin --force --tags
 当你的小伙伴git pull后，发现项目没有问题，你再执行git的gc操作清理本地缓存。
 
 ```git
-yangjundeMac-mini:Test yangjun$ git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
-yangjundeMac-mini:Test yangjun$ git reflog expire --expire=now --all
-yangjundeMac-mini:Test yangjun$ git gc --prune=now
+git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
 ```
 
 完成上述操作后，再次使用命令`du -hs`查看文件夹大小，发现项目只有108k。此时即完成移除敏感数据的相关操作。
