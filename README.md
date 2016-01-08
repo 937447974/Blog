@@ -298,6 +298,8 @@ QQ：937447974
 
 [Git移除敏感数据](https://github.com/937447974/Blog/blob/master/Git/Git移除敏感数据.md)
 
+[Git忽略文件](https://github.com/937447974/Blog/blob/master/Git/Git忽略文件.md)
+
 #<a id="工作"/>6 工作
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
