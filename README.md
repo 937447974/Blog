@@ -129,6 +129,14 @@ QQ：937447974
 
 [UITabBarController](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBarController.md)
 
+[UITabBar](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBar.md)
+
+[UIBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarItem.md)
+
+[UIBarButtonItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarButtonItem.md)
+
+[UITabBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBarItem.md)
+
 [Auto Layout(NSLayoutConstraint)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/Auto%20Layout(NSLayoutConstraint).md)
 
 [Auto Layout(NSLayoutAnchor)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/Auto%20Layout(NSLayoutAnchor).md)
