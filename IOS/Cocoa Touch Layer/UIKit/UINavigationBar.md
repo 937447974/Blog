@@ -4,7 +4,11 @@
 
 [UIToolbar](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIToolbar.md)
 
----
+[UIBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarItem.md)
+
+[UIBarButtonItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarButtonItem.md)
+
+----
 
 1. [Assigning the Delegate](#Assigning_the_Delegate)
 2. [Pushing and Popping Items](#Pushing_and_Popping_Items)

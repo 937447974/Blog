@@ -2,6 +2,8 @@
 
 [UITabBar](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBar.md)
 
+[UITabBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBarItem.md)
+
 ----
 
 UITabBarController是UITabBar的控制器，这是一个很强大的控制器，在各大app中经常能够看见。
@@ -69,7 +71,7 @@ public var selectedIndex: Int
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-07 | 博文完成 |
+| 2016-01-10 | 博文完成 |
 
 ##版权所有
 
