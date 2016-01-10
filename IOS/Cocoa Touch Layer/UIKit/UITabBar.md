@@ -2,6 +2,8 @@
 
 [UITabBar](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBar.md)
 
+[UITabBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UITabBarItem.md)
+
 ----
 
 1. [Setting the Delegate](#Setting_the_Delegate)
@@ -113,7 +115,7 @@ public var selectionIndicatorImage: UIImage?
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-07 | 博文完成 |
+| 2016-01-10 | 博文完成 |
 
 ##Copyright
 

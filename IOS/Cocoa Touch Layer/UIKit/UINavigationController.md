@@ -4,7 +4,11 @@
 
 [UIToolbar](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIToolbar.md)
 
----
+[UIBarItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarItem.md)
+
+[UIBarButtonItem](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIBarButtonItem.md)
+
+----
 
 1. [简介](#简介)
     1. [导航效果图](#导航效果图)
