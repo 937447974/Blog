@@ -1,6 +1,6 @@
 当我们在开发过程中对系统类扩展时，会发现无法扩展属性。如果想扩展属性，可使用Runtime扩展。
 
-#1 相关方法
+#1 相关API
 
 其中涉及到的Runtime方法有如下三个。
 
@@ -24,7 +24,7 @@ public func objc_setAssociatedObject(object: AnyObject!, _ key: UnsafePointer<Vo
 /// - returns: AnyObject
 public func objc_getAssociatedObject(object: AnyObject!, _ key: UnsafePointer<Void>) -> AnyObject!
     
-/// 去掉所有管理属性
+/// 去掉所有关联属性
 ///
 /// - parameter object : self
 ///
