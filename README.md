@@ -236,6 +236,8 @@ QQ：937447974
 
 [URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cookie).md)
 
+[Runtime关联引用](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/Runtime关联引用.md)
+
 ###<a id="JavaScriptCore"/>1.7.2 JavaScriptCore
 
 [JavaScriptCore框架](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/JavaScriptCore/JavaScriptCore框架.md)
