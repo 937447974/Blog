@@ -92,8 +92,8 @@ public func setTitlePositionAdjustment(adjustment: UIOffset, forBarMetrics barMe
 /// 获取标题位置
 @available(iOS 5.0, *)
 public func titlePositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> UIOffset
-    
-    
+
+  
 // MARK: - 后退按钮
     
 /// 后退按钮的图片
