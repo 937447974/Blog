@@ -34,7 +34,7 @@ public var tag: Int
 #2 Customizing Appearance
 
 ```swift
-/// 根据点击状态设置设计不同的字体样式
+/// 根据点击状态设置不同的字体样式
 @available(iOS 5.0, *)
 public func setTitleTextAttributes(attributes: [String : AnyObject]?, forState state: UIControlState)
     
