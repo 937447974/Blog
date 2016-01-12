@@ -2,8 +2,9 @@ MessageUI库提供了专门用于发送短信和邮件的界面，这也就意�
 
 #Classes
 
-- MFMailComposeViewController：发送邮件的VC
-- MFMessageComposeViewController：发送短信的VC
+- UINavigationController：导航控制器
+    - MFMailComposeViewController：发送邮件的VC
+    - MFMessageComposeViewController：发送短信的VC
 
 #Protocols
 
