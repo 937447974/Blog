@@ -150,7 +150,7 @@ class ViewController: UIViewController,  MFMailComposeViewControllerDelegate, MF
 
 ##2.2 效果图
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016011201.jpg)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016011202.jpg)
 
 &#160;
 
