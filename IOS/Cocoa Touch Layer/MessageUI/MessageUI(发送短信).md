@@ -1,4 +1,4 @@
-MessageUI库提供了专门用于发送短信和邮件的界面，这也就意味着我们想在app中发送短信或邮件时无须离开APP。
+在MessageUI库中发送短信使用MFMessageComposeViewController。
 
 #Classes
 
