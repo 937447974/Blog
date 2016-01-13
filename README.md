@@ -338,7 +338,7 @@ QQ：937447974
 
 [Xcode快捷键](https://github.com/937447974/Blog/blob/master/工作/Xcode快捷键.md)
 
-[技术进阶-IOS](https://github.com/937447974/Blog/blob/master/工作/技术进阶-IOS.md)
+[个人简历](https://github.com/937447974/Blog/blob/master/工作/个人简历.md)
 
 [Mac系统安装JavaSE](https://github.com/937447974/Blog/blob/master/工作/Mac系统安装JavaSE.md)
 
