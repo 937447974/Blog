@@ -3,11 +3,20 @@ CNGroup能将联系人分组，这样有便于用户查看和分类整理联系�
 #1 Group Properties
 
 ```swift
+/// 唯一标示符
+public var identifier: String { get }
+/// 组名    
+public var name: String { get }
 ```
 
 #2 Predicate Methods
 
 ```swift
+/// 通过组id获取组
+public class func predicateForGroupsWithIdentifiers(identifiers: [String]) -> NSPredicate
+
+/// 通过容器id获取组
+public class func predicateForGroupsInContainerWithIdentifier(containerIdentifier: String) -> NSPredicate
 ```
 
 &#160;
@@ -23,10 +32,6 @@ CNGroup能将联系人分组，这样有便于用户查看和分类整理联系�
 ##Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
-
-[CNContactStore Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html)
-
-[CNSaveRequest Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html)
 
 [CNGroup Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html)
 
