@@ -20,7 +20,7 @@ Contacts Framework主要用于帮助我们获取用户的联系方式，即通�
     - CNPhoneNumber：电话号码
     - CNPostalAddress：邮政地址。
         - CNMutablePostalAddress：修改邮政地址时使用。
-    - CNSocialProfile：社会现象。
+    - CNSocialProfile：社会关系。
 - NSFormatter
     - CNContactFormatter：格式化获取联系人相关信息。
     - CNPostalAddressFormatter：格式化获取联系人地址
