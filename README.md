@@ -242,6 +242,10 @@ QQ：937447974
 
 [Contacts(CNLabeledValue)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/Contacts(CNLabeledValue).md)
 
+[Contacts(CNGroup)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/Contacts(CNGroup).md)
+
+[Contacts(实战)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/Contacts(实战).md)
+
 ###<a id="Foundation"/>1.7.2 Foundation
 
 [JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/JSON解析.md)
