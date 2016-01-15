@@ -7,7 +7,6 @@ MVP与MVC有着一个重大的区别：在MVP中View并不直接使用Model，�
 MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地方：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。 
 
 作为一种新的模式，MVP与MVC有着一个重大的区别：在MVP中View并不直接使用Model，它们之间的通信是通过Presenter (MVC中的Controller)来进行的，所有的交互都发生在Presenter内部，而在MVC中View会从直接Model中读取数据而不是通过 Controller。 
- 
 
 #2 优缺点
 
@@ -25,12 +24,19 @@ MVP 是从经典的模式MVC演变而来，它们的基本思想有相通的地�
  
 ##3 MVP结构图
 
-
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112801.png)
 
 #4 架构实现
 
 相关搭建项目环节就不介绍了，直接显示最核心的过程。
+
+##4.1 搭建项目
+
+苹果也考虑了这种MVP框架的实现。MVP的核心就是Presenter，也就是视图和Model的双向绑定。可以运用Objec控件完成双向绑定。
+
+下面省略了搭建项目的其他步骤，只显示双向绑定的过程。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112803.gif)
 
 ##4.1 Model层
 
@@ -44,8 +50,8 @@ Model层和MVC框架的模型层使用同样的代码结构。
 //  CSDN:http://blog.csdn.net/y550918116j
 //  GitHub:https://github.com/937447974/Blog
 //
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
 import Foundation
@@ -59,7 +65,7 @@ protocol YJModelProtocol {
 
 /// model层，处理与服务器的响应
 class YJModel: NSObject {
-
+    
     /// 相关数据，发送到服务器的数据以及从服务器接收的数据
     var data: Dictionary<String, AnyObject>?
     /// 回调代理
@@ -77,7 +83,7 @@ class YJModel: NSObject {
         }
         self.data!["qq"] = "937447974"
         print("服务器数据处理完毕，回发中...")
-        print("Model收到服务器发回的数据，通知Presenter层")
+        print("Model收到服务器发回的数据，通知上一层")
         print("Model End============")
         self.delegate?.execute(self)
     }
@@ -89,7 +95,7 @@ class YJModel: NSObject {
 
 ##4.2 Presenter层
 
-Presenter与具体的View是没有直接关联的，而是通过定义好的接口进行交互，从而使得在变更View时候可以保持Presenter的不变，即重用。
+Presenter与具体的View是直接关联的，从而使得在变更View时候可以变更Presenter。
 
 ```swift
 //
@@ -99,32 +105,22 @@ Presenter与具体的View是没有直接关联的，而是通过定义好的接�
 //  CSDN:http://blog.csdn.net/y550918116j
 //  GitHub:https://github.com/937447974/Blog
 //
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-/// Presenter层的协议,view层实现
-protocol YJPresenterProtocol {
-    
-    // 定义一系列通知UI的接口
-    func execute(presenter: YJPresenter)
-    
-}
-
-/// Presenter完全把Model和View进行了分离，主要的程序逻辑在Presenter里实现。
-class YJPresenter: YJModelProtocol {
+/// Presenter层
+class YJPresenter: NSObject, YJModelProtocol {
     
     /// 姓名
-    var name: String?
-    /// view层代理
-    var delegate: YJPresenterProtocol?
+    @IBOutlet weak var nameLabel: UILabel!
     
-    // 开始数据准备
-    func initData() {
-        print("\nPresenter Begin++++++++++++")
-        print("Presenter层收到UI指令")
+    func viewDidLoad() {
+        // 开始数据准备
+        print("\nPresenter层收到View层指令")
+        print("Presenter Begin++++++++++++")
         // 向服务器发送数据
         let model = YJModel()
         model.data = Dictionary()
@@ -136,12 +132,10 @@ class YJPresenter: YJModelProtocol {
     
     func execute(model: YJModel) {
         print("\nPresenter层收到Model层数据：\(model.data)")
-        self.name = model.data?["name"] as? String
-        print("Presenter层通知UI层，数据已准备")
+        self.nameLabel.text = model.data?["name"] as? String
         print("Presenter End++++++++++++")
-        self.delegate?.execute(self)
     }
-
+    
 }
 ```
 
@@ -159,65 +153,52 @@ View层就是ViewController了，这里的ViewController只控制UI界面的交�
 //  CSDN:http://blog.csdn.net/y550918116j
 //  GitHub:https://github.com/937447974/Blog
 //
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
 import UIKit
 
 /// View层
-class YJViewController: UIViewController, YJPresenterProtocol {
-
-    /// 姓名
-    @IBOutlet weak var name: UILabel!
+class YJViewController: UIViewController {
+    
     /// Presenter层
-    var persenter = YJPresenter()
+    @IBOutlet var presenter: YJPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Begin------------")
-        self.persenter.delegate = self
-        print("View层发出指令通知Presenter层")
-        self.persenter.initData()// 初始化数据
+        print("View层初始化UI")
+        print("View通知Presenter加载数据")
+        // 视图加载
+        self.presenter.viewDidLoad()
     }
     
-    // MARK: - YJPresenterProtocol
-    func execute(presenter: YJPresenter) {
-        print("\nView层收到Presenter层通知")
-        self.name.text = presenter.name
-        print("View End------------")
-    }
-
 }
 ```
-
-这里定义了一个name: UILabel属性，指向界面中的元素，这样能让我们直观的感受到，从UI到服务器直接交互的整个流程。
 
 ##4.4 测试
 
 运行项目后可看见如下输出效果,会发现层与层之间的关系非常清晰，代码的可维护度非常高。
 
 ```swift
-View Begin------------
-View层发出指令通知Presenter层
+View层初始化UI
+View通知Presenter加载数据
 
+Presenter层收到View层知Presenter加载数据
+
+Presenter层收到View层\346指令
 Presenter Begin++++++++++++
-Presenter层收到UI指令
 开始请求Model层获取数据
 
 Model Begin============
 Model收到通知开始请求服务器
 服务器接收数据:Optional(["name": 阳君])
 服务器数据处理完毕，回发中...
-Model收到服务器发回的数据，通知Presenter层
+Model收到服务器发回的数据，通知上一层
 Model End============
 
 Presenter层收到Model层数据：Optional(["qq": 937447974, "name": 阳君])
-Presenter层通知UI层，数据已准备
 Presenter End++++++++++++
-
-View层收到Presenter层通知
-View End------------
 ```
 
 &#160;
