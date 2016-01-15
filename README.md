@@ -31,6 +31,7 @@ QQ：937447974
 
 1.6 [Media Layer](#Media%20Layer)
 
+- [ImageIO](#ImageIO)
 - [Photos](#Photos)
 
 1.7 [Core Services Layer](#Core%20Services%20Layer)
@@ -189,7 +190,11 @@ QQ：937447974
 
 ##<a id="Media Layer"/>1.6 Media Layer
 
-###<a id="Photos"/> 1.6.1 Photos
+###<a id="ImageIO"/> 1.6.1 ImageIO
+
+
+
+###<a id="Photos"/> 1.6.2 Photos
 
 [Photos(简介)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(简介).md)
 
