@@ -29,15 +29,7 @@ WPF的数据绑定与Presentation Model相结合是非常好的做法,使得开�
 
 #4 架构实现
 
-#4.1 搭建项目
-
-苹果也考虑了这种MVVM框架的实现。MVVM的核心就是VM，也就是视图和Model的双向绑定。可以运用Objec控件完成双向绑定。
-
-下面省略了搭建项目的其他步骤，只显示双向绑定的过程。
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112803.gif)
-
-##4.2 Model层
+##4.1 Model层
 
 Model层和MVP框架的模型层使用同样的代码结构。
 
@@ -49,8 +41,8 @@ Model层和MVP框架的模型层使用同样的代码结构。
 //  CSDN:http://blog.csdn.net/y550918116j
 //  GitHub:https://github.com/937447974/Blog
 //
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
 import Foundation
@@ -82,7 +74,7 @@ class YJModel: NSObject {
         }
         self.data!["qq"] = "937447974"
         print("服务器数据处理完毕，回发中...")
-        print("Model收到服务器发回的数据，通知ViewModel层")
+        print("Model收到服务器发回的数据，通知上一层")
         print("Model End============")
         self.delegate?.execute(self)
     }
@@ -92,7 +84,7 @@ class YJModel: NSObject {
 
 定义了一个模型类Model以及网络回调协议ModelProtocol。当外部调用类遵循这种协议时即可回调数据。
 
-##4.3 ViewModel层
+##4.2 ViewModel层
 
 ViewModel优化了MVP中Presenter层，让View层彻底解放，只关心界面的展示。服务器返回的数据，在这一层就处理完毕了。
 
@@ -104,22 +96,32 @@ ViewModel优化了MVP中Presenter层，让View层彻底解放，只关心界面�
 //  CSDN:http://blog.csdn.net/y550918116j
 //  GitHub:https://github.com/937447974/Blog
 //
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
 import UIKit
 
-/// ViewModel层
-class YJViewModel: NSObject, YJModelProtocol {
+/// ViewModel层的协议,view层实现
+protocol YJViewModelProtocol {
+    
+    // 定义一系列通知UI的接口
+    func execute(viewModel: YJViewModel)
+    
+}
+
+/// ViewModel完全把Model和View进行了分离，主要的程序逻辑在ViewModel里实现。
+public class YJViewModel: YJModelProtocol {
     
     /// 姓名
-    @IBOutlet weak var nameLabel: UILabel!
+    var name: String?
+    /// view层代理
+    var delegate: YJViewModelProtocol?
     
-    func viewDidLoad() {
-        // 开始数据准备
-        print("\nViewModel层收到View层指令")
-        print("ViewModel Begin++++++++++++")
+    // 开始数据准备
+    func initData() {
+        print("\nViewModel Begin++++++++++++")
+        print("ViewModel层收到UI指令")
         // 向服务器发送数据
         let model = YJModel()
         model.data = Dictionary()
@@ -131,8 +133,10 @@ class YJViewModel: NSObject, YJModelProtocol {
     
     func execute(model: YJModel) {
         print("\nViewModel层收到Model层数据：\(model.data)")
-        self.nameLabel.text = model.data?["name"] as? String
+        self.name = model.data?["name"] as? String
+        print("ViewModel层通知UI层，数据已准备")
         print("ViewModel End++++++++++++")
+        self.delegate?.execute(self)
     }
     
 }
@@ -144,30 +148,36 @@ View层就是ViewController了。
 
 ```swift
 //
-//  YJViewController.swift
+//  ViewController.swift
 //  MVVM
 //
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/28.
-//  Copyright © 2015年 阳君. All rights reserved.
+//  Created by yangjun on 16/1/15.
+//  Copyright © 2016年 阳君. All rights reserved.
 //
 
 import UIKit
 
 /// View层
-class YJViewController: UIViewController {
-
-    /// ViewModel层
-    @IBOutlet var viewModel: YJViewModel!
+class YJViewController: UIViewController, YJViewModelProtocol {
+    
+    /// 姓名
+    @IBOutlet weak var name: UILabel!
+    /// Presenter层
+    var viewModel = YJViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View层初始化UI")
-        print("View通知ViewModel加载数据")
-        // 视图加载
-        self.viewModel.viewDidLoad()
+        print("View Begin------------")
+        self.viewModel.delegate = self
+        print("View层发出指令通知Presenter层")
+        self.viewModel.initData()// 初始化数据
+    }
+    
+    // MARK: - YJViewModelProtocol
+    func execute(viewModel: YJViewModel) {
+        print("\nView层收到Presenter层通知")
+        self.name.text = viewModel.name
+        print("View End------------")
     }
     
 }
@@ -180,23 +190,26 @@ class YJViewController: UIViewController {
 运行项目后可看见如下输出效果,会发现层与层之间的关系非常清晰，代码的可维护度非常高。
 
 ```swift
-View层初始化UI
-View通知ViewModel加载数据
+View Begin------------
+View层发出指令通知Presenter层
 
-ViewModel层收到View层指令
 ViewModel Begin++++++++++++
+ViewModel层收到UI指令
 开始请求Model层获取数据
 
 Model Begin============
 Model收到通知开始请求服务器
 服务器接收数据:Optional(["name": 阳君])
 服务器数据处理完毕，回发中...
-Model收到服务器发回的数发中...
-Model收到服务器发回的数\346\215据，通知ViewModel层
+Model收到服务器发回的数据，通知上一层
 Model End============
 
 ViewModel层收到Model层数据：Optional(["qq": 937447974, "name": 阳君])
+ViewModel层通知UI层，数据已准备
 ViewModel End++++++++++++
+
+View层收到Presenter层通知
+View End------------
 ```
 
 &#160;
