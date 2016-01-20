@@ -127,6 +127,10 @@ QQ：937447974
 
 ###<a id="NotificationCenter"/>1.5.2 NotificationCenter
 
+[NotificationCenter(简介)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/NotificationCenter/NotificationCenter(简介).md)
+
+[NotificationCenter(实战)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/NotificationCenter/NotificationCenter(实战).md)
+
 ###<a id="PhotosUI"/>1.5.3 PhotosUI
 
 [PhotosUI(PHLivePhotoView)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/PhotosUI/PhotosUI(PHLivePhotoView).md)
