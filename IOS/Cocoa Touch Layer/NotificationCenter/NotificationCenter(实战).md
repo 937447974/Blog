@@ -1,18 +1,27 @@
-NotificationCenter库主要用于在通知中心今天添加视图，在这里可以通过它快速跳入我们的项目中。
-
-如图所示
+下面将介绍使用NotificationCenter库实现如下效果图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012001.jpg)
 
+需求如下：
 
-#1 Classes
+1. 显示TodayExtension；
+2. 点击Button按钮打开主APP；
+3. 和主APP共享数据
 
-- NSObject
-    - NCWidgetController 控制视图显示和隐藏。
+#1 显示TodayExtension
 
-#2 Protocols
+##1.1 创建项目
 
-NCWidgetProviding 控制视图的布局显示区域和状态。
+和常规创建项目一样，你也可以使用你目前的项目，这里不做详细说明。
+
+##1.2 创建Today Extension
+
+打开项目后，点击Editor-Add Target
+
+如下所示
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012004.png)
+
 
 
 &#160;
