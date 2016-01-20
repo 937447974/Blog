@@ -146,7 +146,7 @@ class YJContactsUIVC: UIViewController, CNContactViewControllerDelegate {
 
 ##<a id="2.2">2.2 效果图
 
-
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012002.jpg)
 
 &#160;
 
