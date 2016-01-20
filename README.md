@@ -25,6 +25,7 @@ QQ：937447974
 1.5 [Cocoa Touch Layer](#Cocoa%20Touch%20Layer)
 
 - [ContactsUI](#ContactsUI)
+- [NotificationCenter](#NotificationCenter)
 - [MessageUI](#MessageUI)
 - [PhotosUI](#PhotosUI)
 - [UIKit](#UIKit)
@@ -118,11 +119,15 @@ QQ：937447974
 
 ###<a id="ContactsUI"/>1.5.1 ContactsUI
 
-###<a id="PhotosUI"/>1.5.2 PhotosUI
+
+
+###<a id="NotificationCenter"/>1.5.2 NotificationCenter
+
+###<a id="PhotosUI"/>1.5.3 PhotosUI
 
 [PhotosUI(PHLivePhotoView)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/PhotosUI/PhotosUI(PHLivePhotoView).md)
 
-###<a id="MessageUI"/>1.5.3 MessageUI
+###<a id="MessageUI"/>1.5.4 MessageUI
 
 [MessageUI(简介)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/MessageUI/MessageUI(简介).md)
 
@@ -130,7 +135,7 @@ QQ：937447974
 
 [MessageUI(发送短信)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/MessageUI/MessageUI(发送短信).md)
 
-###<a id="UIKit"/>1.5.4 UIKit
+###<a id="UIKit"/>1.5.5 UIKit
 
 [UIWindow简单介绍](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWindow简单介绍.md)
 
