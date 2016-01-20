@@ -112,7 +112,18 @@ func application(app: UIApplication, openURL url: NSURL, options: [String : AnyO
 
 共享数据可运用App Groups。开启App Groups如下所示。
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012006.png)
 
+接下来即可使用NSUserDefaults同步数据，核心代码如下所示。
+
+```swift
+// 数据同步
+if let user = NSUserDefaults(suiteName: "group.com.YJNotificationCenter") {
+    print(user.objectForKey("test"))
+    user.setObject("阳君测试", forKey: "test")
+    print(user.synchronize())
+}
+```
 
 &#160;
 
