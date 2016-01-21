@@ -40,6 +40,7 @@ QQ：937447974
 - [Contacts](#Contacts)
 - [Foundation](#Foundation)
 - [JavaScriptCore](#JavaScriptCore)
+- [MultipeerConnectivity](#MultipeerConnectivity)
 - [SafariServices](#SafariServices)
 - [WebKit](#WebKit)
 
@@ -293,7 +294,11 @@ QQ：937447974
 
 [JavaScriptCore框架](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/JavaScriptCore/JavaScriptCore框架.md)
 
-###<a id="SafariServices"/>1.7.4 SafariServices
+###<a id="MultipeerConnectivity"/>1.7.4 MultipeerConnectivity
+
+[MultipeerConnectivity(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MultipeerConnectivity(简介).md)
+
+###<a id="SafariServices"/>1.7.5 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
 
@@ -303,7 +308,7 @@ QQ：937447974
 
 [SFSafariViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SFSafariViewController.md)
 
-###<a id="WebKit"/>1.7.5 WebKit
+###<a id="WebKit"/>1.7.6 WebKit
 
 [WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/WebKit/WebKit(展示Web界面).md)
 
