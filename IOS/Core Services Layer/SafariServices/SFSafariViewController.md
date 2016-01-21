@@ -1,5 +1,7 @@
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
+SafariServices
+
 &#160;
 
 ----------
@@ -12,13 +14,13 @@
 
 ##Related Documentation
 
-[Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
+[Safari Services Framework Reference](https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SafariServicesFramework_Ref/index.html)
 
 ##Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-13 | 博文完成 |
+| 2016-01-21 | 博文完成 |
 
 ##Copyright
 
