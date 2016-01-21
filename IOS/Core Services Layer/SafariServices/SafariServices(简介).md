@@ -5,7 +5,7 @@
 #Classes
 
 - NSObject
-    - SFContentBlockerManager 通知Safari刷新内容屏蔽规则。
+    - SFContentBlockerManager 通知Safari加载过滤规则。
     - SSReadingList 添加URL链接到Safari浏览器的阅读列表。
 
 - UIViewController
