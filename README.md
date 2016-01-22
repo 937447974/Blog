@@ -302,6 +302,14 @@ QQ：937447974
 
 [MCSession](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCSession.md)
 
+[MCBrowserViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCBrowserViewController.md)
+
+[MCAdvertiserAssistant](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCAdvertiserAssistant.md)
+
+[MCNearbyServiceAdvertiser](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCNearbyServiceAdvertiser.md)
+
+[MCNearbyServiceBrowser](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCNearbyServiceBrowser.md)
+
 ###<a id="SafariServices"/>1.7.5 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
