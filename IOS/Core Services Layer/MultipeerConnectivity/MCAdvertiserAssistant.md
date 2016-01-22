@@ -11,7 +11,7 @@
 
 #<a id="1">1 MCAdvertiserAssistant
 
-MCAdvertiserAssistant主要用户发出广播供附近的设备发现。
+MCAdvertiserAssistant主要用于发出广播供附近的设备发现。
 
 ##<a id="1.1">1.1 Configuring and Initialization
 
