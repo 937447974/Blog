@@ -7,14 +7,14 @@ MultipeerConnectivity支持点对点连接和发现附近的设备。当无法�
 #Classes
 
 - NSObject
-    - MCAdvertiserAssistant 向用户显示传入邀请和处理用户的响应
-    - MCNearbyServiceAdvertiser 发出广播通知，供附件的设备发现并邀请
+    - MCAdvertiserAssistant 向用户显示传入邀请和处理用户的响应。
+    - MCNearbyServiceAdvertiser 发出广播通知，供附件的设备发现并邀请。
     - MCNearbyServiceBrowser 搜索发现附近的设备，并邀请加入会话。
-    - MCPeerID MCSession会话中的设备
-    - MCSession 所有连接设备的共有会话
+    - MCPeerID MCSession会话中的设备。
+    - MCSession 所有连接设备的共有会话。
 
 - UIViewController
-    - MCBrowserViewController UI搜索显示附近的设备并允许用户邀请搜索的设备加入会话
+    - MCBrowserViewController UI搜索显示附近的设备并允许用户邀请搜索的设备加入会话。
 
 #Protocols
 
