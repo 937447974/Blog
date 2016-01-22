@@ -300,6 +300,8 @@ QQ：937447974
 
 [MCPeerID](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCPeerID.md)
 
+[MCSession](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCSession.md)
+
 ###<a id="SafariServices"/>1.7.5 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
