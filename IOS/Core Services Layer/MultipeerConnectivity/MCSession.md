@@ -1,9 +1,9 @@
 **1 [MCSession](#1)**
 
-1. [Creating a Session](#2.1)
-2. [Managing Peers Manually](#2.2)
-3. [Sending Data and Resources](#2.3)
-4. [Leaving a Session](#2.4)
+1. [Creating a Session](#1.1)
+2. [Managing Peers Manually](#1.2)
+3. [Sending Data and Resources](#1.3)
+4. [Leaving a Session](#1.4)
 
 **2 [MCSessionDelegate](#2)**
 
