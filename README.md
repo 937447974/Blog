@@ -315,6 +315,10 @@ QQ：937447974
 
 [QuickLook(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QuickLook(简介).md)
 
+[QLPreviewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QLPreviewController.md)
+
+[QLPreviewItem](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QLPreviewItem.md)
+
 ###<a id="SafariServices"/>1.7.6 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
