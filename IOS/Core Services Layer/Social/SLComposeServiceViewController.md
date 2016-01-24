@@ -1,3 +1,7 @@
+SLComposeServiceViewController可以在共享平台将其他应用的数据共享到我们的应用中，如下图所示。
+
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012402.jpg)
 Social框架可使我们在分享控件中添加扩展，如Safari的分享功能。这样既可将数据快速分享到我们的应用中。
 
 使用这个框架可使用如下方法：
@@ -30,6 +34,8 @@ Social框架可使我们在分享控件中添加扩展，如Safari的分享功�
 ##Related Documentation
 
 [Social Framework Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/Social_Framework/index.html)
+
+[SLComposeServiceViewController Class Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html)
 
 ##Revision History
 
