@@ -43,6 +43,7 @@ QQ：937447974
 - [MultipeerConnectivity](#MultipeerConnectivity)
 - [QuickLook](#QuickLook)
 - [SafariServices](#SafariServices)
+- [Social](#Social)
 - [WebKit](#WebKit)
 
 1.8 [Core OS Layer](#Core_OS_Layer)
@@ -331,7 +332,11 @@ QQ：937447974
 
 [SFSafariViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SFSafariViewController.md)
 
-###<a id="WebKit"/>1.7.7 WebKit
+###<a id="Social"/>1.7.7 Social
+
+[Social(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/Social(简介).md)
+
+###<a id="WebKit"/>1.7.8 WebKit
 
 [WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/WebKit/WebKit(展示Web界面).md)
 
