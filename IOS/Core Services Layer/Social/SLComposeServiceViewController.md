@@ -1,25 +1,96 @@
+1. [Presenting the Compose View](#1)
+2. [Posting or Canceling a Post](#2)
+3. [Validating Content](#3)
+4. [Previewing Attachments](#4)
+5. [Enabling Additional Configuration](#5)
+6. [Enabling Text Autocompletion](#6)
+7. [Accessing Content in the Compose View](#7)
+
+----
+
 SLComposeServiceViewController可以在共享平台将其他应用的数据共享到我们的应用中，如下图所示。
 
-
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012402.jpg)
-Social框架可使我们在分享控件中添加扩展，如Safari的分享功能。这样既可将数据快速分享到我们的应用中。
 
-使用这个框架可使用如下方法：
+有一个可编辑文本框、一张照片、取消和确定按钮。点击确定既可将相关内容分享到我们的App中，我们还可以定制界面。
 
-1. 创建网络Session
-2. 获取用户的活动
-3. 设置新的post请求
-4. 添加附件
-5. 发布帖子
+相关数据的传播经过NSExtensionContext类。
 
-# Classes
+#<a id="1">1 Presenting the Compose View
 
-- NSObject
-    - SLComposeSheetConfigurationItem 在发布前配置相关内容
-    - SLRequest 封装http请求
-- UIViewController
-    - SLComposeServiceViewController 社会化分享
-    - SLComposeViewController
+```swift
+/// 展示动画执行完毕
+public func presentationAnimationDidFinish()
+```
+
+#<a id="2">2 Posting or Canceling a Post
+
+```swift
+/// 点击发布按钮
+public func didSelectPost()
+    
+/// 点击取消按钮
+public func didSelectCancel()
+    
+/// 关闭分享界面
+public func cancel()
+```
+
+#<a id="3">3 Validating Content
+
+```swift
+/// 判断当前内容是否有效
+public func isContentValid() -> Bool
+    
+/// 内容校验
+public func validateContent()
+    
+/// 剩下可写入字符数
+public var charactersRemaining: NSNumber!
+```
+
+#<a id="4">4 Previewing Attachments
+
+```swift
+/// 附近View
+public func loadPreviewView() -> UIView!
+```
+
+#<a id="5">5 Enabling Additional Configuration
+
+```swift
+/// 配置[SLComposeSheetConfigurationItem]
+public func configurationItems() -> [AnyObject]!
+    
+/// 刷新[SLComposeSheetConfigurationItem]
+public func reloadConfigurationItems()
+
+/// 进入下一个视图
+public func pushConfigurationViewController(viewController: UIViewController!)
+    
+/// 回到上个视图
+public func popConfigurationViewController()
+```
+
+#<a id="6">6 Enabling Text Autocompletion
+
+```swift
+/// 文本控制器
+public var autoCompletionViewController: UIViewController!
+```
+
+#<a id="7">7 Accessing Content in the Compose View
+
+```swift
+/// UITextView框
+public var textView: UITextView! { get }
+
+/// 内容
+public var contentText: String! { get }
+    
+/// 默认显示
+public var placeholder: String!
+```
 
 &#160;
 
