@@ -336,6 +336,11 @@ QQ：937447974
 
 [Social(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/Social(简介).md)
 
+[SLComposeServiceViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/SLComposeServiceViewController.md)
+
+
+
+
 ###<a id="WebKit"/>1.7.8 WebKit
 
 [WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/WebKit/WebKit(展示Web界面).md)
