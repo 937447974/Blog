@@ -75,7 +75,7 @@ public func popConfigurationViewController()
 #<a id="6">6 Enabling Text Autocompletion
 
 ```swift
-/// 文本控制器
+/// 扩展界面
 public var autoCompletionViewController: UIViewController!
 ```
 
