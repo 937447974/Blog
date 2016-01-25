@@ -1,95 +1,113 @@
-1. [Presenting the Compose View](#1)
-2. [Posting or Canceling a Post](#2)
-3. [Validating Content](#3)
-4. [Previewing Attachments](#4)
-5. [Enabling Additional Configuration](#5)
-6. [Enabling Text Autocompletion](#6)
-7. [Accessing Content in the Compose View](#7)
+**1 [SLComposeViewController](#1)**
+
+1. [Creating a Social Compose View Controller](#1.1)
+2. [Checking the Social Service Type](#1.2)
+3. [Composing Posts](#1.3)
+4. [Handling Results](#1.4)
+
+**2 [实战演练](#2)**
 
 ----
 
-SLComposeServiceViewController主要用于在当前应用开启分享界面，快速分享相关内容到其他APP或社交平台。
+#<a id="1">1 SLComposeViewController
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012402.jpg)
+SLComposeViewController主要用于在当前应用开启分享界面，快速分享相关内容到其他APP或社交平台。如下所示
 
-有一个可编辑文本框、一张照片、取消和确定按钮。点击确定既可将相关内容分享到我们的App中，我们还可以定制界面。
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012501.jpg)
 
-相关数据的传播经过NSExtensionContext类。
-
-#<a id="1">1 Presenting the Compose View
+##<a id="1.1">1.1 Creating a Social Compose View Controller
 
 ```swift
-/// 展示动画执行完毕
-public func presentationAnimationDidFinish()
+/// 根据扩展的Bundle identifier初始化
+public init!(forServiceType serviceType: String!)
 ```
 
-#<a id="2">2 Posting or Canceling a Post
+##<a id="1.2">1.2 Checking the Social Service Type
 
 ```swift
-/// 点击发布按钮
-public func didSelectPost()
+/// 判断该分享扩展是否支持
+public class func isAvailableForServiceType(serviceType: String!) -> Bool
     
-/// 点击取消按钮
-public func didSelectCancel()
-    
-/// 关闭分享界面
-public func cancel()
+/// 获取分享扩展的类型编码
+public var serviceType: String! { get }
 ```
 
-#<a id="3">3 Validating Content
+##<a id="1.3">1.3 Composing Posts
 
 ```swift
-/// 判断当前内容是否有效
-public func isContentValid() -> Bool
+/// 设置默认内容
+public func setInitialText(text: String!) -> Bool
     
-/// 内容校验
-public func validateContent()
+/// 添加图片
+public func addImage(image: UIImage!) -> Bool
     
-/// 剩下可写入字符数
-public var charactersRemaining: NSNumber!
+/// 清空所有图片
+public func removeAllImages() -> Bool
+    
+/// 添加url链接
+public func addURL(url: NSURL!) -> Bool
+    
+/// 清空所有链接
+public func removeAllURLs() -> Bool
 ```
 
-#<a id="4">4 Previewing Attachments
+##<a id="1.4">1.4 Handling Results
 
 ```swift
-/// 附近View
-public func loadPreviewView() -> UIView!
+/// 分享结果监听
+public var completionHandler: SLComposeViewControllerCompletionHandler!
 ```
 
-#<a id="5">5 Enabling Additional Configuration
+#<a id="2">2 实战演练
+
+应用内打开分享扩展很简单，只需如下所示。
 
 ```swift
-/// 配置[SLComposeSheetConfigurationItem]
-public func configurationItems() -> [AnyObject]!
+//
+//  ViewController.swift
+//  YJSocial
+//
+//  CSDN:http://blog.csdn.net/y550918116j
+//  GitHub:https://github.com/937447974/Blog
+//
+//  Created by yangjun on 16/1/24.
+//  Copyright © 2016年 阳君. All rights reserved.
+//
+
+import UIKit
+import Social
+
+/// 快速分享
+class ViewController: UIViewController {
     
-/// 刷新[SLComposeSheetConfigurationItem]
-public func reloadConfigurationItems()
-
-/// 进入下一个视图
-public func pushConfigurationViewController(viewController: UIViewController!)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
-/// 回到上个视图
-public func popConfigurationViewController()
-```
-
-#<a id="6">6 Enabling Text Autocompletion
-
-```swift
-/// 扩展界面
-public var autoCompletionViewController: UIViewController!
-```
-
-#<a id="7">7 Accessing Content in the Compose View
-
-```swift
-/// UITextView框
-public var textView: UITextView! { get }
-
-/// 内容
-public var contentText: String! { get }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        // 分享到当前应用扩展（微博分享SLServiceTypeSinaWeibo）
+        let serviceType = "com.YJSocial.ShareExtension" // 扩展Bundle identifier
+        guard SLComposeViewController.isAvailableForServiceType(serviceType) else {
+            print("不支持:\(serviceType)")
+            return
+        }
+        let vc = SLComposeViewController(forServiceType: serviceType)
+        vc.setInitialText(serviceType) // 默认内容
+        // 处理结果回调
+        vc.completionHandler =  {(result: SLComposeViewControllerResult) -> Void in
+            switch result {
+            case SLComposeViewControllerResult.Cancelled:
+                print("Cancelled")
+            case SLComposeViewControllerResult.Done:
+                print("Done")
+            }
+        }
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     
-/// 默认显示
-public var placeholder: String!
+}
 ```
 
 &#160;
@@ -106,13 +124,13 @@ public var placeholder: String!
 
 [Social Framework Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/Social_Framework/index.html)
 
-[SLComposeServiceViewController Class Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeServiceViewController_Class/index.html)
+[SLComposeViewController Class Reference](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html)
 
 ##Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-24 | 博文完成 |
+| 2016-01-25 | 博文完成 |
 
 ##Copyright
 
