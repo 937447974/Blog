@@ -340,8 +340,7 @@ QQ：937447974
 
 [SLComposeViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/SLComposeViewController.md)
 
-
-
+[SLRequest](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/SLRequest.md)
 
 ###<a id="WebKit"/>1.7.8 WebKit
 
