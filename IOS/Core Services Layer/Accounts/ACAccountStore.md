@@ -1,14 +1,52 @@
-Accounts Framework能够帮助我们访问账户库中的账户信息。可以用做服务的身份验证，如新浪微博。也可以通过它创建和保存一个用户账户，通过存储账号即可快速实现登录功能。
+ACAccountStore管理账户授权及对账户ACAccount的增、删、改和查。
 
-目前支持的账户有Twitter、Facebook、新浪微博和腾讯微博。查看IOS 9的手机设置发现有Flickr和Vimeo、估计后续会支持这两个账户。
+#1 Getting Accounts
 
-#Classes
+```swift
+/// 获取所有账户
+public var accounts: [AnyObject]? { get }
+    
+/// 根据账户标示符获取账户
+public func accountWithIdentifier(identifier: String!) -> ACAccount!
+    
+/// 根据账户类型获取账户
+public func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]!
+```
 
-- NSObject
-    - ACAccount 用户账号信息。
-    - ACAccountCredential 用户的权限验证信息，如token。
-    - ACAccountStore ACAccountStore提供访问、修改和存储账号的接口。
-    - ACAccountType 封装所有特定类型的账户信息。
+#2 Getting Account Types
+
+```swift
+/// 获取账户类型，如获取微博，传入ACAccountTypeIdentifierSinaWeibo
+public func accountTypeWithAccountTypeIdentifier(typeIdentifier: String!) -> ACAccountType!
+```
+
+#3 Saving Accounts
+
+```swift
+/// 保存账户
+public func saveAccount(account: ACAccount!, withCompletionHandler completionHandler: ACAccountStoreSaveCompletionHandler!)
+```
+
+#4 Requesting Access
+
+```swift
+// 用户授权
+public func requestAccessToAccountsWithType(accountType: ACAccountType!, options: [NSObject : AnyObject]!, completion: ACAccountStoreRequestAccessCompletionHandler!)
+```
+
+#5 Renewing Account Credentials
+
+```swift
+// 更新账户
+public func renewCredentialsForAccount(account: ACAccount!, completion completionHandler: ACAccountStoreCredentialRenewalHandler!)
+```
+
+#6 Removing Accounts
+
+```swift
+// 删除账户
+public func removeAccount(account: ACAccount!, withCompletionHandler completionHandler: ACAccountStoreRemoveCompletionHandler!)
+```
 
 &#160;
 
@@ -23,6 +61,8 @@ Accounts Framework能够帮助我们访问账户库中的账户信息。可以�
 ##Related Documentation
 
 [Accounts Framework Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/AccountsFrameworkRef/index.html)
+
+[ACAccountStore Class Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountStoreClassRef/index.html)
 
 ##Revision History
 
