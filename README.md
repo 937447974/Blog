@@ -269,7 +269,7 @@ QQ：937447974
 
 [ACAccount](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Accounts/ACAccount.md)
 
-[ACAccountType](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Accounts/ACAccountType.md)
+[ACAccountCredential](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Accounts/ACAccountCredential.md)
 
 ###<a id="Contacts"/>1.7.2 Contacts
 
