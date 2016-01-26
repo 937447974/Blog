@@ -1,14 +1,21 @@
-Accounts Framework能够帮助我们访问账户库中的账户信息。可以用做服务的身份验证，如新浪微博。也可以通过它创建和保存一个用户账户，通过存储账号即可快速实现登录功能。
+ACAccountCredential记录账户的身份信息。
 
-目前支持的账户有Twitter、Facebook、新浪微博和腾讯微博。查看IOS 9的手机设置发现有Flickr和Vimeo、估计后续会支持这两个账户。
+#1 Initializing Credentials
 
-#Classes
+```swift
+// 初始化ACAccountCredential
+public init!(OAuthToken token: String!, tokenSecret secret: String!)
+    
+// 初始化ACAccountCredential
+public init!(OAuth2Token token: String!, refreshToken: String!, expiryDate: NSDate!)
+```
 
-- NSObject
-    - ACAccount 用户账号信息。
-    - ACAccountCredential 用户的权限验证信息，如token。
-    - ACAccountStore ACAccountStore提供访问、修改和存储账号的接口。
-    - ACAccountType 封装所有特定类型的账户信息。
+#2 Accessing Credential Properties
+
+```swift
+// OAuth2证书token
+public var oauthToken: String!
+```
 
 &#160;
 
@@ -23,6 +30,8 @@ Accounts Framework能够帮助我们访问账户库中的账户信息。可以�
 ##Related Documentation
 
 [Accounts Framework Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/AccountsFrameworkRef/index.html)
+
+[ACAccountCredential Class Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html)
 
 ##Revision History
 
