@@ -41,6 +41,7 @@ QQ：937447974
 - [AdSupport](#AdSupport)
 - [Contacts](#Contacts)
 - [CoreMotion](#CoreMotion)
+- [CoreSpotlight](#CoreSpotlight)
 - [Foundation](#Foundation)
 - [JavaScriptCore](#JavaScriptCore)
 - [MultipeerConnectivity](#MultipeerConnectivity)
@@ -308,6 +309,14 @@ QQ：937447974
 [CMPedometer](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMPedometer.md)
 
 [CMSensorRecorder](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMSensorRecorder.md)
+
+###<a id="CoreSpotlight"/>1.7.5 CoreSpotlight
+
+[CMSensorRecorder](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMSensorRecorder.md)
+
+CoreSpotlight(简介).mdCSSearchableIndex.mdCSSearchableItem.mdCSSearchableItemAttributeSet.md
+
+CoreSpotlight
 
 ###<a id="Foundation"/>1.7.5 Foundation
 
