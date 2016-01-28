@@ -92,9 +92,11 @@ QQ：937447974
 
 [PHCollectionList+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHCollectionList%2BExtension.md)
 
-[PHAsset+Extension.md](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHAsset%2BExtension.md)
+[PHAsset+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/PHAsset%2BExtension.md)
 
-[ACAccountStore +Extension.md](https://github.com/937447974/Blog/blob/master/IOS/Extension/ACAccountStore%2BExtension.md)
+[ACAccountStore+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/ACAccountStore%2BExtension.md)
+
+[CMMotionActivity+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/CMMotionActivity%2BExtension.md)
 
 ##<a id="Objective-C"/>1.3 Objective-C
 
@@ -297,6 +299,16 @@ QQ：937447974
 
 [CoreMotion(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CoreMotion(简介).md)
 
+[CMMotionManager](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMMotionManager.md)
+
+[CMMotionActivityManager](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMMotionActivityManager.md)
+
+[CMAltimeter](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMAltimeter.md)
+
+[CMPedometer](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMPedometer.md)
+
+[CMSensorRecorder](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMSensorRecorder.md)
+
 ###<a id="Foundation"/>1.7.5 Foundation
 
 [JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/JSON解析.md)
@@ -311,7 +323,7 @@ QQ：937447974
 
 [URL Session(NSURLSessionDownloadTask)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDownloadTask).md)
 
-[URL Session(Cache).md](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cache).md)
+[URL Session(Cache)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cache).md)
 
 [URL Session(Cookie)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(Cookie).md)
 
