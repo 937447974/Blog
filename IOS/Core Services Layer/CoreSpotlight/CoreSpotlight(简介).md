@@ -1,4 +1,6 @@
-Core Motion Framework使我们的应用接受运动事件，同时还支持我们处理加速计。对于有内置螺旋仪的设备，可以通过螺旋仪的数据反应当前设备的状态。这也就意味着，我们可以通过监听设备的状态给用户带来更好的应用体验。
+
+![](https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/Art/Health_result_1x.png)
+
 
 #Classes
 
@@ -31,6 +33,8 @@ The CSSearchableItemAttributeSet class defines an object that encapsulates the s
 ##Related Documentation
 
 [Core Spotlight Framework Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/index.html)
+
+[App Search Programming Guide](https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/index.html)
 
 ##Revision History
 
