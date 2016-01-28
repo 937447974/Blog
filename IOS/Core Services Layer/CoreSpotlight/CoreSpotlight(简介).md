@@ -1,5 +1,4 @@
-
-![](https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/Art/Health_result_1x.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012802.png)![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012803.png)
 
 
 #Classes
