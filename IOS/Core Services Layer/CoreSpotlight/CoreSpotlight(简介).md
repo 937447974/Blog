@@ -1,3 +1,5 @@
+ 使用CoreSpotligh库，可以使我们的应用在搜索栏添加检索内容，使用户快速搜索想要查询的内容，如下图所示。
+
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012802.png)![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012803.png)
 
 
