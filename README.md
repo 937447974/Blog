@@ -18,11 +18,13 @@ QQ：937447974
 
 1.2 [Extension](#Extension)
 
-1.3 [Object-C](#Objective-C)
+1.3 [Utils](#Utils)
 
-1.4 [Swift](#Swift)
+1.4 [Object-C](#Objective-C)
 
-1.5 [Cocoa Touch Layer](#Cocoa_Touch_Layer)
+1.5 [Swift](#Swift)
+
+1.6 [Cocoa Touch Layer](#Cocoa_Touch_Layer)
 
 - [ContactsUI](#ContactsUI)
 - [NotificationCenter](#NotificationCenter)
@@ -30,12 +32,12 @@ QQ：937447974
 - [PhotosUI](#PhotosUI)
 - [UIKit](#UIKit)
 
-1.6 [Media Layer](#Media_Layer)
+1.7 [Media Layer](#Media_Layer)
 
 - [ImageIO](#ImageIO)
 - [Photos](#Photos)
 
-1.7 [Core Services Layer](#Core_Services_Layer)
+1.8 [Core Services Layer](#Core_Services_Layer)
 
 - [Accounts](#Accounts)
 - [AdSupport](#AdSupport)
@@ -100,11 +102,21 @@ QQ：937447974
 
 [CMMotionActivity+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/CMMotionActivity%2BExtension.md)
 
-##<a id="Objective-C"/>1.3 Objective-C
+##<a id="Utils"/>1.3 Utils
+
+[YJUtilsAPP](https://github.com/937447974/Blog/blob/master/IOS/Utils/YJUtilsAPP.md)
+
+[YJUtilsDeviceType](https://github.com/937447974/Blog/blob/master/IOS/Utils/YJUtilsDeviceType.md)
+
+[YJUtilsScreenSize](https://github.com/937447974/Blog/blob/master/IOS/Utils/YJUtilsScreenSize.md)
+
+[YJUtilsUserInterfaceIdiom](https://github.com/937447974/Blog/blob/master/IOS/Utils/YJUtilsUserInterfaceIdiom.md)
+
+##<a id="Objective-C"/>1.4 Objective-C
 
 [Blocks Programming](https://github.com/937447974/Blog/blob/master/IOS/Objective-C/Blocks%20Programming.md)
 
-##<a id="Swift"/>1.4 Swift
+##<a id="Swift"/>1.5 Swift
 
 [方法(Methods)](https://github.com/937447974/Blog/blob/master/IOS/Swift/方法(Methods).md)
 
@@ -128,9 +140,9 @@ QQ：937447974
 
 [高级运算符(Advanced Operators)](https://github.com/937447974/Blog/blob/master/IOS/Swift/高级运算符(Advanced%20Operators).md)
 
-##<a id="Cocoa_Touch_Layer"/>1.5 Cocoa Touch Layer
+##<a id="Cocoa_Touch_Layer"/>1.6 Cocoa Touch Layer
 
-###<a id="ContactsUI"/>1.5.1 ContactsUI
+###<a id="ContactsUI"/>1.6.1 ContactsUI
 
 [ContactsUI(简介)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/ContactsUI/ContactsUI(简介).md)
 
@@ -138,17 +150,17 @@ QQ：937447974
 
 [ContactsUI(修改联系人)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/ContactsUI/ContactsUI(修改联系人).md)
 
-###<a id="NotificationCenter"/>1.5.2 NotificationCenter
+###<a id="NotificationCenter"/>1.6.2 NotificationCenter
 
 [NotificationCenter(简介)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/NotificationCenter/NotificationCenter(简介).md)
 
 [NotificationCenter(实战)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/NotificationCenter/NotificationCenter(实战).md)
 
-###<a id="PhotosUI"/>1.5.3 PhotosUI
+###<a id="PhotosUI"/>1.6.3 PhotosUI
 
 [PhotosUI(PHLivePhotoView)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/PhotosUI/PhotosUI(PHLivePhotoView).md)
 
-###<a id="MessageUI"/>1.5.4 MessageUI
+###<a id="MessageUI"/>1.6.4 MessageUI
 
 [MessageUI(简介)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/MessageUI/MessageUI(简介).md)
 
@@ -156,7 +168,7 @@ QQ：937447974
 
 [MessageUI(发送短信)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/MessageUI/MessageUI(发送短信).md)
 
-###<a id="UIKit"/>1.5.5 UIKit
+###<a id="UIKit"/>1.6.5 UIKit
 
 [UIWindow简单介绍](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIWindow简单介绍.md)
 
@@ -214,9 +226,9 @@ QQ：937447974
 
 [UIGestureRecognizer(高级)](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UIGestureRecognizer(高级).md)
 
-##<a id="Media_Layer"/>1.6 Media Layer
+##<a id="Media_Layer"/>1.7 Media Layer
 
-###<a id="ImageIO"/> 1.6.1 ImageIO
+###<a id="ImageIO"/> 1.7.1 ImageIO
 
 [CGImageDestination Reference](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/ImageIO/CGImageDestination%20Reference.md)
 
@@ -224,7 +236,7 @@ QQ：937447974
 
 [ImageIO实战](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/ImageIO/ImageIO实战.md)
 
-###<a id="Photos"/> 1.6.2 Photos
+###<a id="Photos"/> 1.7.2 Photos
 
 [Photos(简介)](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/Photos(简介).md)
 
@@ -263,9 +275,9 @@ QQ：937447974
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 [](https://github.com/937447974/Blog/blob/master/IOS/Media%20Layer/Photos/.md)
 
-##<a id="Core_Services_Layer"/>1.7 Core Services Layer
+##<a id="Core_Services_Layer"/>1.8 Core Services Layer
 
-###<a id="Accounts"/>1.7.1 Accounts
+###<a id="Accounts"/>1.8.1 Accounts
 
 [Accounts(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Accounts/Accounts(简介).md)
 
@@ -277,11 +289,11 @@ QQ：937447974
 
 [ACAccountCredential](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Accounts/ACAccountCredential.md)
 
-###<a id="AdSupport"/>1.7.2 AdSupport
+###<a id="AdSupport"/>1.8.2 AdSupport
 
 [AdSupport(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/AdSupport(简介).md)
 
-###<a id="Contacts"/>1.7.3 Contacts
+###<a id="Contacts"/>1.8.3 Contacts
 
 [Contacts(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/Contacts(简介).md)
 
@@ -297,7 +309,7 @@ QQ：937447974
 
 [Contacts(实战)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Contacts/Contacts(实战).md)
 
-###<a id="CoreMotion"/>1.7.4 CoreMotion
+###<a id="CoreMotion"/>1.8.4 CoreMotion
 
 [CoreMotion(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CoreMotion(简介).md)
 
@@ -311,7 +323,7 @@ QQ：937447974
 
 [CMSensorRecorder](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreMotion/CMSensorRecorder.md)
 
-###<a id="CoreSpotlight"/>1.7.5 CoreSpotlight
+###<a id="CoreSpotlight"/>1.8.5 CoreSpotlight
 
 [CoreSpotlight(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreSpotlight/CoreSpotlight(简介).md)
 
@@ -321,7 +333,7 @@ QQ：937447974
 
 [CSSearchableItemAttributeSet](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreSpotlight/CSSearchableItemAttributeSet.md)
 
-###<a id="CoreTelephony"/>1.7.6 CoreTelephony
+###<a id="CoreTelephony"/>1.8.6 CoreTelephony
 
 [CoreTelephony(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CoreTelephony(简介).md)
 
@@ -335,7 +347,7 @@ QQ：937447974
 
 [CTCall](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTCall.md)
 
-###<a id="Foundation"/>1.7.7 Foundation
+###<a id="Foundation"/>1.8.7 Foundation
 
 [JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/JSON解析.md)
 
@@ -355,11 +367,11 @@ QQ：937447974
 
 [Runtime关联引用](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/Runtime关联引用.md)
 
-###<a id="JavaScriptCore"/>1.7.8 JavaScriptCore
+###<a id="JavaScriptCore"/>1.8.8 JavaScriptCore
 
 [JavaScriptCore框架](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/JavaScriptCore/JavaScriptCore框架.md)
 
-###<a id="MultipeerConnectivity"/>1.7.9 MultipeerConnectivity
+###<a id="MultipeerConnectivity"/>1.8.9 MultipeerConnectivity
 
 [MultipeerConnectivity(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MultipeerConnectivity(简介).md)
 
@@ -375,7 +387,7 @@ QQ：937447974
 
 [MCNearbyServiceBrowser](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCNearbyServiceBrowser.md)
 
-###<a id="QuickLook"/>1.7.10 QuickLook
+###<a id="QuickLook"/>1.8.10 QuickLook
 
 [QuickLook(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QuickLook(简介).md)
 
@@ -385,7 +397,7 @@ QQ：937447974
 
 [QuickLook(实战)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QuickLook(实战).md)
 
-###<a id="SafariServices"/>1.7.11 SafariServices
+###<a id="SafariServices"/>1.8.11 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
 
@@ -395,7 +407,7 @@ QQ：937447974
 
 [SFSafariViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SFSafariViewController.md)
 
-###<a id="Social"/>1.7.12 Social
+###<a id="Social"/>1.8.12 Social
 
 [Social(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/Social(简介).md)
 
@@ -405,7 +417,7 @@ QQ：937447974
 
 [SLRequest](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/SLRequest.md)
 
-###<a id="WebKit"/>1.7.13 WebKit
+###<a id="WebKit"/>1.8.13 WebKit
 
 [WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/WebKit/WebKit(展示Web界面).md)
 
