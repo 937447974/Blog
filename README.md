@@ -42,6 +42,7 @@ QQ：937447974
 - [Contacts](#Contacts)
 - [CoreMotion](#CoreMotion)
 - [CoreSpotlight](#CoreSpotlight)
+- [CoreTelephony](#CoreTelephony)
 - [Foundation](#Foundation)
 - [JavaScriptCore](#JavaScriptCore)
 - [MultipeerConnectivity](#MultipeerConnectivity)
@@ -320,7 +321,21 @@ QQ：937447974
 
 [CSSearchableItemAttributeSet](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreSpotlight/CSSearchableItemAttributeSet.md)
 
-###<a id="Foundation"/>1.7.6 Foundation
+###<a id="CoreTelephony"/>1.7.6 CoreTelephony
+
+[CoreTelephony(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CoreTelephony(简介).md)
+
+[CTSubscriber](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTSubscriber.md)
+
+[CTTelephonyNetworkInfo](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTTelephonyNetworkInfo.md)
+
+[CTCallCenter](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTCallCenter.md)
+
+[CTCarrier](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTCarrier.md)
+
+[CTCall](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/CoreTelephony/CTCall.md)
+
+###<a id="Foundation"/>1.7.7 Foundation
 
 [JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/JSON解析.md)
 
@@ -340,11 +355,11 @@ QQ：937447974
 
 [Runtime关联引用](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/Runtime关联引用.md)
 
-###<a id="JavaScriptCore"/>1.7.7 JavaScriptCore
+###<a id="JavaScriptCore"/>1.7.8 JavaScriptCore
 
 [JavaScriptCore框架](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/JavaScriptCore/JavaScriptCore框架.md)
 
-###<a id="MultipeerConnectivity"/>1.7.8 MultipeerConnectivity
+###<a id="MultipeerConnectivity"/>1.7.9 MultipeerConnectivity
 
 [MultipeerConnectivity(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MultipeerConnectivity(简介).md)
 
@@ -360,7 +375,7 @@ QQ：937447974
 
 [MCNearbyServiceBrowser](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/MultipeerConnectivity/MCNearbyServiceBrowser.md)
 
-###<a id="QuickLook"/>1.7.9 QuickLook
+###<a id="QuickLook"/>1.7.10 QuickLook
 
 [QuickLook(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QuickLook(简介).md)
 
@@ -370,7 +385,7 @@ QQ：937447974
 
 [QuickLook(实战)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/QuickLook/QuickLook(实战).md)
 
-###<a id="SafariServices"/>1.7.10 SafariServices
+###<a id="SafariServices"/>1.7.11 SafariServices
 
 [SafariServices(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SafariServices(简介).md)
 
@@ -380,7 +395,7 @@ QQ：937447974
 
 [SFSafariViewController](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/SafariServices/SFSafariViewController.md)
 
-###<a id="Social"/>1.7.11 Social
+###<a id="Social"/>1.7.12 Social
 
 [Social(简介)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/Social(简介).md)
 
@@ -390,7 +405,7 @@ QQ：937447974
 
 [SLRequest](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Social/SLRequest.md)
 
-###<a id="WebKit"/>1.7.12 WebKit
+###<a id="WebKit"/>1.7.13 WebKit
 
 [WebKit(展示Web界面)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/WebKit/WebKit(展示Web界面).md)
 
