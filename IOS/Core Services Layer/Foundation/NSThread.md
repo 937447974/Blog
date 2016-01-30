@@ -150,7 +150,7 @@ public var qualityOfService: NSQualityOfService // read-only after the thread is
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-13 | 博文完成 |
+| 2016-01-30 | 博文完成 |
 
 ##Copyright
 
