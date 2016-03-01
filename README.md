@@ -491,6 +491,8 @@ QQ：937447974
 
 [SourceTree](https://github.com/937447974/Blog/blob/master/Git/SourceTree.md)
 
+[生成SSH key](https://github.com/937447974/Blog/blob/master/Git/生成SSH%20key.md)
+
 [Git移除敏感数据](https://github.com/937447974/Blog/blob/master/Git/Git移除敏感数据.md)
 
 [Git忽略文件](https://github.com/937447974/Blog/blob/master/Git/Git忽略文件.md)
