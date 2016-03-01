@@ -515,4 +515,4 @@ QQ：937447974
 
 [三十年后，你有多少钱](https://github.com/937447974/Blog/blob/master/综合/三十年后，你有多少钱.md)
 
-[一万小时定律](https://github.com/937447974/Blog/blob/master/综合/一万小时定律.md)
+[一万小时定律](https://github.com/937447974/Blog/blob/master/综合/一万小时定律.md) 
