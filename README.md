@@ -82,6 +82,8 @@ QQ：937447974
 
 [系统按钮本地化](https://github.com/937447974/Blog/blob/master/IOS/Develop/系统按钮本地化.md)
 
+[Block循环引用](https://github.com/937447974/Blog/blob/master/IOS/Develop/Block循环引用.md)
+
 ##<a id="Extension"/>1.2 Extension
 
 [UIViewController+Extension](https://github.com/937447974/Blog/blob/master/IOS/Extension/UIViewController%2BExtension.md)
