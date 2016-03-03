@@ -42,7 +42,7 @@
 
 #2 ARC模式解决循环引用
 
-ARC模式下使用__block解决循环引用。
+ARC模式下使用__weak解决循环引用。
 
 ```objc
 - (void)viewDidLoad
