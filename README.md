@@ -507,6 +507,8 @@ QQ：937447974
 
 [ZSH安装](https://github.com/937447974/Blog/blob/master/工作/ZSH安装.md)
 
+[CocoaPods安装](https://github.com/937447974/Blog/blob/master/工作/CocoaPods安装.md)
+
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
 
 #<a id="综合"/>7 综合
