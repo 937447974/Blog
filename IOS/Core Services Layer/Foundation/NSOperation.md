@@ -7,7 +7,14 @@
 
 -----
 
-NSOperation是一个任务的抽象接口，我们主要使用它的子类NSInvocationOperation和NSBlockOperation。我们也可以自定义Operation，继承NSOperation即可。
+NSOperation是一个任务的抽象接口，我们主要使用它的子类。也可以使用自定义的Operation，继承NSOperation即可。
+
+NSOperation的子类有如下几种:
+
+1. CKOperation：CloudKit库中的类，主要为执行cloud操作提供操作基类。
+2. NSBlockOperation：以block的方式添加任务。
+3. NSInvocationOperation：以target的方式添加任务，swift已废弃。
+4. UIActivityItemProvider：UIKit库中的类，主要用于UIActivityViewController处理数据时的协议。
 
 **Subclassing Notes**
 
