@@ -375,8 +375,6 @@ QQ：937447974
 
 [NSOperationQueue](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSOperationQueue.md)
 
-[NSInvocationOperation](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSInvocationOperation.md)
-
 [NSBlockOperation](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSBlockOperation.md)
 
 [](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/.md)
