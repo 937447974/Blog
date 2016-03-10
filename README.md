@@ -353,7 +353,7 @@ QQ：937447974
 
 [JSON解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/JSON解析.md)
 
-[XML解析](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/XML解析.md)
+[NSXMLParser](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSXMLParser.md)
 
 [URL Session(NSURLSession)](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSession).md)
 
