@@ -381,8 +381,6 @@ QQ：937447974
 
 [NSBundle](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSBundle.md)
 
-[NSBundleResourceRequest](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSBundleResourceRequest.md)
-
 [](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/.md)
 
 ###<a id="JavaScriptCore"/>1.8.8 JavaScriptCore
