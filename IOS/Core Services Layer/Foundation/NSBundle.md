@@ -9,8 +9,9 @@
 9. [Managing Localizations](#9)
 10. [Managing Preservation Priority for On Demand Resources](#10)
 
-NSBundle主要用于快速访问APP中的资源文件，如xib、plist、image等。
+-----
 
+NSBundle主要用于快速访问APP中的资源文件，如xib、plist、image等。
 
 #<a id="1">1 Initializing an NSBundle
 
