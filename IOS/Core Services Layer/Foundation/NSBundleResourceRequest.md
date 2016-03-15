@@ -29,11 +29,11 @@ NSBundleResourceRequest是用于按需加载资源的下载控制。按需加载
 
 按需加载资源的生命周期如下所示：
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016031601.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016031501.png)
 
 可以用如下方式快速创建tag
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016031602.png)
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016031502.png)
 
 在Resource Tags选项卡的Prefetched界面下，可以把tag分配给三个预获取优先级分类的其中一个。
 
@@ -42,10 +42,30 @@ NSBundleResourceRequest是用于按需加载资源的下载控制。按需加载
 - 按需下载（Dowloaded only on demand）。当app请求一个tag，且tag没有缓存时，才会下载该tag。
 
 #<a id="1">Initializing a Resource Request
+
+```swift
+```
+
 #<a id="2">Accessing the Configuration
+
+```swift
+```
+
 #<a id="3">Requesting Resources
+
+```swift
+```
+
 #<a id="4">Setting the Download Priority
+
+```swift
+```
+
 #<a id="5">Tracking Progress
+
+```swift
+```
+
 
 
 &#160;
