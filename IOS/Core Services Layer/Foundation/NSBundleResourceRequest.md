@@ -6,7 +6,7 @@
 
 ----
 
-NSBundleResourceRequest是用于按需加载资源的下载控制。按需加载资源是由App Store托管的内容，它和下载的app bundle是分开的。app请求一系列按需加载资源，而下载和存储资源是由操作系统来管理。这些资源可以是除可执行代码外，bundle支持的任何类型。
+NSBundleResourceRequest是iOS9的新特性，主要用于按需加载资源的下载控制。按需加载资源是由App Store托管的内容，它和下载的app bundle是分开的。app请求一系列按需加载资源，而下载和存储资源是由操作系统来管理。这些资源可以是除可执行代码外，bundle支持的任何类型。
 
 支持的类型
 
@@ -41,32 +41,60 @@ NSBundleResourceRequest是用于按需加载资源的下载控制。按需加载
 - 按顺序预获取tag（Prefetch tag order）。在app安装后会开始下载tag。tag会按照此处指定的顺序来下载。 
 - 按需下载（Dowloaded only on demand）。当app请求一个tag，且tag没有缓存时，才会下载该tag。
 
-#<a id="1">Initializing a Resource Request
+#<a id="1">1 Initializing a Resource Request
 
 ```swift
+/// 初始化NSBundleResourceRequest
+///
+/// - parameter tags : 相关tags
+///
+/// - returns: NSBundleResourceRequest
+public convenience init(tags: Set<String>)
+    
+/// 初始化NSBundleResourceRequest
+///
+/// - parameter tags : 相关tags
+/// - parameter bundle : 包
+///
+/// - returns: NSBundleResourceRequest
+public init(tags: Set<String>, bundle: NSBundle)
 ```
 
-#<a id="2">Accessing the Configuration
+#<a id="2">2 Accessing the Configuration
 
 ```swift
+/// 加载的tags
+public var tags: Set<String> { get }
+/// 对应的NSBundle
+public var bundle: NSBundle { get }
 ```
 
-#<a id="3">Requesting Resources
+#<a id="3">3 Requesting Resources
 
 ```swift
+// 开始加载资源
+public func beginAccessingResourcesWithCompletionHandler(completionHandler: (NSError?) -> Void)
+    
+// 资源是否加载完成
+public func conditionallyBeginAccessingResourcesWithCompletionHandler(completionHandler: (Bool) -> Void)
+    
+// 取消加载资源
+public func endAccessingResources()
 ```
 
-#<a id="4">Setting the Download Priority
+#<a id="4">4 Setting the Download Priority
 
 ```swift
+/// 加载级别(0...1,默认0.5)
+public var loadingPriority: Double
 ```
 
-#<a id="5">Tracking Progress
+#<a id="5">5 Tracking Progress
 
 ```swift
+// 资源加载管理器
+public var progress: NSProgress { get }
 ```
-
-
 
 &#160;
 
