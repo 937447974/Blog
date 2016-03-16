@@ -383,6 +383,12 @@ QQ：937447974
 
 [NSBundleResourceRequest](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSBundleResourceRequest.md)
 
+[NSNotification](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSNotification.md)
+
+[NSNotificationCenter](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSNotificationCenter.md)
+
+[NSNotificationQueue](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSNotificationQueue.md)
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/.md)
 
 ###<a id="JavaScriptCore"/>1.8.8 JavaScriptCore
