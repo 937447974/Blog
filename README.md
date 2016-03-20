@@ -391,6 +391,10 @@ QQ：937447974
 
 [NSNotificationQueue](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSNotificationQueue.md)
 
+[NSFileManager](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/NSFileManager.md)
+
+[](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/.md)
+
 [](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/.md)
 
 ###<a id="JavaScriptCore"/>1.8.8 JavaScriptCore
