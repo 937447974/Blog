@@ -544,6 +544,8 @@ QQ：937447974
 
 [CocoaPods安装](https://github.com/937447974/Blog/blob/master/工作/CocoaPods安装.md)
 
+[podspec转podspec.json](https://github.com/937447974/Blog/blob/master/工作/podspec转podspec.json.md)
+
 [Mac Gifl录制](https://github.com/937447974/Blog/blob/master/工作/Mac%20Gifl录制.md)
 
 
