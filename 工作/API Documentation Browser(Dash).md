@@ -2,6 +2,4 @@ Dash is an API Documentation Browser and Code Snippet Manager. Dash stores snipp
 
 官网地址：[https://kapeli.com/dash](https://kapeli.com/dash)
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016041401.pnd)
-
-
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016041401.png)
