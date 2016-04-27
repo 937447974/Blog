@@ -69,7 +69,7 @@
     [self.webView loadRequest:urlRequest]; // 加载页面
 }
 
-```objective-c
+```
 
 运行项目后，大家会发现一个错误。错误信息为
 
