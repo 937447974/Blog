@@ -1,42 +1,32 @@
-页面视图控制器让用户以翻书的形式滑动页面，每一页都有自己的UIViewController。我们可以使用自己的方式过渡动画。
+UIPageViewControllerDelegate控制UIPageViewController的相关变化，如导航到新页面、书脊的位置等。
 
-相关类逻辑如图所示。
-
-![](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Art/page_view.png)
-
-#Creating Page View Controllers
+#Responding to Page View Controller Events
 
 ```swift
-// 初始化
-public init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : AnyObject]?)
-// 导航代理
-weak public var delegate: UIPageViewControllerDelegate?
-// 数据源代理
-weak public var dataSource: UIPageViewControllerDataSource?
+// 过渡动画开始
+@available(iOS 6.0, *)
+optional public func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController])
+    
+// 过渡动画结束
+@available(iOS 5.0, *)
+optional public func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool)
+    
+// 返回书脊的位置
+@available(iOS 5.0, *)
+optional public func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation
 ```
 
-#Providing Content
+#Overriding View Rotation Settings
+
 
 ```swift
-// 所有手势
-public var gestureRecognizers: [UIGestureRecognizer] { get }
-// 当前显示的UIViewController
-public var viewControllers: [UIViewController]? { get }
-// 替换UIViewController
-public func setViewControllers(viewControllers: [UIViewController]?, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)?)
-```
+// 支持的屏幕方向
+@available(iOS 7.0, *)
+optional public func pageViewControllerSupportedInterfaceOrientations(pageViewController: UIPageViewController) -> UIInterfaceOrientationMask
+@available(iOS 7.0, *)
 
-#Display Options
-
-```swift
-// 过渡动画
-public var transitionStyle: UIPageViewControllerTransitionStyle { get }
-// 水平或垂直方向变化
-public var navigationOrientation: UIPageViewControllerNavigationOrientation { get }
-// 脊柱的位置，如果transitionStyle=PageCurl，spineLocation默认为Min
-public var spineLocation: UIPageViewControllerSpineLocation { get }
-// 是否多页面显示，如果spineLocation为Mid,doubleSide必须设置为true
-public var doubleSided: Bool
+// 页面控制器的首选方向
+optional public func pageViewControllerPreferredInterfaceOrientationForPresentation(pageViewController: UIPageViewController) -> UIInterfaceOrientation
 ```
 
 &#160;
@@ -47,7 +37,7 @@ public var doubleSided: Bool
 
 ##Related Documentation
 
-[UIPageViewController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html)
+[UIPageViewControllerDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html)
 
 [View Controller Catalog for iOS](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/PageViewControllers.html)
 
