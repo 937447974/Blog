@@ -29,11 +29,11 @@ public func setViewControllers(viewControllers: [UIViewController]?, direction: 
 #Display Options
 
 ```swift
-// 过渡动画
+// 翻页的样式
 public var transitionStyle: UIPageViewControllerTransitionStyle { get }
-// 水平或垂直方向变化
+// 分页的方向
 public var navigationOrientation: UIPageViewControllerNavigationOrientation { get }
-// 脊柱的位置，如果transitionStyle=PageCurl，spineLocation默认为Min
+// 书脊位置，如果transitionStyle=PageCurl，spineLocation默认为Min
 public var spineLocation: UIPageViewControllerSpineLocation { get }
 // 是否多页面显示，如果spineLocation为Mid,doubleSide必须设置为true
 public var doubleSided: Bool
