@@ -1,4 +1,4 @@
-1. [Initializing a View Object](#Initializing a View Object)
+1. [Initializing a View Object](#Initializing_a_View_Object)
 2. [Configuring a View’s Visual Appearance](#)
 3. [Configuring the Event-Related Behavior](#)
 4. [Configuring the Bounds and Frame Rectangles](#)
@@ -31,7 +31,7 @@
 
 # UIView
 
-##<a id="Initializing a View Object">1 Initializing a View Object
+##<a id="Initializing_a_View_Object">1 Initializing a View Object
 ##2 Configuring a View’s Visual Appearance
 ##3 Configuring the Event-Related Behavior
 ##4 Configuring the Bounds and Frame Rectangles
