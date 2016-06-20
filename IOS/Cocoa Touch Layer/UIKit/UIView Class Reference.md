@@ -29,6 +29,8 @@
 29. [Observing View-Related Changes](#Observing View-Related Changes)
 30. [Observing Focus](#Observing Focus)
 
+----
+
 # UIView
 
 UIView是所有界面View的基类。
