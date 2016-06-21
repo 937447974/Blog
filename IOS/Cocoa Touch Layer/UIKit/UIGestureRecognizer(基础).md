@@ -400,7 +400,7 @@ panGR.maximumNumberOfTouches = 1; // 最多响应的手指，默认UINT_MAX
 #pragma mark UIPanGestureRecognizer 平滑
 - (IBAction)panAction:(UIPanGestureRecognizer *)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    CGPoint velocityPoint = [sender translationInView:sender.view]; // 移动的速度
+    CGPoint velocityPoint = [sender velocityInView:sender.view]; // 移动的速度
     NSLog(@"移动速度:%@", NSStringFromCGPoint(velocityPoint));
     CGPoint translatedPoint = [sender translationInView:sender.view]; // 移动的位移
     NSLog(@"移动位移:%@", NSStringFromCGPoint(translatedPoint));
