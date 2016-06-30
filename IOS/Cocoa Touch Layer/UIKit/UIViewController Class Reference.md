@@ -31,7 +31,7 @@ UIViewController 是控制器的基类。生命周期如图所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016062001.png)
 
-##<a id="Configuring a View Controller Using Nib Files">1 Initializing a View Object
+##<a id="Configuring a View Controller Using Nib Files">1 Configuring a View Controller Using Nib Files
 
 ```swift
 /// 通过xib初始化
@@ -43,7 +43,7 @@ public var nibName: String? { get } // The name of the nib to be loaded to insta
 public var nibBundle: NSBundle? { get } // The bundle from which to load the nib.
 ```
 
-##<a id="Configuring a View Controller Using Nib Files">2 Configuring a View Controller Using Nib Files
+##<a id="Interacting with Storyboards and Segues">2 Interacting with Storyboards and Segues
 
 ```swift
 /// 所在的storyboard
@@ -79,7 +79,7 @@ public func canPerformUnwindSegueAction(action: Selector, fromViewController: UI
 public func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController)
 ```
 
-##<a id="Interacting with Storyboards and Segues">3 Interacting with Storyboards and Segues
+##<a id="Managing the View">3 Managing the View
 
 ```swift
 /// 显示的view
@@ -104,122 +104,117 @@ public var title: String?
 public var preferredContentSize: CGSize
 ```
 
-##<a id="">4 Managing the View
+##<a id="Presenting View Controllers">4 Presenting View Controllers
 
 ```swift
 ```
 
-##<a id="">5 Presenting View Controllers
+##<a id="Supporting Custom Transitions and Presentations">5 Supporting Custom Transitions and Presentations
 
 ```swift
 ```
 
-##<a id="">6 Supporting Custom Transitions and Presentations
+##<a id="Responding to View Events">6 Responding to View Events
 
 ```swift
 ```
 
-##<a id="">7 Responding to View Events
+##<a id="Configuring the View’s Layout Behavior">7 Configuring the View’s Layout Behavior
 
 ```swift
 ```
 
-##<a id="">8 Configuring the View’s Layout Behavior
+##<a id="Testing for Specific Kinds of View Transitions">8 Testing for Specific Kinds of View Transitions
 
 ```swift
 ```
 
-##<a id="">9 Testing for Specific Kinds of View Transitions
+##<a id="Configuring the View Rotation Settings">9 Configuring the View Rotation Settings
 
 ```swift
 ```
 
-##<a id="">10 Configuring the View Rotation Settings
+##<a id="Adapting to Environment Changes">10 Adapting to Environment Changes
 
 ```swift
 ```
 
-##<a id="">11 Adapting to Environment Changes
+##<a id="Managing Child View Controllers in a Custom Container">11 Managing Child View Controllers in a Custom Container
 
 ```swift
 ```
 
-##<a id="">12 Managing Child View Controllers in a Custom Container
+##<a id="Responding to Containment Events">12 Responding to Containment Events
 
 ```swift
 ```
 
-##<a id="">13 Responding to Containment Events
+##<a id="Getting Other Related View Controllers">13 Getting Other Related View Controllers
 
 ```swift
 ```
 
-##<a id="">14 Getting Other Related View Controllers
+##<a id="Handling Memory Warnings">14 Handling Memory Warnings
 
 ```swift
 ```
 
-##<a id="">15 Handling Memory Warnings
+##<a id="Managing State Restoration">15 Managing State Restoration
 
 ```swift
 ```
 
-##<a id="">16 Managing State Restoration
+##<a id="Supporting App Extensions">16 Supporting App Extensions
 
 ```swift
 ```
 
-##<a id="">17 Supporting App Extensions
+##<a id="Working With 3D Touch Previews and Preview Quick Actions">17 Working With 3D Touch Previews and Preview Quick Actions
 
 ```swift
 ```
 
-##<a id="">18 Working With 3D Touch Previews and Preview Quick Actions
+##<a id="Managing the Status Bar">18 Managing the Status Bar
 
 ```swift
 ```
 
-##<a id="">19 Managing the Status Bar
+##<a id="Configuring a Navigation Interface">19 Configuring a Navigation Interface
 
 ```swift
 ```
 
-##<a id="">20 Configuring a Navigation Interface
+##<a id="Configuring Tab Bar Items">20 Configuring Tab Bar Items
 
 ```swift
 ```
 
-##<a id="">21 Configuring Tab Bar Items
+##<a id="Adding Editing Behaviors to Your View Controller">21 Adding Editing Behaviors to Your View Controller
 
 ```swift
 ```
 
-##<a id="">22 Adding Editing Behaviors to Your View Controller
+##<a id="Accessing the Available Key Commands">22 Accessing the Available Key Commands
 
 ```swift
 ```
 
-##<a id="">23 Accessing the Available Key Commands
+##<a id="Managing Banner Ads">23 Managing Banner Ads
 
 ```swift
 ```
 
-##<a id="">24 Managing Banner Ads
+##<a id="Determining Whether the View Controller is Displaying an Ad">24 Determining Whether the View Controller is Displaying an Ad
 
 ```swift
 ```
 
-##<a id="">25 Determining Whether the View Controller is Displaying an Ad
+##<a id="Managing Interstitial Ads">25 Managing Interstitial Ads
 
 ```swift
 ```
 
-##<a id="">26 Managing Interstitial Ads
-
-```swift
-```
-
-##<a id="">27 Deprecated
+##<a id="Deprecated">26 Deprecated
 
 ```swift
 ```
