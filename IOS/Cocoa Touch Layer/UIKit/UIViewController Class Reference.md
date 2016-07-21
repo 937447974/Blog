@@ -437,17 +437,13 @@ public func requestInterstitialAdPresentation() -> Bool
 public var shouldPresentInterstitialAd: Bool { get }
 ```
 
-
 ----------
 
 #Appendix
 
-##Sample Code
-
-[Swift](https://github.com/937447974/Swift)
-
 ##Related Documentation
 
+[UIViewController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html)
 
 ##Revision History
 
