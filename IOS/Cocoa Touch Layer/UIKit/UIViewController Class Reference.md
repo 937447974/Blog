@@ -1,37 +1,8 @@
-1. [Configuring a View Controller Using Nib Files](#Configuring a View Controller Using Nib Files)
-2. [Interacting with Storyboards and Segues](#Interacting with Storyboards and Segues)
-3. [Managing the View](#Managing the View)
-4. [Presenting View Controllers](#Presenting View Controllers)
-5. [Supporting Custom Transitions and Presentations](#Supporting Custom Transitions and Presentations)
-6. [Responding to View Events](#Responding to View Events)
-7. [Configuring the View’s Layout Behavior](#Configuring the View’s Layout Behavior)
-8. [Testing for Specific Kinds of View Transitions](#Testing for Specific Kinds of View Transitions)
-9. [Configuring the View Rotation Settings](#Configuring the View Rotation Settings)
-10. [Adapting to Environment Changes](#Adapting to Environment Changes)
-11. [Managing Child View Controllers in a Custom Container](#Managing Child View Controllers in a Custom Container)
-12. [Responding to Containment Events](#Responding to Containment Events)
-13. [Getting Other Related View Controllers](#Getting Other Related View Controllers)
-14. [Handling Memory Warnings](#Handling Memory Warnings)
-15. [Managing State Restoration](#Managing State Restoration)
-16. [Supporting App Extensions](#Supporting App Extensions)
-17. [Working With 3D Touch Previews and Preview Quick Actions](#Working With 3D Touch Previews and Preview Quick Actions)
-18. [Managing the Status Bar](#Managing the Status Bar)
-19. [Configuring a Navigation Interface](#Configuring a Navigation Interface)
-20. [Configuring Tab Bar Items](#Configuring Tab Bar Items)
-21. [Adding Editing Behaviors to Your View Controller](#Adding Editing Behaviors to Your View Controller)
-22. [Accessing the Available Key Commands](#Accessing the Available Key Commands)
-23. [Managing Banner Ads](#Managing Banner Ads)
-24. [Determining Whether the View Controller is Displaying an Ad](#Determining Whether the View Controller is Displaying an Ad)
-25. [Managing Interstitial Ads](#Managing Interstitial Ads)
-26. [Deprecated](#Deprecated)
-
-----
-
 UIViewController 是控制器的基类。生命周期如图所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016062001.png)
 
-##<a id="Configuring a View Controller Using Nib Files">1 Configuring a View Controller Using Nib Files
+##1 Configuring a View Controller Using Nib Files
 
 ```swift
 /// 通过xib初始化
@@ -43,7 +14,7 @@ public var nibName: String? { get } // The name of the nib to be loaded to insta
 public var nibBundle: NSBundle? { get } // The bundle from which to load the nib.
 ```
 
-##<a id="Interacting with Storyboards and Segues">2 Interacting with Storyboards and Segues
+##2 Interacting with Storyboards and Segues
 
 ```swift
 /// 所在的storyboard
@@ -79,7 +50,7 @@ public func canPerformUnwindSegueAction(action: Selector, fromViewController: UI
 public func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController)
 ```
 
-##<a id="Managing the View">3 Managing the View
+##3 Managing the View
 
 ```swift
 /// 显示的view
@@ -104,119 +75,366 @@ public var title: String?
 public var preferredContentSize: CGSize
 ```
 
-##<a id="Presenting View Controllers">4 Presenting View Controllers
+##4 Presenting View Controllers
 
 ```swift
+/// 专场动画的风格
+@available(iOS 3.0, *)
+public var modalTransitionStyle: UIModalTransitionStyle
+/// 控制器展示风格
+@available(iOS 3.2, *)
+public var modalPresentationStyle: UIModalPresentationStyle
+/// 是否弹窗模式展示
+@available(iOS 3.2, *)
+public var modalInPopover: Bool
+/// 显示一个UIViewController
+@available(iOS 8.0, *)
+public func showViewController(vc: UIViewController, sender: AnyObject?)    
+/// 显示detail视图
+@available(iOS 8.0, *)
+public func showDetailViewController(vc: UIViewController, sender: AnyObject?)
+/// modally方式显示UIViewController
+@available(iOS 5.0, *)
+public func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
+// 隐藏当前UIViewController
+@available(iOS 5.0, *)
+public func dismissViewControllerAnimated(flag: Bool, completion: (() -> Void)?)
+// 当前控制器后是否有控制器
+@available(iOS 5.0, *)
+public var definesPresentationContext: Bool
+// 是否使用视图控制器的过过渡样式
+@available(iOS 5.0, *)
+public var providesPresentationContextTransitionStyle: Bool
+/// 是否控制键盘关闭
+@available(iOS 4.3, *)
+public func disablesAutomaticKeyboardDismissal() -> Bool
 ```
 
-##<a id="Supporting Custom Transitions and Presentations">5 Supporting Custom Transitions and Presentations
+##5 Supporting Custom Transitions and Presentations
 
 ```swift
+// 转场的代理
+@available(iOS 7.0, *)
+weak public var transitioningDelegate: UIViewControllerTransitioningDelegate?
+// 转场对象
+@available(iOS 7.0, *)
+public func transitionCoordinator() -> UIViewControllerTransitionCoordinator?
+// 获取响应事件的对象
+@available(iOS 8.0, *)
+public func targetViewControllerForAction(action: Selector, sender: AnyObject?) -> UIViewController?
+// 最近的上一个UIViewController
+@available(iOS 8.0, *)
+public var presentationController: UIPresentationController? { get }
+// 最近关闭的控制器
+@available(iOS 8.0, *)
+public var popoverPresentationController: UIPopoverPresentationController? { get }
 ```
 
-##<a id="Responding to View Events">6 Responding to View Events
+##6 Responding to View Events
 
 ```swift
+// 视图将要显示
+public func viewWillAppear(animated: Bool)
+// 视图已显示
+public func viewDidAppear(animated: Bool) 
+// 视图将要消失
+public func viewWillDisappear(animated: Bool) 
+// 视图已消失
+public func viewDidDisappear(animated: Bool)
 ```
 
-##<a id="Configuring the View’s Layout Behavior">7 Configuring the View’s Layout Behavior
+##7 Configuring the View’s Layout Behavior
 
 ```swift
+// 布局将要发生改变
+@available(iOS 5.0, *)
+public func viewWillLayoutSubviews()
+// 布局已发生改变
+@available(iOS 5.0, *)
+public func viewDidLayoutSubviews()
+// 更新约束
+@available(iOS 6.0, *)
+public func updateViewConstraints()
+// 顶部约束
+@available(iOS 7.0, *)
+public var topLayoutGuide: UILayoutSupport { get }
+// 底部约束
+@available(iOS 7.0, *)
+public var bottomLayoutGuide: UILayoutSupport { get }
+// 边缘约束
+@available(iOS 7.0, *)
+public var edgesForExtendedLayout: UIRectEdge
+// 是否延长布局包含透明的bar
+@available(iOS 7.0, *)
+public var extendedLayoutIncludesOpaqueBars: Bool
+// 是否自动调整ScrollView的Inset
+@available(iOS 7.0, *)
+public var automaticallyAdjustsScrollViewInsets: Bool
 ```
 
-##<a id="Testing for Specific Kinds of View Transitions">8 Testing for Specific Kinds of View Transitions
+##8 Testing for Specific Kinds of View Transitions
 
 ```swift
+// 是否从父视图移除
+@available(iOS 5.0, *)
+public func isMovingToParentViewController() -> Bool
+// 是否移入父视图
+@available(iOS 5.0, *)
+public func isMovingFromParentViewController() -> Bool
+// 正在显示
+@available(iOS 5.0, *)
+public func isBeingPresented() -> Bool
+// 正在隐藏
+@available(iOS 5.0, *)
+public func isBeingDismissed() -> Bool
 ```
 
-##<a id="Configuring the View Rotation Settings">9 Configuring the View Rotation Settings
+##9 Configuring the View Rotation Settings
 
 ```swift
+// 内容是否自动旋转
+@available(iOS 6.0, *)
+public func shouldAutorotate() -> Bool
+// 支持的旋转方向
+@available(iOS 6.0, *)
+public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
+// 界面显示时呈现的方向
+@available(iOS 6.0, *)
+public func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation
+// 尝试旋转方向
+@available(iOS 5.0, *)
+public class func attemptRotationToDeviceOrientation()
 ```
 
-##<a id="Adapting to Environment Changes">10 Adapting to Environment Changes
+##10 Adapting to Environment Changes
 
 ```swift
+// 显示副视图
+@available(iOS 8.0, *)
+public func collapseSecondaryViewController(secondaryViewController: UIViewController, forSplitViewController splitViewController: UISplitViewController)
+// 隐藏副视图
+@available(iOS 8.0, *)
+public func separateSecondaryViewControllerForSplitViewController(splitViewController: UISplitViewController) -> UIViewController?
 ```
 
-##<a id="Managing Child View Controllers in a Custom Container">11 Managing Child View Controllers in a Custom Container
+##11 Managing Child View Controllers in a Custom Container
 
 ```swift
+// 子控制器
+@available(iOS 5.0, *)
+public var childViewControllers: [UIViewController] { get }
+// 添加子控制器
+@available(iOS 5.0, *)
+public func addChildViewController(childController: UIViewController)
+// 从父控制器移除当前控制器
+@available(iOS 5.0, *)
+public func removeFromParentViewController()
+// 控制器转场
+@available(iOS 5.0, *)
+public func transitionFromViewController(fromViewController: UIViewController, toViewController: UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?)
+// 是否自动向子控制器发生view变化
+@available(iOS 6.0, *)
+public func shouldAutomaticallyForwardAppearanceMethods() -> Bool
+// 开始显示变化
+@available(iOS 5.0, *)
+public func beginAppearanceTransition(isAppearing: Bool, animated: Bool)
+// 结束显示变化
+@available(iOS 5.0, *)
+public func endAppearanceTransition()
+// 设置子控制器的特征变化
+@available(iOS 8.0, *)
+public func setOverrideTraitCollection(collection: UITraitCollection?, forChildViewController childViewController: UIViewController)
+// 获取子控制器的特征变化
+@available(iOS 8.0, *)
+public func overrideTraitCollectionForChildViewController(childViewController: UIViewController) -> UITraitCollection?
 ```
 
-##<a id="Responding to Containment Events">12 Responding to Containment Events
+##12 Responding to Containment Events
 
 ```swift
+// 将要移动到父VC
+@available(iOS 5.0, *)
+public func willMoveToParentViewController(parent: UIViewController?)
+// 已经移动到父VC
+@available(iOS 5.0, *)
+public func didMoveToParentViewController(parent: UIViewController?)
 ```
 
-##<a id="Getting Other Related View Controllers">13 Getting Other Related View Controllers
+##13 Getting Other Related View Controllers
 
 ```swift
+// 父控制器
+weak public var parentViewController: UIViewController? { get }
+// presented当前VC的VC,或其最近的父视图
+@available(iOS 5.0, *)
+public var presentedViewController: UIViewController? { get }
+// presented当前VC的VC,或其最远的父视图
+@available(iOS 5.0, *)
+public var presentingViewController: UIViewController? { get }
+// 导航控制器
+public var navigationController: UINavigationController? { get }
+// split控制器
+public var splitViewController: UISplitViewController? { get }
+// tabBar控制器
+public var tabBarController: UITabBarController? { get }
 ```
 
-##<a id="Handling Memory Warnings">14 Handling Memory Warnings
+##14 Handling Memory Warnings
 
 ```swift
+// 内存警告
+public func didReceiveMemoryWarning()
 ```
 
-##<a id="Managing State Restoration">15 Managing State Restoration
+##15 Managing State Restoration
 
 ```swift
+// 状态标示符
+@available(iOS 6.0, *)
+public var restorationIdentifier: String?
+// 恢复状态的类
+@available(iOS 6.0, *)
+public var restorationClass: AnyObject.Type?
+// 编码
+@available(iOS 6.0, *)
+public func encodeRestorableStateWithCoder(coder: NSCoder)
+// 解码
+@available(iOS 6.0, *)
+public func decodeRestorableStateWithCoder(coder: NSCoder)
+// 完成恢复
+@available(iOS 7.0, *)
+public func applicationFinishedRestoringState()
 ```
 
-##<a id="Supporting App Extensions">16 Supporting App Extensions
+##16 Supporting App Extensions
 
 ```swift
+// request的上下文
+@available(iOS 8.0, *)
+public var extensionContext: NSExtensionContext? { get }
 ```
 
-##<a id="Working With 3D Touch Previews and Preview Quick Actions">17 Working With 3D Touch Previews and Preview Quick Actions
+##17 Working With 3D Touch Previews and Preview Quick Actions
 
 ```swift
+// 注册3D Touch的显示view
+@available(iOS 9.0, *)
+public func registerForPreviewingWithDelegate(delegate: UIViewControllerPreviewingDelegate, sourceView: UIView) -> UIViewControllerPreviewing
+// 移除3D Touch
+@available(iOS 9.0, *)
+public func unregisterForPreviewingWithContext(previewing: UIViewControllerPreviewing)
+// 相关按钮
+@available(iOS 9.0, *)
+public func previewActionItems() -> [UIPreviewActionItem]
 ```
 
-##<a id="Managing the Status Bar">18 Managing the Status Bar
+##18 Managing the Status Bar
 
 ```swift
+// 状态栏样式控制器
+@available(iOS 7.0, *)
+public func childViewControllerForStatusBarStyle() -> UIViewController?
+// 状态栏隐藏控制器
+@available(iOS 7.0, *)
+public func childViewControllerForStatusBarHidden() -> UIViewController?
+// 状态栏的样式
+@available(iOS 7.0, *)
+public func preferredStatusBarStyle() -> UIStatusBarStyle
+// 状态栏是否隐藏
+@available(iOS 7.0, *)
+public func prefersStatusBarHidden() -> Bool
+// 是否管理状态栏
+@available(iOS 7.0, *)
+public var modalPresentationCapturesStatusBarAppearance: Bool
+// 状态栏变化效果
+@available(iOS 7.0, *)
+public func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation
+// 更新状态栏
+@available(iOS 7.0, *)
+public func setNeedsStatusBarAppearanceUpdate()
 ```
 
-##<a id="Configuring a Navigation Interface">19 Configuring a Navigation Interface
+##19 Configuring a Navigation Interface
 
 ```swift
+// 导航按钮
+public var navigationItem: UINavigationItem { get } 
+// push情况下是否隐藏bar
+public var hidesBottomBarWhenPushed: Bool
+// toolbar的按钮
+@available(iOS 3.0, *)
+public var toolbarItems: [UIBarButtonItem]?
+// 动画设置toolbar的按钮
+@available(iOS 3.0, *)
+public func setToolbarItems(toolbarItems: [UIBarButtonItem]?, animated: Bool)
 ```
 
-##<a id="Configuring Tab Bar Items">20 Configuring Tab Bar Items
+##20 Configuring Tab Bar Items
 
 ```swift
+// tabbar的按钮
+public var tabBarItem: UITabBarItem!
 ```
 
-##<a id="Adding Editing Behaviors to Your View Controller">21 Adding Editing Behaviors to Your View Controller
+##21 Adding Editing Behaviors to Your View Controller
 
 ```swift
+// 是否编辑模式
+public var editing: Bool
+// 动画设置编辑模式
+public func setEditing(editing: Bool, animated: Bool) 
+// 编辑模式下的按钮    
+public func editButtonItem() -> UIBarButtonItem
 ```
 
-##<a id="Accessing the Available Key Commands">22 Accessing the Available Key Commands
+##22 Accessing the Available Key Commands
 
 ```swift
+// 添加UIKeyCommand
+@available(iOS 9.0, *)
+public func addKeyCommand(keyCommand: UIKeyCommand)
+// 移除UIKeyCommand
+@available(iOS 9.0, *)
+public func removeKeyCommand(keyCommand: UIKeyCommand)
 ```
 
-##<a id="Managing Banner Ads">23 Managing Banner Ads
+##23 Managing Banner Ads
 
 ```swift
+// 能否显示广告位
+@available(iOS 7.0, *)
+public var canDisplayBannerAds: Bool
+// 原始View
+@available(iOS 7.0, *)
+public var originalContentView: UIView! { get }
 ```
 
-##<a id="Determining Whether the View Controller is Displaying an Ad">24 Determining Whether the View Controller is Displaying an Ad
+##24 Determining Whether the View Controller is Displaying an Ad
 
 ```swift
+// 是否满屏幕显示
+@available(iOS 7.0, *)
+public var presentingFullScreenAd: Bool { get }
+// 是否显示广告位
+@available(iOS 7.0, *)
+public var displayingBannerAd: Bool { get }
 ```
 
-##<a id="Managing Interstitial Ads">25 Managing Interstitial Ads
+##25 Managing Interstitial Ads
 
 ```swift
-```
-
-##<a id="Deprecated">26 Deprecated
-
-```swift
+// 准备显示广告资产
+@available(iOS 7.0, *)
+public class func prepareInterstitialAds()
+// 广告展示策略
+@available(iOS 7.0, *)
+public var interstitialPresentationPolicy: ADInterstitialPresentationPolicy
+// 要求框架显示一个广告
+@available(iOS 7.0, *)
+public func requestInterstitialAdPresentation() -> Bool
+// 广告将要显示
+@available(iOS 7.0, *)
+public var shouldPresentInterstitialAd: Bool { get }
 ```
 
 
@@ -235,7 +453,8 @@ public var preferredContentSize: CGSize
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-03-20 | 博文完成 |
+| 2016-03-20 | 博文创建 |
+| 2016-07-21 | 博文完成 |
 
 ##Copyright
 
