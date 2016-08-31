@@ -43,7 +43,8 @@
 方法注释
 
 ```objc
-@brief : 使用它来写一段你正在文档化的method, PRoperty, class, file, struct, 或enum的短描述信息。
+@function : 方法
+@abstract : 使用它来写一段你正在文档化的method, PRoperty, class, file, struct, 或enum的短描述信息。
 @discusstion: 用它来写一段详尽的描述。如果需要你可以添加换行。
 @param:通过它你可以描述一个 method 或 function的参数信息。你可以使用多个这种标签。
 @return: 用它来制定一个 method 或 function的返回值。
