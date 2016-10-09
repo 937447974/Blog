@@ -24,7 +24,7 @@ if WCSession.isSupported() {
 
 #Symbols
 
-##Getting the Default Session
+##1 Getting the Default Session
 
 ```swift
 // 是否支持
@@ -33,7 +33,7 @@ open class func isSupported() -> Bool
 open class func `default`() -> WCSession
 ```
 
-##Configuring the Session
+##2 Configuring the Session
 
 ```swift
 // 代理
@@ -45,7 +45,7 @@ open func activate()
 open var activationState: WCSessionActivationState { get }
 ```
 
-##Getting the Paired Device Information
+##3 Getting the Paired Device Information
 
 
 ```swift
@@ -59,14 +59,14 @@ open var isComplicationEnabled: Bool { get }
 open var watchDirectoryURL: URL? { get }
 ```
 
-##Determining the Session’s Reachability
+##4 Determining the Session’s Reachability
 
 ```swift
 // 能否传递信息
 open var isReachable: Bool { get }
 ```
 
-##Managing Background Updates
+##5 Managing Background Updates
 
 ```swift
 // 获取信息
@@ -77,7 +77,7 @@ open func updateApplicationContext(_ applicationContext: [String : Any]) throws
 open var receivedApplicationContext: [String : Any] { get }
 ```
 
-##Sending Messages
+##6 Sending Messages
 
 ```swift
 // 发送[String : Any]信息
@@ -86,7 +86,7 @@ open func sendMessage(_ message: [String : Any], replyHandler: (@escaping ([Stri
 open func sendMessageData(_ data: Data, replyHandler: (@escaping (Data) -> Swift.Void)?, errorHandler: (@escaping (Error) -> Swift.Void)? = nil)
 ```
 
-##Updating Complication Data
+##7 Updating Complication Data
 
 ```swift
 // 剩下的未发送的并发数
@@ -96,7 +96,7 @@ open var remainingComplicationUserInfoTransfers: Int { get }
 open func transferCurrentComplicationUserInfo(_ userInfo: [String : Any] = [:]) -> WCSessionUserInfoTransfer
 ```
 
-##Transferring Data in the Background
+##8 Transferring Data in the Background
 
 ```swift
 // 传输信息
@@ -105,7 +105,7 @@ open func transferUserInfo(_ userInfo: [String : Any] = [:]) -> WCSessionUserInf
 open var outstandingUserInfoTransfers: [WCSessionUserInfoTransfer] { get }
 ```
 
-##Transferring Files in the Background
+##9 Transferring Files in the Background
 
 ```swift
 // 是否有未发送的数据
