@@ -17,7 +17,7 @@
 
 ----
 
-NSFileManager帮助我们快速访问管理文件系统。通过它我们可以对文件进行定位、复制、移动和删除等操作。
+NSFileManager(Swift中是FileManager)帮助我们快速访问管理文件系统。通过它我们可以对文件进行定位、复制、移动和删除等操作。
 
 #<a id="1">1 Creating a File Manager
 
@@ -164,49 +164,103 @@ public func URLForPublishingUbiquitousItemAtURL(url: NSURL, expirationDate outDa
 #<a id="8">8 Creating Symbolic and Hard Links
 
 ```swift
+// 创建软连接
+@available(iOS 2.0, *)
+open func createSymbolicLink(atPath path: String, withDestinationPath destPath: String) throws
+@available(iOS 5.0, *)
+open func createSymbolicLink(at url: URL, withDestinationURL destURL: URL) throws
+
+// 创建硬连接
+@available(iOS 2.0, *)
+open func linkItem(atPath srcPath: String, toPath dstPath: String) throws
+@available(iOS 4.0, *)
+open func linkItem(at srcURL: URL, to dstURL: URL) throws
+
+// 获取软连接对应的实际地址
+@available(iOS 2.0, *)
+open func destinationOfSymbolicLink(atPath path: String) throws -> String
 ```
 
 #<a id="9">9 Determining Access to Files
 
 ```swift
+// 路径对应的文件或文件夹是否存在
+open func fileExists(atPath path: String) -> Bool  
+// 路径对应的文件或文件夹是否存在，isDirectory对应是否为目录
+open func fileExists(atPath path: String, isDirectory: UnsafeMutablePointer<ObjCBool>?) -> Bool   
+// 能否读取文件
+open func isReadableFile(atPath path: String) -> Bool 
+// 能否写入文件
+open func isWritableFile(atPath path: String) -> Bool 
+// 是否为可执行文件
+open func isExecutableFile(atPath path: String) -> Bool
+// 能否删除文件
+open func isDeletableFile(atPath path: String) -> Bool
 ```
 
 #<a id="10">10 Getting and Setting Attributes
 
 ```swift
+// 文件名
+open func displayName(atPath path: String) -> String
+// 路径上的文件夹名
+open func componentsToDisplay(forPath path: String) -> [String]?
+// 获取文件属性
+@available(iOS 2.0, *)
+open func attributesOfItem(atPath path: String) throws -> [FileAttributeKey : Any]
+// 获取文件所处系统的相关文件属性（如剩余存储空间）
+@available(iOS 2.0, *)
+open func attributesOfFileSystem(forPath path: String) throws -> [FileAttributeKey : Any]
+// 设置文件属性
+@available(iOS 2.0, *)
+open func setAttributes(_ attributes: [FileAttributeKey : Any], ofItemAtPath path: String) throws
 ```
 
 #<a id="11">11 Getting and Comparing File Contents
 
 ```swift
+// 获取文件内容
+open func contents(atPath path: String) -> Data?
+// 判断文件内容是否相同
+open func contentsEqual(atPath path1: String, andPath path2: String) -> Bool
 ```
 
 #<a id="12">12 Getting the Relationship Between Items
 
 ```swift
+// 获取路径之间的关系
+@available(iOS 8.0, *)
+open func getRelationship(_ outRelationship: UnsafeMutablePointer<FileManager.URLRelationship>, ofDirectoryAt directoryURL: URL, toItemAt otherURL: URL) throws
+// 获取路径是否在某容器中
+@available(iOS 8.0, *)
+open func getRelationship(_ outRelationship: UnsafeMutablePointer<FileManager.URLRelationship>, of directory: FileManager.SearchPathDirectory, in domainMask: FileManager.SearchPathDomainMask, toItemAt url: URL) throws
 ```
 
 #<a id="13">13 Converting File Paths to Strings
 
 ```swift
+// 路径转C字符串
+open func fileSystemRepresentation(withPath path: String) -> UnsafePointer<Int8>
+// C字符串转路径
+open func string(withFileSystemRepresentation str: UnsafePointer<Int8>, length len: Int) -> String    
 ```
 
 #<a id="14">14 Managing the Delegate
 
 ```swift
+// 代理监听
+@available(iOS 2.0, *)
+unowned(unsafe) open var delegate: FileManagerDelegate?    
 ```
 
 #<a id="15">15 Managing the Current Directory
 
 ```swift
+// 修改当前工作目录为指定目录
+open func changeCurrentDirectoryPath(_ path: String) -> Bool
+// 获取当前工作目录
+open var currentDirectoryPath: String { get }
 ```
-
-#<a id="16">16 Deprecated Methods
-
-```swift
-```
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
 &#160;
 
@@ -226,7 +280,7 @@ public func URLForPublishingUbiquitousItemAtURL(url: NSURL, expirationDate outDa
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-01-13 | 博文完成 |
+| 2016-10-14 | 博文完成 |
 
 ##Copyright
 
