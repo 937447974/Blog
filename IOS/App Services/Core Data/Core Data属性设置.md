@@ -1,4 +1,3 @@
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
 &#160;
 
@@ -6,12 +5,9 @@
 
 #Appendix
 
-##Sample Code
-
-[Swift](https://github.com/937447974/Swift)
-
 ##Related Documentation
 
+[Core Data Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075)
 
 ##Revision History
 
