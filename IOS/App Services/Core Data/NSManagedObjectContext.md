@@ -178,6 +178,9 @@ open var shouldDeleteInaccessibleFaults: Bool
 // 释放所有对象
 @available(iOS 8.3, *)
 open func refreshAllObjects()
+// 批操作处理
+@available(iOS 8.0, *)
+open func execute(_ request: NSPersistentStoreRequest) throws -> NSPersistentStoreResult
 ```
 
 ## Type Methods
