@@ -1,19 +1,35 @@
-NSMappingModel是映射模型，用于比较两个托管对象模型之间的差异。
+NSMappingModel是映射模型，用于比较两个托管对象模型之间的差异。即使用Xcode创建的如下所示的文件。
 
-即使用xcode创建的
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016102601.png)
 
+#Symbols
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+##1 Creating a Mapping
+
+```swift
+// 通过托管对象模型初始化
+public /*not inherited*/ init?(from bundles: [Bundle]?, forSourceModel sourceModel: NSManagedObjectModel?, destinationModel: NSManagedObjectModel?)
+// 通过托管对象模型初始化
+@available(iOS 3.0, *)
+open class func inferredMappingModel(forSourceModel sourceModel: NSManagedObjectModel, destinationModel: NSManagedObjectModel) throws -> NSMappingModel
+// 通过文件地址初始化
+public init?(contentsOf url: URL?)
+```
+
+##2 Managing Entity Mappings
+
+```swift
+// 映射数组
+open var entityMappings: [NSEntityMapping]!
+// 映射字典
+open var entityMappingsByName: [String : NSEntityMapping] { get }
+```
 
 &#160;
 
 ----------
 
 #Appendix
-
-##Sample Code
-
-[Swift](https://github.com/937447974/Swift)
 
 ##Related Documentation
 
@@ -23,7 +39,7 @@ NSMappingModel是映射模型，用于比较两个托管对象模型之间的差
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-03-20 | 博文完成 |
+| 2016-10-26 | 博文完成 |
 
 ##Copyright
 
