@@ -12,6 +12,7 @@
 
 ##Related Documentation
 
+[NSMigrationManager](https://developer.apple.com/reference/coredata/nsmigrationmanager)
 
 ##Revision History
 
