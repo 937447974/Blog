@@ -1,4 +1,3 @@
-
 NSManagedObjectModel是托管对象模型，标示着Core Data对应的数据实体。
 
 托管对象模型包含一个或多个NSEntityDescription对象，NSEntityDescription记录的就是实体的描述信息。
