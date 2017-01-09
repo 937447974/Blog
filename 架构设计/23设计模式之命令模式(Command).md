@@ -30,7 +30,7 @@ Command属于行为型模式中的一种，将一个请求封装为一个对象�
 
 ```swift
 //
-//  YJInterpreter.swift
+//  YJCommand.swift
 //  DesignPattern
 //
 //  CSDN:http://blog.csdn.net/y550918116j
@@ -42,60 +42,70 @@ Command属于行为型模式中的一种，将一个请求封装为一个对象�
 
 import Cocoa
 
-/// 声明一个抽象的解释操作，这个协议为抽象语法树中所有的节点所共享
-private protocol ExpressionProtocol {
+/// Receiver知道如何实施与执行一个请求相关的操作
+private class Receiver {
     
-    func interpret(context: Context)
-    
-}
-
-private class AdvanceExpression: ExpressionProtocol {
-    
-    func interpret(context: Context){
-        print("\(context.content) 这是高级解析器!")
-    }
-}
-
-private class SimpleExpression: ExpressionProtocol {
-    
-    func interpret(context: Context) {
-        print("\(context.content) 这是普通解析器!")
+    func receive() {
+        print("This is Receive class!")
     }
     
 }
 
 // MARK: -
 
-/// Context（上下文）包含解释器之外的一些全局信息
-private class Context {
+/// Command声明执行操作的协议
+private protocol CommandProtocol {
     
-    /// 全局信息
-    var content:String = ""
-    /// 解释器数组
-    var list: [ExpressionProtocol] = []
+    func execute()
     
-    // MARK: 增加
-    func add(expression: ExpressionProtocol) {
-        self.list.append(expression)
+}
+
+/// ConcreteCommand将一个接收者对象绑定于一个动作。
+private class Command: CommandProtocol {
+    
+    /// 接受者
+    var receiver:Receiver?
+    
+    // MARK: 初始化
+    init(receiver:Receiver) {
+        self.receiver = receiver
+    }
+    
+    // MARK: 执行请求
+    func execute() {
+        // 调用接收者相应的操作，以实现Execute
+        self.receiver?.receive()
     }
     
 }
 
 // MARK: -
 
-/// 解释器模式
-class YJInterpreter: YJTestProtocol {
+/// Invoker要求该操作者执行这个命令
+private class Invoker {
+    
+    /// 操作者
+    var command: CommandProtocol?
+    
+    func execute() {
+        command?.execute();
+    }
+    
+}
 
+// MARK: -
+
+/// 命令模式
+class YJCommand: YJTestProtocol {
+    
     func test() {
-        let ctx = Context()
-        ctx.content = "Context"
-        ctx.add(AdvanceExpression())
-        ctx.add(SimpleExpression())
-        for ex in ctx.list {
-            ex.interpret(ctx)
-        }
+        let rec = Receiver()
+        let cmd = Command(receiver:rec)
+        // Client:创建一个具体命令对象并设定它的接收者。
+        let i = Invoker()
+        i.command = cmd
+        i.execute()
     }
-    
 }
 ```
 
