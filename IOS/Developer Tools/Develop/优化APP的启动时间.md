@@ -160,7 +160,6 @@ Dyld is a helper program
 
 [如何优化 App 的启动时间](http://www.cocoachina.com/ios/20161102/17931.html)
 
-
 ##Revision History
 
 | 时间 | 描述 |
@@ -172,5 +171,3 @@ Dyld is a helper program
 CSDN：http://blog.csdn.net/y550918116j
 
 GitHub：https://github.com/937447974
-
-optimizin app startup time
