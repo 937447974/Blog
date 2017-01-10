@@ -67,7 +67,8 @@
 
 ##1.4 Pre-main() Summary
 
-Dyld is a helper program1. Loads all dependent dylibs
+Dyld is a helper program
+1. Loads all dependent dylibs
 2. Fixes up all pointers in DATA pages 
 3. Runs all initializers
 
@@ -100,9 +101,52 @@ Dyld is a helper program1. Loads all dependent dylibs
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017011002.png)
 
+##2.5 Optimizing
+
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017011003.png)
 
-#3 优化
+###2.5.1 Dylib Loading
+
+1. Embedded dylibs are expensive2. Use fewer dylibs	- Merge existing dylibs
+	- Use static archives3. Lazy load, but...
+	- **dlopen()** can cause issues 
+	- Actually more work overall
+
+###2.5.2 Rebase/Binding
+
+1. Reduce __DATA pointers2. Reduce Objective C metadata	- Classes, selectors, and categories3. Reduce C++ virtual4. Use Swift structs5. Examine machine generated code 
+	- Use offsets instead of pointers
+	- Mark read only
+
+###2.5.3 ObjC Setup
+
+1. Class registration
+2. Non-fragile ivars offsets updated 
+3. Category registration
+4. Selector uniquing
+
+###2.5.4 Initializers
+
+**Explicit**
+
+1. ObjC **+load** methods	- Replace with **+initiailize**2. C/C++ `__attribute__`((constructor))
+3. Replace with call site initializers	- dispatch_once() dsfgsdfgsed	- pthread_once() 3452342	- std::once()
+
+**Implicit**
+
+1. C++ statics with non-trivial constructors
+	- Replace with call site initializers 
+	- Only set simple values (PODs) 
+	-Wglobal-constructors
+	Rewrite in Swift 2. Do not call dlopen() in initializers 
+ 3. Do not create threads in initializers
+
+#3 TL;DR
+1. Measure launch times with **DYLD_PRINT_STATISTICS** 
+2. Reduce launch times by	- Embedding fewer dylibs
+	- Consolidating Objective-C classes 
+	- Eliminating static initializers3. Use more Swift
+4.  dlopen() is discouraged	- Subtle performance and deadlock issues
 
 &#160;
 
@@ -121,10 +165,12 @@ Dyld is a helper program1. Loads all dependent dylibs
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-10-26 | 博文完成 |
+| 2017-01-10 | 博文完成 |
 
 ##Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 
 GitHub：https://github.com/937447974
+
+optimizin app startup time
