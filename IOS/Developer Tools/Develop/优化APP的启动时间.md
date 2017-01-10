@@ -98,6 +98,10 @@ Dyld is a helper program1. Loads all dependent dylibs
 		- Available on shipping OSes		- Significantly enhanced in new OSes		- Available in seed 23. Debugger pauses every dylib load	- Dyld subtracts out debugger time 
 	- Console times less than wall clock
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017011002.png)
+
+
+
 #3 优化
 
 &#160;
