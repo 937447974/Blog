@@ -100,7 +100,7 @@ Dyld is a helper program1. Loads all dependent dylibs
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017011002.png)
 
-
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017011003.png)
 
 #3 优化
 
