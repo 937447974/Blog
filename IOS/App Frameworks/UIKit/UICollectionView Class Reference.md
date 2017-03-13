@@ -148,7 +148,7 @@ public var remembersLastFocusedIndexPath: Bool
 ##12 Locating Items and Views in the Collection View
 
 ```swift
-// 感觉点获取对应显示的item
+// 根据点获取对应显示的item
 public func indexPathForItemAtPoint(point: CGPoint) -> NSIndexPath?
 // 当前显示的items
 public func indexPathsForVisibleItems() -> [NSIndexPath]
