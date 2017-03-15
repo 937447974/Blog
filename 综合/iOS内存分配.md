@@ -22,7 +22,7 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 4. 常量区
 	- 常量字符串就是放在这里，还有const常量；
 5. 代码区
-	- 存放App代码，iOS7只有64M；
+	- 存放App代码，4S(iOS7)只有74M；
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017031501.png)
 
