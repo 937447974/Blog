@@ -7,11 +7,25 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 	2. 静态SRAM，速度快，我们常说的一级缓存，二级缓存就是指它，当然价格高一点。
 2. ROM(read only memory)：存储性内存，可以掉电存储，例如SD卡。
 
-#2 内存五区2017031501.png
+#2 内存五区
 
+1. 栈区（stack）：
+	- 栈区地址从高到低分配
+	- 存放的局部变量、先进后出；
+2. 堆区（heap）：
+	- 堆区的地址是从低到高分配。
+	- ARC下OC对象runloop循环结束后(kCFRunLoopBeforeWaiting后)自动释放，CF对象需要`CFRelease(CFTypeRef cf)`手动释放。
+3. 全局区／静态区（static）：
+	包括两个部分：未初始化过和初始化过。（全局区／静态区）在内存中是放在一起的，初始化的全局变量和静态变量在一块区域， 未初始化的全局变量和静态变量在相邻的另一块区域；
+	` eg：int a;未初始化的。int a = 10;已初始化的。`
+4. 常量区：常量字符串就是放在这里，还有const常量；
+5. 代码区： 存放App代码，iOS7只有64M；
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017031501.png)
 
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
+#3 RAM&ROM协调工作
+
+2017031502.png
 
 &#160;
 
