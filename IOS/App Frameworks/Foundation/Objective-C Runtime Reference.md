@@ -460,6 +460,10 @@ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
 
 [Objective-C Runtime 运行时之六：拾遗](http://southpeak.github.io/blog/2014/11/09/objective-c-runtime-yun-xing-shi-zhi-liu-:shi-yi/)
 
+[【OC刨根问底】-Runtime简单粗暴理解](http://www.jianshu.com/p/f900de4a1495)
+
+[OC最实用的runtime总结，面试、工作你看我就足够了！](http://www.jianshu.com/p/ab966e8a82e2)
+
 ##Revision History
 
 | 时间 | 描述 |
