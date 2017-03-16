@@ -132,7 +132,7 @@ long dispatch_testcancel(void *object);
 // 创建调度信号 value=0暂停、大于0执行
 dispatch_semaphore_t dispatch_semaphore_create(long value);
 // 递减计数信号量。如果得到的值小于零，该功能在FIFO为信号发生之前回来。并设置超时时间
-long dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout);
+long dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout\*DISPATCH_TIME_FOREVER*\);
 // 增量计数信号量。如果先前的值小于零，该功能目前在dispatch_semaphore_wait唤醒一个线程
 long dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 ```
@@ -307,6 +307,8 @@ void *dispatch_get_specific(const void *key);
 [Concurrency Programming Guide](https://developer.apple.com/library/ios/documentation/General/Conceptual/ConcurrencyProgrammingGuide/GCDWorkQueues/GCDWorkQueues.html)
 
 [iOS学习篇之Grand Central Dispatch（GCD）](http://www.tuicool.com/articles/NnURNrI)
+
+[GCD(Grand Central Dispatch)教程](http://www.dreamingwish.com/article/gcdgrand-central-dispatch-jiao-cheng.html)
 
 ##Revision History
 
