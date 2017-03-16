@@ -304,6 +304,12 @@ https://github.com/937447974/Algorithms
 
 [Blocks Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40007502)
 
+[objc 中的 block](http://blog.ibireme.com/2013/11/27/objc-block/)
+
+[How Do I Declare A Block in Objective-C?](http://fuckingblocksyntax.com)
+
+[梦维block](http://www.dreamingwish.com/articlelist/tag/block)
+
 ##文档修改记录
 
 | 时间 | 描述 |
