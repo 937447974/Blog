@@ -104,6 +104,10 @@ public func cancelPerformSelectorsWithTarget(target: AnyObject)
 
 [【iOS程序启动与运转】- RunLoop个人小结](http://www.jianshu.com/p/37ab0397fec7)
 
+[NSRunLoop](http://blog.csdn.net/y550918116j/article/details/50837624)
+
+[深入理解RunLoop](http://blog.ibireme.com/2015/05/18/runloop/)
+
 ##Revision History
 
 | 时间 | 描述 |
