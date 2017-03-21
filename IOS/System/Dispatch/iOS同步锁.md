@@ -41,7 +41,7 @@ pthread_mutex_destroy(&lock);
 
 典型的面向对象的锁，即同步锁类。所有锁（包括NSLock）遵循 Objective-C 的 NSLocking 协议接口，支持 tryLock 和 lockBeforeDate: 。底层通过 pthread_mutex 实现。
 
-```
+```objc
 NSLock *lock = [[NSLock alloc] init];
 
 if ([lock tryLock]) { // 尝试加锁，如果失败返回NO，不会阻塞该线程
