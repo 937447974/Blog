@@ -30,7 +30,7 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 
 #2 KVO
 
-Key-Value Observing (KVO) 建立在 KVC 之上，它通过重写 KVC 和监听 setter 方法，向外发送通知。
+KVO (Key-Value Observing) 建立在 KVC 之上，它通过重写 KVC 和监听 setter 方法，向外发送通知。
 
 ##2.1 使用
 
