@@ -1,6 +1,6 @@
 #1 KVC
 
-KVC（Key-value coding）键值编码。简单来说，是可以通过对象属性名称（Key）直接给属性值（value）编码（coding）“编码”可以理解为“赋值”。其内部运用了 isa-swizzling 技术。isa-swizzling 就是类型混合指针机制。KVC 主要通过 isa-swizzling，来实现其内部查找定位的。
+KVC（Key-value coding）键值编码。简单来说，是可以通过对象属性名称（Key）直接给属性值（value）赋值。
 
 ##1.1 使用
 
@@ -14,11 +14,11 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 
 ##1.2 底层调用
 
-假如我们调用`[[NSObject alloc] setValue:nil forKey:@"property"];`，其KVC调用如下所示：
+假如我们调用 `[[NSObject alloc] setValue:nil forKey:@"property"];`，其 KVC 调用如下所示：
 
-1. 去模型中查找有没有对应的 setter 方法：例如：setProperty 方法，有就直接调用这个 setter 方法给模型这个属性赋值;
-2. 如果找不到 setter 方法，接着就会去寻找有没有 property 属性，如果有，就直接访问模型中的property属性，进行赋值;
-3. 如果找不到 property 属性，接着又会去寻找 _property 属性，如果有，直接进行赋值
+1. 去模型中查找有没有对应的 setter 方法：例如：setProperty 方法，有就直接调用这个 setter 方法给属性赋值;
+2. 如果找不到 setter 方法，接着就会去寻找有没有 property Ivar，如果有，就直接进行 `void object_setIvar ( id obj, Ivar ivar, id value )` 赋值;
+3. 如果找不到 property 属性，接着又会去寻找 _property Ivar，如果有，直接进行 Ivar 赋值
 4. 如果都找不到会报出如下所示的崩溃信息。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017032101.png)
@@ -30,7 +30,7 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 
 #2 KVO
 
-Key-Value Observing (KVO) 建立在 KVC 之上，它通过观察一个对象的 KVC key path 值的变化向外发送通知。
+Key-Value Observing (KVO) 建立在 KVC 之上，它通过重写 KVC 和监听 setter 方法，向外发送通知。
 
 ##2.1 使用
 
@@ -54,7 +54,31 @@ Key-Value Observing (KVO) 建立在 KVC 之上，它通过观察一个对象的 
 
 > 当父类和子类同时 KVO 同一个对象时，在 `dealloc` 移除引起崩溃时 应对 context 赋值，移除时也应通过`(void)removeObserver: forKeyPath: context:` 方法移除。
 
-## 
+##2.2 底层实现
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017032201.png)
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017032202.png)
+
+通过上面两张图的对比，我们发现对 test 执行 `addObserver ` 操作时，test 的 isa 指向了NSKVONotifying_KVOTest。执行 `removeObserver ` 操作时，其 isa 再次指回了 KVOTest。这也就是 isa-swizzling 技术，isa-swizzling 就是类型混合指针机制。
+
+由此我们可以结合 runtime 得出如下结论。
+
+1. KVO 的底层是 runtime 编译时动态生成 NSKVONotifying_Class 对象。
+2. NSKVONotifying_Class 是一个动态类，其内部继承了 NSKVONotifying 对象。
+3. NSKVONotifying 内实现了如下操作：
+	1. 重写了 KVC 的机制，这样调用 `setValue: forKey:` 时，外部 Observer 也能接到通知。
+	2. 绑定了原 isa 便于 `removeObserver ` 时，修改原始对象的 isa; 
+	3. 通过动态方法决议与消息转发实现了属性的 setter 方法。
+	4. 可以通过 NSObject 内的 NSKeyValueObserverNotification 扩展方法向外发送 NSKeyValueObservingOptions 通知。如下所示
+	
+```objc
+[test willChangeValueForKey:@"str"]; // KVO 存储旧值
+test -> _str = @"阳君";               // 指针改变值
+[test didChangeValueForKey:@"str"];  // KVO 存储新值，且发出通知
+``` 
+
+> `willChangeValueForKey:` 和 `didChangeValueForKey:` 成对出现缺一不可。
 
 &#160;
 
@@ -74,7 +98,7 @@ Key-Value Observing (KVO) 建立在 KVC 之上，它通过观察一个对象的 
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2017-03-21 | 博文完成 |
+| 2017-03-22 | 博文完成 |
 
 ##Copyright
 
