@@ -74,7 +74,7 @@ yangjundeMac-mini:Test yangjun$ git push
 移除版本库中的数据使用filter-branch命名。打开命令行敲入如下命令
 
 ```git
-yangjundeMac-mini:Test yangjun$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch test/IMG_4933.jpg' --prune-empty --tag-name-filter cat -- --all
+$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch test/IMG_4933.jpg' --prune-empty --tag-name-filter cat -- --all
 ```
 
 只需将“test/IMG_4933.jpg”改为你想删除的文件路径即可，文件路径是以项目为根目录。
@@ -82,7 +82,7 @@ yangjundeMac-mini:Test yangjun$ git filter-branch --force --index-filter 'git rm
 如果你觉得这样一个一个删除太麻烦了，git也支持删除文件夹的方式，只需添加'-r',然后将“test/IMG_4933.jpg”改为“test”即可。
 
 ```git
-yangjundeMac-mini:Test yangjun$ git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch test' --prune-empty --tag-name-filter cat -- --all
+$ git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch test' --prune-empty --tag-name-filter cat -- --all
 ```
 
 > test改为.会清楚所有缓存和本地数据，无法版本回滚，谨慎使用。
@@ -106,7 +106,7 @@ yangjundeMac-mini:Test yangjun$ git commit -m "Add .gitignore"
 当你检查项目后，发现没有任何问题，则将命令提交到版本库中。
 
 ```git
-yangjundeMac-mini:Test yangjun$ git push origin --force --all
+git push origin --force --all
 ```
 
 ##2.5 提交git tags
