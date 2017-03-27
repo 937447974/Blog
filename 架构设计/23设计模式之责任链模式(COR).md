@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 COR属于行为型模式中的一种，使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止。这一模式的想法是，给多个对象处理一个请求的机会，从而解耦发送者和接受者。
@@ -25,21 +21,11 @@ COR属于行为型模式中的一种，使多个对象都有机会处理请求�
 #5 代码实现
 
 ```swift
-//
-//  YJCOR.swift
-//  DesignPattern
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// 定义一个处理请求的协议
-private protocol RequestHandleProtocol {
-    
-    func handleRequest(request: RequestProtocol)
-    
+private protocol RequestHandleProtocol {    
+    func handleRequest(request: RequestProtocol)    
 }
 
 ///  处理它所负责的请求。可访问它的后继者。
@@ -112,32 +98,28 @@ private class AddMoneyRequest: RequestProtocol {
 private class LeaveRequest: RequestProtocol {
     
 }
-
-// MARK: -
-
-/// 责任链模式
-class YJCOR: YJTestProtocol {
-
-    func test() {
-        let hr = HRRequestHandle()
-        let pmRH = PMRequestHandle(requestHandle: hr)
-        let tl  = TLRequestHandle(requestHandle: pmRH)
-        // 向链上的具体处理者(ConcreteHandler)对象提交请求
-        // team leader处理离职请求
-        var request: RequestProtocol = DimissionRequest()
-        tl.handleRequest(request)
-        print("====")
-        // team leader处理加薪请求
-        request = AddMoneyRequest()
-        tl.handleRequest(request)
-        print("====")
-        // team leader处理请假请求
-        request = LeaveRequest()
-        tl.handleRequest(request)
-    }
-    
-}
 ```
+
+测试
+
+```swift
+let hr = HRRequestHandle()
+let pmRH = PMRequestHandle(requestHandle: hr)
+let tl  = TLRequestHandle(requestHandle: pmRH)
+// 向链上的具体处理者(ConcreteHandler)对象提交请求
+// team leader处理离职请求
+var request: RequestProtocol = DimissionRequest()
+tl.handleRequest(request)
+print("====")
+// team leader处理加薪请求
+request = AddMoneyRequest()
+tl.handleRequest(request)
+print("====")
+// team leader处理请假请求
+request = LeaveRequest()
+tl.handleRequest(request)
+```
+
 &#160;
 
 ----------

@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Composite属于结构型模式中的一种，将对象组合成树形结构以表示"部分-整体"的层次结构。Composite使得用户对单个对象和组合对象的使用具有一致性。
@@ -25,17 +21,6 @@ Composite属于结构型模式中的一种，将对象组合成树形结构以�
 #5 代码实现
 
 ```swift
-//
-//  YJComposite.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// Employer为组合中的对象声明协议
@@ -114,28 +99,21 @@ private class ProjectManager: Employer {
     }
     
 }
+```
 
-// MARK: -
-
-/// 组合模式
-class YJComposite: YJTestProtocol {
-
-    func test() {
-        let pm = ProjectManager(name: "项目经理")
-        let pa = ProjectAssistant(name: "项目经理")
-        let pm1 = Programmer(name: "程序员一")
-        let pm2 = Programmer(name: "程序员二")
-        // Client:通过Component协议操纵组合部件的对象。
-        pm.add(pa)
-        pm.add(pm1)
-        pm.add(pm2)
-        // 删除
-        pm.delete(pm2)
-        for item in pm.employers {
-            item.printInfo()
-        }
-    }
-    
+```swift
+let pm = ProjectManager(name: "项目经理")
+let pa = ProjectAssistant(name: "项目经理")
+let pm1 = Programmer(name: "程序员一")
+let pm2 = Programmer(name: "程序员二")
+// Client:通过Component协议操纵组合部件的对象。
+pm.add(pa)
+pm.add(pm1)
+pm.add(pm2)
+// 删除
+pm.delete(pm2)
+for item in pm.employers {
+    item.printInfo()
 }
 ```
 

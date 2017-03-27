@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Flyweight属于结构型模式中的一种，运用共享技术有效地支持大量细粒度的对象。
@@ -30,24 +26,11 @@ Flyweight属于结构型模式中的一种，运用共享技术有效地支持�
 #5 代码实现
 
 ```swift
-//
-//  YJFlyweight.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// FlyweightProtocol:描述一个协议，通过这个协议flyweight可以接受并作用于外部状态。
 private protocol FlyweightProtocol {
-    
-    func action(arg: Int)
-    
+    func action(arg: Int)    
 }
 
 /// ConcreteFlyweight:实现Flyweight协议，并为内部状态（如果有的话）增加存储空间。
@@ -87,24 +70,19 @@ private class FlyweightFactory  {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 享元模式
-class YJFlyweight: YJTestProtocol {
-
-    func test() {
-        // 享元模式
-        let fly1 = FlyweightFactory.getFlyweight("a")
-        fly1.action(1)
-        let fly2 = FlyweightFactory.getFlyweight("a")
-        fly2.action(2);
-        let fly3 = FlyweightFactory.getFlyweight("b")
-        fly3.action(2);
-        print("对象个数：\(FlyweightFactory.getSize())");
-    }
-    
-}
+```swift
+// 享元模式
+let fly1 = FlyweightFactory.getFlyweight("a")
+fly1.action(1)
+let fly2 = FlyweightFactory.getFlyweight("a")
+fly2.action(2);
+let fly3 = FlyweightFactory.getFlyweight("b")
+fly3.action(2);
+print("对象个数：\(FlyweightFactory.getSize())");
 ```
 
 &#160;
