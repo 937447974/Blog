@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Strategy属于行为型模式中的一种，定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
@@ -26,24 +22,11 @@ Strategy属于行为型模式中的一种，定义一系列的算法，把它们
 #5 代码实现
 
 ```swift
-//
-//  YJStrategy.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// StrategyProtocol定义所有支持的算法的公共协议
 private protocol StrategyProtocol {
-    
-    func method()
-    
+    func method()  
 }
 
 /// 以StrategyProtocol协议实现某具体算法
@@ -76,22 +59,18 @@ private class ContextSt {
     }
     
 }
-
-// MARK: -
-
-/// 策略模式
-class YJStrategy: YJTestProtocol {
-
-    func test() {
-        let ctxSt = ContextSt()
-        ctxSt.strategy = StrategyA()
-        ctxSt.doMethod()
-        ctxSt.strategy = StrategyB()
-        ctxSt.doMethod()
-    }
-    
-}
 ```
+
+测试
+
+```swift
+let ctxSt = ContextSt()
+ctxSt.strategy = StrategyA()
+ctxSt.doMethod()
+ctxSt.strategy = StrategyB()
+ctxSt.doMethod()
+```
+
 &#160;
 
 ----------

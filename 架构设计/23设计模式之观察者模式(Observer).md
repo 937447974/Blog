@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Observer属于行为型模式中的一种，定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新。
@@ -26,24 +22,11 @@ Observer属于行为型模式中的一种，定义对象间的一种一对多的
 #5 代码实现
 
 ```swift
-//
-//  YJObserver.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// PolicemanProtocol（观察者）为那些在目标发生改变时需获得通知的对象定义一个更新协议。
 private protocol PolicemanProtocol {
-    
-    func action(citizen:Citizen)
-    
+    func action(_ citizen:Citizen)
 }
 
 /// HuangPuPoliceman具体观察者
@@ -134,23 +117,19 @@ private class TianHeCitizen: Citizen {
     }
     
 }
-
-// MARK: -
-
-/// 观察者模式
-class YJObserver: YJTestProtocol {
-
-    func test() {
-        let hpPol = HuangPuPoliceman()
-        var citizen:Citizen = HuangPuCitizen(pol: hpPol)
-        citizen.sendMessage("unnormal")
-        let thPol = TianHePoliceman()
-        citizen = TianHeCitizen(pol: thPol)
-        citizen.sendMessage("normal")
-    }
-    
-}
 ```
+
+测试
+
+```swift
+let hpPol = HuangPuPoliceman()
+var citizen:Citizen = HuangPuCitizen(pol: hpPol)
+citizen.sendMessage("unnormal")
+let thPol = TianHePoliceman()
+citizen = TianHeCitizen(pol: thPol)
+citizen.sendMessage("normal")
+```
+
 
 &#160;
 

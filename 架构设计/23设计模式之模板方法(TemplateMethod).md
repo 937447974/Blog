@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 TemplateMethod属于行为型模式中的一种，定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。   
@@ -25,17 +21,6 @@ TemplateMethod使得子类可以不改变一个算法的结构即可重定义该
 #5 代码实现
 
 ```swift
-//
-//  YJTemplateMethod.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// Template定义抽象的原语操作，具体的子类将重定义它们以实现一个算法的各步骤。
@@ -64,18 +49,11 @@ private class TemplateConcrete: Template {
     }
     
 }
+```
 
-// MARK: - 
-
-/// 模板方法
-class YJTemplateMethod: YJTestProtocol {
-
-    func test() {
-        let temp: Template = TemplateConcrete()
-        temp.update()
-    }
-    
-}
+```swift
+let temp: Template = TemplateConcrete()
+temp.update()
 ```
 
 &#160;

@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Builder属于创建型模式中的一种，将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
@@ -25,53 +21,34 @@ Builder属于创建型模式中的一种，将一个复杂对象的构建与它�
 #5 代码实现
 
 ```swift
-//
-//  YJBuilder.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// Person 表示被构造的复杂对象
 private class Person {
-    
     /// 头
     var head:String = ""
     /// 身体
     var body:String = ""
     /// 脚
     var foot:String = ""
-    
 }
 
 /// 男人
 private class Man: Person {
-    
 }
 
 // MARK: -
 
 /// PersonBuilder为创建一个Person对象的各个部件指定抽象协议
 private protocol PersonBuilder {
-    
     /// 造头
-    func buildHead()
-    
+    func buildHead()    
     /// 造身体
-    func buildBody()
-    
+    func buildBody()    
     /// 造脚
-    func buildFoot()
-    
+    func buildFoot()    
     /// 造人
-    func buildPerson() -> Person
-    
+    func buildPerson() -> Person    
 }
 
 
@@ -122,23 +99,18 @@ private class PersonDirector {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 建造者模式
-class YJBuilder: YJTestProtocol {
-
-    func test() {
-        // 构造器
-        let pd = PersonDirector()
-        // 装配器
-        let mb = ManBuilder()
-        // 创建对象
-        let person = pd.constructPerson(mb)
-        print(person)
-    }
-    
-}
+```swift
+// 构造器
+let pd = PersonDirector()
+// 装配器
+let mb = ManBuilder()
+// 创建对象
+let person = pd.constructPerson(mb)
+print(person)
 ```
 
 &#160;

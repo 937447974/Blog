@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 **抽象工厂(Abstract Factory)**属于创建型模式中的一种，提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
@@ -28,24 +24,11 @@
 #5 代码实现
 
 ```swift
-//
-//  YJAbstractFactory.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// CatProtocol为一类产品对象声明一个协议。
 private protocol CatProtocol {
-    
     func eat()
-    
 }
 
 /// WhiteCat定义一个将被相应的具体工厂创建的产品对象。实现CatProtocol协议
@@ -70,9 +53,7 @@ private class BlackCat: CatProtocol {
 
 /// DogProtocol为一类产品对象声明一个协议。
 private protocol DogProtocol {
-    
     func eat()
-    
 }
 
 /// WhiteDog定义一个将被相应的具体工厂创建的产品对象。实现DogProtocol协议
@@ -131,28 +112,23 @@ private class BlackAnimalFactory: AnimalFactoryProtocol {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 抽象工厂
-class YJAbstractFactory: YJTestProtocol {
-
-    func test() {
-        let blackAnimalFactory = BlackAnimalFactory()
-        let whiteAnimalFactory = WhiteAnimalFactory()
-        
-        var cat = blackAnimalFactory.createCat()
-        cat.eat()
-        cat = whiteAnimalFactory.createCat()
-        cat.eat()
-        
-        var dog = blackAnimalFactory.createDog()
-        dog.eat()
-        dog = whiteAnimalFactory.createDog()
-        dog.eat()
-    }
+```swift
+let blackAnimalFactory = BlackAnimalFactory()
+let whiteAnimalFactory = WhiteAnimalFactory()
     
-}
+var cat = blackAnimalFactory.createCat()
+cat.eat()
+cat = whiteAnimalFactory.createCat()
+cat.eat()
+    
+var dog = blackAnimalFactory.createDog()
+dog.eat()
+dog = whiteAnimalFactory.createDog()
+dog.eat()
 ```
 
 &#160;
