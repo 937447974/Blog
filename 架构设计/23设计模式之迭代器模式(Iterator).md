@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Iterator属于行为型模式中的一种，给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
@@ -26,30 +22,14 @@ Iterator属于行为型模式中的一种，给定一个语言，定义它的文
 #5 代码实现
 
 ```swift
-//
-//  YJIterator.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// 聚合定义创建相应迭代器对象的协议
-private protocol ListProtocol {
-    
-    func iterator() -> IteratorProtocol
-    
-    func get(index:Int) -> AnyObject
-    
-    func getSize() -> Int
-    
-    func add(obj:AnyObject)
-    
+private protocol ListProtocol {    
+    func iterator() -> IteratorProtocol    
+    func get(index:Int) -> AnyObject    
+    func getSize() -> Int    
+    func add(obj:AnyObject)    
 }
 
 /// 具体聚合实现创建相应迭代器的协议，该操作返回ConcreteIterator的一个适当的实例.
@@ -85,12 +65,9 @@ private class List: ListProtocol {
 // MARK: - 
 
 /// 迭代器定义访问和遍历元素的协议
-private protocol IteratorProtocol {
-    
+private protocol IteratorProtocol {    
     func next() ->AnyObject
-
-    func hasNext() ->Bool
-    
+    func hasNext() ->Bool    
 }
 
 /// 具体迭代器实现迭代器协议,对该聚合遍历时跟踪当前位置
@@ -140,6 +117,25 @@ class YJIterator: YJTestProtocol {
         }
     }
     
+}
+```
+
+测试
+
+```swift
+let list = List()
+list.add("a" as AnyObject)
+list.add("b" as AnyObject)
+list.add("c" as AnyObject)
+//第一种迭代方式
+let it = list.iterator();
+while (it.hasNext()) {
+	print(it.next())
+}
+print("===========")
+//第二种迭代方式
+for i in 0 ..< list.getSize() {
+	print(list.get(i));
 }
 ```
 

@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Proxy属于结构型模式中的一种，为其他对象提供一种代理以控制对这个对象的访问。
@@ -29,24 +25,11 @@ Proxy属于结构型模式中的一种，为其他对象提供一种代理以控
 #5 代码实现
 
 ```swift
-//
-//  YJProxy.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// ObjectProtocol定义ViewController和ProxyObject的共用协议
 private protocol ObjectProtocol {
-    
     func action()
-    
 }
 
 /// ProxyObject保存一个引用使得代理可以访问实体。
@@ -72,20 +55,17 @@ private class ViewController: ObjectProtocol {
     }
     
 }
-
-// MARK: -
-/// 代理模式
-class YJProxy: YJTestProtocol {
-
-    func test() {
-        let vc = ViewController() // 当前VC
-        let obj = ProxyObject()
-        obj.objProtocol = vc // 设置代理类
-        obj.action() // 发送消息
-    }
-    
-}
 ```
+
+测试
+
+```swift
+let vc = ViewController() // 当前VC
+let obj = ProxyObject()
+obj.objProtocol = vc // 设置代理类
+obj.action() // 发送消息
+```
+
 &#160;
 
 ----------

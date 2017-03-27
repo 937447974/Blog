@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Visitor属于行为型模式中的一种，表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
@@ -27,24 +23,11 @@ Visitor属于行为型模式中的一种，表示一个作用于某对象结构�
 #5 代码实现
 
 ```swift
-//
-//  YJVisitor.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// VisitableProtocol定义一个Accept操作，它以一个访问者为参数。
-private protocol VisitableProtocol {
-    
-    func accept(visitor: VisitorProtocol)
-    
+private protocol VisitableProtocol {    
+    func accept(visitor: VisitorProtocol)    
 }
 
 /// FloatElement实现VisitableProtocol操作，该操作以一个访问者为参数
@@ -80,14 +63,10 @@ private class StringElement: VisitableProtocol {
 // MARK: - 
 
 /// VisitorProtocol为该对象结构中ConcreteElement的每一个类声明一个Visit操作
-private protocol VisitorProtocol {
-    
-    func visitString(stringE: StringElement)
-    
-    func visitFloat(floatE: FloatElement)
-    
-    func visitCollection(collection: Array<VisitableProtocol>)
-    
+private protocol VisitorProtocol {    
+    func visitString(stringE: StringElement)    
+    func visitFloat(floatE: FloatElement)    
+    func visitCollection(collection: Array<VisitableProtocol>)    
 }
 
 /// ConcreteVisitor实现每个由Visitor声明的操作
@@ -108,24 +87,19 @@ private class ConcreteVisitor: VisitorProtocol {
     }
     
 }
+```
 
-// MARK: - 
+测试
 
-/// 访问者模式
-class YJVisitor: YJTestProtocol {
-
-    func test() {
-        let visitor = ConcreteVisitor()
-        let se = StringElement(se: "abc")
-        se.accept(visitor)
-        let fe = FloatElement(fe: 1.5)
-        fe.accept(visitor)
-        print("====")
-        let list: Array<VisitableProtocol> = [se, fe]
-        visitor.visitCollection(list)
-    }
-
-}
+```swift
+let visitor = ConcreteVisitor()
+let se = StringElement(se: "abc")
+se.accept(visitor)
+let fe = FloatElement(fe: 1.5)
+fe.accept(visitor)
+print("====")
+let list: Array<VisitableProtocol> = [se, fe]
+visitor.visitCollection(list)
 ```
 
 &#160;

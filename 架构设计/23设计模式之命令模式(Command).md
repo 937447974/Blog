@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Command属于行为型模式中的一种，将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤消的操作。
@@ -29,17 +25,6 @@ Command属于行为型模式中的一种，将一个请求封装为一个对象�
 #5 代码实现
 
 ```swift
-//
-//  YJCommand.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// Receiver知道如何实施与执行一个请求相关的操作
@@ -54,10 +39,8 @@ private class Receiver {
 // MARK: -
 
 /// Command声明执行操作的协议
-private protocol CommandProtocol {
-    
-    func execute()
-    
+private protocol CommandProtocol {    
+    func execute()    
 }
 
 /// ConcreteCommand将一个接收者对象绑定于一个动作。
@@ -92,21 +75,17 @@ private class Invoker {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 命令模式
-class YJCommand: YJTestProtocol {
-    
-    func test() {
-        let rec = Receiver()
-        let cmd = Command(receiver:rec)
-        // Client:创建一个具体命令对象并设定它的接收者。
-        let i = Invoker()
-        i.command = cmd
-        i.execute()
-    }
-}
+```swift
+let rec = Receiver()
+let cmd = Command(receiver:rec)
+// Client:创建一个具体命令对象并设定它的接收者。
+let i = Invoker()
+i.command = cmd
+i.execute()
 ```
 
 &#160;

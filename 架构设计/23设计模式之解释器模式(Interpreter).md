@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Interpreter属于行为型模式中的一种，给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
@@ -28,24 +24,11 @@ Interpreter属于行为型模式中的一种，给定一个语言，定义它的
 #5 代码实现
 
 ```swift
-//
-//  YJInterpreter.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// 声明一个抽象的解释操作，这个协议为抽象语法树中所有的节点所共享
-private protocol ExpressionProtocol {
-    
-    func interpret(context: Context)
-    
+private protocol ExpressionProtocol {    
+    func interpret(context: Context)    
 }
 
 private class AdvanceExpression: ExpressionProtocol {
@@ -79,22 +62,17 @@ private class Context {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 解释器模式
-class YJInterpreter: YJTestProtocol {
-
-    func test() {
-        let ctx = Context()
-        ctx.content = "Context"
-        ctx.add(AdvanceExpression())
-        ctx.add(SimpleExpression())
-        for ex in ctx.list {
-            ex.interpret(ctx)
-        }
-    }
-    
+```swift
+let ctx = Context()
+ctx.content = "Context"
+ctx.add(AdvanceExpression())
+ctx.add(SimpleExpression())
+for ex in ctx.list {
+	ex.interpret(ctx)
 }
 ```
 
