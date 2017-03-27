@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Facade属于结构型模式中的一种，为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
@@ -24,24 +20,11 @@ Facade属于结构型模式中的一种，为子系统中的一组接口提供�
 #5 代码实现
 
 ```swift
-//
-//  YJFacade.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// 服务A协议
-private protocol ServiceProtocolA {
-    
-    func methodA()
-    
+private protocol ServiceProtocolA {    
+    func methodA()    
 }
 
 /// ServiceA的实现
@@ -56,10 +39,8 @@ private class ServiceA: ServiceProtocolA {
 // MARK: -
 
 /// 服务B协议
-private protocol ServiceProtocolB {
-  
-    func methodB()
-    
+private protocol ServiceProtocolB {  
+    func methodB()    
 }
 
 /// ServiceB的实现
@@ -93,18 +74,14 @@ private class Facade {
         sb.methodB()
     }
 }
+```
 
-// MARK: -
+测试
 
-/// 外观模式
-class YJFacade: YJTestProtocol {
-
-    func test() {
-        let facade = Facade()
-        facade.methodA();
-        facade.methodB();
-    }
-}
+```swift
+let facade = Facade()
+facade.methodA();
+facade.methodB();
 ```
 
 &#160;

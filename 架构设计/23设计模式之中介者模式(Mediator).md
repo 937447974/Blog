@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Mediator属于行为型模式中的一种，用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
@@ -25,25 +21,12 @@ Mediator属于行为型模式中的一种，用一个中介对象来封装一系
 #5 代码实现
 
 ```swift
-//
-//  YJMediator.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// MediatorProtocol中介者定义一个协议用于与各同事（Colleague）对象通信。
-private protocol MediatorProtocol {
-    
+private protocol MediatorProtocol {    
     // MARK: 通知
-    func notice(content:String)
-    
+    func notice(content:String)    
 }
 
 /// ConcreteMediator具体中介者通过协调各同事对象实现协作行为。
@@ -72,11 +55,9 @@ private class ConcreteMediator: MediatorProtocol {
 // MARK: - 
 
 /// ColleagueProtocol协议
-private protocol ColleagueProtocol {
-    
+private protocol ColleagueProtocol {    
     // MARK: 通知
-    func action()
-    
+    func action()    
 }
 
 /// 同事A
@@ -96,23 +77,18 @@ private class ColleagueB: ColleagueProtocol {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 中介者模式
-class YJMediator: YJTestProtocol {
-
-    func test() {
-        let med = ConcreteMediator()
-        // 老板来了
-        med.notice("boss")
-        // 客户来了
-        med.notice("client")
-        // 通知错误
-        med.notice("other")
-    }
-    
-}
+```swift
+let med = ConcreteMediator()
+// 老板来了
+med.notice("boss")
+// 客户来了
+med.notice("client")
+// 通知错误
+med.notice("other")
 ```
 
 &#160;

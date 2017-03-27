@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Adapter属于结构型模式中的一种，将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
@@ -26,35 +22,19 @@ Adapter属于结构型模式中的一种，将一个类的接口转换成客户�
 #5 代码实现
 
 ```swift
-//
-//  YJAdapter.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 ///  定义Client使用的与特定领域相关的协议
-private protocol Target {
-    
-    func adapteeMethod()
-    
-    func adapterMethod()
-    
+private protocol Target {    
+    func adapteeMethod()    
+    func adapterMethod()    
 }
 
 /// Adaptee定义一个已经存在的协议，这个协议需要适配。
-private class Adaptee {
-    
+private class Adaptee {    
     func adapteeMethod() {
         print("Adaptee method!")
-    }
-    
+    }    
 }
 
 /// Adapter对Adaptee的协议与Target协议进行适配
@@ -71,19 +51,16 @@ private class Adapter: Target {
     }
     
 }
+```
 
-/// 适配器
-class YJAdapter: YJTestProtocol {
+测试
 
-    func test() {
-        let target = Adapter()
-        target.adaptee = Adaptee()
-        // Client与符合Target协议的对象协同。
-        target.adapteeMethod();
-        target.adapterMethod();
-    }
-    
-}
+```swift
+let target = Adapter()
+target.adaptee = Adaptee()
+// Client与符合Target协议的对象协同。
+target.adapteeMethod();
+target.adapterMethod();
 ```
 
 &#160;

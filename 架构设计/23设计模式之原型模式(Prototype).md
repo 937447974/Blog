@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Prototype属于创建型模式中的一种，用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
@@ -26,17 +22,6 @@ Prototype属于创建型模式中的一种，用原型实例指定创建对象�
 #5 代码实现
 
 ```swift
-//
-//  YJPrototype.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// 实现一个克隆自身的操作
@@ -61,19 +46,16 @@ private class ConcretePrototype: Prototype {
     }
     
 }
+```
 
-/// 原型模式测试
-class YJPrototype: YJTestProtocol {
-    
-    func test() {
-        let pro = ConcretePrototype(name:"阳君")
-        //  Client,让一个原型克隆自身从而创建一个新的对象。
-        let pro2 = pro.clone()
-        print(pro.name)
-        print(pro2.name)
-    }
-    
-}
+测试
+
+```swift
+let pro = ConcretePrototype(name:"阳君")
+//  Client,让一个原型克隆自身从而创建一个新的对象。
+let pro2 = pro.clone()
+print(pro.name)
+print(pro2.name)
 ```
 
 &#160;

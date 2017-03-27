@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Decorator属于结构型模式中的一种，动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。
@@ -26,24 +22,11 @@ Decorator属于结构型模式中的一种，动态地给一个对象添加一�
 #5 代码实现
 
 ```swift
-//
-//  YJDecorator.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// PersonProtocol定义一个对象协议，可以给这些对象动态地添加职责。
-private protocol PersonProtocol {
-    
-    func eat()
-    
+private protocol PersonProtocol {    
+    func eat()    
 }
 
 /// Man定义一个对象，可以给这个对象添加一些职责
@@ -87,23 +70,19 @@ private class ManDecoratorB: Decorator {
     }
     
 }
-
-// MARK: -
-
-/// 装饰模式
-class YJDecorator: YJTestProtocol {
-
-    func test() {
-        let man = Man()
-        let md1 = ManDecoratorA()
-        let md2 = ManDecoratorB()
-        md1.person = man
-        md2.person = md1
-        md2.eat()
-    }
-    
-}
 ```
+
+测试
+
+```swift
+let man = Man()
+let md1 = ManDecoratorA()
+let md2 = ManDecoratorB()
+md1.person = man
+md2.person = md1
+md2.eat()
+```
+
 &#160;
 
 ----------

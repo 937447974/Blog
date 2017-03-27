@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 Bridge属于结构型模式中的一种，将抽象部分与它的实现部分分离，使它们都可以独立地变化。
@@ -28,24 +24,11 @@ Bridge属于结构型模式中的一种，将抽象部分与它的实现部分�
 #5 代码实现
 
 ```swift
-//
-//  YJBridge.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/26.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// Clothing定义实现类的协议，该协议不一定要与PersonBr的协议完全一致
-private protocol Clothing {
-    
-    func personDressCloth(person:Person)
-    
+private protocol Clothing {    
+    func personDressCloth(person:Person)    
 }
 
 /// Trouser实现Clothing协议并定义它的具体实现。
@@ -110,29 +93,24 @@ private class Lady: Person {
     }
     
 }
+```
 
-// MARK: -
+测试
 
-/// 桥接模式
-class YJBridge: YJTestProtocol {
-
-    func test() {
-        let clothes: Clothing = Clothes()
-        let trouser: Clothing = Trouser()
-        
-        let man: Person = Man()
-        let lady: Person = Lady()
-        
-        man.clothing = clothes
-        man.dress()
-        man.clothing = trouser
-        man.dress()
-        // 或
-        clothes.personDressCloth(lady)
-        trouser.personDressCloth(lady)
-    }
+```swift
+let clothes: Clothing = Clothes()
+let trouser: Clothing = Trouser()
     
-}
+let man: Person = Man()
+let lady: Person = Lady()
+    
+man.clothing = clothes
+man.dress()
+man.clothing = trouser
+man.dress()
+// 或
+clothes.personDressCloth(lady)
+trouser.personDressCloth(lady)
 ```
 
 &#160;

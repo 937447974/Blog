@@ -1,7 +1,3 @@
-[返回目录](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之目录.md)
-
-----------
-
 #1 概述
 
 State属于行为型模式中的一种，定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新。
@@ -25,24 +21,11 @@ State属于行为型模式中的一种，定义对象间的一种一对多的依
 #5 代码实现
 
 ```swift
-//
-//  YJState.swift
-//  DesignPattern
-//
-//  CSDN:http://blog.csdn.net/y550918116j
-//  GitHub:https://github.com/937447974/Blog
-//
-//  Created by yangjun on 15/11/27.
-//  Copyright © 2015年 阳君. All rights reserved.
-//
-
 import Cocoa
 
 /// WeatherProtocol定义一个协议以封装与Context的一个特定状态相关的行为
-private protocol WeatherProtocol {
-    
-    func getWeather() ->String
-    
+private protocol WeatherProtocol {    
+    func getWeather() ->String    
 }
 
 private class Rain: WeatherProtocol {
@@ -73,23 +56,20 @@ private class Context {
     }
     
 }
-
-// MARK: - 
-
-/// 状态模式
-class YJState: YJTestProtocol {
-
-    func test() {
-        let ctx = Context()
-        print(ctx.weatherMessage())
-        ctx.weather = Sunshine()
-        print(ctx.weatherMessage())
-        // 改变状态
-        ctx.weather = Rain()
-        print(ctx.weatherMessage())
-    }
-}
 ```
+
+测试
+
+```swift
+let ctx = Context()
+print(ctx.weatherMessage())
+ctx.weather = Sunshine()
+print(ctx.weatherMessage())
+// 改变状态
+ctx.weather = Rain()
+print(ctx.weatherMessage())
+```
+
 &#160;
 
 ----------
