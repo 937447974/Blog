@@ -18,6 +18,8 @@ NSURLSession 创建 NSURLSessionDataTask、NSURLSessionUploadTask 和 NSURLSessi
 
 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
 
+UIViewController 就是通过建造者模式创建的。我们添加 view 的时候，并不是在其 init 方法添加，而是在其构建方法 viewDidLoad 中添加 view。
+
 ##1.4 [Prototype（原型）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之原型模式(Prototype).md)
 
 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
@@ -36,21 +38,31 @@ NSObject 中的 `copy` 则是原型模式，通过拷贝自身达到创建对象
 
 将一个类的接口转化成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 
+适配器模式在 iOS 的 api 中并不常见，更多的是在底层使用，如 `forwardingTargetForSelector ` 消息转发。
+
 ##2.2 [Facade（外观）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之外观模式(Facade).md) 
 
 为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
+
+KVC 其实就是外观模式，我们可以通过 `setValue: forKey:` 随意对对象的属性赋值，而无需考虑其是否有 setter 方法。
 
 ##2.3 [Bridge（桥接）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之桥接模式(Bridge).md)
 
 将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 
+UICollectionViewLayout 和其子类其实际就是一种桥接模式。通过它或者自定义子类实现，即可达到控制 CollectionView 界面的展示。
+
 ##2.4 [Composite（组合）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之组合模式(Composite).md)
 
 将对象组合成树形结构以表示‘部分-整体’的层次结构，组合模式使得用户对单个对象和组合对象的使用具有一致性。
 
+UIView 结合 `addSubview:` 方法就是组合模式，当前 view 即可以是子 view 也可以是父 view。
+
 ##2.5 [Decorator（装饰）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之装饰模式(Decorator).md)
 
 动态地给一个对象添加一些额外的职责。就增加功能来说，装饰模式相比子类更加灵活。
+
+category 其实就是一直装饰模式，我们可以随意为一个类添加方法。
 
 ##2.6 [Flyweight（享元）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之享元模式(Flyweight).md)
 
@@ -104,6 +116,8 @@ NSURLSessionDataTask 的网络控制则是命令模式，我们可以通过控�
 
 定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
 
+NSMutableArray 的 sort 排序算法就是策略模式，我们可在外部随意设置算法的具体实现。
+
 ###3.2.2 [Interpreter（解释器）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之解释器模式(Interpreter).md)
 
 给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
@@ -132,6 +146,8 @@ CoreData 的缓存就是备忘录模式，当我们修改了内存中对象的�
 
 一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
 
+NSNumber 其实际就是访问者模式，我们并不知道内部是是否为 float 或 int 数据。它提供了一系列的接口，只有我们在使用的时候才知道能否转换为 float 或 int 数据。
+
 &#160;
 
 ----------
@@ -142,7 +158,7 @@ CoreData 的缓存就是备忘录模式，当我们修改了内存中对象的�
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2016-10-26 | 博文完成 |
+| 2017-04-03 | 博文完成 |
 
 ##Copyright
 
