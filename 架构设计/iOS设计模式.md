@@ -66,7 +66,7 @@ UITableViewDataSource 则是代理模式，通过它的代理回调我们控制�
 
 #3 行为型
 
-##3.1 梯队
+##3.1 一梯队
 
 ###3.1.1 [Observer（观察者）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之观察者模式(Observer).md) 
 
@@ -90,37 +90,45 @@ init 则是模板方法。NSObject 定义了 init 方法，我们可子类重写
 
 将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；可以对请求排队或记录请求日志，以及支持可撤销的操作。
 
+NSURLSessionDataTask 的网络控制则是命令模式，我们可以通过控制它发起或取消网络请求。
+
 ###3.1.5 [State（状态）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之状态模式(State).md)
 
 允许一个对象在其内部状态改变时改变它的行为，让对象看起来似乎修改了它的类。
 
-2梯队
+状态模式我们可以理解为改变一系列的bool值。如通过改成 UIScrollView 的 scrollEnabled 即可控制用户能否滚动 ScrollView。
 
-###3.1.1 [Strategy（策略）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之策略模式(Strategy).md)
+##3.2 二梯队
+
+###3.2.1 [Strategy（策略）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之策略模式(Strategy).md)
 
 定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
 
-###3.1.2 [Interpreter（解释器）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之解释器模式(Interpreter).md)
+###3.2.2 [Interpreter（解释器）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之解释器模式(Interpreter).md)
 
 给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
 
 NSString 的 boolValue 则是内嵌的解释器模式，将字符串解释成 bool 值。
 
-###3.1.3 [Iterator（迭代器）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之迭代器模式(Iterator).md)
+###3.2.3 [Iterator（迭代器）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之迭代器模式(Iterator).md)
 
 提供一种方法顺序访问一个聚合对象中的各个元素，而又不需要暴露该对象的内部表示。
 
 forin 遍历数组则是迭代器模式。
 
-###3.1.4 [Mediator（中介者）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之中介者模式(Mediator).md)
+###3.2.4 [Mediator（中介者）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之中介者模式(Mediator).md)
 
 用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
 
-###3.1.5 [Memento（备忘录）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之备忘录模式(Memento).md)
+UIApplication 的 `openURL: `，则是中介者模式，提供它我们无需与其他 app 耦合，即可打开其他app。如 qq 的授权登录。
+
+###3.2.5 [Memento（备忘录）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之备忘录模式(Memento).md)
 
 在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可将该对象恢复到原先保存的状态。
 
-###3.1.6 [Visitor（访问者）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之工厂方法(FactoryMethod).md)
+CoreData 的缓存就是备忘录模式，当我们修改了内存中对象的数据时，如果不保存到硬盘上。我们可以通过重置使硬盘中的数据覆盖内存中对象的数据。
+
+###3.2.6 [Visitor（访问者）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之访问者模式(Visitor).md)
 
 一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
 
