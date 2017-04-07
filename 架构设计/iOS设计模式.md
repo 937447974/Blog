@@ -8,7 +8,7 @@ NSObject 的 alloc 方法后跟的 init 其实就是一个工厂方法，我们�
 
 ##1.2 [Abstract Factory（抽象工厂）](https://github.com/937447974/Blog/blob/master/架构设计/23设计模式之抽象工厂(Abstract%20Factory).md)
 
-提给一个创建一系列或相关依赖对象的接口，而无需指定它们具体的类。
+提供一个创建一系列或相关依赖对象的接口，而无需指定它们具体的类。
 
 NSURLSession 创建 NSURLSessionDataTask、NSURLSessionUploadTask 和 NSURLSessionDownloadTask 等对象就是抽象工厂模式。通过一个仓库生产多个不同的实例。
 

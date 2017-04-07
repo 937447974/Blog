@@ -19,7 +19,7 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 1. 去模型中查找有没有对应的 setter 方法：例如：setProperty 方法，有就直接调用这个 setter 方法给属性赋值;
 2. 如果找不到 setter 方法，接着就会去寻找有没有 property Ivar，如果有，就直接进行 `void object_setIvar ( id obj, Ivar ivar, id value )` 赋值;
 3. 如果找不到 property 属性，接着又会去寻找 _property Ivar，如果有，直接进行 Ivar 赋值
-4. 如果都找不到会报出如下所示的崩溃信息。
+4. 如果都找不到会调用 `setValue: forUndefinedKey:`, 然后报出如下所示的崩溃信息。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017032101.png)
 
