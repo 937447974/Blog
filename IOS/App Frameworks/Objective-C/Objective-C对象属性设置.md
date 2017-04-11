@@ -8,7 +8,7 @@
 
 ## retain
 
-对其他NSObject和其子类对参数进行release旧值，再retain新值。释放旧的对象，将旧对象的值赋予输入对象，再提高输入对象的索引计数为1
+对其他NSObject和其子类进行release旧值，再retain新值。释放旧的对象，将旧对象的指针赋予输入对象，再提高输入对象的索引计数为1
 
 > 指定retain会在赋值时唤醒传入值的retain消息。此属性只能用于Objective-C对象类型，而不能用于Core Foundation对象。(原因很明显，retain会增加对象的引用计数，而基本数据类型或者Core Foundation对象都没有引用计数——译者注)。
 > 注意: 把对象添加到数组中时，引用计数将增加对象的引用次数+1。
