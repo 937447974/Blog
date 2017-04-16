@@ -1,6 +1,6 @@
 UIPageViewControllerDelegate控制UIPageViewController的相关变化，如导航到新页面、书脊的位置等。
 
-#Responding to Page View Controller Events
+# Responding to Page View Controller Events
 
 ```swift
 // 过渡动画开始
@@ -16,7 +16,7 @@ optional public func pageViewController(pageViewController: UIPageViewController
 optional public func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation
 ```
 
-#Overriding View Rotation Settings
+# Overriding View Rotation Settings
 
 
 ```swift
@@ -33,21 +33,21 @@ optional public func pageViewControllerPreferredInterfaceOrientationForPresentat
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIPageViewControllerDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerDelegateProtocolRef/index.html)
 
 [View Controller Catalog for iOS](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/PageViewControllers.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-05-03 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -2,7 +2,7 @@
 
 接下来为大家介绍两种方案
 
-##1 直接执行
+## 1 直接执行
 
 带版本执行相关命令
 
@@ -10,7 +10,7 @@
 pod _1.0.0_ update //pod _version_ update
 ```
 
-##2 项目级Cocoapods
+## 2 项目级Cocoapods
 
 第一种方法暴力直接，但需记住工程对应的Cocoapods版本号，否则。。。
 
@@ -38,15 +38,15 @@ Cocoapods的这个思路其实是借鉴了一个叫做Bundler的工具，而Bund
 
 ----------
 
-#Appendix
+# Appendix
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-12-08 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

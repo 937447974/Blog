@@ -73,23 +73,23 @@ class ArrayIntersectUnion {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Algorithms](https://github.com/937447974/Algorithms)
 
-##参考资料
+## 参考资料
 
 [算法导论](https://github.com/937447974/LearningMaterials)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-26 | 算法项目完成、博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

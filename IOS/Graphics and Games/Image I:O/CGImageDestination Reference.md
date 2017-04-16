@@ -1,6 +1,6 @@
 CGImageDestination用于将照片写入到用户的磁盘中，在写入前可修改元数据。
 
-#1 Creating Image Destinations
+# 1 Creating Image Destinations
 
 ```swift
 /// 通过Quartz生成CGImageDestination
@@ -16,7 +16,7 @@ public func CGImageDestinationCreateWithData(data: CFMutableData, _ type: CFStri
 public func CGImageDestinationCreateWithURL(url: CFURL, _ type: CFString, _ count: Int, _ options: CFDictionary?) -> CGImageDestination?
 ```
 
-#2 Adding Images
+# 2 Adding Images
 
 ```swift
 /// 增加照片
@@ -36,7 +36,7 @@ public func CGImageDestinationAddImageAndMetadata(idst: CGImageDestination, _ im
 public func CGImageDestinationCopyImageSource(idst: CGImageDestination, _ isrc: CGImageSource, _ options: CFDictionary?, _ err: UnsafeMutablePointer<Unmanaged<CFError>?>) -> Bool
 ```
 
-#3 Getting Type Identifiers
+# 3 Getting Type Identifiers
 
 ```swift
 /// 获取唯一标示符
@@ -48,7 +48,7 @@ public func CGImageDestinationGetTypeID() -> CFTypeID
 public func CGImageDestinationCopyTypeIdentifiers() -> CFArray
 ```
 
-#4 Setting Properties
+# 4 Setting Properties
 
 ```swift
 /// 设置属性
@@ -56,7 +56,7 @@ public func CGImageDestinationCopyTypeIdentifiers() -> CFArray
 public func CGImageDestinationSetProperties(idst: CGImageDestination, _ properties: CFDictionary?)
 ```
 
-#5 Finalizing an Image Destination
+# 5 Finalizing an Image Destination
 
 ```swift
 /// 写入照片
@@ -68,23 +68,23 @@ public func CGImageDestinationFinalize(idst: CGImageDestination) -> Bool
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [CGImageDestination Reference](https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageDestination/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-15 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

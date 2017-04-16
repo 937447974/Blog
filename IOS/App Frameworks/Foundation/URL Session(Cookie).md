@@ -19,11 +19,11 @@ cookie和缓存一样有两个类控制。
 1. NSHTTPCookieStorage：Cookie管理器。
 2. NSHTTPCookie：Cookie实际对象。
 
-#1 NSHTTPCookieStorage
+# 1 NSHTTPCookieStorage
 
 NSHTTPCookieStorage实际是一个共享的单例对象，它存储整个应用的所有Cookie，并在所有线程中是同步的。
 
-##1.1 获取NSHTTPCookieStorage
+## 1.1 获取NSHTTPCookieStorage
 
 ```swift
 // 获取共享的NSHTTPCookieStorage
@@ -32,7 +32,7 @@ public class func sharedHTTPCookieStorage() -> NSHTTPCookieStorage
 public class func sharedCookieStorageForGroupContainerIdentifier(identifier: String) -> NSHTTPCookieStorage
 ```
 
-##1.2 获取和设置Cookie访问策略
+## 1.2 获取和设置Cookie访问策略
 
 ```swift
 public var cookieAcceptPolicy: NSHTTPCookieAcceptPolicy
@@ -44,7 +44,7 @@ public enum NSHTTPCookieAcceptPolicy : UInt {
 }
 ```
 
-##1.3 增加和删除Cookie
+## 1.3 增加和删除Cookie
 
 ```swift
 // 增加cookie
@@ -57,7 +57,7 @@ public func deleteCookie(cookie: NSHTTPCookie)
 public func removeCookiesSinceDate(date: NSDate)
 ```
 
-##1.4 获取Cookie
+## 1.4 获取Cookie
 
 ```swift
 // 获取所有cookie
@@ -68,7 +68,7 @@ public func cookiesForURL(URL: NSURL) -> [NSHTTPCookie]?
 public func sortedCookiesUsingDescriptors(sortOrder: [NSSortDescriptor]) -> [NSHTTPCookie]
 ```
 
-##1.5 通知
+## 1.5 通知
 
 ```swift
 // cookieAcceptPolicy变动通知
@@ -77,11 +77,11 @@ public let NSHTTPCookieManagerAcceptPolicyChangedNotification: String
 public let NSHTTPCookieManagerCookiesChangedNotification: String
 ```
 
-#2 NSHTTPCookie
+# 2 NSHTTPCookie
 
 NSHTTPCookie是cookie的实际对象。这里不再详细描述，有兴趣的朋友查阅API《[NSHTTPCookie Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html)》
 
-#3 实战演练
+# 3 实战演练
 
 ```swift
 //
@@ -135,9 +135,9 @@ class YJHTTPCookieVC: UIViewController {
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
@@ -145,14 +145,14 @@ class YJHTTPCookieVC: UIViewController {
 
 [NSHTTPCookie Class Reference]
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-05 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

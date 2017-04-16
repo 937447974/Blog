@@ -24,13 +24,13 @@
 
 ---
 
-#<a id="NSLayoutAnchor"/>1 NSLayoutAnchor
+# <a id="NSLayoutAnchor"/>1 NSLayoutAnchor
 
 前面讲到了NSLayoutConstraint约束UI界面。但是通过实际操作，这样的写法特别繁琐特别麻烦。今天向大家介绍NSLayoutAnchor，这种写法很简洁大方。它会生成一个NSLayoutConstraint供你使用。
 
 > NSLayoutAnchor是IOS9推出的。
 
-##<a id="对比NSLayoutConstraint和NSLayoutAnchor"/>1.1 对比NSLayoutConstraint和NSLayoutAnchor
+## <a id="对比NSLayoutConstraint和NSLayoutAnchor"/>1.1 对比NSLayoutConstraint和NSLayoutAnchor
 
 还记得NSLayoutConstraint创建约束时，如下所示。
 
@@ -52,7 +52,7 @@ subview.leadingAnchor.constraintEqualToAnchor(margins.leadingAnchor).active = tr
 
 一对比是否感觉使用NSLayoutAnchor更酸爽。
 
-##<a id="创建NSLayoutAnchor"/>1.2 创建NSLayoutAnchor
+## <a id="创建NSLayoutAnchor"/>1.2 创建NSLayoutAnchor
 
 使用创建约束有如下几种方式
 
@@ -75,9 +75,9 @@ public func constraintLessThanOrEqualToAnchor(anchor: NSLayoutAnchor!, constant 
 1. 左边的View对应self，右边的View对应anchor；
 2. 下面的View对应self，上面的View对应anchor。
 
-#<a id="NSLayoutAnchor的子类"/>2 NSLayoutAnchor的子类
+# <a id="NSLayoutAnchor的子类"/>2 NSLayoutAnchor的子类
 
-##<a id="相关子类"/>2.1 相关子类
+## <a id="相关子类"/>2.1 相关子类
 
 多数情况下，我们设置约束时是操作NSLayoutAnchor的子类。
 
@@ -87,7 +87,7 @@ public func constraintLessThanOrEqualToAnchor(anchor: NSLayoutAnchor!, constant 
 
 这里不在详细介绍，开发过程中看看API就知道。
 
-##<a id="获取子类"/>2.2 获取子类
+## <a id="获取子类"/>2.2 获取子类
 
 苹果对view进行了扩展，便于大家设置约束的时候，获取NSLayoutAnchor的子类。
 
@@ -122,9 +122,9 @@ extension UIView {
 }
 ```
 
-#<a id="实战演练"/>3 实战演练
+# <a id="实战演练"/>3 实战演练
 
-##<a id="效果图模型">3.1 效果图模型
+## <a id="效果图模型">3.1 效果图模型
 
 我们要实现和NSLayoutConstraint实战演练一样的效果图。
 
@@ -143,7 +143,7 @@ extension UIView {
 7. Green View.Leading = Yellow View.Trailing + 30.0
 8. Yellow View.Width = Green View.Width
 
-##<a id="代码实现">3.2 代码实现
+## <a id="代码实现">3.2 代码实现
 
 在代码实现的时候，UIView是默认禁止约束的，你要通过。
 
@@ -226,7 +226,7 @@ class YJAutoLayoutAnchorVC: UIViewController {
 }
 ```
 
-##<a id="效果图">3.3 效果图
+## <a id="效果图">3.3 效果图
 
 运行项目后，在不同的屏幕上都可以看到如下效果图，还可以旋转屏幕。
 
@@ -242,25 +242,25 @@ class YJAutoLayoutAnchorVC: UIViewController {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [NSLayoutAnchor Class Reference](https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html)
 
 [Auto Layout Guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-19 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

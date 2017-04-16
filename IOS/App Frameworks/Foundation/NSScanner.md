@@ -1,6 +1,6 @@
 NSScanner（OC）、Scanner（Swift）是一个扫描工具，主要用于扫描NSString。
 
-##1 Creating a Scanner
+## 1 Creating a Scanner
 
 ```swift
 // 初始化
@@ -8,14 +8,14 @@ public init(string: String)
 open class func localizedScanner(with string: String) -> Any
 ```
 
-##2 Getting a Scanner’s String
+## 2 Getting a Scanner’s String
 
 ```swift
 // 当前扫描的String
 open var string: String { get }
 ```
 
-##3 Configuring a Scanner
+## 3 Configuring a Scanner
 
 ```swift
 // 开始扫描的位置
@@ -28,7 +28,7 @@ open var caseSensitive: Bool
 open var locale: Any?
 ```
 
-##4 Scanning a String
+## 4 Scanning a String
 
 ```swift
 // 扫描十进制
@@ -66,20 +66,20 @@ open var isAtEnd: Bool { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSScanner](https://developer.apple.com/reference/foundation/nsscanner?language=objc)
 
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-09-29 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

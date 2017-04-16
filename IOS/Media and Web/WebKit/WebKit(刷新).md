@@ -18,7 +18,7 @@
 
 作为一款模拟浏览器的项目，必然要支持界面刷新。其实刷新很简单，WekWebView就支持相关功能。
 
-#1 WekWebView刷新相关
+# 1 WekWebView刷新相关
 
 在WekWebView有一个属性和两个方法管理刷新。
 
@@ -31,9 +31,9 @@
 - - (void)stopLoading;
 ```
 
-#2 实现刷新
+# 2 实现刷新
 
-##2.1 创建刷新按钮
+## 2.1 创建刷新按钮
 
 我们将刷新功能用按钮实现，将其添加到UINavigationController导航上。
 
@@ -48,7 +48,7 @@
 }
 ```
 
-##2.2 加载刷新按钮
+## 2.2 加载刷新按钮
 
 在viewDidLoad()中使用
 
@@ -63,7 +63,7 @@
 }
 ```
 
-##2.3 实现刷新方法
+## 2.3 实现刷新方法
 
 接下来实现刷新方法reload:。
 
@@ -82,24 +82,24 @@
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-02 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

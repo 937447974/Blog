@@ -8,7 +8,7 @@
 
 PHFetchResultChangeDetails主要用于记录PHFetchResult的变动，这样可以同时判断多个数据是否有变动。
 
-#1 获取PHFetchResult
+# 1 获取PHFetchResult
 
 ```swift
 /// 变化前
@@ -18,7 +18,7 @@ public var fetchResultBeforeChanges: PHFetchResult { get }
 public var fetchResultAfterChanges: PHFetchResult { get }
 ``` 
 
-#2 获取变动信息
+# 2 获取变动信息
 
 ```swift
 /// 是否有变动
@@ -46,7 +46,7 @@ public func enumerateMovesWithBlock(handler: (Int, Int) -> Void)
 public var hasMoves: Bool { get }
 ```
 
-#3 比较PHFetchResult
+# 3 比较PHFetchResult
 
 ```swift
 /// 获取两个PHFetchResult的差异
@@ -59,7 +59,7 @@ public var hasMoves: Bool { get }
 public convenience init(fromFetchResult fromResult: PHFetchResult, toFetchResult toResult: PHFetchResult, changedObjects: [PHObject])
 ```
 
-#4 实战演练
+# 4 实战演练
 
 ```swift
 func photoLibraryDidChange(changeInfo: PHChange!) {
@@ -133,13 +133,13 @@ func photoLibraryDidChange(changeInfo: PHChange!) {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -147,13 +147,13 @@ func photoLibraryDidChange(changeInfo: PHChange!) {
 
 [PHFetchResultChangeDetails Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-06 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

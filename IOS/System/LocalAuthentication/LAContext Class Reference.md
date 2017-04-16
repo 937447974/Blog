@@ -17,19 +17,19 @@ public func evaluatePolicy(policy: LAPolicy, localizedReason: String, reply: (Bo
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [LAContext Class Reference](https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-08-03 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

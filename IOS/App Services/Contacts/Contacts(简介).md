@@ -1,6 +1,6 @@
 Contacts Framework主要用于帮助我们获取用户的联系方式，即通讯录中的相关信息。我们可以对其实现增删改查及归纳整理等相关功能。
 
-#Classes
+# Classes
 
 - NSObject
     - CNContactStore：联系人的存储库。
@@ -28,23 +28,23 @@ Contacts Framework主要用于帮助我们获取用户的联系方式，即通�
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-13 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -1,6 +1,6 @@
 前面已经讲解了QuickLook相关知识，接下来使用QuickLook库预览pdf文件。
 
-#1 显示的文件
+# 1 显示的文件
 
 显示的文件需要自定义实体，然后继承QLPreviewItem。这里制作一个简单的文件实体类。
 
@@ -35,7 +35,7 @@ class YJPreviewItem: NSObject, QLPreviewItem {
 
 我们使用Test.pdf文件，并且这个文件已经导入到项目中。你也可以使用其他文件。
 
-#2 页面跳转
+# 2 页面跳转
 
 当用户点击屏幕时发生跳转，具体代码如下。
 
@@ -73,7 +73,7 @@ class ViewController: UIViewController, QLPreviewControllerDataSource {
 }
 ```
 
-#3 实现QLPreviewControllerDataSource
+# 3 实现QLPreviewControllerDataSource
 
 要显示的item需要实现QLPreviewControllerDataSource协议展示。
 
@@ -90,7 +90,7 @@ func previewController(controller: QLPreviewController, previewItemAtIndex index
 }
 ```
 
-#4 效果图
+# 4 效果图
 
 运行项目点击屏幕即可看见如下效果图。
 
@@ -100,13 +100,13 @@ func previewController(controller: QLPreviewController, previewItemAtIndex index
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Quick Look Framework Reference for iOS](https://developer.apple.com/library/ios/documentation/QuickLook/Reference/QuickLookFrameworkReference_iPhoneOS/index.html)
 
@@ -118,13 +118,13 @@ func previewController(controller: QLPreviewController, previewItemAtIndex index
 
 [QLPreviewItem Protocol Reference for iOS](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewItem_Protocol_iPhoneOS/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-24 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

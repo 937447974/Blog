@@ -24,17 +24,17 @@
 
 ----
 
-#<a id="UICollectionViewDelegateFlowLayout"/>1 UICollectionViewDelegateFlowLayout
+# <a id="UICollectionViewDelegateFlowLayout"/>1 UICollectionViewDelegateFlowLayout
 
 UICollectionViewDelegateFlowLayout是UICollectionViewDelegate的子类，也就是说它继承了UICollectionViewDelegate的所有协议。在UICollectionViewDelegate的基础上，UICollectionViewDelegateFlowLayout增加了关于UICollectionViewFlowLayout的相关控制，让我们能够更加精细的控制视图的布局。
 
-##<a id="获取Item的Size"/>1.1 获取Item的Size
+## <a id="获取Item的Size"/>1.1 获取Item的Size
 
 ```swift
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
 ```
 
-##<a id="获取Section的间隔"/>1.2 获取Section的间隔
+## <a id="获取Section的间隔"/>1.2 获取Section的间隔
 
 ```swift
 // 边间隔
@@ -47,7 +47,7 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
 ```
 
-##<a id="获取Header和Footer的Size"/>1.3 获取Header和Footer的Size
+## <a id="获取Header和Footer的Size"/>1.3 获取Header和Footer的Size
 
 ```swift
 // MARK: Header显示
@@ -57,13 +57,13 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
 ```
 
-#<a id="实战演练"/>2 实战演练
+# <a id="实战演练"/>2 实战演练
 
-##<a id="界面搭建"/>2.1 界面搭建
+## <a id="界面搭建"/>2.1 界面搭建
 
 界面搭建如[UICollectionViewDataSource](https://github.com/937447974/Blog/blob/master/IOS/Cocoa%20Touch%20Layer/UIKit/UICollectionViewDataSource.md)所示，这里不在详细解锁。
 
-##<a id="类YJCollectionViewDelegateFlowLayoutVC"/>2.2 类YJCollectionViewDelegateFlowLayoutVC
+## <a id="类YJCollectionViewDelegateFlowLayoutVC"/>2.2 类YJCollectionViewDelegateFlowLayoutVC
 
 这里使用类YJCollectionViewDelegateFlowLayoutVC为搭建演示关于UICollectionViewDelegateFlowLayout的使用，下面是部分源代码。
 
@@ -140,7 +140,7 @@ class YJCollectionViewDelegateFlowLayoutVC: UIViewController, UICollectionViewDa
 }
 ```
 
-##<a id="实现UICollectionViewDelegateFlowLayout"/>2.3 实现UICollectionViewDelegateFlowLayout
+## <a id="实现UICollectionViewDelegateFlowLayout"/>2.3 实现UICollectionViewDelegateFlowLayout
 
 接下来实现UICollectionViewDelegateFlowLayout。
 
@@ -195,13 +195,13 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
@@ -209,13 +209,13 @@ func collectionView(collectionView: UICollectionView, layout collectionViewLayou
 
 [UICollectionViewDelegateFlowLayout Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegateFlowLayout_protocol/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-23 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

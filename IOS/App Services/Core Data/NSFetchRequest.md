@@ -1,7 +1,7 @@
 NSFetchRequest即SQL的select操作。
 
-#Symbols
-##1 Managing the Fetch Request’s Entity
+# Symbols
+## 1 Managing the Fetch Request’s Entity
 
 ```swift
 // 通过实体名初始化
@@ -14,7 +14,7 @@ open var entity: NSEntityDescription?
 open var includesSubentities: Bool
 ```
 
-##2 Fetch Constraints
+## 2 Fetch Constraints
 
 ```swift
 // 谓词，即where
@@ -31,14 +31,14 @@ open var fetchBatchSize: Int
 open var affectedStores: [NSPersistentStore]?
 ```
 
-##3 Sorting
+## 3 Sorting
 
 ```swift
 // 排序集合
 open var sortDescriptors: [NSSortDescriptor]?
 ```
 
-##4 Prefetching
+## 4 Prefetching
 
 ```swift
 // 预获取关系数据
@@ -46,7 +46,7 @@ open var sortDescriptors: [NSSortDescriptor]?
 open var relationshipKeyPathsForPrefetching: [String]?
 ```
 
-##5 Managing How Results Are Returned
+## 5 Managing How Results Are Returned
 
 ```swift
 // 返回的类型
@@ -72,7 +72,7 @@ open var shouldRefreshRefetchedObjects: Bool
 open var returnsObjectsAsFaults: Bool
 ```
 
-##6 Grouping and Filtering Dictionary Results
+## 6 Grouping and Filtering Dictionary Results
 
 ```swift
 // GROUP BY操作
@@ -83,14 +83,14 @@ open var propertiesToGroupBy: [Any]?
 open var havingPredicate: NSPredicate?
 ```
 
-##7 Initializers
+## 7 Initializers
 
 ```swift
 // 初始化
 public init()
 ```
 
-##8 Instance Methods
+## 8 Instance Methods
 
 ```swift
 // 提交请求
@@ -102,19 +102,19 @@ open func execute() throws -> [ResultType]
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSFetchRequest](https://developer.apple.com/reference/coredata/nsfetchrequest)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

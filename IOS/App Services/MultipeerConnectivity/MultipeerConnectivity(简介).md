@@ -1,10 +1,10 @@
 MultipeerConnectivity支持点对点连接和发现附近的设备。当无法连接互联网时，MultipeerConnectivity也能帮助我们在相近的设备间传输数据，如消息、流数据或文件。
 
-#Using the Framework
+# Using the Framework
 
 使用这个库我们会经历两个阶段，发现阶段和会话阶段。
 
-#Classes
+# Classes
 
 - NSObject
     - MCAdvertiserAssistant 发出广播通知，供附件的设备发现并邀请。
@@ -16,7 +16,7 @@ MultipeerConnectivity支持点对点连接和发现附近的设备。当无法�
 - UIViewController
     - MCBrowserViewController UI搜索显示附近的设备并允许用户邀请搜索的设备加入会话。
 
-#Protocols
+# Protocols
 
 - MCAdvertiserAssistantDelegate MCAdvertiserAssistant代理，处理广播相关事件。
 - MCNearbyServiceAdvertiserDelegate MCNearbyServiceAdvertiser代理，处理发出广播的事件。
@@ -28,23 +28,23 @@ MultipeerConnectivity支持点对点连接和发现附近的设备。当无法�
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Multipeer Connectivity Framework Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-21 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

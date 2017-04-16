@@ -1,6 +1,6 @@
 UIScrollViewDelegate是UIScrollView的核心代理，我们可以通过它监听UIScrollView的相关动作。
 
-##1 Responding to Scrolling and Dragging
+## 1 Responding to Scrolling and Dragging
 
 ```swift
 // 滚动持续中
@@ -27,7 +27,7 @@ func scrollViewWillBeginDecelerating(scrollView: UIScrollView)
 func scrollViewDidEndDecelerating(scrollView: UIScrollView)
 ```
 
-##2 Managing Zooming
+## 2 Managing Zooming
 
 ```swift
 // 返回要缩放的View
@@ -44,7 +44,7 @@ optional public func scrollViewDidZoom(scrollView: UIScrollView)
 optional public func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat)
 ```
 
-##3 Responding to Scrolling Animations
+## 3 Responding to Scrolling Animations
 
 ```swift
 // 使用setContentOffset/scrollRectVisible:animated:调用的滚动动画结束
@@ -55,19 +55,19 @@ func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIScrollViewDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollViewDelegate_Protocol/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

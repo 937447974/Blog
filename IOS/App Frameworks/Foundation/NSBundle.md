@@ -13,7 +13,7 @@
 
 NSBundle主要用于快速访问APP中的资源文件，如xib、plist、image等。
 
-#<a id="1">1 Initializing an NSBundle
+# <a id="1">1 Initializing an NSBundle
 
 ```swift
 /// 根据路径生成NSBundle
@@ -24,7 +24,7 @@ public init?(path: String)
 public convenience init?(URL url: NSURL)
 ```
 
-#<a id="2">2 Getting an NSBundle
+# <a id="2">2 Getting an NSBundle
 
 ```swift
 /// 获取主bundle，Info.plist
@@ -43,7 +43,7 @@ public class func allBundles() -> [NSBundle]
 public class func allFrameworks() -> [NSBundle]
 ```
 
-#<a id="3">3 Getting a Bundled Class
+# <a id="3">3 Getting a Bundled Class
 
 ```swift
 /// 根据class名生成class
@@ -53,7 +53,7 @@ public func classNamed(className: String) -> AnyClass?
 public var principalClass: AnyClass? { get }
 ```
 
-#<a id="4">4 Finding Resources
+# <a id="4">4 Finding Resources
 
 ```swift
 /// 源path
@@ -113,7 +113,7 @@ public func URLsForResourcesWithExtension(ext: String?, subdirectory subpath: St
 public func pathsForResourcesOfType(ext: String?, inDirectory subpath: String?) -> [String]
 ```
 
-#<a id="5">5 Getting the Bundle Directory
+# <a id="5">5 Getting the Bundle Directory
 
 ```swift
 /// 包路径
@@ -122,7 +122,7 @@ public var bundlePath: String { get }
 @NSCopying public var bundleURL: NSURL { get }
 ```
 
-#<a id="6">6 Getting Bundle Information
+# <a id="6">6 Getting Bundle Information
 
 ```swift
 // 包标示符Bundle ID
@@ -163,14 +163,14 @@ public var privateFrameworksPath: String? { get }
 public var sharedSupportPath: String? { get }
 ```
 
-#<a id="7">7 Managing Localized Resources
+# <a id="7">7 Managing Localized Resources
 
 ```swift
 /// 返回本地化字符串对应的值
 public func localizedStringForKey(key: String, value: String?, table tableName: String?) -> String
 ```
 
-#<a id="8">8 Loading a Bundle’s Code
+# <a id="8">8 Loading a Bundle’s Code
 
 ```swift
 /// 可执行的cpu架构
@@ -190,7 +190,7 @@ public var loaded: Bool { get }
 public func unload() -> Bool
 ```
 
-#<a id="9">9 Managing Localizations
+# <a id="9">9 Managing Localizations
 
 ```swift
 // 从一个或多个本地化id中获取当前支持的id
@@ -206,7 +206,7 @@ public var localizedInfoDictionary: [String : AnyObject]? { get }
 public var localizations: [String] { get }
 ```
 
-#<a id="10">10 Managing Preservation Priority for On Demand Resources
+# <a id="10">10 Managing Preservation Priority for On Demand Resources
 
 ```swift
 /// 设置优先级
@@ -221,13 +221,13 @@ public func preservationPriorityForTag(tag: String) -> Double
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSBundle Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html)
 
@@ -235,13 +235,13 @@ public func preservationPriorityForTag(tag: String) -> Double
 
 [Resource Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/LoadingResources/Introduction/Introduction.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-14 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

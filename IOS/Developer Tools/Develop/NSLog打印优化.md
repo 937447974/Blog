@@ -1,4 +1,4 @@
-#1 NSLog
+# 1 NSLog
 
 在开发过程中，我们会使用NSLog打印一些日志，如果在NSArray或NSDictionary中有中文字符时，如下。
 
@@ -16,7 +16,7 @@ NSLog(@"%@", dict);
 
 如图这样很不利于开发过程的调试。如果你说这样很好，你看的懂，那你牛逼！
 
-#2 NSLog打印优化
+# 2 NSLog打印优化
 
 通过分析打印的实质是调用了NSArray或NSDictionary对象的`- (NSString *)descriptionWithLocale:(id)locale`方法。我们只需重写这个方法即可。
 
@@ -36,7 +36,7 @@ NSLog+Extension.h代码如下
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+# import <Foundation/Foundation.h>
 
 /** 数组NSLog打印扩展*/
 @interface NSArray (NSLogExtension)
@@ -68,9 +68,9 @@ NSLog+Extension.m代码如下
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import "NSLog+Extension.h"
+# import "NSLog+Extension.h"
 
-#if 1
+# if 1
 
 #pragma mark -  NSLog打印辅助方法
 id logExtension(id obj) {
@@ -149,12 +149,12 @@ id logExtension(id obj) {
 
 @end
 
-#endif
+# endif
 ```
 
 我们使用字符串拼接的方式返回要打印的字符串。这里使用了函数logExtension，主要是因为在数组中包含字典或数组时，要让显示数据后移'\t'。
 
-#3 测试
+# 3 测试
 
 只需引入文件，无须在类中引入头文件。再次运行前面的测试代码，打印输出
 
@@ -162,7 +162,7 @@ id logExtension(id obj) {
 
 可以发现两个的打印结果格式没有太大差异，但是优化后的打印看着就是爽。
 
-#4 小结
+# 4 小结
 
 本博文讲解了工作中的常用的NSLog打印优化，其实还有一种就是将数据转换为NSString再查看。但是没有格式，数据庞大时，不利于查看，如果你有兴趣可以查看的的博文《[JSON解析](http://blog.csdn.net/y550918116j/article/details/49002701)》。
 
@@ -170,13 +170,13 @@ id logExtension(id obj) {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 https://github.com/937447974/Objective-C
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -184,7 +184,7 @@ https://github.com/937447974/Objective-C
 | 2015-11-19 | 修改源代码，字典遍历不使用并发，防止线程错误 |
 | 2015-12-29 | 增加NSSet打印扩展，增加对NSString的支持 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

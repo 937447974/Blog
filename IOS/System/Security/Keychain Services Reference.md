@@ -8,9 +8,9 @@ Keychain Services的相关接口可以让你发现、增加、修改和删除钥
 
 ![](https://developer.apple.com/library/ios/documentation/Security/Conceptual/keychainServConcepts/art/iphone_keychain_flowchart.png)
 
-#1 Functions
+# 1 Functions
 
-##1.1 Using Keychain Item Search Dictionaries
+## 1.1 Using Keychain Item Search Dictionaries
 
 钥匙串由CFDictionary定义键值对。
 
@@ -29,7 +29,7 @@ public func SecItemUpdate(query: CFDictionary, _ attributesToUpdate: CFDictionar
 public func SecItemDelete(query: CFDictionary) -> OSStatus
 ```
 
-##1.2 Creating Access Control Objects
+## 1.2 Creating Access Control Objects
 
 ```swift
 // 创建一个新的访问控制对象，该对象具有指定的保护类型和标志。
@@ -37,9 +37,9 @@ public func SecItemDelete(query: CFDictionary) -> OSStatus
 public func SecAccessControlCreateWithFlags(allocator: CFAllocator?, _ protection: AnyObject, _ flags: SecAccessControlCreateFlags, _ error: UnsafeMutablePointer<Unmanaged<CFError>?>) -> SecAccessControl?
 ```
 
-#2 Constants
+# 2 Constants
 
-##2.1 OS X Keychain Services API Constants
+## 2.1 OS X Keychain Services API Constants
 
 ```swift
 // 预定义的关键常量时,基于字典的参数使用传递导入/导出功能
@@ -47,9 +47,9 @@ public func SecAccessControlCreateWithFlags(allocator: CFAllocator?, _ protectio
 public let kSecImportExportPassphrase: CFString
 ```
 
-##2.2 Keychain Item Class Keys and Values
+## 2.2 Keychain Item Class Keys and Values
 
-###2.2.1 Item Class Key Constant
+### 2.2.1 Item Class Key Constant
 
 ```swift
 // 搜索词典条目
@@ -57,7 +57,7 @@ public let kSecImportExportPassphrase: CFString
 public let kSecClass: CFString
 ```
 
-###2.2.2 Item Class Value Constants
+### 2.2.2 Item Class Value Constants
 
 ```swift
 // 一般密码
@@ -77,9 +77,9 @@ public let kSecClassKey: CFString
 public let kSecClassIdentity: CFString
 ```
 
-##2.3 Attribute Item Keys and Values
+## 2.3 Attribute Item Keys and Values
 
-###2.3.1 Attribute Item Keys
+### 2.3.1 Attribute Item Keys
 
 每种类型的钥匙串项可以有多个描述属性
 
@@ -134,7 +134,7 @@ public let kSecClassIdentity: CFString
 >1. kSecAttrAccessGroup：如果希望这个keychain的item可以被多个应用share，可以给这个item设置这个属性，类型是CFStringRef。应用程序在被编译时，可以在entitlement中指定自己的accessgroup，如果应用的accessgroup名字和keychain item的accessgroup名字一致，那这个应用就可以访问这个item，不过这个设计并不是很好，因为应用的accessgroup是由应用开发者指定的，它可以故意跟其他应用的accessgroup一样，从而访问其他应用的item，更可怕的是还支持wildcard，比如keychain-dumper将自己的accessgroup指定为*，从而可以把keychain中的所有item都dump出来。
 >2. kSecAttrTokenID: 当前对应的值只有kSecAttrTokenIDSecureEnclave
 
-###2.3.2 Protocol Values
+### 2.3.2 Protocol Values
 
 kSecAttrProtocol对应的values
 
@@ -172,7 +172,7 @@ let kSecAttrProtocolIRCS: CFString // IRC over TLS/SSL.
 let kSecAttrProtocolPOP3S: CFString // POP3 over TLS/SSL.
 ```
 
-###2.3.3 Authentication Type Values
+### 2.3.3 Authentication Type Values
 
 kSecAttrAuthenticationType对应的values
 
@@ -187,7 +187,7 @@ let kSecAttrAuthenticationTypeHTMLForm: CFString // HTML form based authenticati
 let kSecAttrAuthenticationTypeDefault: CFString // The default authentication type.
 ```
 
-###2.3.4 Key Class Values
+### 2.3.4 Key Class Values
 
 kSecAttrKeyClass对应的values
 
@@ -197,7 +197,7 @@ let kSecAttrKeyClassPrivate: CFString // 私钥
 let kSecAttrKeyClassSymmetric: CFString // 对称密钥
 ```
 
-###2.3.5 Key Type Values
+### 2.3.5 Key Type Values
 
 kSecAttrKeyType对应的values
 
@@ -206,7 +206,7 @@ let kSecAttrKeyTypeRSA: CFString // RSA公钥加密算法
 let kSecAttrKeyTypeEC: CFString // 非对称加密
 ```
 
-###2.3.6 Keychain Item Accessibility Constants
+### 2.3.6 Keychain Item Accessibility Constants
 
 kSecAttrAccessible对应的常量，默认kSecAttrAccessibleWhenUnlocked
 
@@ -221,7 +221,7 @@ let kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly: CFString // 设备重启�
 let kSecAttrAccessibleAlwaysThisDeviceOnly: CFString // 一直可访问，不备份
 ```
 
-###2.3.7 kSecAttrSynchronizable Value Constants
+### 2.3.7 kSecAttrSynchronizable Value Constants
 
 使用于SecItemCopyMatching, SecItemUpdate, or SecItemDelete.
 
@@ -230,7 +230,7 @@ let kSecAttrAccessibleAlwaysThisDeviceOnly: CFString // 一直可访问，不备
 public let kSecAttrSynchronizableAny: CFString // 同步和非同步返回查询结果
 ```
 
-###2.3.8 kSecAttrTokenID Value Constants
+### 2.3.8 kSecAttrTokenID Value Constants
 
 使用kSecAttrKeyTypeEC 256-bits加密，对应使用的kSecAttrTokenID和kSecAttrTokenIDSecureEnclave
 
@@ -239,9 +239,9 @@ public let kSecAttrSynchronizableAny: CFString // 同步和非同步返回查询
 public let kSecAttrTokenIDSecureEnclave: CFString // 秘钥
 ```
 
-##2.4 Search Keys
+## 2.4 Search Keys
 
-###2.4.1 Search Attribute Keys
+### 2.4.1 Search Attribute Keys
 
 查询时使用的属性key
 
@@ -260,7 +260,7 @@ let kSecMatchLimitOne: CFString // 首条结果
 let kSecMatchLimitAll: CFString // 全部结果
 ```
 
-###2.4.2 Item List Key
+### 2.4.2 Item List Key
 
 用于指定要搜索或添加的项目列表的键。用户提供用于查询的列表。当这个列表被提供的时候，不会再搜索钥匙串。
 
@@ -268,9 +268,9 @@ let kSecMatchLimitAll: CFString // 全部结果
 let kSecUseItemList: CFString // CFArrayRef(SecKeychainItemRef, SecKeyRef, SecCertificateRef, SecIdentityRef, or (for persistent item references) CFDataRef items. )
 ```
 
-##2.5 Search Results Constants
+## 2.5 Search Results Constants
 
-###2.5.1 Return Type Keys
+### 2.5.1 Return Type Keys
 
 搜索的返回值
 
@@ -281,7 +281,7 @@ let kSecReturnRef: CFString // 返回实例(SecKeychainItemRef, SecKeyRef, SecCe
 let kSecReturnPersistentRef: CFString // 返回持久型实例(CFDataRef) CFBooleanRef
 ```
 
-###2.5.2 Value Type Keys
+### 2.5.2 Value Type Keys
 
 ```swift
 let kSecValueData: CFString // data数据(CFDataRef)
@@ -289,7 +289,7 @@ let kSecValueRef: CFString // 引用数据（SecKeychainItemRef, SecKeyRef, SecC
 let kSecValuePersistentRef: CFString // 强引用数据（CFDataRef）
 ```
 
-##2.6 Access Control Create Flags
+## 2.6 Access Control Create Flags
 
 SecAccessControlCreateFlags方法使用的常数
 
@@ -316,9 +316,9 @@ public struct SecAccessControlCreateFlags : OptionSetType {
 }
 ```
 
-##2.7 Other Constants
+## 2.7 Other Constants
 
-##2.7.1 predefined constants
+## 2.7.1 predefined constants
 
 ```swift
 @available(iOS 8.0, *)
@@ -329,7 +329,7 @@ public let kSecUseAuthenticationUI: CFString // 验证UI（CFBooleanRef)
 public let kSecUseAuthenticationContext: CFString // 秘钥item验证(LAContext)
 ```
 
-###2.7.2 kSecUseAuthenticationUI Value Constants
+### 2.7.2 kSecUseAuthenticationUI Value Constants
 
 ```swift
 @available(iOS 9.0, *)
@@ -344,9 +344,9 @@ public let kSecUseAuthenticationUISkip: CFString // UI校验跳过
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Keychain Services Reference](https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/index.html)
 
@@ -356,7 +356,7 @@ public let kSecUseAuthenticationUISkip: CFString // UI校验跳过
 
 [iOS 再谈Keychain钥匙串，应用间数据共享打造iOS上的全家桶](http://www.mamicode.com/info-detail-1159388.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -364,7 +364,7 @@ public let kSecUseAuthenticationUISkip: CFString // UI校验跳过
 | 2016-07-29 | 博文完成 |
 
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -14,7 +14,7 @@
 
 在上一篇博文《[URL Session(NSURLSessionDataTask))](https://github.com/937447974/Blog/blob/master/IOS/Core%20Services%20Layer/Foundation/URL%20Session(NSURLSessionDataTask).md)》中讲解了怎么和服务器通信，在这篇博文向大家讲解怎么把文件上传到服务器。
 
-#1 NSURLSessionUploadTask
+# 1 NSURLSessionUploadTask
 
 上传文件使用NSURLSessionUploadTask来操作。通过NSURLSession创建NSURLSessionUploadTask有如下几种方式。
 
@@ -24,7 +24,7 @@
 4. `uploadTaskWithRequest(_:fromFile:completionHandler:)`：通过文件路径上传文件，完成后回调，可前后台上传；
 5. `uploadTaskWithStreamedRequest(_:)`：通过流的方式上传数据。
 
-#2 前台上传
+# 2 前台上传
 
 前台上传的时候都是上传的小数据，大数据多数放在后台上传。毕竟上传是需要时间的，等待太久用户体验不好。
 
@@ -58,7 +58,7 @@ func uploadTaskMain() {
 }
 ```
 
-#3 后台上传
+# 3 后台上传
 
 很多时候我们会在后台上传数据，尤其是特别大的数据，还会考虑分段上传。
 
@@ -107,9 +107,9 @@ func application(application: UIApplication, handleEventsForBackgroundURLSession
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [NSURLSessionUploadTask](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionUploadTask_class/index.html)
 
@@ -117,14 +117,14 @@ func application(application: UIApplication, handleEventsForBackgroundURLSession
 
 [NSURLSession Class Reference](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-04 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

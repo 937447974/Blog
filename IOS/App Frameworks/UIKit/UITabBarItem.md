@@ -12,7 +12,7 @@ UITabBarItem就是UITabBar上显示的小按钮。
 
 我们也可以定制系统UITabBarItem按钮，只需通过`UITabBarItem.appearance()`获取即可。
 
-#1 Initializing an Item
+# 1 Initializing an Item
 
 ```swift
 /// 通过标题、图片、tag初始化按钮
@@ -26,14 +26,14 @@ public convenience init(title: String?, image: UIImage?, selectedImage: UIImage?
 public convenience init(tabBarSystemItem systemItem: UITabBarSystemItem, tag: Int)
 ```
 
-#2 Getting and Setting Properties
+# 2 Getting and Setting Properties
 
 ```swift
 /// 未读消息的标记
 public var badgeValue: String?
 ```
 
-#3 Customizing Appearance
+# 3 Customizing Appearance
 
 ```swift
 /// 选中按钮的图片
@@ -49,21 +49,21 @@ public var titlePositionAdjustment: UIOffset
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
 [UITabBarController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-11 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

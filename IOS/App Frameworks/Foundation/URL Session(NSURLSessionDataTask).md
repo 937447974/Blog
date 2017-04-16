@@ -14,13 +14,13 @@
 
 在这篇博文为大家讲解整个项目中最重要的功能：和服务器通信。相信现在的app单机操作的很少了，基本上都会和服务器通信。
 
-#1 NSURLSessionDataTask
+# 1 NSURLSessionDataTask
 
 和服务器通信使用到的类是NSURLSessionDataTask，早期的时候我们会使用NSURLConnection完成通信。
 
 NSURLSessionDataTask是NSURLSession的子类，它向服务器发送数据的同时接受服务器发回的数据，是短连接操作。
 
-#2 搭建项目
+# 2 搭建项目
 
 你使用任何项目都没有关系，本次只是为了测试NSURLSessionDataTask的相关功能。为此使用类YJDataTaskVC。
 
@@ -50,7 +50,7 @@ class YJDataTaskVC: UIViewController {
 
 这是一个很干净的类，相信大家一目了然。你只要保证你的项目能进入这个VC即可。
 
-#3 异步请求
+# 3 异步请求
 
 NSURLSession整个系列的请求都是高度异步的，当用户发出一个请求后，数据没回来的时候，还可以做其他操作。
 
@@ -60,7 +60,7 @@ NSURLSession整个系列的请求都是高度异步的，当用户发出一个�
 2. 使用NSMutableURLRequest创建不同的任务，并使用resume()方法将信息发送给服务器。
 3. 在completionHandler闭包中处理服务器发回的数据。
 
-##3.1 Get请求
+## 3.1 Get请求
 
 在通信中get是最简单的请求方式了，一个url链接即可获取服务器发回的数据。在YJDataTaskVC添加如下代码。
 
@@ -118,7 +118,7 @@ override func viewDidLoad() {
 
 运行项目即可在控制台看见输出信息。
 
-##3.2 Post请求
+## 3.2 Post请求
 
 在网络通信中，我们最常用的就是post提交数据了。如登录、注册、修改密码等功能都是通过异步Post完成的。
 
@@ -157,7 +157,7 @@ func sendRequestPost() {
 
 post请求要比get请求多几个步骤，多出的步骤就是将我们的数据封装到NSMutableURLRequest。
 
-#4 同步
+# 4 同步
 
 在NSURLSession中是没有同步的，但是有的时候因为业务需要，用户的请求需要同步操作。这里我们可以使用NSURLConnection完成同步操作。
 
@@ -197,24 +197,24 @@ func sendSynchronousRequestPOST() {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-04 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -1,6 +1,6 @@
 当我们在开发过程中对系统类扩展时，会发现无法扩展属性。如果想扩展属性，可使用Runtime扩展。
 
-#1 相关API
+# 1 相关API
 
 其中涉及到的Runtime方法有如下三个。
 
@@ -32,9 +32,9 @@ public func objc_getAssociatedObject(object: AnyObject!, _ key: UnsafePointer<Vo
 public func objc_removeAssociatedObjects(object: AnyObject!)
 ```
 
-#2 实战演练
+# 2 实战演练
 
-##2.1 扩展属性
+## 2.1 扩展属性
 
 下面为YJUser扩展name属性。
 
@@ -80,7 +80,7 @@ extension YJUser {
 }
 ```
 
-##2.2 测试
+## 2.2 测试
 
 ```swift
 //
@@ -108,23 +108,23 @@ print(user.name)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Runtime](https://github.com/937447974/Swift/tree/master/Runtime)
 
-##Related Documentation
+## Related Documentation
 
 [Objective-C Runtime Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-11 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

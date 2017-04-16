@@ -10,7 +10,7 @@ Core Data是个框架，它使得开发者可以把数据当成对象来操作�
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016102101.png)
 
-##1 持久化存储协调器
+## 1 持久化存储协调器
 
 持久化存储协调器里面包含一份持久化存储区，而存储区里面又含有数据表里的若干行数据。设置持久化存储协调器的时候，我们通常选用SQLite数据库作为持久化存储区。
 
@@ -20,13 +20,13 @@ Core Data是个框架，它使得开发者可以把数据当成对象来操作�
 
 要想创建持久化存储区，需生成NSPersistentStore类的实例；要想创建持久化存储协调器，需生成NSPersistentStoreCoordinator类的实例。
 
-##2 托管对象模型
+## 2 托管对象模型
 
 托管对象模型，它位于持久化存储协调器和托管对象上下文之间。顾名思义，托管对象模型是描述数据结构的数据或图示，而托管对象正式以它为基础产生出来的。它与数据库模式相似，有时也叫做对象图。要想创建托管对象模型，可以用XCode来配置实体及实体之间的关系。实体就是数据库中的表，其属性的数据类型可以是整数、字符串或日期。
 
 要想创建托管对象模型，需生成NSManagedObjectModel类的实例。
 
-##3 托管对象上下文
+## 3 托管对象上下文
 
 托管对象上下文，其中包含多个托管对象。托管对象上下文负责管理其中对象的生命周期，并且负责提供许多强大的功能，诸如faulting、变更追踪、验证等。faulting就是用户从持久化存储区中获取数据时，系统只会把需要用到的那一部分获取过来。变更追踪用户支持撤销及重做功能。验证机制用来确保由托管对象模型所订立的规则。
 
@@ -38,19 +38,19 @@ Core Data是个框架，它使得开发者可以把数据当成对象来操作�
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Core Data Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-21 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

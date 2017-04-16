@@ -2,7 +2,7 @@ Accounts Framework能够帮助我们访问账户库中的账户信息。可以�
 
 目前支持的账户有Twitter、Facebook、新浪微博和腾讯微博。查看IOS 9的手机设置发现有Flickr和Vimeo、估计后续会支持这两个账户。
 
-#Classes
+# Classes
 
 - NSObject
     - ACAccount 用户账号信息。
@@ -14,23 +14,23 @@ Accounts Framework能够帮助我们访问账户库中的账户信息。可以�
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Accounts Framework Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/AccountsFrameworkRef/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

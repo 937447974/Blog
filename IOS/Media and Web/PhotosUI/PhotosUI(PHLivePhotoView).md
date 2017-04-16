@@ -6,13 +6,13 @@
 
 PHLivePhotoView用于显示用户的生活照片。
 
-#1 Choosing a Live Photo to Display
+# 1 Choosing a Live Photo to Display
 
 ```swift
 public var livePhoto: PHLivePhoto?
 ```
 
-#2 Managing Playback
+# 2 Managing Playback
 
 ```swift
 /// 是否有声音
@@ -21,7 +21,7 @@ public var muted: Bool
 public var playbackGestureRecognizer: UIGestureRecognizer { get }
 ```
 
-#3 Responding to Playback Events
+# 3 Responding to Playback Events
 
 ```swift
 /// 开始播放生活照片
@@ -30,14 +30,14 @@ public func startPlaybackWithStyle(playbackStyle: PHLivePhotoViewPlaybackStyle)
 public func stopPlayback()
 ```
 
-#4 Manually Playing Live Photo Content
+# 4 Manually Playing Live Photo Content
 
 ```swift
 /// 代理，监听播放开始和结束
 weak public var delegate: PHLivePhotoViewDelegate?
 ```
 
-#5 Accessing User Interface Icons for Live Photos
+# 5 Accessing User Interface Icons for Live Photos
 
 ```swift
 /// 获取显示照片
@@ -48,7 +48,7 @@ weak public var delegate: PHLivePhotoViewDelegate?
 public class func livePhotoBadgeImageWithOptions(badgeOptions: PHLivePhotoBadgeOptions) -> UIImage
 ```
 
-#6 实战演示
+# 6 实战演示
 
 下面演示了显示并播放生活照片的源代码
 
@@ -75,25 +75,25 @@ if self.asset.mediaSubtypes == PHAssetMediaSubtype.PhotoLive {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
 [PHLivePhoto Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-07 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

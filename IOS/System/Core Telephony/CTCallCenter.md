@@ -1,6 +1,6 @@
 使用CTCallCenter可获取当前电话和对方电话的通话状态。
 
-#Responding to Cellular Call Events
+# Responding to Cellular Call Events
 
 ```swift
 // 获取接入电话
@@ -16,25 +16,25 @@ public var callEventHandler: ((CTCall) -> Void)?
 
 ----
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Telephony Framework Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/index.html)
 
 [CTCallCenter Class Reference](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-30 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

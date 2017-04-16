@@ -1,6 +1,6 @@
 CNContactStore主要用于沟通用户存储联系人的数据仓库，通过它可以对用户通讯录中的联系人进行查询、修改、增加等操作。
 
-#1 Fetching Unified Contacts
+# 1 Fetching Unified Contacts
 
 ```swift
 /// 获取联系人
@@ -20,7 +20,7 @@ public func unifiedContactsMatchingPredicate(predicate: NSPredicate, keysToFetch
 public func unifiedContactWithIdentifier(identifier: String, keysToFetch keys: [CNKeyDescriptor]) throws -> CNContact
 ```
 
-#2 Privacy Access
+# 2 Privacy Access
 
 ```swift
 /// 用户认证的权限
@@ -39,7 +39,7 @@ public class func authorizationStatusForEntityType(entityType: CNEntityType) -> 
 public func requestAccessForEntityType(entityType: CNEntityType, completionHandler: (Bool, NSError?) -> Void)
 ```
 
-#3 Fetching and Saving
+# 3 Fetching and Saving
 
 ```swift
 /// 闭包获取联系人
@@ -81,25 +81,25 @@ public func defaultContainerIdentifier() -> String
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
 [CNContactStore Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-13 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

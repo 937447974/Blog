@@ -19,11 +19,11 @@
 1. NSURLCache：缓存管理器。
 2. NSCachedURLResponse：存储缓存的对象。
 
-#1 NSURLCache
+# 1 NSURLCache
 
 NSURLCache缓存控制器，多数情况下我们只需要操作它。
 
-##1.1 获取和设置共享缓存
+## 1.1 获取和设置共享缓存
 
 我们可以使用系统配置的缓存，也可以设计自己的缓存管理器。
 
@@ -34,7 +34,7 @@ public class func sharedURLCache() -> NSURLCache
 public class func setSharedURLCache(cache: NSURLCache)
 ```
 
-##1.2 创建共享缓存
+## 1.2 创建共享缓存
 
 当你想设置整个系统的共享缓存时，首先要创建一个NSURLCache。
 
@@ -49,7 +49,7 @@ public class func setSharedURLCache(cache: NSURLCache)
 public init(memoryCapacity: Int, diskCapacity: Int, diskPath path: String?)
 ```
 
-##1.3 获取和存储缓存对象
+## 1.3 获取和存储缓存对象
 
 有的时候你也可以自己去获取和存储缓存对象。更多的时候我们是获取NSCachedURLResponse，由系统去自动存储缓存NSCachedURLResponse。
 
@@ -60,7 +60,7 @@ public func cachedResponseForRequest(request: NSURLRequest) -> NSCachedURLRespon
 public func storeCachedResponse(cachedResponse: NSCachedURLResponse, forRequest request: NSURLRequest)
 ```
 
-##1.4 删除缓存对象
+## 1.4 删除缓存对象
 
 由于业务需要，我们也需要删除缓存对象。
 
@@ -73,7 +73,7 @@ public func removeCachedResponseForRequest(request: NSURLRequest)
 public func removeCachedResponsesSinceDate(date: NSDate)
 ```
 
-##1.5 获取和设置磁盘缓存属性
+## 1.5 获取和设置磁盘缓存属性
 
 我们可以在开发工程中设置和获取磁盘缓存属性。
 
@@ -84,7 +84,7 @@ public var diskCapacity: Int
 public var currentDiskUsage: Int { get }
 ```
 
-##1.6 获取和设置内存缓存属性
+## 1.6 获取和设置内存缓存属性
 
 还可以获取和设置内存缓存属性。
 
@@ -95,11 +95,11 @@ public var memoryCapacity: Int
 public var currentMemoryUsage: Int { get }
 ```
 
-#2 NSCachedURLResponse
+# 2 NSCachedURLResponse
 
 NSCachedURLResponse就是我们实际缓存的每一个对象，一般不对其操作，这里不在详细说明。
 
-#3 缓存模式
+# 3 缓存模式
 
 还记得前面讲的NSURLSession的两步，封装网络请求相关信息和根据不同工作模式发出请求。这里的缓存配置是在NSMutableURLRequest中配置的。
 
@@ -116,11 +116,11 @@ NSURLRequestCachePolicy : UInt {
 }
 ```
 
-#4 实战演练
+# 4 实战演练
 
 接下来，我们就用一个webView请求的方法测试缓存。第二次请求使用缓存数据，已达到缓存加速的效果。
 
-##4.1 显示网页
+## 4.1 显示网页
 
 ```swift
 //
@@ -165,7 +165,7 @@ class YJURLCacheVC: UIViewController {
 
 这是一个简单的页面显示，使用WKWebView显示http://blog.csdn.net/y550918116j。你会发现每次点击刷新按钮，加载的速度不是特别快。
 
-##4.2 缓存显示网页
+## 4.2 缓存显示网页
 
 接下来就使用缓存，加速显示页面。改写reloadWebView()方法。
 
@@ -216,9 +216,9 @@ func reloadWebView() {
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
@@ -226,14 +226,14 @@ func reloadWebView() {
 
 [NSCachedURLResponse Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCachedURLResponse_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-05 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

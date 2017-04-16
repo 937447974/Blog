@@ -16,9 +16,9 @@
 6. 网页加载的进度条，效果如qq和微信的网页加载进度条。
 &#160;
 
-#1 准备工作
+# 1 准备工作
 
-##1.1 搭建项目
+## 1.1 搭建项目
 
 前期的项目搭建和上一篇博文一样，只是在UINavigationController添加三个按钮。运行后的界面如图所示:
 
@@ -37,7 +37,7 @@
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "AdvancedVC.h"
+# import "AdvancedVC.h"
 
 @interface AdvancedVC ()
 
@@ -56,7 +56,7 @@
 
 ```
 
-##1.2 显示网页
+## 1.2 显示网页
 
 我们使用大家都熟悉的百度做测试，加载网页“https://www.baidu.com”。
 
@@ -101,11 +101,11 @@ NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9802)
 
 ![这里写图片描述](http://img.blog.csdn.net/20151104152115623)
 
-#2 UIWebView设置
+# 2 UIWebView设置
 
 下面讲解在项目过程中关于UIWebView的常用设置。
 
-##2.1 背景设置
+## 2.1 背景设置
 
 滑动屏幕到顶部时，再向上滑动，你会看到背景色，你可以通过backgroundColor自定义背景色。
 
@@ -113,7 +113,7 @@ NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9802)
 self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 ```
 
-##2.2 页面滚动弹跳
+## 2.2 页面滚动弹跳
 
 上面说的，你可以滑动到顶部看到背景色，这里有一个弹跳效果。也就是你看见背景色，松开手指看到的效果。这里你可以禁用这种效果。
 
@@ -121,7 +121,7 @@ self.webView.backgroundColor = [UIColor lightGrayColor]; // 设置背景色
 self.webView.scrollView.bounces = NO;
 ```
 
-##2.3 缩放
+## 2.3 缩放
 
 默认情况下UIWebView加载HTML页面后，会以页面的原始大小进行显示，亦即如果页面的大小超出UIWebView视口大小，UIWebView会出现滚动效果，而且用户只能通过滚动页面来查看不同区域的内容，不能使用手指的捏合手势来放大或缩小页面。通过设置
 
@@ -133,7 +133,7 @@ self.webView.scalesPageToFit = YES ;
 UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显示内容的效果，并且用户可以用捏合动作来放大或缩小页面来查看内容。
 &#160;
 
-#3 清空cookies
+# 3 清空cookies
 
 清空cookies使用到了NSHTTPCookieStorage类，这个类主要用于管理网络中的cookies。
 
@@ -157,7 +157,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#4 清除缓存
+# 4 清除缓存
 
 清除UIWebView的缓存使用了NSURLCache对象，在这里我们使用`removeAllCachedResponses `清楚所有缓存。
 
@@ -182,7 +182,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#5 网页刷新
+# 5 网页刷新
 
 在UIWebView有下列属性和方法。
 
@@ -208,7 +208,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 &#160;
 
-#6 网页上一页和下一页
+# 6 网页上一页和下一页
 
 在UIWebView有下列方法：
 
@@ -240,13 +240,13 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 将界面上方右边的两个按钮指向这两个方法体，运行项目，则能实现网页前往上一页或下一页。
 &#160;
 
-#7 进度条
+# 7 进度条
 
-##7.1 QQ进度条分析
+## 7.1 QQ进度条分析
 
 打开qq的网页浏览，发现在UINavigationController有一个很炫的进度条，初步分析使用的是UIProgressView控件，这里我们也使用这种控件，只要实现进度条的动画效果即可。如果你想实现更炫的效果，请自行研究UIProgressView。
 
-##7.2 项目改造
+## 7.2 项目改造
 
 为了实现进度条，需要在界面中加一个UIProgressView控件。
 
@@ -265,7 +265,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "AdvancedVC.h"
+# import "AdvancedVC.h"
 
 @interface AdvancedVC () <UIWebViewDelegate>
 {
@@ -348,7 +348,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 }
 ```
 
-##7.3 进度条实现
+## 7.3 进度条实现
 
 运行项目后，我们在浏览器随意操作。发现，有的页面输出信息多，有的页面输出信息少。
 
@@ -439,13 +439,13 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [UIWebView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -455,7 +455,7 @@ UIWebView可以缩放HTML页面来适配其视口大小，从而达到整屏显�
 | 2015-12-11 | 更新相关博文链接 |
 | 2015-12-12 | 更新博文名 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

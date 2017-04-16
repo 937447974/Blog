@@ -6,7 +6,7 @@
 
 ----------
 
-#1 UIGestureRecognizer
+# 1 UIGestureRecognizer
 
 手势识别器是识别用户在界面的触摸响应，它能帮助我们更好的响应用户的触摸行为，实现更好的交互效果。如一个按钮的点击，就是一个手势响应。手势的核心是UIGestureRecognizer，它是具体手势识别器的一个抽象基类。它的工作原理如图所示。
 
@@ -82,9 +82,9 @@ typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
 - `- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)otherGestureRecognizer`：当otherGestureRecognizer的手势响应跳过时才执行当前手势的响应。
 - `- (NSUInteger)numberOfTouches`: 用户触摸的手指数。 
 
-#2 项目准备
+# 2 项目准备
 
-##2.1 创建项目
+## 2.1 创建项目
 
 创建一个单一项目GestureRecognizer
 
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
 
 这里我使用了两个View，一个是界面直接拉去手势识别器的gestureView，一个是通过代码添加手势识别器的gestureCodeView。当然你不一定要跟我一样，在这里我还使用了tab控件，是为了讲解进阶和高级做准备的。两个View和最底层的View最好使用不同的颜色做区分，有助于提示你，你正在那个界面做手势操作。
 
-##2.2 核心类
+## 2.2 核心类
 
 我们使用的核心类是BaseVC。下面是核心代码。
 
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "BaseVC.h"
+# import "BaseVC.h"
 
 @interface BaseVC ()
 
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
 
 ![项目准备-2](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110804.jpg)
 
-#3 UITapGestureRecognizer
+# 3 UITapGestureRecognizer
 
 UITapGestureRecognizer是单点击的手势识别器，你也可以理解为短点击手势识别器，如UIButton的点击响应。
 
@@ -170,7 +170,7 @@ tapGR.numberOfTouchesRequired = 1; // 有几个手指点击，默认1
 
 >你只需修改codeHidden的值即可切换storyboard测试还是代码测试。为节约篇幅，以后会直接显示相应的方法体和代码添加手势的相关代码。
 
-#4 UILongPressGestureRecognizer
+# 4 UILongPressGestureRecognizer
 
 与短点击相对应的还有长点击手势UILongPressGestureRecognizer。
 
@@ -202,7 +202,7 @@ longPressGR.allowableMovement = 10; // 手指长按时可移动的区域，默�
 }
 ```
 
-#5 UIPinchGestureRecognizer
+# 5 UIPinchGestureRecognizer
 
 UIPinchGestureRecognizer主要用于捏合操作，在app中主要用它缩放视图，如缩放照片。
 
@@ -230,7 +230,7 @@ UIPinchGestureRecognizer *pinchGR = [[UIPinchGestureRecognizer alloc] initWithTa
 }
 ```
 
-#6 UIRotationGestureRecognizer
+# 6 UIRotationGestureRecognizer
 
 UIRotationGestureRecognizer主要用于旋转视图。
 
@@ -258,7 +258,7 @@ UIRotationGestureRecognizer *rotationGR = [[UIRotationGestureRecognizer alloc] i
 }
 ```
 
-#7 UISwipeGestureRecognizer
+# 7 UISwipeGestureRecognizer
 
 UISwipeGestureRecognizer是滑动手势，它可以监听上下左右的滑动。在实际应用中，它更多的是帮助用户滑动切换视图。
 
@@ -312,7 +312,7 @@ swipeGR.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecogn
 
 > 你可以使用一个手势监听多个方向，如同时监听向左和向右使用`swipeGR.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;`
 
-#8 UIScreenEdgePanGestureRecognizer
+# 8 UIScreenEdgePanGestureRecognizer
 
 UIScreenEdgePanGestureRecognizer边缘滑动，就是在屏幕边缘滑动的手势响应。屏幕顶端向下划出的通知栏。
 
@@ -371,7 +371,7 @@ screenEdgePanGR.edges = UIRectEdgeAll; // 所有方向
 }
 ```
 
-#9 UIPanGestureRecognizer
+# 9 UIPanGestureRecognizer
 
 UIPanGestureRecognizer为平滑手势，只要是你的手指在屏幕上滑动都可以通过它监听。
 
@@ -413,15 +413,15 @@ panGR.maximumNumberOfTouches = 1; // 最多响应的手指，默认UINT_MAX
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [Event Handling Guide for iOS](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/GestureRecognizer_basics/GestureRecognizer_basics.html)
 
 [UIGestureRecognizer Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -430,7 +430,7 @@ panGR.maximumNumberOfTouches = 1; // 最多响应的手指，默认UINT_MAX
 | 2015-12-11 | 目录添加索引 |
 | 2015-12-12 | 文章标题更新 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

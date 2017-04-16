@@ -8,7 +8,7 @@
 
 NSOperationQueue是NSOperation的操作队列，主要用于管理NSOperation子类的执行。NSOperationQueue是按照顺序执行相关NSOperation操作。
 
-#<a id="1">1 Getting Specific Operation Queues
+# <a id="1">1 Getting Specific Operation Queues
 
 ```swift
 /// 获取当前队列
@@ -20,7 +20,7 @@ public class func currentQueue() -> NSOperationQueue?
 public class func mainQueue() -> NSOperationQueue
 ```
 
-#<a id="2">2 Managing Operations in the Queue
+# <a id="2">2 Managing Operations in the Queue
 
 ```swift
 /// 添加一个NSOperation
@@ -53,7 +53,7 @@ public func cancelAllOperations()
 public func waitUntilAllOperationsAreFinished()    
 ```
 
-#<a id="3">3 Managing the Execution of Operations
+# <a id="3">3 Managing the Execution of Operations
 
 ```swift
 /// 队列的级别
@@ -64,14 +64,14 @@ public var qualityOfService: NSQualityOfService
 public var maxConcurrentOperationCount: Int
 ```
 
-#<a id="4">4 Suspending Operations
+# <a id="4">4 Suspending Operations
 
 ```swift
 /// 是否暂停队列
 public var suspended: Bool
 ```
 
-#<a id="5">5 Configuring the Queue
+# <a id="5">5 Configuring the Queue
 
 ```swift
 /// 队列名
@@ -87,13 +87,13 @@ unowned(unsafe) public var underlyingQueue: dispatch_queue_t?
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSOperationQueue Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperationQueue_class/index.html)
 
@@ -101,13 +101,13 @@ unowned(unsafe) public var underlyingQueue: dispatch_queue_t?
 
 [Simple and Reliable Threading with NSOperation](https://developer.apple.com/library/ios/technotes/tn2109/_index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

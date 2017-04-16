@@ -4,7 +4,7 @@ MVVM是Model-View-ViewModel的简写。
 
 MVVM（Model-View-ViewModel）框架的由来便是MVP（Model-View-Presenter）模式与WPF结合的应用方式时发展演变过来的一种新型架构框架。它立足于原有MVP框架并且把WPF的新特性糅合进去，以应对客户日益复杂的需求变化。 
  
-#1 简介
+# 1 简介
 
 WPF的数据绑定与Presentation Model相结合是非常好的做法,使得开发人员可以将View和逻辑分离出来,但这种数据绑定技术非常简单实用，也是WPF所特有的，所以我们又称之为Model-View-ViewModel(MVVM)。 
 
@@ -13,7 +13,7 @@ WPF的数据绑定与Presentation Model相结合是非常好的做法,使得开�
 数据绑定系统还支持提供了标准化的方式传输到视图的验证错误的输入的验证。 
  
 
-#2 优点
+# 2 优点
 
 低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。
 
@@ -23,13 +23,13 @@ WPF的数据绑定与Presentation Model相结合是非常好的做法,使得开�
 
 可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写。 
  
-#3 MVVM结构图 
+# 3 MVVM结构图 
  
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112802.png)
 
-#4 架构实现
+# 4 架构实现
 
-##4.1 Model层
+## 4.1 Model层
 
 Model层和MVP框架的模型层使用同样的代码结构。
 
@@ -84,7 +84,7 @@ class YJModel: NSObject {
 
 定义了一个模型类Model以及网络回调协议ModelProtocol。当外部调用类遵循这种协议时即可回调数据。
 
-##4.2 ViewModel层
+## 4.2 ViewModel层
 
 ViewModel优化了MVP中Presenter层，让View层彻底解放，只关心界面的展示。服务器返回的数据，在这一层就处理完毕了。
 
@@ -142,7 +142,7 @@ public class YJViewModel: YJModelProtocol {
 }
 ```
 
-##4.4 View层
+## 4.4 View层
 
 View层就是ViewController了。
 
@@ -185,7 +185,7 @@ class YJViewController: UIViewController, YJViewModelProtocol {
 
 从代码中可以看出业务逻辑已经完全扔给ViewModel做处理了。
 
-##4.4 测试
+## 4.4 测试
 
 运行项目后可看见如下输出效果,会发现层与层之间的关系非常清晰，代码的可维护度非常高。
 
@@ -216,23 +216,23 @@ View End------------
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Framework](https://github.com/937447974/Framework)
 
-##参考资料
+## 参考资料
 
 [MVVM](http://baike.baidu.com/view/3507915.htm)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-28 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

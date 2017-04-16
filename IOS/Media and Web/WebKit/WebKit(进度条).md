@@ -18,7 +18,7 @@
 
 仿照qq或微信的进度条，我们也为我们的浏览器添加进度条功能。
 
-#1 WKWebView相关属性
+# 1 WKWebView相关属性
 
 在WKWebView就有一个关于网页加载进度的属性。
 
@@ -29,11 +29,11 @@
 
 我们所要做的是使用KVO监听这个属性，然后显示到进度条上。
 
-#2 创建进度条
+# 2 创建进度条
 
 这里我们就是使用控件UIProgressView创建一个进度条，你还可以自行设计更精美的进度条。
 
-##2.1 强引用进度条
+## 2.1 强引用进度条
 
 由于我们需要时刻更新进度条的数据，故我们使用强引用，设置进度条。
 
@@ -41,7 +41,7 @@
 @property (nonatomic, strong) UIProgressView *progressView; ///< 进度条
 ```
 
-##2.2 懒加载进度条
+## 2.2 懒加载进度条
 
 我们使用懒加载的方式加载进度条。实现get方法。
 
@@ -60,9 +60,9 @@
 }
 ```
 
-#3 KVO实现进度条
+# 3 KVO实现进度条
 
-##3.1 KVO监听
+## 3.1 KVO监听
 
 在viewDidLoad()中，我们监听WKWebView的estimatedProgress属性。
 
@@ -80,7 +80,7 @@
 }
 ```
 
-##3.2 KVO回调实现
+## 3.2 KVO回调实现
 
 所有类的KVO回调都是实现`- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context`方法。
 
@@ -120,24 +120,24 @@
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-02 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

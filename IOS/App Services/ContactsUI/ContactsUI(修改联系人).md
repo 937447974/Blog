@@ -12,18 +12,18 @@
 
 ----
 
-#<a id="1">1 CNContactPickerViewController
+# <a id="1">1 CNContactPickerViewController
 
 CNContactPickerViewController可以显示一个联系人的相关信息、创建联系人或修改联系人。
 
-##<a id="1.1">1.1 Required Keys
+## <a id="1.1">1.1 Required Keys
 
 ```swift
 /// 获取联系人使用的描述符
 public class func descriptorForRequiredKeys() -> CNKeyDescriptor
 ```
 
-##<a id="1.2">1.2 Initializing View Controllers
+## <a id="1.2">1.2 Initializing View Controllers
 
 ```swift
 /// 通过已有联系人初始化CNContactPickerViewController
@@ -36,7 +36,7 @@ public convenience init(forUnknownContact contact: CNContact)
 public convenience init(forNewContact contact: CNContact?)
 ```
 
-##<a id="1.3">1.3 Displaying Contact Properties
+## <a id="1.3">1.3 Displaying Contact Properties
 
 ```swift
 /// 联系人
@@ -53,21 +53,21 @@ public var message: String?
 public var displayedPropertyKeys: [AnyObject]?
 ```
 
-##<a id="1.4">1.4 Notifying Delegate
+## <a id="1.4">1.4 Notifying Delegate
 
 ```swift
 /// 代理控制可显示属性，及获取修改后的联系人
 weak public var delegate: CNContactViewControllerDelegate?
 ```
 
-##<a id="1.5">1.5 Contact Store
+## <a id="1.5">1.5 Contact Store
 
 ```swift
 /// 联系人存储库
 public var contactStore: CNContactStore?
 ```
 
-##<a id="1.6">1.6 Customizing Contact Card
+## <a id="1.6">1.6 Customizing Contact Card
 
 ```swift
 /// 能否修改数据
@@ -78,18 +78,18 @@ public var allowsActions: Bool // YES by default
 public var shouldShowLinkedContacts: Bool // NO by default
 ```
 
-##<a id="1.7">1.7 Highlighting a Property
+## <a id="1.7">1.7 Highlighting a Property
 
 ```swift
 /// 属性高亮
 public func highlightPropertyWithKey(key: String, identifier: String?)
 ```
 
-#<a id="2">2 实战
+# <a id="2">2 实战
 
 这里展示创建新联系人的简单需求。
 
-##<a id="2.1">2.1 源代码
+## <a id="2.1">2.1 源代码
 
 ```swift
 //
@@ -144,7 +144,7 @@ class YJContactsUIVC: UIViewController, CNContactViewControllerDelegate {
 }
 ```
 
-##<a id="2.2">2.2 效果图
+## <a id="2.2">2.2 效果图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012002.jpg)
 
@@ -152,23 +152,23 @@ class YJContactsUIVC: UIViewController, CNContactViewControllerDelegate {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [ContactsUI Framework Reference](https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/ContactsUI_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-20 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

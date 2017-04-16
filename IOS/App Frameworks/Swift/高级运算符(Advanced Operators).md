@@ -1,6 +1,6 @@
-#按位运算符
+# 按位运算符
 
-##~
+## ~
 
 1变0，0变1。
 
@@ -11,7 +11,7 @@ let initialBits: UInt8 = 0b00001111
 let invertedBits = ~initialBits  // equals 11110000
 ```
 
-##$
+## $
 
 全1得1，其他为0
 
@@ -23,7 +23,7 @@ let lastSixBits: UInt8  = 0b00111111
 let middleFourBits = firstSixBits & lastSixBits  // equals 00111100
 ```
 
-##|
+## |
 
 有1得1，其他为0
 
@@ -35,7 +35,7 @@ let moreBits: UInt8 = 0b01011110
 let combinedbits = someBits | moreBits  // equals 11111110
 ```
 
-##^
+## ^
 
 相异为1，相同为0
 
@@ -47,7 +47,7 @@ let otherBits: UInt8 = 0b00000101
 let outputBits = firstBits ^ otherBits  // equals 00010001
 ```
 
-##<<和>>
+## <<和>>
 
 <<整体左移，右边填0；
 
@@ -66,11 +66,11 @@ shiftBits >> 2             // 00000001
 
 &#160;
 
-#算子函数
+# 算子函数
 
 上面讲解的都是简单的运算符，下面的是为对象添加运算符，使之可计算。
 
-##符号在中间
+## 符号在中间
 
 ```Swift
 struct Vector2D {
@@ -87,7 +87,7 @@ let combinedVector = vector + anotherVector
 // combinedVector is a Vector2D instance with values of (5.0, 5.0)
 ```
 
-##前缀和后缀
+## 前缀和后缀
 
 前缀关键字prefix
 后缀关键字postfix
@@ -105,7 +105,7 @@ let alsoPositive = -negative
 
 ```
 
-##复合赋值运算符
+## 复合赋值运算符
 
 这里用+=举例。
 
@@ -124,13 +124,13 @@ original += vectorToAdd
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

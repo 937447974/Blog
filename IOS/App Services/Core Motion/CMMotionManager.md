@@ -17,7 +17,7 @@
 
 CMMotionManager可以理解为是CoreMotion Framework的中央管理器，也可以理解为运动服务。这些服务提供了获取加速机数据、旋转数据和磁力数据等。
 
-#<a id="1">1 Managing Accelerometer Updates
+# <a id="1">1 Managing Accelerometer Updates
 
 ```swift
 // 加速计更新间隔
@@ -33,7 +33,7 @@ public func startAccelerometerUpdatesToQueue(queue: NSOperationQueue, withHandle
 public func stopAccelerometerUpdates()
 ```
 
-#<a id="2">2 Determining Whether the Accelerometer Is Active and Available
+# <a id="2">2 Determining Whether the Accelerometer Is Active and Available
     
 ```swift
 // 设备是否支持加速计
@@ -43,14 +43,14 @@ public var accelerometerAvailable: Bool { get }
 public var accelerometerActive: Bool { get }
 ```
 
-#<a id="3">3 Accessing Accelerometer Data
+# <a id="3">3 Accessing Accelerometer Data
     
 ```swift
 // 最新的加速计数据
 public var accelerometerData: CMAccelerometerData? { get }
 ```
 
-#<a id="4">4 Managing Gyroscope Updates
+# <a id="4">4 Managing Gyroscope Updates
     
 ```swift
 // 螺旋仪获取数据间隔
@@ -66,7 +66,7 @@ public func startGyroUpdatesToQueue(queue: NSOperationQueue, withHandler handler
 public func stopGyroUpdates()
 ```
 
-#<a id="5">5 Determining Whether the Gyroscope Is Active and Available
+# <a id="5">5 Determining Whether the Gyroscope Is Active and Available
     
 ```swift
 // 设备是否支持螺旋仪
@@ -76,14 +76,14 @@ public var gyroAvailable: Bool { get }
 public var gyroActive: Bool { get }
 ```
 
-#<a id="6">6 Accessing Gyroscope Data
+# <a id="6">6 Accessing Gyroscope Data
     
 ```swift
 // 最新螺旋仪数据
 public var gyroData: CMGyroData? { get }
 ```
 
-#<a id="7">7 Managing Magnetometer Updates
+# <a id="7">7 Managing Magnetometer Updates
     
 ```swift
 // 磁场计获取数据间隔
@@ -103,7 +103,7 @@ public func startMagnetometerUpdatesToQueue(queue: NSOperationQueue, withHandler
 public func stopMagnetometerUpdates()
 ```
 
-#<a id="8">8 Determining Whether the Magnetometer is Active and Available
+# <a id="8">8 Determining Whether the Magnetometer is Active and Available
     
 ```swift
 // 设备是否支持磁场计
@@ -115,7 +115,7 @@ public var magnetometerAvailable: Bool { get }
 public var magnetometerActive: Bool { get }
 ```
 
-#<a id="9">9 Accessing Magnetometer Data
+# <a id="9">9 Accessing Magnetometer Data
     
 ```swift
 // 最新磁场计数据
@@ -123,7 +123,7 @@ public var magnetometerActive: Bool { get }
 public var magnetometerData: CMMagnetometerData? { get }
 ```
 
-#<a id="10">10 Managing the Device Movement Display
+# <a id="10">10 Managing the Device Movement Display
     
 ```swift
 // 是否显示设备运动
@@ -131,7 +131,7 @@ public var magnetometerData: CMMagnetometerData? { get }
 public var showsDeviceMovementDisplay: Bool
 ```
 
-#<a id="11">11 Managing Device Motion Updates
+# <a id="11">11 Managing Device Motion Updates
     
 ```swift
 // 获取运动数据更新间隔
@@ -155,7 +155,7 @@ public func startDeviceMotionUpdatesUsingReferenceFrame(referenceFrame: CMAttitu
 public func stopDeviceMotionUpdates()
 ```
 
-#<a id="12">12 Accessing Attitude Reference Frames
+# <a id="12">12 Accessing Attitude Reference Frames
     
 ```swift
 // 获取设备参考系
@@ -167,7 +167,7 @@ public class func availableAttitudeReferenceFrames() -> CMAttitudeReferenceFrame
 public var attitudeReferenceFrame: CMAttitudeReferenceFrame { get }
 ```
 
-#<a id="13">13 Determining Whether the Device Motion Hardware Is Active and Available
+# <a id="13">13 Determining Whether the Device Motion Hardware Is Active and Available
     
 ```swift
 // 是否支持获取运动数据
@@ -178,7 +178,7 @@ public var deviceMotionAvailable: Bool { get }
 public var deviceMotionActive: Bool { get }
 ```
 
-#<a id="14">14 Accessing Device Motion Data
+# <a id="14">14 Accessing Device Motion Data
     
 ```swift
 // 获取设备运动数据
@@ -190,25 +190,25 @@ public var deviceMotion: CMDeviceMotion? { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Motion Framework Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CoreMotion_Reference/index.html)
 
 [CMMotionManager Class Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

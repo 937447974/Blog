@@ -10,7 +10,7 @@
 
 PHCollectionListChangeRequest可创建、删除和修改PHCollectionList对象。
 
-#1 Adding New Collection Lists
+# 1 Adding New Collection Lists
 
 ```swift
 /// 创建PHCollectionList
@@ -24,7 +24,7 @@ public class func creationRequestForAssetCollectionWithTitle(title: String) -> S
 public var placeholderForCreatedAssetCollection: PHObjectPlaceholder { get }
 ```
 
-#2 Deleting Collection Lists
+# 2 Deleting Collection Lists
 
 ```swift
 /// 删除PHCollectionList
@@ -35,7 +35,7 @@ public var placeholderForCreatedAssetCollection: PHObjectPlaceholder { get }
 public class func deleteCollectionLists(collectionLists: NSFastEnumeration)
 ```
 
-#3 Modifying Collection Lists
+# 3 Modifying Collection Lists
 
 ```swift
 /// 通过PHCollectionList初始化PHCollectionListChangeRequest
@@ -67,25 +67,25 @@ public func moveChildCollectionsAtIndexes(indexes: NSIndexSet, toIndex: Int)
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
 [PHAssetCreationRequest Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-07 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

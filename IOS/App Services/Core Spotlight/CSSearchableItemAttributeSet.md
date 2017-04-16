@@ -16,7 +16,7 @@
 
 CSSearchableItemAttributeSet声明CSSearchableItem包含的元数据。
 
-#<a id="1">1 Getting an Attribute Set
+# <a id="1">1 Getting an Attribute Set
 
 ```swift
 /// 初始化CSSearchableItemAttributeSet
@@ -27,7 +27,7 @@ CSSearchableItemAttributeSet声明CSSearchableItem包含的元数据。
  public init(itemContentType: String)
 ```
 
-#<a id="2">2 Working with Custom Attributes
+# <a id="2">2 Working with Custom Attributes
 
 ```swift
 /// 存储数据
@@ -42,7 +42,7 @@ public func setValue(value: NSSecureCoding?, forCustomKey key: CSCustomAttribute
 public func valueForCustomKey(key: CSCustomAttributeKey) -> NSSecureCoding?
 ```
 
-#<a id="3">3 Describing Documents
+# <a id="3">3 Describing Documents
 
 ```swift
 // 主题
@@ -88,7 +88,7 @@ public var kind: String?
 public var fontNames: [String]?
 ```
 
-#<a id="4">4 Describing Events
+# <a id="4">4 Describing Events
 
 ```swift
 // 到期时间
@@ -110,21 +110,21 @@ public var importantDates: [NSDate]?
 @NSCopying public var allDay: NSNumber?
 ```
 
-#<a id="5">5 Describing General Attributes
+# <a id="5">5 Describing General Attributes
 
-#<a id="6">6 Describing Places
+# <a id="6">6 Describing Places
 
-#<a id="7">7 Describing Media
+# <a id="7">7 Describing Media
 
-#<a id="8">8 Describing Music
+# <a id="8">8 Describing Music
 
-#<a id="9">9 Describing Images
+# <a id="9">9 Describing Images
 
-#<a id="10">10 Describing Messages
+# <a id="10">10 Describing Messages
 
-#<a id="11">11 Describing Containment
+# <a id="11">11 Describing Containment
 
-#<a id="12">12 Supporting Actions
+# <a id="12">12 Supporting Actions
 
 ```swift
 // 电话与item相连
@@ -138,13 +138,13 @@ public var importantDates: [NSDate]?
 
 ----
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Spotlight Framework Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/index.html)
 
@@ -152,13 +152,13 @@ public var importantDates: [NSDate]?
 
 [CSSearchableItemAttributeSet Class Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItemAttributeSet_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-28 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -18,7 +18,7 @@
 
 CNContact代表一个不可变的联系人，它是线程安全的，当我们想要修改某个联系人的数据时，可通过其子类CNMutableContact实现。
 
-#<a id="Identification_Properties">1 Identification Properties
+# <a id="Identification_Properties">1 Identification Properties
 
 ```swift
 /// 唯一标示符
@@ -29,7 +29,7 @@ public var contactType: CNContactType { get }
 public func isUnifiedWithContactWithIdentifier(contactIdentifier: String) -> Bool
 ```
 
-#<a id="Date_Properties">2 Date Properties
+# <a id="Date_Properties">2 Date Properties
 
 ```swift
 /// 公历生日
@@ -40,7 +40,7 @@ public func isUnifiedWithContactWithIdentifier(contactIdentifier: String) -> Boo
 public var dates: [CNLabeledValue] { get }
 ```
 
-#<a id="Name_Properties">3 Name Properties
+# <a id="Name_Properties">3 Name Properties
 
 ```swift
 /// 姓名前缀
@@ -73,14 +73,14 @@ public var departmentName: String { get }
 public var jobTitle: String { get }
 ```
 
-#<a id="Localization">4 Localization
+# <a id="Localization">4 Localization
 
 ```swift
 /// 获取本地化显示
 public class func localizedStringForKey(key: String) -> String
 ```
 
-#<a id="Contact_Comparator">5 Contact Comparator
+# <a id="Contact_Comparator">5 Contact Comparator
 
 ```swift
 /// 根据制定类型排序
@@ -90,49 +90,49 @@ public class func comparatorForNameSortOrder(sortOrder: CNContactSortOrder) -> N
 public class func descriptorForAllComparatorKeys() -> CNKeyDescriptor
 ```
 
-#<a id="Social_Properties">6 Social Properties
+# <a id="Social_Properties">6 Social Properties
 
 ```swift
 /// 社交关系
 public var socialProfiles: [CNLabeledValue] { get }
 ```
 
-#<a id="Contact_phone_Number">7 Contact phone Number
+# <a id="Contact_phone_Number">7 Contact phone Number
 
 ```swift
 /// 电话号码
 public var phoneNumbers: [CNLabeledValue] { get }
 ```
 
-#<a id="Url_Address">8 Url Address
+# <a id="Url_Address">8 Url Address
 
 ```swift
 /// 网络地址
 public var urlAddresses: [CNLabeledValue] { get }
 ```
 
-#<a id="Postal_Addresses">9 Postal Addresses
+# <a id="Postal_Addresses">9 Postal Addresses
 
 ```swift
 /// 家庭地址
 public var postalAddresses: [CNLabeledValue] { get }
 ```
 
-#<a id="Email_Address">10 Email Address
+# <a id="Email_Address">10 Email Address
 
 ```swift
 /// 邮箱地址
 public var emailAddresses: [CNLabeledValue] { get }
 ```
 
-#<a id="Note_Property">11 Note Property
+# <a id="Note_Property">11 Note Property
 
 ```swift
 // 备注
 public var note: String { get }
 ```
 
-#<a id="Image_Properties">12 Image Properties
+# <a id="Image_Properties">12 Image Properties
 
 ```swift
 /// 头像
@@ -144,7 +144,7 @@ public var note: String { get }
 public var imageDataAvailable: Bool { get }
 ```
 
-#<a id="Labeled_Value_Properties">13 Labeled Value Properties
+# <a id="Labeled_Value_Properties">13 Labeled Value Properties
 
 ```swift
 /// 链接已有联系人
@@ -153,7 +153,7 @@ public var contactRelations: [CNLabeledValue] { get }
 public var instantMessageAddresses: [CNLabeledValue] { get }
 ```
 
-#<a id="Partial_Contact_property_availability">14 Partial Contact property availability
+# <a id="Partial_Contact_property_availability">14 Partial Contact property availability
 
 ```swift
 /// 通过制定的key获取信息时，判断能否获取成功
@@ -163,7 +163,7 @@ public func isKeyAvailable(key: String) -> Bool
 public func areKeysAvailable(keyDescriptors: [CNKeyDescriptor]) -> Bool
 ```
 
-#<a id="CNContact_Predicates">15 CNContact Predicates
+# <a id="CNContact_Predicates">15 CNContact Predicates
 
 ```swift
 /// 通过姓名匹配获取联系人
@@ -183,25 +183,25 @@ public class func predicateForContactsInContainerWithIdentifier(containerIdentif
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
 [CNContact Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContact_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-14 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

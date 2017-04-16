@@ -13,7 +13,7 @@
 废话结束，开始正文。本文介绍的是自动clean本地项目，编译 打包 上传fir 邮件通知相关人员。不涉及从git上下载。原理就是利用python执行控制台命令。对
 iOS项目进行打包
 
-#1 xcode控制台命令
+# 1 xcode控制台命令
 
 xcode 控制台命令基本都是以 xcodebuild 开头的介绍几个简单的命令，大家可以在命令行试试。
 
@@ -21,7 +21,7 @@ xcode 控制台命令基本都是以 xcodebuild 开头的介绍几个简单的�
 - `xcodebuild -showsdks` 显示当前系统的SDK、及其版本
 - `xcodebuild -list` 先 cd 到工程目录下执行此命令 显示target Schemes 等
 
-##1.1 没有使用 cocoaPods 项目的编译
+## 1.1 没有使用 cocoaPods 项目的编译
 
 如果你的项目是普通的项目没有使用cocoaPods 那么 cd 到工程目录下直接执行 xcodebuild build ，就会自动编译了 参数都是默认 默认build release。
 
@@ -29,7 +29,7 @@ xcode 控制台命令基本都是以 xcodebuild 开头的介绍几个简单的�
 
 就是一会打包成ipa需要的文件。 第一次build速度会比较慢，要把编译环境拉下来，不要删除build文件夹，以后build 速度就会变快。
 
-##1.2 使用了 cocoaPods 项目的编译
+## 1.2 使用了 cocoaPods 项目的编译
 
 如果不幸你也和我一样使用了cocoaPods , 其实也没啥不幸的 ，只是编译的时候就比较麻烦了 ，首先还是 cd 到项目目录 。但是你要指定编译文件和 scheme。而且还要指定build后build文件夹的位置，如果位置找不到，后面怎么自动打包ipa？。
 
@@ -39,7 +39,7 @@ xcode 控制台命令基本都是以 xcodebuild 开头的介绍几个简单的�
 
 这样就能正常编译并把build指定到我们想要去的目录
 
-##1.3 打包ipa
+## 1.3 打包ipa
 
 打包ipa只要上面路径对了，打包指定从.app 文件的路径 ， 打包到你指定地方就行了。
 
@@ -47,11 +47,11 @@ xcode 控制台命令基本都是以 xcodebuild 开头的介绍几个简单的�
 
 `xcrun -sdk iphoneos PackageApplication -v 这里填.app的路径 -o 指定存放ipa路径/文件名.ipa`
 
-#2 python实现篇
+# 2 python实现篇
 
 上面只是说了下编译的原理,下面看下怎么通过python自动处理这些任务 。
 
-##2.1 clean、编译、打包
+## 2.1 clean、编译、打包
 
 首先创建一个xxx.py文件，需要你懂点python 语法，不懂就直接copy代码。不要改tab 。python的语法是严格按照tab区分的。后面我会放上我的代码，你们改改
 变量就可以使用。
@@ -130,7 +130,7 @@ def main():
 
 执行就在最下面直接调用就行了 main()
 
-##2.2 上传fir
+## 2.2 上传fir
 
 我们是把代码上传到fir测试的，如果你们用的蒲公英或者其他，请自行搜索。
 
@@ -148,7 +148,7 @@ fir_api_token = "xxxxxxxxxxxxxxxxxxxxxxxxxx"
 然后命令传入ipa目录和token就可以上传了
 
 ```python
-#上传
+# 上传
 def upload_fir():
     if os.path.exists("%s/%s" % (targerIPA_parth,ipa_filename)):
         print('watting...')
@@ -160,7 +160,7 @@ def upload_fir():
     
 这里也有遇到一个=坑，就是在终端直接fir 带后面的就可以执行 ，但是在这里识别不了命令，必须制定全路径，怎么找命令的全路径呢？终端输入`which fir`
 
-##2.3 发邮件
+## 2.3 发邮件
 
 具体发邮件功能看代码，这里有几个变量。我使用的是新浪邮箱发的，smtp服务器 ， 如果你是 pop3 请更换，还要在邮箱里开启相应的服务
 
@@ -213,23 +213,23 @@ main()
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [https://github.com/smalldu/autoipa](https://github.com/smalldu/autoipa)
 
-##Related Documentation
+## Related Documentation
 
 [iOS 本地打包工具](http://stonedu.site/2016/08/17/iOS-本地打包工具/)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-08-19 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

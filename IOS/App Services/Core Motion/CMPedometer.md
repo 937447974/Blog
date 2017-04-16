@@ -1,6 +1,6 @@
 CMPedometer是徒步计数器，用于记录用户走过的步数。
 
-#1 Determining Pedometer Availability
+# 1 Determining Pedometer Availability
 
 ```swift
 // 能否获取徒步数
@@ -21,7 +21,7 @@ public class func isPaceAvailable() -> Bool
 public class func isCadenceAvailable() -> Bool
 ```
 
-#2 Generating Live Pedometer Data
+# 2 Generating Live Pedometer Data
 
 ```swift 
 // 开始获取CMPedometerData数据
@@ -31,7 +31,7 @@ public func startPedometerUpdatesFromDate(start: NSDate, withHandler handler: CM
 public func stopPedometerUpdates()
 ```
 
-#3 Fetching Historical Pedometer Data
+# 3 Fetching Historical Pedometer Data
 
 ```swift
 // 获取某个时间段的徒步数据
@@ -42,25 +42,25 @@ public func queryPedometerDataFromDate(start: NSDate, toDate end: NSDate, withHa
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Motion Framework Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CoreMotion_Reference/index.html)
 
 [CMPedometer Class Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -10,19 +10,19 @@ public func SecRandomCopyBytes(rnd: SecRandomRef, _ count: Int, _ bytes: UnsafeM
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Security Framework Reference](https://developer.apple.com/library/ios/documentation/Security/Reference/SecurityFrameworkReference/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-29 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

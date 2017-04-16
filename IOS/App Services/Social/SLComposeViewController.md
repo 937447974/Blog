@@ -9,20 +9,20 @@
 
 ----
 
-#<a id="1">1 SLComposeViewController
+# <a id="1">1 SLComposeViewController
 
 SLComposeViewController主要用于在当前应用开启分享界面，快速分享相关内容到其他APP或社交平台。如下所示
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012501.jpg)
 
-##<a id="1.1">1.1 Creating a Social Compose View Controller
+## <a id="1.1">1.1 Creating a Social Compose View Controller
 
 ```swift
 /// 根据扩展的Bundle identifier初始化
 public init!(forServiceType serviceType: String!)
 ```
 
-##<a id="1.2">1.2 Checking the Social Service Type
+## <a id="1.2">1.2 Checking the Social Service Type
 
 ```swift
 /// 判断该分享扩展是否支持
@@ -32,7 +32,7 @@ public class func isAvailableForServiceType(serviceType: String!) -> Bool
 public var serviceType: String! { get }
 ```
 
-##<a id="1.3">1.3 Composing Posts
+## <a id="1.3">1.3 Composing Posts
 
 ```swift
 /// 设置默认内容
@@ -51,14 +51,14 @@ public func addURL(url: NSURL!) -> Bool
 public func removeAllURLs() -> Bool
 ```
 
-##<a id="1.4">1.4 Handling Results
+## <a id="1.4">1.4 Handling Results
 
 ```swift
 /// 分享结果监听
 public var completionHandler: SLComposeViewControllerCompletionHandler!
 ```
 
-#<a id="2">2 实战演练
+# <a id="2">2 实战演练
 
 应用内打开分享扩展很简单，只需如下所示。
 
@@ -114,25 +114,25 @@ class ViewController: UIViewController {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Social Framework Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/Social_Framework/index.html)
 
 [SLComposeViewController Class Reference](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/SLComposeViewController_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 
