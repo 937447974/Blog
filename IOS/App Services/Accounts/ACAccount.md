@@ -1,13 +1,13 @@
 ACAccount记录账户相关信息。
 
-#1 Initializing Accounts
+# 1 Initializing Accounts
 
 ```swift
 // 初始化
 public init!(accountType type: ACAccountType!)
 ```
 
-#2 Accessing Properties
+# 2 Accessing Properties
 
 ```swift
 // 唯一标示符
@@ -34,25 +34,25 @@ public var credential: ACAccountCredential!
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Accounts Framework Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/AccountsFrameworkRef/index.html)
 
 [ACAccount Class Reference](https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountClassRef/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -1,9 +1,9 @@
 NSPersistentStoreCoordinator是持久化存储协调者，主要用于协调托管对象上下文和持久化存储区之间的关系。NSManagedObjectContext使用协调者的托管对象模型将数据保存到数据库，或查询数据。
 
 
-#Symbols
+# Symbols
 
-##1 Registered Store Types
+## 1 Registered Store Types
 
 ```swift
 // 对于存储的类型注册指定的NSPersistentStore子类
@@ -11,7 +11,7 @@ NSPersistentStoreCoordinator是持久化存储协调者，主要用于协调托�
 open class func registerStoreClass(_ storeClass: Swift.AnyClass, forStoreType storeType: String)
 ```
 
-##2 Initializing a Coordinator
+## 2 Initializing a Coordinator
 
 ```swift
 // 通过托管对象模型初始化
@@ -20,7 +20,7 @@ public init(managedObjectModel model: NSManagedObjectModel)
 open var managedObjectModel: NSManagedObjectModel { get }
 ```
 
-##3 Configuring Persistent Stores
+## 3 Configuring Persistent Stores
 
 ```swift
 // 通过指定位置生成一个持久性存储库
@@ -40,7 +40,7 @@ open func persistentStore(for URL: URL) -> NSPersistentStore?
 open func url(for store: NSPersistentStore) -> URL
 ```
 
-##4 Executing a Fetch Request
+## 4 Executing a Fetch Request
 
 ```swift
 // 将持久化存储关联到托管对象上下文
@@ -48,7 +48,7 @@ open func url(for store: NSPersistentStore) -> URL
 open func execute(_ request: NSPersistentStoreRequest, with context: NSManagedObjectContext) throws -> Any
 ```
 
-##5 Working with Metadata
+## 5 Working with Metadata
 
 ```swift
 // 获取持久化存储的元数据
@@ -57,7 +57,7 @@ open func metadata(for store: NSPersistentStore) -> [String : Any]
 open func setMetadata(_ metadata: [String : Any]?, for store: NSPersistentStore)
 ```
 
-##6 Discovering Object IDs
+## 6 Discovering Object IDs
 
 ```swift
 // 获取匹配的持久化存储ID
@@ -68,19 +68,19 @@ open func managedObjectID(forURIRepresentation url: URL) -> NSManagedObjectID?
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-24 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

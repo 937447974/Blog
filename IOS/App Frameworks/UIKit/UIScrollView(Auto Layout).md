@@ -8,7 +8,7 @@
 
 适配的核心就是约束，对UIScrollView做适配时要记住，对外的约束是显示区域，对内的约束是滑动区域。我总结为八个字：对外显示对内滑动。
 
-#1 纯代码适配
+# 1 纯代码适配
 
 ```swift
 //
@@ -68,7 +68,7 @@ class YJAutoLayoutSVVC: UIViewController {
 
 这里为大家展示了三种约束效果。
 
-#2 Storyboard约束
+# 2 Storyboard约束
 
 Storyboard约束讲解起来比较麻烦，就用一个视屏为大家演示。
 
@@ -78,13 +78,13 @@ Storyboard约束讲解起来比较麻烦，就用一个视屏为大家演示。
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UIScrollView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html)
 
@@ -92,13 +92,13 @@ Storyboard约束讲解起来比较麻烦，就用一个视屏为大家演示。
 
 [Auto Layout Guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-18 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

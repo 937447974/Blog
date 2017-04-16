@@ -21,7 +21,7 @@ UIBarButtonItem就是我们在UIToolbar和UINavigationBar上看见的按钮。
 
 如果你要改变UIBarButtonItem的全局样式，可以通过`UIBarButtonItem.appearance()`获取全局UIBarButtonItem。
 
-#<a id="Initializing_an_Item">1 Initializing an Item
+# <a id="Initializing_an_Item">1 Initializing an Item
 
 ```swift
 /// 通过图片初始化UIBarButtonItem
@@ -41,7 +41,7 @@ public convenience init(barButtonSystemItem systemItem: UIBarButtonSystemItem, t
 public convenience init(customView: UIView)
 ```
 
-#<a id="Getting_and_Setting_Properties">2 Getting and Setting Properties
+# <a id="Getting_and_Setting_Properties">2 Getting and Setting Properties
 
 ```swift
 /// 系统点击样式
@@ -58,7 +58,7 @@ public var action: Selector
 weak public var target: AnyObject?
 ```
 
-#<a id="Customizing_Appearance">3 Customizing Appearance
+# <a id="Customizing_Appearance">3 Customizing Appearance
 
 ```swift
 /// 设置背景图片
@@ -118,7 +118,7 @@ public func setBackButtonBackgroundVerticalPositionAdjustment(adjustment: CGFloa
 public func backButtonBackgroundVerticalPositionAdjustmentForBarMetrics(barMetrics: UIBarMetrics) -> CGFloat
 ```
 
-#<a id="Getting_the_Shortcuts_Group_Information">4 Getting the Shortcuts Group Information
+# <a id="Getting_the_Shortcuts_Group_Information">4 Getting the Shortcuts Group Information
 
 ```swift
 /// 按钮管理的按钮组
@@ -130,25 +130,25 @@ weak public var buttonGroup: UIBarButtonItemGroup? { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
 [UIBarButtonItem Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-11 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -30,7 +30,7 @@ NSOperation的子类有如下几种:
 - finished
 
 
-#<a id="1">1 Executing the Operation
+# <a id="1">1 Executing the Operation
 
 ```swift
 /// 开始执行方法
@@ -44,14 +44,14 @@ public func main()
 public var completionBlock: (() -> Void)?
 ```
 
-#<a id="2">2 Canceling Operations
+# <a id="2">2 Canceling Operations
 
 ```swift
 /// 取消任务
 public func cancel()
 ```
 
-#<a id="3">3 Getting the Operation Status
+# <a id="3">3 Getting the Operation Status
 
 ```swift
 /// 是否取消
@@ -72,7 +72,7 @@ public var ready: Bool { get }
 public var name: String?
 ```
 
-#<a id="4">4 Managing Dependencies
+# <a id="4">4 Managing Dependencies
 
 ```swift
 /// 添加子任务
@@ -83,7 +83,7 @@ public func removeDependency(op: NSOperation)
 public var dependencies: [NSOperation] { get }
 ```
 
-#<a id="5">5 Configuring the Execution Priority
+# <a id="5">5 Configuring the Execution Priority
 
 ```swift
 /// 任务优先级
@@ -98,7 +98,7 @@ public var threadPriority: Double
 public var qualityOfService: NSQualityOfService
 ```
 
-#<a id="6">6 Waiting on an Operation Object
+# <a id="6">6 Waiting on an Operation Object
 
 ```swift
 /// 阻塞当前线程的执行，直到完成其任务
@@ -110,25 +110,25 @@ public func waitUntilFinished()
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSOperation Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSOperation_class/index.html)
 
 [Concurrency Programming Guide](https://developer.apple.com/library/ios/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

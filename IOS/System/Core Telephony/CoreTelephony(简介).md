@@ -1,6 +1,6 @@
 使用CoreTelephony可以获取用户电话服务供应商的信息，以及当前蜂窝电话的状态。
 
-#Classes
+# Classes
 
 - NSObject
     - CTCallCenter 获取当前的蜂窝电话和回复电话。
@@ -15,23 +15,23 @@
 
 ----
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Telephony Framework Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-29 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

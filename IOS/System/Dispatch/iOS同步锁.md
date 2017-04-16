@@ -1,10 +1,10 @@
-#1 性能对比
+# 1 性能对比
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017031601.png)
 
-#2 介绍与使用
+# 2 介绍与使用
 
-##2.1 OSSpinLock
+## 2.1 OSSpinLock
 
 OSSpinLock 目前已不再安全，主要原因发生在低优先级线程拿到锁时，高优先级线程进入忙等(busy-wait)状态，消耗大量 CPU 时间，从而导致低优先级线程拿不到 CPU 时间，也就无法完成任务并释放锁。这种问题被称为优先级反转。
 
@@ -14,7 +14,7 @@ OSSpinLockLock(&theLock);
 OSSpinLockUnlock(&theLock);
 ```
 
-##2.2 dispatch_semaphore
+## 2.2 dispatch_semaphore
 
 dispatch_semaphore 是 GCD 用来同步的一种方式。允许通过 wait/signal 的信号事件控制并发执行的最大线程数，当最大线程数降级为1的时候则可当作同步锁使用。**注意该信号量并不支持递归**
 
@@ -24,7 +24,7 @@ dispatch_semaphore_wait(signal, overTime);
 dispatch_semaphore_signal(signal);
 ```
 
-##2.3 pthread_mutex
+## 2.3 pthread_mutex
 
 POSIX标准的unix多线程库(pthread)中使用的互斥量，支持 while 循环。
 
@@ -37,7 +37,7 @@ pthread_mutex_unlock(&lock);
 pthread_mutex_destroy(&lock);
 ```
 
-##2.4 NSLock
+## 2.4 NSLock
 
 典型的面向对象的锁，即同步锁类。所有锁（包括NSLock）遵循 Objective-C 的 NSLocking 协议接口，支持 tryLock 和 lockBeforeDate: 。底层通过 pthread_mutex 实现。
 
@@ -52,7 +52,7 @@ if ([lock lockBeforeDate:date]) { // 在Date之前尝试加锁，如果不能加
 }
 ```
 
-##2.5 NSCondition
+## 2.5 NSCondition
 
 NSCondition基于信号量方式实现的锁对象，提供单独的信号量管理接口。底层通过pthread_cond_t实现。
 
@@ -64,7 +64,7 @@ NSCondition *condition = [[NSCondition alloc] init];
 [condition unlock];
 ```
 
-##2.6 pthread_mutex(recursive)
+## 2.6 pthread_mutex(recursive)
 
 pthread_mutex的递归锁实现，作用和NSRecursiveLock类似，主要为了防止在递归的情况下出现死锁。
 
@@ -83,7 +83,7 @@ pthread_mutex_unlock(&lock);
 pthread_mutex_destroy(&lock);
 ```
 
-##2.7 NSRecursiveLock递归锁
+## 2.7 NSRecursiveLock递归锁
 
 NSRecursiveLock 和 NSLock 一样是面向对象的锁，但是支持递归，不支持tryLock。这个锁可以被同一线程多次请求，而不会引起死锁。这主要是用在循环或递归操作中。
 
@@ -102,7 +102,7 @@ void RecursiveFunction(int value) {
 RecursiveFunction(5);
 ```
 
-##2.8 NSConditionLock条件锁
+## 2.8 NSConditionLock条件锁
 
 NSConditionLock 可以使用特定值来加锁和解锁。相比NSCondition更为直接和实用。
 
@@ -115,7 +115,7 @@ while(true) {
 }
 ```
 
-##2.9 @synchronized
+## 2.9 @synchronized
 
 通过 @synchronized 可以非常方便的创建一个互斥锁非常方便的方法。@synchronized 通过对象的哈希表来实现。
 
@@ -127,7 +127,7 @@ while(true) {
 }
 ```
 
-#3 结论
+# 3 结论
 
 1. 常规和 while 循环加锁使用 pthread_mutex。
 2. 队列（dispatch_get_global_queue）并发线程数控制，使用 dispatch_semaphore。
@@ -141,9 +141,9 @@ while(true) {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [不再安全的 OSSpinLock](http://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/)
 
@@ -153,13 +153,13 @@ while(true) {
 
 [[iOS] 正确使用多线程同步锁 @synchronized()](http://www.tuicool.com/articles/b2QB7vu)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2017-03-16 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

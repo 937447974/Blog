@@ -2,7 +2,7 @@ B树是为磁盘和其他直接存取的辅助存储设备而设计的一种平�
 
 B树与红黑树的不同之处在于B树的结点可以有很多孩子，从数个到树千个。也就是说，一个B树的“分支因子”可以相当大，尽管它通常依赖于所使用的磁盘单元的特性。B树类似于红黑树，就是每棵含有n个结点的B数高度为O(lgn)。然而，一棵B树的严格高度可能比一棵红黑树的高度要小许多，这是因为它的分支因子。
 
-#1 B树的定义
+# 1 B树的定义
 
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112403.png)
@@ -26,9 +26,9 @@ B树与红黑树的不同之处在于B树的结点可以有很多孩子，从数
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015112402.png)
 
-#2 B树设计
+# 2 B树设计
 
-##2.1 B树的结点YJBTreeNode
+## 2.1 B树的结点YJBTreeNode
 
 根据B树对于结点的定义设计结点YJBTreeNode。
 
@@ -74,7 +74,7 @@ class YJBTreeNode: NSObject {
 }
 ```
 
-##2.2 B树YJBTree
+## 2.2 B树YJBTree
 
 根据对B树的定义，我们这里设计类YJBTree，并可以指定最小度数t
 
@@ -114,9 +114,9 @@ class YJBTree {
 }
 ```
 
-#3 B树上的基本操作
+# 3 B树上的基本操作
 
-##3.1 排序
+## 3.1 排序
 
 B树的数据和二叉搜索树相类似，我们可以使用中序遍历的方式实现，即左-中-右。
 
@@ -145,7 +145,7 @@ private func sort(node: YJBTreeNode) -> [Int] {
 }
 ```
 
-##3.2 搜索
+## 3.2 搜索
 
 在B数中搜索一个key时，需要注意的是key是在node.key中还是在node.child中。
 
@@ -171,7 +171,7 @@ private func search(node: YJBTreeNode, key :Int) ->(node: YJBTreeNode, keyLocati
 }
 ```
 
-##3.3 插入key
+## 3.3 插入key
 
 在B数中插入一个key，其实质是在其叶子结点插入，然后叶子结点裂变生成一棵B树。
 
@@ -313,7 +313,7 @@ private func splitChild(node: YJBTreeNode) -> YJBTreeNode {
 
 这里使用了方法splitChild，该方法的作用就是key满足分裂条件时，分裂结点成为一个新的B树。
 
-##3.4 删除
+## 3.4 删除
 
 在B中删除key时，需要考虑删除的key是在叶子上，还是在树的内部。
 
@@ -438,31 +438,31 @@ private func mergeChild(left: YJBTreeNode, right: YJBTreeNode) -> YJBTreeNode {
     return left
 }
 ```
-#5 小结
+# 5 小结
 
 本篇博文讲解了B树的定义、查找、增加和删除等功能。B树是以一种自然的方式推广了二叉搜索树，可以保证在最坏情况下基本动态集合操作的时间复杂度为O(lgn)。
 &#160;
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Algorithms](https://github.com/937447974/Algorithms)
 
-##参考资料
+## 参考资料
 
 [算法导论](https://github.com/937447974/LearningMaterials)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-23 | 完成B树的查找和增加结点的研发 |
 | 2015-11-24 | 完成B树删除结点的研发，完成《B树》博文 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

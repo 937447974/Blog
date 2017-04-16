@@ -1,8 +1,8 @@
 在MessageUI库中发送短信使用MFMessageComposeViewController。
 
-#1 相关API
+# 1 相关API
 
-##1.1 Determining If Message Composition Is Available
+## 1.1 Determining If Message Composition Is Available
 
 ```swift
 /// 能否发短信
@@ -31,14 +31,14 @@ public class func canSendAttachments() -> Bool
 public class func isSupportedAttachmentUTI(uti: String) -> Bool
 ```
 
-##1.2 Accessing the Delegate
+## 1.2 Accessing the Delegate
 
 ```swift
 /// 监听发送结果
 unowned(unsafe) public var messageComposeDelegate: MFMessageComposeViewControllerDelegate?
 ```
 
-##1.3 Setting the Initial Message Information
+## 1.3 Setting the Initial Message Information
 
 ```swift
 /// 取消添加附件的按钮
@@ -63,9 +63,9 @@ public func addAttachmentURL(attachmentURL: NSURL, withAlternateFilename alterna
 public func addAttachmentData(attachmentData: NSData, typeIdentifier uti: String, filename: String) -> Bool
 ```
 
-#2 实战演练
+# 2 实战演练
 
-##2.1 源代码
+## 2.1 源代码
 
 ```swift
 //
@@ -148,7 +148,7 @@ class ViewController: UIViewController,  MFMailComposeViewControllerDelegate, MF
 }
 ```
 
-##2.2 效果图
+## 2.2 效果图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016011202.jpg)
 
@@ -156,23 +156,23 @@ class ViewController: UIViewController,  MFMailComposeViewControllerDelegate, MF
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Message UI Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-12 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

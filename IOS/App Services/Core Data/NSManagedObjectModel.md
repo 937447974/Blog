@@ -3,7 +3,7 @@ NSManagedObjectModel是托管对象模型，标示着Core Data对应的数据实
 托管对象模型包含一个或多个NSEntityDescription对象，NSEntityDescription记录的就是实体的描述信息。
 
 
-##1 Initializing a Model
+## 1 Initializing a Model
 
 ```swift
 // 通过指定的url地址生成模型
@@ -20,7 +20,7 @@ public /*not inherited*/ init?(byMerging models: [NSManagedObjectModel]?)
     public /*not inherited*/ init?(byMerging models: [NSManagedObjectModel], forStoreMetadata metadata: [String : Any])
 ```
 
-##2 Entities and Configurations
+## 2 Entities and Configurations
 
 ```swift
 // 实体字典，key为实体名
@@ -35,7 +35,7 @@ open func entities(forConfigurationName configuration: String?) -> [NSEntityDesc
 open func setEntities(_ entities: [NSEntityDescription], forConfigurationName configuration: String)
 ```
 
-##3 Getting Fetch Request Templates
+## 3 Getting Fetch Request Templates
 
 ```swift
 // 获取所有快速查询模板
@@ -50,14 +50,14 @@ open func fetchRequestFromTemplate(withName name: String, substitutionVariables 
     
 ```
 
-##4 Localization
+## 4 Localization
 
 ```swift
 // 定位字典
 open var localizationDictionary: [String : String]?
 ```
 
-##5 Versioning and Migration
+## 5 Versioning and Migration
 
 ```swift
 // 开发人员定义的版本标识符
@@ -71,7 +71,7 @@ open func isConfiguration(withName configuration: String?, compatibleWithStoreMe
 open var entityVersionHashesByName: [String : Data] { get }
 ```
 
-##6 Initializers
+## 6 Initializers
 
 ```swift
 // 初始化
@@ -82,19 +82,19 @@ public init()
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

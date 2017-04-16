@@ -1,8 +1,8 @@
 WCSessionDelegate用户响应WCSession相关操作，如传输data、file。
 
-#Symbols
+# Symbols
 
-##1 Managing Session Activation
+## 1 Managing Session Activation
 
 ```swift
 // session激活
@@ -16,7 +16,7 @@ public func sessionDidBecomeInactive(_ session: WCSession)
 public func sessionDidDeactivate(_ session: WCSession)
 ```
 
-##2 Managing State Changes
+## 2 Managing State Changes
 
 ```swift
 // 状态发生变化
@@ -27,7 +27,7 @@ optional public func sessionWatchStateDidChange(_ session: WCSession)
 optional public func sessionReachabilityDidChange(_ session: WCSession)
 ```
 
-##3 Receiving Context Data
+## 3 Receiving Context Data
 
 ```swift
 // 接收上下文信息
@@ -35,7 +35,7 @@ optional public func sessionReachabilityDidChange(_ session: WCSession)
 optional public func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any])
 ```
 
-##4 Receiving Immediate Messages
+## 4 Receiving Immediate Messages
 
 ```swift
 // 接收[String : Any]
@@ -51,7 +51,7 @@ optional public func session(_ session: WCSession, didReceiveMessageData message
 optional public func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Swift.Void)
 ```
 
-##5 Managing Data Dictionary Transfers
+## 5 Managing Data Dictionary Transfers
 
 ```swift
 // 接收WCSessionUserInfoTransfer
@@ -63,7 +63,7 @@ optional public func session(_ session: WCSession, didFinish userInfoTransfer: W
 optional public func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:])
 ```
 
-##6 Managing File Transfers
+## 6 Managing File Transfers
 
 ```swift
 // WCSessionFileTransfer接收完成，接收失败会有报错信息
@@ -79,19 +79,19 @@ optional public func session(_ session: WCSession, didReceive file: WCSessionFil
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [WCSessionDelegate](https://developer.apple.com/reference/watchconnectivity/WCSessionDelegate)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：[http://blog.csdn.net/y550918116j](http://blog.csdn.net/y550918116j)
 

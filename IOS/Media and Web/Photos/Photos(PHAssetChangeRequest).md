@@ -10,7 +10,7 @@
 
 PHAssetChangeRequest主要用于创建、删除或修改PHAsset对象。可以理解为它是沟通用户照片库中照片或视频的桥梁。
 
-#1 Adding New Assets
+# 1 Adding New Assets
 
 ```swift
 /// 通过UIImage创建PHAsset
@@ -38,7 +38,7 @@ public class func creationRequestForAssetFromVideoAtFileURL(fileURL: NSURL) -> S
 public var placeholderForCreatedAsset: PHObjectPlaceholder? { get }
 ```
 
-#2 Deleting Assets
+# 2 Deleting Assets
 
 ```swift
 /// 删除PHAsset
@@ -49,7 +49,7 @@ public var placeholderForCreatedAsset: PHObjectPlaceholder? { get }
 public class func deleteAssets(assets: NSFastEnumeration)
 ```
 
-#3 Modifying Assets
+# 3 Modifying Assets
 
 ```swift
 /// 通过PHAsset初始化PHAssetChangeRequest
@@ -66,7 +66,7 @@ public var favorite: Bool
 public var hidden: Bool
 ```
 
-#4 Editing Asset Content
+# 4 Editing Asset Content
 
 ```swift
 /// 修改内容
@@ -75,7 +75,7 @@ public var contentEditingOutput: PHContentEditingOutput?
 public func revertAssetContentToOriginal()
 ```
 
-#5 实战演练
+# 5 实战演练
 
 下面演示用户收藏照片或视频的源代码
 
@@ -97,13 +97,13 @@ func toggleFavoriteForAsset(asset: PHAsset) {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -111,13 +111,13 @@ func toggleFavoriteForAsset(asset: PHAsset) {
 
 [PHAsset Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-07 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

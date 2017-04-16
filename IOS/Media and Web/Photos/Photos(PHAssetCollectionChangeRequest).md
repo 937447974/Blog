@@ -11,7 +11,7 @@
 PHAssetCollectionChangeRequest可创建、删除和修改PHAssetCollection对象。
 
 
-#1 Adding New Asset Collections
+# 1 Adding New Asset Collections
 
 ```swift
 /// 创建相册
@@ -25,7 +25,7 @@ public class func creationRequestForAssetCollectionWithTitle(title: String) -> S
 public var placeholderForCreatedAssetCollection: PHObjectPlaceholder { get }
 ```
 
-#2 Deleting Asset Collections
+# 2 Deleting Asset Collections
 
 ```swift
 /// 删除指定的PHAssetCollection
@@ -36,7 +36,7 @@ public var placeholderForCreatedAssetCollection: PHObjectPlaceholder { get }
  public class func deleteAssetCollections(assetCollections: NSFastEnumeration)
 ```
 
-#3 Modifying Asset Collections
+# 3 Modifying Asset Collections
 
 ```swift
 /// 通过PHAssetCollection初始化PHAssetCollectionChangeRequest
@@ -67,25 +67,25 @@ public func moveAssetsAtIndexes(fromIndexes: NSIndexSet, toIndex: Int)
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
 [PHAssetCreationRequest Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-07 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

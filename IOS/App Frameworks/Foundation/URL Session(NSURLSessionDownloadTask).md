@@ -16,7 +16,7 @@
 
 下载文件使用的类是NSURLSessionDownloadTask。
 
-#1 NSURLSessionDownloadTask
+# 1 NSURLSessionDownloadTask
 
 NSURLSessionDownloadTask是NSURLSessionTask的子类，主要处理网络中的下载业务。
 
@@ -35,7 +35,7 @@ public func cancel()
 
 前面使用了resume()方法，今天会使用suspend()和cancel()为大家带来暂停下载和取消下载的功能。
 
-#2 NSURLSessionDownloadDelegate
+# 2 NSURLSessionDownloadDelegate
 
 在下载的时候，绝大多数的情况都是使用后台下载的。因为用户不可能长时间在一个页面等待下载。后台下载的监听就需要NSURLSessionDownloadDelegate实现了。在NSURLSessionDownloadDelegate中有如下几个方法。
 
@@ -50,9 +50,9 @@ optional public func URLSession(session: NSURLSession, downloadTask: NSURLSessio
 optional public func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64)
 ```
 
-#3 后台下载
+# 3 后台下载
 
-##3.1 YJDownloadTaskVC类
+## 3.1 YJDownloadTaskVC类
 
 下载测试我们使用YJDownloadTaskVC类。
 
@@ -115,7 +115,7 @@ class YJDownloadTaskVC: UIViewController, NSURLSessionDownloadDelegate {
 
 这里已经创建了4个按钮。刷新、开始下载、暂停下载和取消下载，并且创建了一个全局属性downloadTask指向一个NSURLSessionDownloadTask。
 
-##3.2 创建NSURLSession
+## 3.2 创建NSURLSession
 
 在这里我们会以单例的模式创建NSURLSession，这样可以在调度器里面并发请求服务器。
 
@@ -139,7 +139,7 @@ private func backgroundSession() -> NSURLSession{
 }
 ```
 
-##3.3 NSURLSessionDelegate代理实现
+## 3.3 NSURLSessionDelegate代理实现
 
 通过NSURLSessionDelegate代理，我们能监听下载的进度，以及下载后的链接和下载中的错误。
 
@@ -172,9 +172,9 @@ func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithEr
 
 为了监听下载中的错误，我们实现了NSURLSessionTaskDelegate的`func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?)`方法。不管成功还是失败，任务结束后都会调用它。
 
-##3.4 业务实现
+## 3.4 业务实现
 
-###3.4.1 并发测试
+### 3.4.1 并发测试
 
 这里是从网上下载一个高清图片，并在队列中连续下载10张照片，由于我们session中设置了并发数为5个，你会发现控制台输出只会同时下载5张照片。
 
@@ -192,7 +192,7 @@ func testQueue() {
 }
 ```
 
-###3.4.2 刷新
+### 3.4.2 刷新
 
 刷新的实质是设置downloadTask。
 
@@ -209,7 +209,7 @@ func downloadTaskRefresh() {
 }
 ```
 
-###3.4.3 开始下载
+### 3.4.3 开始下载
 
 ```swift
 // MARK: 开始下载
@@ -217,7 +217,7 @@ func downloadTaskResume() {
     self.downloadTask?.resume()
 }
 ```
-###3.4.4 暂停下载
+### 3.4.4 暂停下载
 
 ```swift
 // MARK: 暂停下载
@@ -226,7 +226,7 @@ func downloadTaskSuspend() {
 }
 ```
 
-###3.4.5 取消下载
+### 3.4.5 取消下载
 
 ```swift
 // MARK: 取消下载
@@ -240,22 +240,22 @@ func downloadTaskCancel() {
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [URL Session Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 
 [NSURLSessionDownloadTask Class Reference](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadTask_class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-05 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

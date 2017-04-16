@@ -1,13 +1,13 @@
 NSNotificationCenter为通知管理中心，通过它我们可以注册通知监听、取消通知监听以及发出通知。
 
-#1 Getting the Notification Center
+# 1 Getting the Notification Center
 
 ```swift
 /// 默认通知中心
 public class func defaultCenter() -> NSNotificationCenter
 ```
 
-#2 Managing Notification Observers
+# 2 Managing Notification Observers
 
 ```swift
 /// block接受通知
@@ -48,7 +48,7 @@ public func removeObserver(observer: AnyObject)
 public func removeObserver(observer: AnyObject, name aName: String?, object anObject: AnyObject?)
 ```
 
-#3 Posting Notifications
+# 3 Posting Notifications
 
 ```swift
 /// 发出通知
@@ -80,25 +80,25 @@ public func postNotificationName(aName: String, object anObject: AnyObject?, use
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSNotificationCenter Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html)
 
 [Notification Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-15 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

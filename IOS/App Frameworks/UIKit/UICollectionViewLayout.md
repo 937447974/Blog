@@ -16,7 +16,7 @@
 
 ----
 
-#<a id="UICollectionViewLayout"/>1 UICollectionViewLayout
+# <a id="UICollectionViewLayout"/>1 UICollectionViewLayout
 
 UICollectionViewLayout就是UICollectionView显示用的布局文件。我们使用过程中更多的是使用它的子类UICollectionViewFlowLayout和UICollectionViewTransitionLayout。
 
@@ -55,7 +55,7 @@ override public func prepareLayout()
 
 当然还有其他的方法，可自行实现。这些是主要的方法。
 
-#<a" id="自定义UICollectionViewLayout"/>2 自定义UICollectionViewLayout
+# <a" id="自定义UICollectionViewLayout"/>2 自定义UICollectionViewLayout
 
 下面为大家展示所有源代码。
 
@@ -389,7 +389,7 @@ public class YJCollectionViewFlowLayout : UICollectionViewLayout{
 }
 ```
 
-#<a id="实战演练"/>3 实战演练
+# <a id="实战演练"/>3 实战演练
 
 相关界面仿照前面的博文自行设计即可。这里展示YJFlowLayoutCollectionVC的所有源代码。
 
@@ -527,13 +527,13 @@ class YJFlowLayoutCollectionVC: UICollectionViewController, YJCollectionViewDele
 
 ---
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
@@ -547,13 +547,13 @@ class YJFlowLayoutCollectionVC: UICollectionViewController, YJCollectionViewDele
 
 [UICollectionViewFlowLayout Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayout_class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-24 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

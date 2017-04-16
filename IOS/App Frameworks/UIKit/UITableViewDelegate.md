@@ -18,13 +18,13 @@
 
 ---
 
-#1<a id="简介"/> 简介
+# 1<a id="简介"/> 简介
 
 当我们使用UITableView对象时，可以实现UITableViewDelegate协议。该协议可以管理组、配置组标题和脚标、帮助我们删除和重排cell对象，还有一些其他操作。
 
 使用UITableViewDelegate的时候多数情况会使用NSIndexPath对象作为当前行。其中有两个核心参数section(组)和row(行)。
 
-#2<a id="项目准备"/> 项目准备
+# 2<a id="项目准备"/> 项目准备
 
 使用YJTableViewDelegateVC.swift做基础测试，这里已经优先实现了UITableViewDataSource部分协议，至于界面可自行搭建。
 
@@ -122,9 +122,9 @@ class YJTableViewDelegateVC: UIViewController, UITableViewDataSource, UITableVie
 }
 ```
 
-#3<a id="UITableViewDelegate实现"/> UITableViewDelegate实现
+# 3<a id="UITableViewDelegate实现"/> UITableViewDelegate实现
 
-##3.1<a id="配置表试图的行"/> 配置表试图的行
+## 3.1<a id="配置表试图的行"/> 配置表试图的行
 
 ```swift
 // MARK: 预获取行高
@@ -161,7 +161,7 @@ func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, fo
 }
 ```
 
-##3.2<a id="管理附属视图"/> 管理附属视图
+## 3.2<a id="管理附属视图"/> 管理附属视图
 
 ```swift
 // MARK: 左滑出现的按钮
@@ -188,7 +188,7 @@ func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath 
 }
 ```
 
-##3.3<a id="管理选择"/> 管理选择
+## 3.3<a id="管理选择"/> 管理选择
 
 ```swift
 // MARK: 将要点击某行
@@ -224,7 +224,7 @@ func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIn
 }
 ```
 
-##3.4<a id="修改组Header和Footer"/> 修改组Header和Footer
+## 3.4<a id="修改组Header和Footer"/> 修改组Header和Footer
 
 ```swift
 // MARK: 预获取header高
@@ -294,7 +294,7 @@ func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSe
 }
 ```
 
-##3.5<a id="编辑行"/> 编辑行
+## 3.5<a id="编辑行"/> 编辑行
 
 ```swift
 // MARK: 将要进入编辑模式
@@ -336,7 +336,7 @@ func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath in
 }
 ```
 
-##3.6<a id="重排行"/> 重排行
+## 3.6<a id="重排行"/> 重排行
 
 ```swift
 // MARK: 移动cell
@@ -348,7 +348,7 @@ func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath 
 }
 ```
 
-##3.7<a id="追踪移除视图"/> 追踪移除视图
+## 3.7<a id="追踪移除视图"/> 追踪移除视图
 
 ```swift
 // MARK: header消失
@@ -373,7 +373,7 @@ func tableView(tableView: UITableView, didEndDisplayingFooterView view: UIView, 
 }
 ```
 
-##3.8<a id="复制和粘贴行内容"/> 复制和粘贴行内容
+## 3.8<a id="复制和粘贴行内容"/> 复制和粘贴行内容
 
 ```swift
 // 将要显示复制和粘贴板
@@ -400,7 +400,7 @@ func tableView(tableView: UITableView, performAction action: Selector, forRowAtI
 }
 ```
 
-##3.9<a id="管理表视图高亮"/> 管理表视图高亮
+## 3.9<a id="管理表视图高亮"/> 管理表视图高亮
 
 ```swift
 // MARK: 点击cell能否进入高亮模式
@@ -426,7 +426,7 @@ func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: N
 }
 ```
 
-##3.10<a id="管理表视图焦点"/> 管理表视图焦点
+## 3.10<a id="管理表视图焦点"/> 管理表视图焦点
 
 ```swift
 // MARK: 是否指定路径
@@ -465,23 +465,23 @@ func indexPathForPreferredFocusedViewInTableView(tableView: UITableView) -> NSIn
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UITableViewDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-15 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

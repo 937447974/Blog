@@ -1,8 +1,8 @@
-#1 KVC
+# 1 KVC
 
 KVC（Key-value coding）键值编码。简单来说，是可以通过对象属性名称（Key）直接给属性值（value）赋值。
 
-##1.1 使用
+## 1.1 使用
 
 ```objc
 @property (class, readonly) BOOL accessInstanceVariablesDirectly; // 是否禁用KVC
@@ -12,7 +12,7 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 
 通过 setter 方法我们就可以动态给 readonly 的对象赋值。key 可以是属性也可以是_属性。
 
-##1.2 底层调用
+## 1.2 底层调用
 
 假如我们调用 `[[NSObject alloc] setValue:nil forKey:@"property"];`，其 KVC 调用如下所示：
 
@@ -28,11 +28,11 @@ KVC（Key-value coding）键值编码。简单来说，是可以通过对象属�
 1. KVC 使用了 OSSpinLock 锁
 2. 其存储信息可分散在 CFSetCreateMutable -> CFHash -> CFSetGetValue -> CFSetAddValue
 
-#2 KVO
+# 2 KVO
 
 KVO (Key-Value Observing) 建立在 KVC 之上，它通过重写 KVC 和监听 setter 方法，向外发送通知。
 
-##2.1 使用
+## 2.1 使用
 
 ```objc
 // 1. 注册观察者，实施监听
@@ -54,7 +54,7 @@ KVO (Key-Value Observing) 建立在 KVC 之上，它通过重写 KVC 和监听 s
 
 > 当父类和子类同时 KVO 同一个对象时，在 `dealloc` 移除引起崩溃时 应对 context 赋值，移除时也应通过`(void)removeObserver: forKeyPath: context:` 方法移除。
 
-##2.2 底层实现
+## 2.2 底层实现
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017032201.png)
 
@@ -84,9 +84,9 @@ test -> _str = @"阳君";               // 指针改变值
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 1. [iOS--KVO的实现原理与具体应用](http://www.cnblogs.com/azuo/p/5442319.html)
 2. [【原】iOS下KVO使用过程中的陷阱](http://www.cnblogs.com/wengzilin/p/4346775.html)
@@ -94,13 +94,13 @@ test -> _str = @"阳君";               // 指针改变值
 4. [KVC, KVO实现原理剖析](http://www.jianshu.com/p/37a92141077e)
 5. [KVC与Runtime结合使用(案例)及其底层原理](http://www.cnblogs.com/junhuawang/p/5802516.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2017-03-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

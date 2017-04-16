@@ -1,9 +1,9 @@
 
-#1 概述
+# 1 概述
 
 在c和c的派生语言中，如Object-c和C++，块对象为你创建一个Ad Hoc功能体。在其他编程语言中，一个块对象有时候会称为“关闭（closure）”。在IOS中，我们称呼它为“块（blocks）”。
 
-##1.1 Block的功能
+## 1.1 Block的功能
 
 Block是一个匿名内敛的代码集合：
 
@@ -15,7 +15,7 @@ Block是一个匿名内敛的代码集合：
 
 你可以传递它到其他线程中延迟执行，或者在当前线程中执行。在block的生命周期，编译器和运行系统将它引用的所有变量都保存为其副本。虽然block可以在C或C++中使用，但更多的时候，它是作为Object-C对象使用。
 
-##1.2 Block的使用
+## 1.2 Block的使用
 
 Bolck作为封装的工作单元特别有用，它是小且独立的代码块。它可以同时执行，或者在一个操作完成后作为回调使用。
 
@@ -25,8 +25,8 @@ Block可以作为传统回调函数的替代物，有两个主要的原因：
 
 2. Block允许访问局部变量。当你执行一个函数的回调时，你不需要使用一个数据结构，你只需访问局部变量。
 
-#2 声明和创建Block
-##2.1 声明Block引用
+# 2 声明和创建Block
+## 2.1 声明Block引用
 
 声明Block类似于声明一个指向函数的指针，只是使用^替代了*。下面是一些有效的Block声明：
 
@@ -49,7 +49,7 @@ MyBlockType myFirstBlock = // ... ;
 MyBlockType mySecondBlock = // ... ;
 ```
 
-##2.2 创建Block
+## 2.2 创建Block
 
 使用^来标志要创建一个Block，紧随其后使用一个类型名，并放入（）中，Block的主要操作过程在{}中。下面是一个简单的Block块，我们将其命名为oneForm，其传入和回传的参数类型都是float。
 
@@ -62,22 +62,22 @@ oneFrom = ^(float aFloat) {
 ```
 如果没有显示的声明Block的返回类型，它也可以通过块内容自动判断返回类型。如果推断参数列表和返回类型都是void，你可以使用void作为参数列表。如果在块中会返回多个值时，你需要保证返回值的类型是一致的。
 
-##3.2 全局Block
+## 3.2 全局Block
 
 在文档的开头，你可以声明一个全局的Block
 
 ```objc
-#import <stdio.h>
+# import <stdio.h>
 
 int GlobalInt = 0;
 int (^getGlobalInt)(void) = ^{ return GlobalInt; };
 ```
 
-#3 Block和变量
+# 3 Block和变量
 
 本节介绍了Block和变量之间的关系，包括内存管理。
 
-##3.1 变量类型
+## 3.1 变量类型
 
 从Block的结构体中，可以有5种不同的变量类型。
 
@@ -122,7 +122,7 @@ void (^printXAndY)(int) = ^(int y) {
 
 当你想要在Block内改变Blcok外声明的局部变量，需要使用__Block做类型修饰符。
 
-##3.2 __block存储类型
+## 3.2 __block存储类型
 
 当你使用__block作为存储类型的修饰符后，你就可以在Block内修改它的值。
 
@@ -168,8 +168,8 @@ static NSInteger CounterStatic;
 }
 ```
 
-#4 怎么使用Block
-##4.1 调用Block
+# 4 怎么使用Block
+## 4.1 调用Block
 
 如果你将Block声明为一个变量，你可以如下所示像使用函数一样使用它。
 
@@ -190,7 +190,7 @@ float howFar = distanceTraveled(0.0, 9.8, 1.0); // howFar = 4.9
 
 当你将Block作为一个参数传递给一个函数或者方法体时，通常可以创建一个“内联”块。
 
-##4.2 将Blcok作为函数参数
+## 4.2 将Blcok作为函数参数
 
 如同其他参数，你也可以将Block作为一个函数的参数。但是，多数情况下，你不需要声明它，你只需要编写它的方法体来实现。下面的例子使用了qsort_b函数，qsort_b函数类似标准的qsort_r函数，在这里我们使用Blcok作为最后一个参数。
 
@@ -218,7 +218,7 @@ dispatch_apply(count, queue, ^(size_t i) {
 });
 ```
 
-##4.3 将Block作为方法体的参数
+## 4.3 将Block作为方法体的参数
 
 Cocoa提供了大量的支持Blcok作为参数的方法体，你可以像使用其他参数一样使用它。下面的例子介绍了怎么使用Block作为参数给数组过滤。
 
@@ -257,7 +257,7 @@ NSString *string = @"gamma";
 // At this point, found == YES
 ```
 
-##4.4 需要避免的模式
+## 4.4 需要避免的模式
 
 当你使用^{ ... }使用Block时，下面的例子是需要避免的模式
 
@@ -294,13 +294,13 @@ test();
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 https://github.com/937447974/Algorithms
 
-##参考资料
+## 参考资料
 
 [Blocks Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40007502)
 
@@ -310,14 +310,14 @@ https://github.com/937447974/Algorithms
 
 [梦维block](http://www.dreamingwish.com/articlelist/tag/block)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-09-27 | 博文完成 |
 | 2015-11-20 | 添加避免循环引用 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

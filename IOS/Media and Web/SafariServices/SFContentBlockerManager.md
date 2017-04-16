@@ -1,8 +1,8 @@
-#1 SFContentBlockerManager
+# 1 SFContentBlockerManager
 
 SFContentBlockerManager通知SFSafariViewController加载内容过滤规则。
 
-##1.1 Reloading Your Content Blocking Rules
+## 1.1 Reloading Your Content Blocking Rules
 
 ```swift
 /// 刷新扩展
@@ -14,7 +14,7 @@ SFContentBlockerManager通知SFSafariViewController加载内容过滤规则。
 public class func reloadContentBlockerWithIdentifier(identifier: String, completionHandler: ((NSError?) -> Void)?)
 ```
 
-#2 实战演练
+# 2 实战演练
 
 下面显示刷新的核心代码。
 
@@ -30,23 +30,23 @@ SFContentBlockerManager.reloadContentBlockerWithIdentifier(YJUtilsAPP.identifier
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Safari Services Framework Reference](https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SafariServicesFramework_Ref/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-21 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

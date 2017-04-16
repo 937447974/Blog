@@ -1,13 +1,13 @@
 CSSearchableItem代表搜索栏中的每一个条目。配合CSSearchableIndex保存数据到搜索栏，配合CSSearchableItemAttributeSet封装数据。
 
-#1 Getting a Searchable Item
+# 1 Getting a Searchable Item
 
 ```swift
 // 初始化CSSearchableItem
 public init(uniqueIdentifier: String?, domainIdentifier: String?, attributeSet: CSSearchableItemAttributeSet)
 ```
 
-#2 Setting Attributes on a Searchable Item
+# 2 Setting Attributes on a Searchable Item
 
 ```
 // 唯一标示符
@@ -27,25 +27,25 @@ public var attributeSet: CSSearchableItemAttributeSet
 
 ----
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Spotlight Framework Reference](https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CoreSpotlight_Framework/index.html)
 
 [App Search Programming Guide](https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-28 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

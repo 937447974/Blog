@@ -4,7 +4,7 @@ UITableViewDataSource是UITableView的一个协议，它主要帮助我们设置
 
 UITableViewDataSource要求我们提供显示UITableViewCell，以及要显示的cell个数，你还可以使他们以组的形式显示。
 
-#1 配置UItableVIew
+# 1 配置UItableVIew
 
 ```swift
 
@@ -36,7 +36,7 @@ optional public func sectionIndexTitlesForTableView(tableView: UITableView) -> [
 optional public func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int
 ```
 
-#2 插入或删除行
+# 2 插入或删除行
 
 
 ```swift
@@ -49,7 +49,7 @@ optional public func tableView(tableView: UITableView, canEditRowAtIndexPath ind
 optional public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
 ```
 
-#3 移动UITableViewCell
+# 3 移动UITableViewCell
 
 ```swift
 // 能否移动
@@ -61,7 +61,7 @@ optional public func tableView(tableView: UITableView, canMoveRowAtIndexPath ind
 optional public func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
 ```
 
-#4 示例代码
+# 4 示例代码
 
 这里使用类YJTableViewDataSourceVC，至于界面请自行搭建。
 
@@ -202,23 +202,23 @@ class YJTableViewDataSourceVC: UIViewController, UITableViewDataSource {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UITableViewDataSource Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-14 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

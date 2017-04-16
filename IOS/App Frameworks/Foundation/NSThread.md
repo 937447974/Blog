@@ -5,7 +5,7 @@ NSThread的优缺点具有以下两点。
 1. 优点：NSThread比其他Cocoa NSOperation和GCD轻量级。
 2. 缺点：需要自己管理线程的生命周期，线程同步。线程同步对数据的加锁会有一定的系统开销。
 
-#1 Initializing an NSThread Object
+# 1 Initializing an NSThread Object
 
 ```swift
 // 初始化NSThread
@@ -17,7 +17,7 @@ public init()
 public convenience init(target: AnyObject, selector: Selector, object argument: AnyObject?)
 ```
 
-#2 Starting a Thread
+# 2 Starting a Thread
 
 ```swift
 // 分离一个线程并执行相应的代码
@@ -32,7 +32,7 @@ public func start()
 public func main() // thread body method
 ```
 
-#3 Stopping a Thread
+# 3 Stopping a Thread
 
 ```swift
 // 阻塞当前线程,直到指定的时间。
@@ -49,7 +49,7 @@ public class func exit()
 public func cancel()
 ```
 
-#4 Determining the Thread’s Execution State
+# 4 Determining the Thread’s Execution State
 
 ```swift
 // 是否正在执行
@@ -65,7 +65,7 @@ public var finished: Bool { get }
 public var cancelled: Bool { get }
 ```
 
-#5 Working with the Main Thread
+# 5 Working with the Main Thread
 
 ```swift
 // 线程是否为主线程
@@ -81,7 +81,7 @@ public class func isMainThread() -> Bool
 public class func mainThread() -> NSThread
 ```
 
-#6 Querying the Environment
+# 6 Querying the Environment
 
 ```swift
 // 获取当前线程
@@ -99,7 +99,7 @@ public class func callStackReturnAddresses() -> [NSNumber]
 public class func callStackSymbols() -> [String]
 ```
 
-#7 Working with Thread Properties
+# 7 Working with Thread Properties
 
 ```swift
 // 线程字典
@@ -114,7 +114,7 @@ public var name: String?
 public var stackSize: Int
 ```
 
-#8 Working with Thread Priorities
+# 8 Working with Thread Priorities
 
 ```swift
 // 当前线程优先级0~1.0
@@ -136,23 +136,23 @@ public var qualityOfService: NSQualityOfService // read-only after the thread is
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSThread Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-30 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

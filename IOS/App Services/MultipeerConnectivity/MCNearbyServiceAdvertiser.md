@@ -10,11 +10,11 @@
 
 ----
 
-#<a id="1">1 MCNearbyServiceAdvertiser
+# <a id="1">1 MCNearbyServiceAdvertiser
 
 MCNearbyServiceAdvertiser通知附近的设备发出邀请。这个类会有回调，告知有用户要与您的设备连接，然后可以自定义提示框，以及自定义连接处理。
 
-##<a id="1.1">1.1 Configuring and Initialization
+## <a id="1.1">1.1 Configuring and Initialization
 
 ```swift
 /// 初始化MCNearbyServiceAdvertiser
@@ -29,7 +29,7 @@ public var discoveryInfo: [String : String]? { get }
 public var serviceType: String { get }
 ```
 
-##<a id="1.2">1.2 Starting and Stopping Advertisement
+## <a id="1.2">1.2 Starting and Stopping Advertisement
 
 ```swift
 /// 发出广播
@@ -39,9 +39,9 @@ public func startAdvertisingPeer()
 public func stopAdvertisingPeer()
 ```
 
-#<a id="2">2 MCNearbyServiceAdvertiserDelegate
+# <a id="2">2 MCNearbyServiceAdvertiserDelegate
 
-##<a id="2.1">2.1 Error Handling Delegate Methods
+## <a id="2.1">2.1 Error Handling Delegate Methods
 
 ```swift
 /// 广播未运行的错误
@@ -49,7 +49,7 @@ public func stopAdvertisingPeer()
 optional public func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError)
 ```
 
-##<a id="2.2">2.2 Invitation Handling Delegate Methods
+## <a id="2.2">2.2 Invitation Handling Delegate Methods
 
 ```swift
 /// 附近的设备发出连接请求
@@ -61,13 +61,13 @@ public func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitati
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Multipeer Connectivity Framework Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/index.html)
 
@@ -75,13 +75,13 @@ public func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitati
 
 [MCNearbyServiceAdvertiserDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserDelegateProtocolRef/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

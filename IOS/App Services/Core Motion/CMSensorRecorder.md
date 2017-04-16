@@ -1,6 +1,6 @@
 CMSensorRecorder是和传感器交互，检索和存储运动数据。应用进入不活跃状态时，仍然记录数据。
 
-#1 Checking the Availability of Sensor Recording
+# 1 Checking the Availability of Sensor Recording
 
 ```swift
 // 加速计数据能否记录数据
@@ -10,7 +10,7 @@ public class func isAccelerometerRecordingAvailable() -> Bool
 public class func isAuthorizedForRecording() -> Bool
 ```
 
-#2 Retrieving Past Accelerometer Data
+# 2 Retrieving Past Accelerometer Data
 
 ```swift
 // 根据标示符获取数据
@@ -27,25 +27,25 @@ public func recordAccelerometerFor(duration: NSTimeInterval)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Motion Framework Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CoreMotion_Reference/index.html)
 
 [CMSensorRecorder Class Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

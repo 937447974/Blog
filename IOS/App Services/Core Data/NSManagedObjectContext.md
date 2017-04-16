@@ -2,7 +2,7 @@ NSManagedObjectContext是托管对象上下文，其中包含多个托管对象�
 
 持久化存储区可以有很多个，与之类似，托管对象上下文也可以不止一个。
 
-#Notifications
+# Notifications
 
 我们也可以通过通知监听托管对象上下文的变化状态。
 
@@ -12,7 +12,7 @@ NSManagedObjectContext是托管对象上下文，其中包含多个托管对象�
 
 还有其他通知字段，如NSManagedObjectContextDidSave和NSManagedObjectContextWillSave
 
-#Concurrency
+# Concurrency
 
 Core Data使用专有的队列来保护管理对象。其中有三种方式可供选择。
 
@@ -22,9 +22,9 @@ Core Data使用专有的队列来保护管理对象。其中有三种方式可�
 
 > 其中confinementConcurrencyType已被弃用。
 
-#Symbols
+# Symbols
 
-##1 Registering and Fetching Objects
+## 1 Registering and Fetching Objects
 
 ```swift
 // 获取请求的数据
@@ -198,19 +198,19 @@ open class func mergeChanges(fromRemoteContextSave changeNotificationData: [AnyH
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

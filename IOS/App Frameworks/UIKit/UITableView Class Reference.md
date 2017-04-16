@@ -1,13 +1,13 @@
 UITableView有两种样式UITableViewStylePlain和UITableViewStyleGrouped。
 
-##1 Initializing a UITableView Object
+## 1 Initializing a UITableView Object
 
 ```swift
 // 初始化
 public init(frame: CGRect, style: UITableViewStyle)
 ```
 
-##2 Configuring a Table View
+## 2 Configuring a Table View
 
 ```swift
 // 展示样式
@@ -36,7 +36,7 @@ public var separatorInset: UIEdgeInsets
 public var cellLayoutMarginsFollowReadableWidth: Bool 
 ```
 
-##3 Creating Table View Cells
+## 3 Creating Table View Cells
 
 ```swift
 // 注册xib创建的cell
@@ -52,7 +52,7 @@ public func dequeueReusableCellWithIdentifier(identifier: String) -> UITableView
 public func dequeueReusableCellWithIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath) -> UITableViewCell
 ```
 
-##4 Accessing Header and Footer Views
+## 4 Accessing Header and Footer Views
 
 ```swift
 // 注册通过xib创建Section头部和尾部
@@ -80,7 +80,7 @@ public func headerViewForSection(section: Int) -> UITableViewHeaderFooterView?
 public func footerViewForSection(section: Int) -> UITableViewHeaderFooterView?
 ```
 
-##5 Accessing Cells and Sections
+## 5 Accessing Cells and Sections
 
 ```swift
 // 根据位置获取UITableViewCell
@@ -97,7 +97,7 @@ public var visibleCells: [UITableViewCell] { get }
 public var indexPathsForVisibleRows: [NSIndexPath]? { get }
 ```
 
-##6 Estimating Element Heights
+## 6 Estimating Element Heights
 
 ```swift
 // 估计的row显示高度
@@ -111,7 +111,7 @@ public var estimatedSectionHeaderHeight: CGFloat
 public var estimatedSectionFooterHeight: CGFloat
 ```
 
-##7 Scrolling the Table View
+## 7 Scrolling the Table View
 
 ```swift
 // 滚动到指定位置
@@ -120,7 +120,7 @@ public func scrollToRowAtIndexPath(indexPath: NSIndexPath, atScrollPosition scro
 public func scrollToNearestSelectedRowAtScrollPosition(scrollPosition: UITableViewScrollPosition, animated: Bool)
 ```
 
-##8 Managing Selections
+## 8 Managing Selections
 
 ```swift
 // 获取选中的cell
@@ -145,7 +145,7 @@ public var allowsMultipleSelection: Bool
 public var allowsMultipleSelectionDuringEditing: Bool
 ```
 
-##9 Inserting, Deleting, and Moving Rows and Sections
+## 9 Inserting, Deleting, and Moving Rows and Sections
 
 ```swift
 // 开始更新
@@ -168,7 +168,7 @@ public func deleteRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation a
 public func moveRowAtIndexPath(indexPath: NSIndexPath, toIndexPath newIndexPath: NSIndexPath)
 ```
 
-##10  Managing the Editing of Table Cells
+## 10  Managing the Editing of Table Cells
 
 ```swift
 // 设置编辑状态
@@ -177,7 +177,7 @@ public var editing: Bool
 public func setEditing(editing: Bool, animated: Bool)
 ```
 
-##11  Reloading the Table View
+## 11  Reloading the Table View
 
 ```swift
 // 更新数据源
@@ -192,7 +192,7 @@ public func reloadSections(sections: NSIndexSet, withRowAnimation animation: UIT
 public func reloadRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation)
 ```
 
-##12  Accessing Drawing Areas of the Table View
+## 12  Accessing Drawing Areas of the Table View
 
 ```swift
 // 组显示区域
@@ -205,7 +205,7 @@ public func rectForFooterInSection(section: Int) -> CGRect
 public func rectForRowAtIndexPath(indexPath: NSIndexPath) -> CGRect
 ```
 
-##13  Managing the Delegate and the Data Source
+## 13  Managing the Delegate and the Data Source
 
 ```swift
 // 数据源代理
@@ -214,7 +214,7 @@ weak public var dataSource: UITableViewDataSource?
 weak public var delegate: UITableViewDelegate?
 ```
 
-##14  Configuring the Table Index
+## 14  Configuring the Table Index
 
 ```swift
 // 最少显示的cell数目
@@ -230,7 +230,7 @@ public var sectionIndexBackgroundColor: UIColor?
 public var sectionIndexTrackingBackgroundColor: UIColor?
 ```
 
-##15  Managing Focus
+## 15  Managing Focus
 
 ```swift
 // 检查焦点是否应该返回上一个焦点索引
@@ -242,20 +242,20 @@ public var remembersLastFocusedIndexPath: Bool
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UITableView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/index.html)
 
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

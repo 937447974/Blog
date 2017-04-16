@@ -11,11 +11,11 @@
 
 ----
 
-#<a id="1">1 MCNearbyServiceBrowser
+# <a id="1">1 MCNearbyServiceBrowser
 
 MCNearbyServiceBrowser主要用于发现附近的设备。
 
-##<a id="1.1">1.1 Initializing the Browser
+## <a id="1.1">1.1 Initializing the Browser
 
 ```swift
 /// 初始化MCNearbyServiceBrowser
@@ -29,7 +29,7 @@ public var myPeerID: MCPeerID { get }
 public var serviceType: String { get }
 ```
 
-##<a id="1.2">1.2 Browsing for Peers
+## <a id="1.2">1.2 Browsing for Peers
 
 ```swift
 /// 开始搜索设备
@@ -38,16 +38,16 @@ public func startBrowsingForPeers()
 public func stopBrowsingForPeers()
 ```
 
-##<a id="1.3">1.3 Inviting Peers
+## <a id="1.3">1.3 Inviting Peers
 
 ```swift
 /// 邀请设备加入会话
 public func invitePeer(peerID: MCPeerID, toSession session: MCSession, withContext context: NSData?, timeout: NSTimeInterval)
 ```
 
-#<a id="2">2 MCSessionDelegate
+# <a id="2">2 MCSessionDelegate
 
-##<a id="2.1">2.1 Error Handling Delegate Methods
+## <a id="2.1">2.1 Error Handling Delegate Methods
 
 ```swift
 // 开启搜索附近设备失败
@@ -55,7 +55,7 @@ public func invitePeer(peerID: MCPeerID, toSession session: MCSession, withConte
 optional public func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError)
 ```
 
-##<a id="2.2">2.2 Peer Discovery Delegate Methods
+## <a id="2.2">2.2 Peer Discovery Delegate Methods
 
 ```swift
 // 发现附近的MCPeerID
@@ -71,13 +71,13 @@ public func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Multipeer Connectivity Framework Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/index.html)
 
@@ -85,13 +85,13 @@ public func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID)
 
 [MCNearbyServiceBrowserDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceBrowserDelegateRef/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

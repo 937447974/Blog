@@ -13,13 +13,13 @@
 
 >如果你还不知道JavaScriptCore库，详见我的博文《[JavaScriptCore框架](http://blog.csdn.net/y550918116j/article/details/49666443)》
 
-#1 JavaScriptCore和UIWebView
+# 1 JavaScriptCore和UIWebView
 
 在WWDC 2013上，苹果公司推出了JavaScriptCore框架，这是一个基于JavaScript的框架，它完美的以面向对象的方式实现js和oc的交互。
 
 今天我们使用JavaScriptCore为大家介绍更优雅的js和oc交互。
 
-##1.1 准备工作
+## 1.1 准备工作
 
 这次创建的项目是借用前两篇博文的组合模式。完成后的界面图和进阶篇的截面图一样。
 
@@ -34,7 +34,7 @@
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "SeniorVC.h"
+# import "SeniorVC.h"
 
 @interface SeniorVC () <UIWebViewDelegate>
 
@@ -112,7 +112,7 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20151106154733055)
 
-##1.2 制造JavaScript协议
+## 1.2 制造JavaScript协议
 
 我们使用JSExport制造要暴露给JS调用的协议以及工具类JavaScriptUtil。
 
@@ -127,8 +127,8 @@ JavaScriptUtil.h
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+# import <Foundation/Foundation.h>
+# import <JavaScriptCore/JavaScriptCore.h>
 
 /// 暴露给js使用的协议
 @protocol JavaScriptDelegate <NSObject, JSExport>
@@ -160,7 +160,7 @@ JavaScriptUtil.m
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "JavaScriptUtil.h"
+# import "JavaScriptUtil.h"
 
 @implementation JavaScriptUtil
 
@@ -173,14 +173,14 @@ JavaScriptUtil.m
 @end
 ```
 
-##1.3 实现交互
+## 1.3 实现交互
 
 接下来，我们改造SeniorVC。
 
 ```objective-c
-#import "SeniorVC.h"
-#import <JavaScriptCore/JavaScriptCore.h>
-#import "JavaScriptUtil.h"
+# import "SeniorVC.h"
+# import <JavaScriptCore/JavaScriptCore.h>
+# import "JavaScriptUtil.h"
 
 @interface SeniorVC () <UIWebViewDelegate, JavaScriptDelegate>
 
@@ -257,7 +257,7 @@ JavaScriptUtil.m
 其中app这个类型是通过`self.jsContext[@"app"] = jSUtil;`注入的。运行项目，则可在真机上看见神奇的交互效果。
 &#160;
 
-#2 进度条
+# 2 进度条
 
 在《[UIWebView进阶(Objective-C)](http://blog.csdn.net/y550918116j/article/details/49638523)》中，我们是在回调内实现的进度条制造，但是这样精度不是很高。如果想要很高的精度，我们必然需要分析UIWebView的方法，也就是私有方法。这里可以使用runtime机制打印UIWebView方法。
 
@@ -290,7 +290,7 @@ for (int i = 0; i < count ; i++) {
 
 这几个方法很有意思，我就不一一介绍了，从字面就可以理解。虽然oc的方法很长，但当我们想做点比较私有的事时，还是很方便的。
 
-##2.1 自定义UIWebView
+## 2.1 自定义UIWebView
 
 接下来我们制造我们自己的UITableView，并可回调网络的加载进度，这里我使用的类名为ProgressWebView。
 
@@ -303,7 +303,7 @@ for (int i = 0; i < count ; i++) {
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+# import <UIKit/UIKit.h>
 
 @class ProgressWebView;
 
@@ -345,7 +345,7 @@ for (int i = 0; i < count ; i++) {
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "ProgressWebView.h"
+# import "ProgressWebView.h"
 
 // 暴露UIWebView的私有方法
 @interface UIWebView()
@@ -398,7 +398,7 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 [pDelegate webView:self didReceivedCount:self.receivedCount totalCount:self.totalCount];
 ```
 
-##2.2 改造SeniorVC
+## 2.2 改造SeniorVC
 
 接下来就是改造我们的核心类SeniorVC，让你实现很酸爽的进度条。
 
@@ -413,10 +413,10 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "SeniorVC.h"
-#import <JavaScriptCore/JavaScriptCore.h>
-#import "JavaScriptUtil.h"
-#import "ProgressWebView.h"
+# import "SeniorVC.h"
+# import <JavaScriptCore/JavaScriptCore.h>
+# import "JavaScriptUtil.h"
+# import "ProgressWebView.h"
 
 @interface SeniorVC () <UIWebViewDelegate, JavaScriptDelegate>
 {
@@ -571,9 +571,9 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [UIWebView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html)
 
@@ -581,7 +581,7 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 
 [iOS与JS交互实战篇（ObjC版）](http://mp.weixin.qq.com/s?__biz=MzIzMzA4NjA5Mw==&mid=214063688&idx=1&sn=903258ec2d3ae431b4d9ee55cb59ed89&scene=18#rd)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -589,7 +589,7 @@ id<ProgressWebViewDelegate> pDelegate = (id<ProgressWebViewDelegate>)self.delega
 | 2015-12-11 | 更新相关博文链接 |
 | 2015-12-12 | 更新博文名 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -2,14 +2,14 @@ UICollectionView如图所示是一个容器控件。
 
 ![](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/Art/uicollectionview_callouts.png)
 
-##1 Initializing a Collection View
+## 1 Initializing a Collection View
 
 ```swift
 /// 初始化
 public init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout)
 ```
 
-##2 Configuring the Collection View
+## 2 Configuring the Collection View
 
 ```swift
 // 管理管理
@@ -20,7 +20,7 @@ weak public var dataSource: UICollectionViewDataSource?
 public var backgroundView: UIView?
 ```
 
-##3 Creating Collection View Cells
+## 3 Creating Collection View Cells
 
 ```swift
 // 注册通过class创建cell
@@ -39,7 +39,7 @@ public func dequeueReusableCellWithReuseIdentifier(identifier: String, forIndexP
 public func dequeueReusableSupplementaryViewOfKind(elementKind: String, withReuseIdentifier identifier: String, forIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
 ```
 
-##4 Changing the Layout
+## 4 Changing the Layout
 
 ```swift
 // 界面item显示约束
@@ -61,7 +61,7 @@ public func finishInteractiveTransition()
 public func cancelInteractiveTransition()
 ```
 
-##5 Reloading Content
+## 5 Reloading Content
 
 ```swift
 // 刷新所有显item
@@ -72,7 +72,7 @@ public func reloadSections(sections: NSIndexSet)
 public func reloadItemsAtIndexPaths(indexPaths: [NSIndexPath])
 ```
 
-##6 Getting the State of the Collection View
+## 6 Getting the State of the Collection View
 
 ```swift
 // 显示多少组
@@ -83,7 +83,7 @@ public func numberOfItemsInSection(section: Int) -> Int
 public func visibleCells() -> [UICollectionViewCell]
 ```
 
-##7 Inserting, Moving, and Deleting Items
+## 7 Inserting, Moving, and Deleting Items
 
 ```swift
 // 插入Items
@@ -94,7 +94,7 @@ public func deleteItemsAtIndexPaths(indexPaths: [NSIndexPath])
 public func moveItemAtIndexPath(indexPath: NSIndexPath, toIndexPath newIndexPath: NSIndexPath)    
 ```
 
-##8 Inserting, Moving, and Deleting Sections
+## 8 Inserting, Moving, and Deleting Sections
 
 ```swift
 // 插入sections
@@ -105,7 +105,7 @@ public func deleteSections(sections: NSIndexSet)
 public func moveSection(section: Int, toSection newSection: Int)
 ```
 
-##9 Reordering Items Interactively
+## 9 Reordering Items Interactively
 
 ```swift
 // 能否交互移动item
@@ -122,7 +122,7 @@ public func endInteractiveMovement()
 public func cancelInteractiveMovement()
 ```
 
-##10 Managing the Selection
+## 10 Managing the Selection
 
 ```swift
 // 能否选中
@@ -137,7 +137,7 @@ public func selectItemAtIndexPath(indexPath: NSIndexPath?, animated: Bool, scrol
 public func deselectItemAtIndexPath(indexPath: NSIndexPath, animated: Bool)
 ```
 
-##11 Managing Focus
+## 11 Managing Focus
 
 ```swift
 // 检查焦点是否应该返回上一个焦点索引
@@ -145,7 +145,7 @@ public func deselectItemAtIndexPath(indexPath: NSIndexPath, animated: Bool)
 public var remembersLastFocusedIndexPath: Bool
 ```
 
-##12 Locating Items and Views in the Collection View
+## 12 Locating Items and Views in the Collection View
 
 ```swift
 // 根据点获取对应显示的item
@@ -167,7 +167,7 @@ public func supplementaryViewForElementKind(elementKind: String, atIndexPath ind
 public func visibleSupplementaryViewsOfKind(elementKind: String) -> [UICollectionReusableView]
 ```
 
-##13 Getting Layout Information
+## 13 Getting Layout Information
 
 ```swift
 // 获取item对应的约束
@@ -176,14 +176,14 @@ public func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UIColl
 public func layoutAttributesForSupplementaryElementOfKind(kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes?
 ```
 
-##14 Scrolling an Item Into View
+## 14 Scrolling an Item Into View
 
 ```swift
 // 滚动到指定的item
 public func scrollToItemAtIndexPath(indexPath: NSIndexPath, atScrollPosition scrollPosition: UICollectionViewScrollPosition, animated: Bool)
 ```
 
-##15 Animating Multiple Changes to the Collection View
+## 15 Animating Multiple Changes to the Collection View
 
 ```swift
 // 批处理执行insert/delete/reload/move
@@ -194,19 +194,19 @@ public func performBatchUpdates(updates: (() -> Void)?, completion: ((Bool) -> V
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -33,7 +33,7 @@ if let bar = self.navigationController?.toolbar { // 共享bar UIToolBar.appeara
 }
 ```
 
-#<a id="Configuring_Toolbar_Items">1 Configuring Toolbar Items
+# <a id="Configuring_Toolbar_Items">1 Configuring Toolbar Items
 
 ```swift
 /// toolbar上的按钮
@@ -48,7 +48,7 @@ public var items: [UIBarButtonItem]?
 public func setItems(items: [UIBarButtonItem]?, animated: Bool)
 ```
 
-#<a id="Customizing_Appearance">2 Customizing Appearance
+# <a id="Customizing_Appearance">2 Customizing Appearance
 
 ```swift
 /// bar样式
@@ -77,7 +77,7 @@ public func setShadowImage(shadowImage: UIImage?, forToolbarPosition topOrBottom
 public func shadowImageForToolbarPosition(topOrBottom: UIBarPosition) -> UIImage?
 ```
 
-#<a id="Managing_the_Delegate">3 Managing the Delegate
+# <a id="Managing_the_Delegate">3 Managing the Delegate
 
 ```swift
 /// toolbar定位代理
@@ -89,13 +89,13 @@ unowned(unsafe) public var delegate: UIToolbarDelegate?
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
@@ -103,13 +103,13 @@ unowned(unsafe) public var delegate: UIToolbarDelegate?
 
 [UIToolbar Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-10 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

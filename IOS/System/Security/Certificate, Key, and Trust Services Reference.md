@@ -11,9 +11,9 @@ Certificate, Key, and Trust Services为管理证书、公钥私钥和信任策�
 在iOS上，该文章介绍的所有API都是线程安全的。
 
 
-#1 Functions
+# 1 Functions
 
-##1.1 Getting Type Identifiers
+## 1.1 Getting Type Identifiers
 
 ```swift
 // 获取SecCertificate的唯一ID
@@ -33,7 +33,7 @@ public func SecPolicyGetTypeID() -> CFTypeID
 public func SecTrustGetTypeID() -> CFTypeID
 ```
 
-##1.2 Managing Certificates
+## 1.2 Managing Certificates
 
 ```swift
 // 创建DER证书
@@ -47,7 +47,7 @@ public func SecCertificateCopyData(certificate: SecCertificate) -> CFData
 public func SecCertificateCopySubjectSummary(certificate: SecCertificate) -> CFString?
 ```
 
-##1.3 Managing Identities
+## 1.3 Managing Identities
 
 ```swift
 // 检索身份相关的证书
@@ -61,7 +61,7 @@ public func SecIdentityCopyPrivateKey(identityRef: SecIdentity, _ privateKeyRef:
 public func SecPKCS12Import(pkcs12_data: CFData, _ options: CFDictionary, _ items: UnsafeMutablePointer<CFArray?>) -> OSStatus
 ```
 
-##1.4 Cryptography and Digital Signatures
+## 1.4 Cryptography and Digital Signatures
 
 ```swift
 // 创建不对称密钥
@@ -84,7 +84,7 @@ public func SecKeyRawVerify(key: SecKey, _ padding: SecPadding, _ signedData: Un
 public func SecKeyGetBlockSize(key: SecKey) -> Int
 ```
 
-##1.5 Managing Policies
+## 1.5 Managing Policies
 
 ```swift
 // 获取政策属性字典
@@ -98,7 +98,7 @@ public func SecPolicyCreateBasicX509() -> SecPolicy
 public func SecPolicyCreateSSL(server: Bool, _ hostname: CFString?) -> SecPolicy
 ```
 
-##1.6 Managing Trust
+## 1.6 Managing Trust
 
 ```swift
 // 基于给定的证书和政策创建一个信任对象
@@ -166,7 +166,7 @@ public func SecTrustCopyResult(trust: SecTrust) -> CFDictionary?
 public func SecTrustSetOCSPResponse(trust: SecTrust, _ responseData: AnyObject?) -> OSStatus
 ```
 
-#2 Data Types
+# 2 Data Types
 
 ```swift
 // X.509证书
@@ -207,21 +207,21 @@ public typealias SecTrustCallback = (SecTrust, SecTrustResultType) -> Void
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Certificate, Key, and Trust Services Reference](https://developer.apple.com/library/ios/documentation/Security/Reference/certifkeytrustservices/index.html)
 
 [Certificate, Key, and Trust Services Programming Guide](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CertKeyTrustProgGuide/iPhone_Tasks/iPhone_Tasks.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-31 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

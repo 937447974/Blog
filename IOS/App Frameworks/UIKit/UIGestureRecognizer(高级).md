@@ -8,7 +8,7 @@
 
 在上一篇博文，我们已经讲解了关于手势识别支持缩放、旋转和移动View的相关知识。这篇博文我们会实现在app中常见的功能：手势解锁。
 
-#1 前期准备
+# 1 前期准备
 
 在前面我们讲解了手势识别器，今天运用到的功能不需要手势识别器来实现，当然你也可以使用手势识别器的UISwipeGestureRecognizer来实现。
 
@@ -20,7 +20,7 @@
 
 这几个方法和viewDidLoad一样，你都可以继承实现。今天就是使用这几个方法去做手势解锁的功能。
 
-#2 创建项目
+# 2 创建项目
 
 你可以使用上一篇博文的项目，也可以使用新的项目，这里没有任何特殊要求。
 
@@ -40,7 +40,7 @@
 
 ![创建项目-6](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015110908.png)
 
-#3 核心类SeniorVC
+# 3 核心类SeniorVC
 
 核心类使用到了SeniorVC。
 
@@ -53,8 +53,8 @@
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "SeniorVC.h"
-#import "DrawRectView.h"
+# import "SeniorVC.h"
+# import "DrawRectView.h"
 
 /** 屏幕宽度*/
 #define UIScreenWeight [[UIScreen mainScreen] bounds].size.width
@@ -115,7 +115,7 @@
 
 在这里我们新建了一个类DrawRectView，这就是为了让我们画线条用的。要知道在UIViewController是没法直接画线条的，只能在UIView的`- (void)drawRect:(CGRect)rect`中画线条。而且我们让这个drawRectView在界面的顶层，这样做的好处就是线条会覆盖按钮，以免线条不连贯。
 
-#4 线条类DrawRectView
+# 4 线条类DrawRectView
 
 线条类DrawRectView有且只有一个作用那就是画出我们想要的线条。这些线条就是将一个一个的点连接起来。
 
@@ -130,8 +130,8 @@ DrawRectView.h
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "YJPoint.h"
+# import <UIKit/UIKit.h>
+# import "YJPoint.h"
 
 /** DrawRect监听*/
 @interface DrawRectView : UIView
@@ -155,7 +155,7 @@ DrawRectView.m
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import "DrawRectView.h"
+# import "DrawRectView.h"
 
 @implementation DrawRectView
 
@@ -205,7 +205,7 @@ DrawRectView.m
 3. 使用CGContextAddLineToPoint画线；
 4. 最后设置线的相关属性即可。
 
-#5 点YJPoint
+# 5 点YJPoint
 
 点YJPoint的作用就是将CGPoint转化为类型对象。
 
@@ -220,8 +220,8 @@ YJPoint.h
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+# import <Foundation/Foundation.h>
+# import <UIKit/UIKit.h>
 
 /** CGPoint转为对象*/
 @interface YJPoint : NSObject
@@ -254,7 +254,7 @@ YJPoint.h
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import "YJPoint.h"
+# import "YJPoint.h"
 
 @implementation YJPoint
 
@@ -270,7 +270,7 @@ YJPoint.h
 @end
 ```
 
-#6 实现手势解锁
+# 6 实现手势解锁
 
 两个辅助类我们已经搭建好了，接下来就是实现核心类SeniorVC。
 
@@ -436,7 +436,7 @@ YJPoint.h
 2. 校验密码，密码成功和失败都使用self.verifySuccess调用其setter方法绘制界面。这里我设置的密码为123，当然正式环境中，你还需匹配用户保存的密码。
 3. 给用户显示手势密码成功还是失败的状态，0.5秒后恢复初始化状态。
 
-#7 运行项目
+# 7 运行项目
 
 运行项目后进行相应调试，你会在控制台和手机界面看到相应的结果。是不是感觉很爽，你也可以在你的app中实现了很炫的手势解锁功能。
 
@@ -458,13 +458,13 @@ YJPoint.h
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [Event Handling Guide for iOS](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/GestureRecognizer_basics/GestureRecognizer_basics.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -472,7 +472,7 @@ YJPoint.h
 | 2015-12-11 | 目录添加索引 |
 | 2015-12-12 | 文章标题更新 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

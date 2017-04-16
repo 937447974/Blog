@@ -12,7 +12,7 @@ JavaScriptCore让OC和JS自动完成交互。由于js是单线程的，JavaScrip
 
 >开发过程中需要引入的库：`#import <JavaScriptCore/JavaScriptCore.h>`
 
-#1 JSContext
+# 1 JSContext
 
 JSContext是JavaScript的执行环境，所有的JavaScript的执行都是基于这个环境。JSContext同时也管理JavaScript对象的生命周期，每一个JSValue都和JSContext强引用关联。
 
@@ -24,7 +24,7 @@ JSContext *context = [[JSContext alloc] init];
 context = [JSContext currentContext];
 ```
 
-#2 JSValue
+# 2 JSValue
 
 JSValue是JavaScript和Object-C之间互换的桥梁，它提供了多种方法可以方便地把JavaScript数据类型转换成Objective-C，或者是转换过去。
 
@@ -46,7 +46,17 @@ JSValue是JavaScript和Object-C之间互换的桥梁，它提供了多种方法�
 通过Objective-C创建JSValue对象，可以使用如下常用方法。
 
 ```objc
-+ valueWithBool:(BOOL)value inContext:(JSContext *)context;+ valueWithDouble:(double)value inContext:(JSContext *)context;+ valueWithInt32:(int32_t)value inContext:(JSContext *)context;+ valueWithUInt32:(uint32_t)value inContext:(JSContext *)context;+ valueWithNullInContext:(JSContext *)context;+ valueWithUndefinedInContext:(JSContext *)context;+ valueWithNewObjectInContext:(JSContext *)context;+ valueWithNewArrayInContext:(JSContext *)context;+ valueWithNewRegularExpressionFromPattern:(NSString *)pattern flags:(NSString *)flags inContext:(JSContext *)context;+ valueWithNewErrorFromMessage:(NSString *)message inContext:(JSContext *)context;
++ valueWithBool:(BOOL)value inContext:(JSContext *)context;
++ valueWithDouble:(double)value inContext:(JSContext *)context;
++ valueWithInt32:(int32_t)value inContext:(JSContext *)context;
++ valueWithUInt32:(uint32_t)value inContext:(JSContext *)context;
++ valueWithNullInContext:(JSContext *)context;
++ valueWithUndefinedInContext:(JSContext *)context;
+
++ valueWithNewObjectInContext:(JSContext *)context;
++ valueWithNewArrayInContext:(JSContext *)context;
++ valueWithNewRegularExpressionFromPattern:(NSString *)pattern flags:(NSString *)flags inContext:(JSContext *)context;
++ valueWithNewErrorFromMessage:(NSString *)message inContext:(JSContext *)context;
 ```
 
 你还可以使用通配方法创建。
@@ -58,11 +68,22 @@ JSValue是JavaScript和Object-C之间互换的桥梁，它提供了多种方法�
 如果你想访问JSValue的值，可以使用如下常用方法。
 
 ```objc
-- (BOOL)toBool;- (double)toDouble;- (int32_t)toInt32;- (uint32_t)toUInt32;- (NSNumber *)toNumber;- (NSString *)toString;- (NSDate *)toDate;- (NSArray *)toArray;- (NSDictionary *)toDictionary;
-- (id)toObject;- (id)toObjectOfClass:(Class)expectedClass;
+- (BOOL)toBool;
+- (double)toDouble;
+- (int32_t)toInt32;
+- (uint32_t)toUInt32;
+- (NSNumber *)toNumber;
+- (NSString *)toString;
+
+- (NSDate *)toDate;
+- (NSArray *)toArray;
+- (NSDictionary *)toDictionary;
+
+- (id)toObject;
+- (id)toObjectOfClass:(Class)expectedClass;
 ```
 
-#3 JSExport
+# 3 JSExport
 
 JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Objective-C编程里可不能脱离类和继承写代码。所以JavaScriptCore就提供了JSExport作为两种语言的互通协议。JSExport中没有约定任何的方法，连可选的(@optional)都没有，但是所有继承了该协议(@protocol)的协议（注意不是Objective-C的类(@interface)）中定义的方法，都可以在JSContext中被使用。
 
@@ -79,13 +100,13 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 @end
 ```
 
-#4 基本类型转换
+# 4 基本类型转换
 
 下面是一些基本类型转换操作，你可以使用XCTestCase做这些测试。
 
 ```objc
-#import <XCTest/XCTest.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+# import <XCTest/XCTest.h>
+# import <JavaScriptCore/JavaScriptCore.h>
 
 @interface JavaScriptCoreTests : XCTestCase
 
@@ -107,7 +128,9 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 }
 
 - (void)testExample {
-    // 计算2+2    JSValue *result = [self.context evaluateScript:@"2 + 2"];    NSLog(@"2 + 2 = %d", [result toInt32]);
+    // 计算2+2
+    JSValue *result = [self.context evaluateScript:@"2 + 2"];
+    NSLog(@"2 + 2 = %d", [result toInt32]);
     // 数组操作
     [self.context evaluateScript:@"var array = [\"阳君\", 937447974 ];"];
     JSValue *jsArray = self.context[@"array"];// 下标获取值
@@ -130,7 +153,7 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 
 > 以下关于JavaScriptCore的测试为节约篇幅只显示核心代码，不在显示整个文件的代码。
 
-#5 函数
+# 5 函数
 
 你还可以在JSContext中添加函数，这里我们通过jS实现一个递归算法计算`1*2*3*....*n`。
 
@@ -138,18 +161,28 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 #pragma mark 函数测试
 - (void)testFunctions {
     /* js代码
-     var factorial = function(n) {        if (n < 0)            return;        if (n === 0)            return 1;        return n * factorial(n - 1);     };
+     var factorial = function(n) {
+        if (n < 0)
+            return;
+        if (n === 0)
+            return 1;
+        return n * factorial(n - 1);
+     };
      */
     // 计算1*2*3....*n
     NSMutableString *factorialScript = [NSMutableString stringWithCapacity:10];
     [factorialScript appendString:@"var factorial = function(n) { "];
     [factorialScript appendString:@"if (n < 0) return; "];
     [factorialScript appendString:@"if (n === 0) return 1; "];
-    [factorialScript appendString:@"return n * factorial(n - 1); };"];    [_context evaluateScript:factorialScript];    JSValue *function = _context[@"factorial"]; // 提取函数    JSValue *result = [function callWithArguments:@[@5]];    NSLog(@"factorial(5) = %d", [result toInt32]);
+    [factorialScript appendString:@"return n * factorial(n - 1); };"];
+    [_context evaluateScript:factorialScript];
+    JSValue *function = _context[@"factorial"]; // 提取函数
+    JSValue *result = [function callWithArguments:@[@5]];
+    NSLog(@"factorial(5) = %d", [result toInt32]);
 }
 ```
 
-#6 Blocks
+# 6 Blocks
 
 各种数据类型可以转换，Objective-C的Block也可以传入JSContext中当做JavaScript的方法使用。
 
@@ -166,10 +199,14 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
     
     // 设计一个user类，其中有name和qq属性
     self.context[@"user"] = ^{
-        // 如果想使用JSContext，必须使用[JSContext currentContext]，避免循环引用        JSValue *object = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
+        // 如果想使用JSContext，必须使用[JSContext currentContext]，避免循环引用
+        JSValue *object = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
         // 属性传入
         [object setValue:@"阳君" forProperty:@"name"];
-        // 通过下标传入        object[@"qq"] = @"937447974";        return object;    };
+        // 通过下标传入
+        object[@"qq"] = @"937447974";
+        return object;
+    };
     JSValue *user = [self.context evaluateScript:@"user()"];
     NSLog(@"name:%@, qq:%@", user[@"name"], [user valueForProperty:@"qq"]);
     
@@ -192,7 +229,7 @@ JavaScript可以脱离prototype继承完全用JSON来定义对象，但是Object
 1. 在Blocks内，想获得JSContext时，需用`[JSContext currentContext]`获得，详见创建user类的实现；
 2. 在Block内不要直接使用其外部定义的JSValue，应该将其当做参数传入到Block中，否则会造成循环引用使得内存无法被正确释放，详见修改name值的实现。
 
-#7 异常处理
+# 7 异常处理
 
 Objective-C和Swift的异常会在运行时被Xcode捕获，而在JSContext中执行的JavaScript如果出现异常，只会被JSContext捕获并存储在exception属性上，而不会向外抛出。
 
@@ -216,7 +253,7 @@ Objective-C和Swift的异常会在运行时被Xcode捕获，而在JSContext中�
 }
 ```
 
-#8 JSExport协议
+# 8 JSExport协议
 
 上面我们使用Blocks实现了类的创建和属性的赋值。下面我们使用JSExport来创建可维护User类，其实现的需求如下。
 
@@ -236,8 +273,8 @@ User.h
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+# import <Foundation/Foundation.h>
+# import <JavaScriptCore/JavaScriptCore.h>
 
 /** JavaScript可调的协议*/
 @protocol UserProtocol <JSExport>
@@ -268,7 +305,7 @@ User.h
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "User.h"
+# import "User.h"
 
 @implementation User
 
@@ -302,9 +339,9 @@ User.h
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [WWDC 2013: Integrating JavaScript into Native Apps](https://developer.apple.com/videos/play/wwdc2013-615/)
 
@@ -312,14 +349,14 @@ User.h
 
 [iOS7新JavaScriptCore框架入门介绍](http://www.cnblogs.com/ider/p/introduction-to-ios7-javascriptcore-framework.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-5 | 关于JavaScriptCore的相关介绍 |
 | 2015-11-6 | 增加相关文章的链接。|
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -13,7 +13,7 @@ NSRunLoop是一种更加高明的消息处理模式，他就高明在对消息�
 
 如图所示，将消息放到循环中，保证每个消息在循环的过程中都能执行。
 
-#<a id="1">1 Accessing Run Loops and Modes
+# <a id="1">1 Accessing Run Loops and Modes
 
 ```swift
 /// 当前runloop
@@ -33,14 +33,14 @@ public func getCFRunLoop() -> CFRunLoop
 public func limitDateForMode(mode: String) -> NSDate?
 ```
 
-#<a id="2">2 Managing Timers
+# <a id="2">2 Managing Timers
 
 ```swift
 /// 添加NSTimer到指定的模式
 public func addTimer(timer: NSTimer, forMode mode: String)
 ```
 
-#<a id="3">3 Managing Ports
+# <a id="3">3 Managing Ports
 
 ```swift
 /// 添加一个NSPort到指定的模式
@@ -49,7 +49,7 @@ public func addPort(aPort: NSPort, forMode mode: String)
 public func removePort(aPort: NSPort, forMode mode: String)
 ```
 
-#<a id="4">4 Running a Loop
+# <a id="4">4 Running a Loop
 
 ```swift
 /// 运行
@@ -65,7 +65,7 @@ public func runMode(mode: String, beforeDate limitDate: NSDate) -> Bool
 public func acceptInputForMode(mode: String, beforeDate limitDate: NSDate)
 ```
 
-#<a id="5">5 Scheduling and Canceling Messages
+# <a id="5">5 Scheduling and Canceling Messages
 
 ```swift
 /// 添加消息任务
@@ -90,13 +90,13 @@ public func cancelPerformSelectorsWithTarget(target: AnyObject)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSRunLoop Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRunLoop_Class/index.html)
 
@@ -106,13 +106,13 @@ public func cancelPerformSelectorsWithTarget(target: AnyObject)
 
 [深入理解RunLoop](http://blog.ibireme.com/2015/05/18/runloop/)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

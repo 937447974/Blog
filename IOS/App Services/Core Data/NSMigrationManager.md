@@ -1,6 +1,6 @@
 NSMigrationManager是迁移管理器，通过它我们可以更精细的控制数据库迁移的工程，并能获取迁移的进度。
 
-#Symbols
+# Symbols
 
 ## Initializing a Manager
 
@@ -75,19 +75,19 @@ open var usesStoreSpecificMigrationManager: Bool
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSMigrationManager](https://developer.apple.com/reference/coredata/nsmigrationmanager)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -2,7 +2,7 @@ Contacts Framework主要用于帮助我们获取用户的联系方式，即通�
 
 下面介绍一些比较常用的代码实现。
 
-#1 增加联系人
+# 1 增加联系人
 
 ```swift
 // Creating a mutable object to add to the contact
@@ -50,7 +50,7 @@ do {
 }
 ```
 
-#2 查询联系人
+# 2 查询联系人
 
 ```swift
 /// 快速查询
@@ -69,7 +69,7 @@ private var predicate: NSPredicate! {
 self.predicate = CNContact.predicateForContactsInContainerWithIdentifier(self.store.defaultContainerIdentifier()) //predicateForContactsMatchingName("")
 ```
 
-#3 删除联系人
+# 3 删除联系人
 
 ```swift
 // 删除电话
@@ -89,23 +89,23 @@ do {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-14 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

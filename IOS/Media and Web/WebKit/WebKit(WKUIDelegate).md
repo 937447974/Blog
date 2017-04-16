@@ -22,7 +22,7 @@ WebKit考虑web页面的各种弹出框样式，如alert弹出框、Confirm选�
 
 这一列的操作都是基于WKUIDelegate协议实现的，本篇博文将为大家讲解WKUIDelegate协议。
 
-#1 改造index.html页面
+# 1 改造index.html页面
 
 要实现这三个弹出框，我们先改造我们前面用到的index.html页面，使其支持alert弹出框、Confirm选择框和TextInput输入框。
 
@@ -134,7 +134,7 @@ WebKit考虑web页面的各种弹出框样式，如alert弹出框、Confirm选�
 
 当然此时你点击这三个按钮是没有任何效果的，我们还没有实现WKUIDelegate协议。
 
-#2 WKUIDelegate协议
+# 2 WKUIDelegate协议
 
 WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 
@@ -163,11 +163,11 @@ WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * __nullable result))completionHandler;
 ```
 
-#3 实现WKUIDelegate
+# 3 实现WKUIDelegate
 
 下面就来实现这几个协议，让我们的项目完整起来。
 
-##3.1 引入WKUIDelegate
+## 3.1 引入WKUIDelegate
 
 在YJBaseVC.m上添加WKUIDelegate实现。
 
@@ -175,7 +175,7 @@ WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 @interface YJBaseVC () <WKScriptMessageHandler, WKUIDelegate>
 ```
 
-##3.2 设置WKUIDelegate代理
+## 3.2 设置WKUIDelegate代理
 
 修改`- (WKWebView *)webView`方法。
 
@@ -204,7 +204,7 @@ WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 }
 ```
 
-##3.3 实现WKUIDelegate协议
+## 3.3 实现WKUIDelegate协议
 
 在YJBaseVC.m添加如下方法。
 
@@ -279,13 +279,13 @@ WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
@@ -293,14 +293,14 @@ WKUIDelegate就是为了UI元素存在的，其中有几个协议。
 
 [WKWeb​View](http://nshipster.com/wkwebkit/?utm_campaign=iOS_Dev_Weekly_Issue_161&utm_medium=email&utm_source=iOS%2BDev%2BWeekly)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-30 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

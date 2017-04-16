@@ -1,6 +1,6 @@
 CGImageSource用于读取照片，通过它可以获取元数据、属性和缩略图。
 
-#1 Creating an Image Source
+# 1 Creating an Image Source
 
 ```swift
 /// 通过缓存数据源获取CGImageSource
@@ -16,7 +16,7 @@ public func CGImageSourceCreateWithData(data: CFData, _ options: CFDictionary?) 
 public func CGImageSourceCreateWithURL(url: CFURL, _ options: CFDictionary?) -> CGImageSource?
 ```
 
-#2 Creating Images From an Image Source
+# 2 Creating Images From an Image Source
 
 ```swift
 /// 获取CGImageSource中指定位置的照片CGImage
@@ -32,7 +32,7 @@ public func CGImageSourceCreateThumbnailAtIndex(isrc: CGImageSource, _ index: In
 public func CGImageSourceCreateIncremental(options: CFDictionary?) -> CGImageSource
 ```
 
-#3 Updating an Image Source
+# 3 Updating an Image Source
 
 ```swift
 /// 通过CFData更新数据源
@@ -44,7 +44,7 @@ public func CGImageSourceUpdateData(isrc: CGImageSource, _ data: CFData, _ final
 public func CGImageSourceUpdateDataProvider(isrc: CGImageSource, _ provider: CGDataProvider, _ final: Bool)
 ```
 
-#4 Getting Information From an Image Source
+# 4 Getting Information From an Image Source
 
 ```swift
 
@@ -93,23 +93,23 @@ public func CGImageSourceRemoveCacheAtIndex(isrc: CGImageSource, _ index: Int)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [CGImageSource Reference](https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGImageSource/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-15 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

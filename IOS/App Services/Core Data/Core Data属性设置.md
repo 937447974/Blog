@@ -1,4 +1,4 @@
-#1 Data Model Inspector
+# 1 Data Model Inspector
 
 当我们使用Xcode建立设置表中字段时，可看见有如下界面。
 
@@ -15,11 +15,11 @@
 7. Store in External Record File：启用了该选项之后，系统会把持久化存储区里的数据复制成XML格式，并保存在存储区之外。
 8. Attribute Type：属性类型。
 
-#2 Attribute Type
+# 2 Attribute Type
 
 属性类型，主要分为如下几种。
 
-##2.1 Interger 16、Ingerget 32与 Ingerget 64
+## 2.1 Interger 16、Ingerget 32与 Ingerget 64
 
 对于属性来说，这三种数据类型比较相似的，它们都表示没有小数点的整数，唯一区别就在于能够表示多大或多小的数。
 
@@ -29,31 +29,31 @@
 
 数值越大，所占的内存就越多。
 
-##2.2 单精度浮点数与双精度浮点数
+## 2.2 单精度浮点数与双精度浮点数
 
 对于属性来说，单精度浮点数（float）与双精度浮点数（double）这两种数据类型可以看作带小数点的非整数。与float相比，double所包含的二进制位（bit）的个数是它的两倍。
 
-##2.3 小数
+## 2.3 小数
 
 在涉及货币或其他十进制运算的场合中，建议把属性的数据设为小数（decimal）。
 
-##2.4 字符串
+## 2.4 字符串
 
 对于属性来说，字符串这种数据可以存放字符数组（array of character）或普通文本（plain old text）。
 
-##2.5 Boolean
+## 2.5 Boolean
 
 对于属性来说，Boolean这种数据类型可用来存放“是”或“否”这两种值。
 
-##2.6 日期类型
+## 2.6 日期类型
 
 日期（date）这种数据类型就是用来在属性中保存日期和时间得。
 
-##2.7 二进制数据类型
+## 2.7 二进制数据类型
 
 如果要保存照片、音频或其他由“0”、“1”二进制位所组成的连续BLOB,那么就应该把属性的类型设为二进制数据类型（Binary Data）。
 
-##2.8 可变类型
+## 2.8 可变类型
 
 可变（Transformable）数据类型很适合用来把OC对象存放到属性里。
 
@@ -61,20 +61,20 @@
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Core Data Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/index.html#//apple_ref/doc/uid/TP40001075)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-26 | 博文完成 |
 | 2016-10-31 | 增加Attribute Type章节 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

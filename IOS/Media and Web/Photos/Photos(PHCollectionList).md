@@ -1,6 +1,6 @@
 PHCollectionList是PHCollection的子类，代表照片或视频的组，可以理解为系统“照片”App里面的年度或精选。
 
-#1 获取PHCollectionList
+# 1 获取PHCollectionList
 
 ```swift
 /// 从指定的PHCollection中获取PHCollectionList
@@ -46,7 +46,7 @@ public class func fetchMomentListsWithSubtype(momentListSubtype: PHCollectionLis
 public class func fetchMomentListsWithSubtype(momentListSubtype: PHCollectionListSubtype, options: PHFetchOptions?) -> PHFetchResult
 ```
 
-#2 获取PHCollectionList元数据
+# 2 获取PHCollectionList元数据
 
 ```swift
 /// PHCollectionList类型
@@ -63,7 +63,7 @@ public var endDate: NSDate? { get }
 public var localizedLocationNames: [String] { get }
 ```
 
-#3 创建临时PHCollectionList
+# 3 创建临时PHCollectionList
 
 ```swift
 /// 通过[PHAsset]集合生成临时PHCollectionList
@@ -87,13 +87,13 @@ public class func transientCollectionListWithCollectionsFetchResult(fetchResult:
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -103,13 +103,13 @@ public class func transientCollectionListWithCollectionsFetchResult(fetchResult:
 
 [PHCollectionList Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-05 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

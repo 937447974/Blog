@@ -5,7 +5,7 @@
 比如我们在网络传输时，会遇到各种各样的突发情况导致数据传输失败。这时，通过错误处理机制，就能有效的提示用户当前是因为那种错误导致网络出错。
 &#160;
 
-#声明错误
+# 声明错误
 
 声明错误用到了枚举，其中枚举实现ErrorType协议。这里我们使用枚举声明一个简单的错误。
 
@@ -20,7 +20,7 @@ enum ErrorEnum: ErrorType {
 这里面有两个错误Default和Other，其中Other可携带数据。
 &#160;
 
-#抛出错误
+# 抛出错误
 
 我们声明了错误后，就在类中抛出错误，抛出错误只需要使用throw。
 
@@ -59,7 +59,7 @@ class SomeClass {
 这里用到了guard校验，然后抛出错误。如果你不知道guard语法，可查阅我的博文《[Swift控制流](http://blog.csdn.net/y550918116j/article/details/49428647)》。
 &#160;
 
-#处理错误
+# 处理错误
 
 在Swift捕获错误使用do-catch语法，如下所示：
 
@@ -97,13 +97,13 @@ try! sClass.canThrowErrors("Default")
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

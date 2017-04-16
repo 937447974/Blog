@@ -1,6 +1,6 @@
 当使用CNContactStore保存通讯录时，需要使用CNSaveRequest记录通讯录的变动，即修改、增加等操作。
 
-#1 Saving a Contact Changes
+# 1 Saving a Contact Changes
 
 ```swift
 /// 添加联系人
@@ -13,7 +13,7 @@ public func updateContact(contact: CNMutableContact)
 public func deleteContact(contact: CNMutableContact)
 ```
 
-#2 Saving Group Changes
+# 2 Saving Group Changes
 
 ```swift
 /// 添加分组
@@ -36,13 +36,13 @@ public func removeMember(contact: CNContact, fromGroup group: CNGroup)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
@@ -50,13 +50,13 @@ public func removeMember(contact: CNContact, fromGroup group: CNGroup)
 
 [CNSaveRequest Class Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-14 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

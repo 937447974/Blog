@@ -21,7 +21,7 @@ class Song: MediaItem {
 其中Movie和Song都继承MediaItem。
 &#160;
 
-#Is
+# Is
 
 is主要用于类型判断，如我们判断某个实例是那个类的子类，或是那个类生成的。
 
@@ -40,7 +40,7 @@ for item in array {
 
 &#160;
 
-#As
+# As
 
 as主要用于类型转换，可将一个类转换为另一个类。as后可以跟'?'或'!'。
 
@@ -61,7 +61,7 @@ for item in array {
 
 &#160;
 
-#AnyObject
+# AnyObject
 
 使用AnyObject声明的常量（变量）可以是值对象或引用对象。
 
@@ -71,7 +71,7 @@ let someObjects: [AnyObject] = [Movie(), 1, "33"]
 
 &#160;
 
-#Any
+# Any
 
 Any和AnyObject具有相同的特性，只是Any还可以代表方法和闭包。
 
@@ -86,13 +86,13 @@ things.append({ (name: String) -> String in "Hello, \(name)" }) // 闭包
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

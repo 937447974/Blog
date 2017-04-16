@@ -30,13 +30,13 @@ private class SomePrivateClass {        // 明确 private class
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

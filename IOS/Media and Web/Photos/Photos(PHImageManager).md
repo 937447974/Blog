@@ -1,6 +1,6 @@
 PHImageManager是PHAsset管理器，它能从PHAsset获取你想要的数据，如UIImage、NSData等。
 
-#1 获取PHImageManager
+# 1 获取PHImageManager
 
 ```swift
 /// 获取单例PHImageManager
@@ -9,7 +9,7 @@ PHImageManager是PHAsset管理器，它能从PHAsset获取你想要的数据，�
 public class func defaultManager() -> PHImageManager
 ```
 
-#2 获取照片
+# 2 获取照片
 
 ```swift
 /// 获取UIImage
@@ -33,7 +33,7 @@ public func requestImageForAsset(asset: PHAsset, targetSize: CGSize, contentMode
 public func requestImageDataForAsset(asset: PHAsset, options: PHImageRequestOptions?, resultHandler: (NSData?, String?, UIImageOrientation, [NSObject : AnyObject]?) -> Void) -> PHImageRequestID
 ```
 
-#3 获取视频
+# 3 获取视频
 
 ```swift
 /// 获取视频AVPlayerItem
@@ -65,7 +65,7 @@ public func requestExportSessionForVideo(asset: PHAsset, options: PHVideoRequest
 public func requestAVAssetForVideo(asset: PHAsset, options: PHVideoRequestOptions?, resultHandler: (AVAsset?, AVAudioMix?, [NSObject : AnyObject]?) -> Void) -> PHImageRequestID
 ```
 
-#4 获取生活照片
+# 4 获取生活照片
 
 ```swift
 /// 获取生活照片
@@ -81,7 +81,7 @@ public func requestAVAssetForVideo(asset: PHAsset, options: PHVideoRequestOption
 public func requestLivePhotoForAsset(asset: PHAsset, targetSize: CGSize, contentMode: PHImageContentMode, options: PHLivePhotoRequestOptions?, resultHandler: (PHLivePhoto?, [NSObject : AnyObject]?) -> Void) -> PHImageRequestID
 ```
 
-#5 取消加载
+# 5 取消加载
 
 ```swift
 /// 取消获取数据
@@ -96,25 +96,25 @@ public func cancelImageRequest(requestID: PHImageRequestID)
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
 [PHImageManager Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-05 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

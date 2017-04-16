@@ -20,7 +20,7 @@
 
 在WebKit中有WKBackForwardList类，就是专门记录浏览记录的。
 
-#1 WKBackForwardList相关属性
+# 1 WKBackForwardList相关属性
 
 打开WKBackForwardList，会看见如下属性，
 
@@ -44,9 +44,9 @@
 @property (nonatomic, readonly, copy) NSArray<WKBackForwardListItem *> *forwardList;
 ```
 
-#2 浏览记录
+# 2 浏览记录
 
-##2.1 创建查询按钮
+## 2.1 创建查询按钮
 
 浏览记录用查询按钮，改写initUIBarButtonItem()方法添加查询按钮。
 
@@ -66,7 +66,7 @@
 }
 ```
 
-##2.2 实现查询方法
+## 2.2 实现查询方法
 
 实现查询方法使用searchBackForwardList：。
 
@@ -107,24 +107,24 @@
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-02 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

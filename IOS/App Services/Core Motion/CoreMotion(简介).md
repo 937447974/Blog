@@ -1,6 +1,6 @@
 Core Motion Framework使我们的应用接受运动事件，同时还支持我们处理加速计。对于有内置螺旋仪的设备，可以通过螺旋仪的数据反应当前设备的状态。这也就意味着，我们可以通过监听设备的状态给用户带来更好的应用体验。
 
-#Classes
+# Classes
 
 - NSObject
     - CMAltimeter 设备的海拔高度。
@@ -25,23 +25,23 @@ Core Motion Framework使我们的应用接受运动事件，同时还支持我�
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Core Motion Framework Reference](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CoreMotion_Reference/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

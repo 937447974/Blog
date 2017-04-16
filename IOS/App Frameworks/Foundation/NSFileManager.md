@@ -19,14 +19,14 @@
 
 NSFileManager(Swift中是FileManager)帮助我们快速访问管理文件系统。通过它我们可以对文件进行定位、复制、移动和删除等操作。
 
-#<a id="1">1 Creating a File Manager
+# <a id="1">1 Creating a File Manager
 
 ```swift
 /// 获取共享的NSFileManager
 public class func defaultManager() -> NSFileManager
 ```
 
-#<a id="2">2 Locating System Directories
+# <a id="2">2 Locating System Directories
 
 ```swift
 // 快速获取目录
@@ -45,7 +45,7 @@ public func URLsForDirectory(directory: NSSearchPathDirectory, inDomains domainM
 public func URLForDirectory(directory: NSSearchPathDirectory, inDomain domain: NSSearchPathDomainMask, appropriateForURL url: NSURL?, create shouldCreate: Bool) throws -> NSURL
 ```
 
-#<a id="3">3 Locating Application Group Container Directories
+# <a id="3">3 Locating Application Group Container Directories
 
 ```swift
 /// 获取应用容器目录
@@ -58,7 +58,7 @@ public func URLForDirectory(directory: NSSearchPathDirectory, inDomain domain: N
 public func containerURLForSecurityApplicationGroupIdentifier(groupIdentifier: String) -> NSURL?
 ```
 
-#<a id="4">4 Discovering Directory Contents
+# <a id="4">4 Discovering Directory Contents
 
 ```swift
 /// 获取一级目录内的内容
@@ -84,7 +84,7 @@ public func subpathsAtPath(path: String) -> [String]?
 public func subpathsOfDirectoryAtPath(path: String) throws -> [String]
 ```
 
-#<a id="5">5 Creating and Deleting Items
+# <a id="5">5 Creating and Deleting Items
 
 ```swift
 /// 创建文件夹
@@ -107,7 +107,7 @@ public func removeItemAtPath(path: String) throws
 public func replaceItemAtURL(originalItemURL: NSURL, withItemAtURL newItemURL: NSURL, backupItemName: String?, options: NSFileManagerItemReplacementOptions, resultingItemURL resultingURL: AutoreleasingUnsafeMutablePointer<NSURL?>) throws
 ```
 
-#<a id="6">6 Moving and Copying Items
+# <a id="6">6 Moving and Copying Items
 
 ```swift
 /// 复制文件
@@ -123,7 +123,7 @@ public func moveItemAtPath(srcPath: String, toPath dstPath: String) throws
 public func moveItemAtURL(srcURL: NSURL, toURL dstURL: NSURL) throws
 ```
 
-#<a id="7">7 Managing iCloud-Based Items
+# <a id="7">7 Managing iCloud-Based Items
 
 ```swift
 /// 获取iCloud身份标识符
@@ -161,7 +161,7 @@ public func evictUbiquitousItemAtURL(url: NSURL) throws
 public func URLForPublishingUbiquitousItemAtURL(url: NSURL, expirationDate outDate: AutoreleasingUnsafeMutablePointer<NSDate?>) throws -> NSURL
 ```
 
-#<a id="8">8 Creating Symbolic and Hard Links
+# <a id="8">8 Creating Symbolic and Hard Links
 
 ```swift
 // 创建软连接
@@ -181,7 +181,7 @@ open func linkItem(at srcURL: URL, to dstURL: URL) throws
 open func destinationOfSymbolicLink(atPath path: String) throws -> String
 ```
 
-#<a id="9">9 Determining Access to Files
+# <a id="9">9 Determining Access to Files
 
 ```swift
 // 路径对应的文件或文件夹是否存在
@@ -198,7 +198,7 @@ open func isExecutableFile(atPath path: String) -> Bool
 open func isDeletableFile(atPath path: String) -> Bool
 ```
 
-#<a id="10">10 Getting and Setting Attributes
+# <a id="10">10 Getting and Setting Attributes
 
 ```swift
 // 文件名
@@ -216,7 +216,7 @@ open func attributesOfFileSystem(forPath path: String) throws -> [FileAttributeK
 open func setAttributes(_ attributes: [FileAttributeKey : Any], ofItemAtPath path: String) throws
 ```
 
-#<a id="11">11 Getting and Comparing File Contents
+# <a id="11">11 Getting and Comparing File Contents
 
 ```swift
 // 获取文件内容
@@ -225,7 +225,7 @@ open func contents(atPath path: String) -> Data?
 open func contentsEqual(atPath path1: String, andPath path2: String) -> Bool
 ```
 
-#<a id="12">12 Getting the Relationship Between Items
+# <a id="12">12 Getting the Relationship Between Items
 
 ```swift
 // 获取路径之间的关系
@@ -236,7 +236,7 @@ open func getRelationship(_ outRelationship: UnsafeMutablePointer<FileManager.UR
 open func getRelationship(_ outRelationship: UnsafeMutablePointer<FileManager.URLRelationship>, of directory: FileManager.SearchPathDirectory, in domainMask: FileManager.SearchPathDomainMask, toItemAt url: URL) throws
 ```
 
-#<a id="13">13 Converting File Paths to Strings
+# <a id="13">13 Converting File Paths to Strings
 
 ```swift
 // 路径转C字符串
@@ -245,7 +245,7 @@ open func fileSystemRepresentation(withPath path: String) -> UnsafePointer<Int8>
 open func string(withFileSystemRepresentation str: UnsafePointer<Int8>, length len: Int) -> String    
 ```
 
-#<a id="14">14 Managing the Delegate
+# <a id="14">14 Managing the Delegate
 
 ```swift
 // 代理监听
@@ -253,7 +253,7 @@ open func string(withFileSystemRepresentation str: UnsafePointer<Int8>, length l
 unowned(unsafe) open var delegate: FileManagerDelegate?    
 ```
 
-#<a id="15">15 Managing the Current Directory
+# <a id="15">15 Managing the Current Directory
 
 ```swift
 // 修改当前工作目录为指定目录
@@ -266,23 +266,23 @@ open var currentDirectoryPath: String { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [File System Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileManager_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-14 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

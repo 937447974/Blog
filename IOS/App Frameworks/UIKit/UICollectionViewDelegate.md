@@ -22,7 +22,7 @@ UICollectionViewDelegate能够帮助我们更加精细的管理UICollectionView�
 
 >所有的协议方法都是optional。
 
-#<a id="管理选择Cells"/>1 管理选择Cells
+# <a id="管理选择Cells"/>1 管理选择Cells
 
 ```swift
 // MARK: 是否选中某个item
@@ -38,7 +38,7 @@ func collectionView(collectionView: UICollectionView, shouldDeselectItemAtIndexP
 func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath)
 ```
 
-#<a id="管理Cell高亮"/>2 管理Cell高亮
+# <a id="管理Cell高亮"/>2 管理Cell高亮
 
 ```swift
 // MARK: 能否选中高亮
@@ -51,7 +51,7 @@ func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPat
 func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath)
 ```
 
-#<a id="增加和移除视图"/>3 增加和移除视图
+# <a id="增加和移除视图"/>3 增加和移除视图
 
 ```swift
 // MARK: cell显示
@@ -67,7 +67,7 @@ func collectionView(collectionView: UICollectionView, willDisplaySupplementaryVi
 func collectionView(collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, atIndexPath indexPath: NSIndexPath)
 ```
 
-#<a id="管理布局变化"/>4 管理布局变化
+# <a id="管理布局变化"/>4 管理布局变化
 
 ```swift
 // MARK: collectionViewLayout: UICollectionViewLayout发生改变
@@ -81,7 +81,7 @@ func collectionView(collectionView: UICollectionView, targetContentOffsetForProp
 func collectionView(collectionView: UICollectionView, targetIndexPathForMoveFromItemAtIndexPath originalIndexPath: NSIndexPath, toProposedIndexPath proposedIndexPath: NSIndexPath) -> NSIndexPath
 ```
 
-#<a id="管理Cells长点击事件"/>5 管理Cells长点击事件
+# <a id="管理Cells长点击事件"/>5 管理Cells长点击事件
 
 ```swift
 // MARK: 长按，是否将要显示Action菜单（剪切、拷贝、粘贴）
@@ -98,25 +98,25 @@ func collectionView(collectionView: UICollectionView, performAction action: Sele
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
 [UICollectionViewDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDelegate_protocol/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-23 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -1,6 +1,6 @@
 NSNotificationCenter发出通知的过程中会发出一个一个NSNotification对象。
 
-#1 Creating Notifications
+# 1 Creating Notifications
 
 ```swift
 /// 创建NSNotification
@@ -22,7 +22,7 @@ public convenience init(name aName: String, object anObject: AnyObject?)
 public init(name: String, object: AnyObject?, userInfo: [NSObject : AnyObject]?)
 ```
 
-#2 Getting Notification Information
+# 2 Getting Notification Information
 
 ```swift
 /// 通知名
@@ -37,25 +37,25 @@ public var userInfo: [NSObject : AnyObject]? { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSNotification Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html)
 
 [Notification Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-15 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

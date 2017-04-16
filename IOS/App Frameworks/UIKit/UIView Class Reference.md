@@ -35,14 +35,14 @@
 
 UIView是所有界面View的基类。
 
-##<a id="Initializing a View Object">1 Initializing a View Object
+## <a id="Initializing a View Object">1 Initializing a View Object
 
 ```swift
 /// 初始化
 public init(frame: CGRect)
 ```
 
-##<a id="Configuring a View’s Visual Appearance">2 Configuring a View’s Visual Appearance
+## <a id="Configuring a View’s Visual Appearance">2 Configuring a View’s Visual Appearance
 
 ```swift
 @NSCopying public var backgroundColor: UIColor?
@@ -74,7 +74,7 @@ public class func layerClass() -> AnyClass // default is [CALayer class].
 public var layer: CALayer { get }
 ```
 
-##<a id="Configuring the Event-Related Behavior">3 Configuring the Event-Related Behavior
+## <a id="Configuring the Event-Related Behavior">3 Configuring the Event-Related Behavior
 
 ```swift
 /// 用户是否可交互
@@ -85,7 +85,7 @@ public var multipleTouchEnabled: Bool // default is NO
 public var exclusiveTouch: Bool // default is NO
 ```
 
-##<a id="Configuring the Bounds and Frame Rectangles">4 Configuring the Bounds and Frame Rectangles
+## <a id="Configuring the Bounds and Frame Rectangles">4 Configuring the Bounds and Frame Rectangles
 
 ```swift
 /// 显示区域
@@ -98,7 +98,7 @@ public var center: CGPoint
 public var transform: CGAffineTransform
 ```
 
-##<a id="Managing the View Hierarchy">5 Managing the View Hierarchy
+## <a id="Managing the View Hierarchy">5 Managing the View Hierarchy
 
 ```swift
 /// 父View
@@ -131,7 +131,7 @@ public func exchangeSubviewAtIndex(index1: Int, withSubviewAtIndex index2: Int)
 public func isDescendantOfView(view: UIView) -> Bool
 ```
 
-##<a id="Configuring the Resizing Behavior">6 Configuring the Resizing Behavior
+## <a id="Configuring the Resizing Behavior">6 Configuring the Resizing Behavior
 
 ```swift
 // 父view的size变化时，当前view的变化策略
@@ -147,7 +147,7 @@ public func sizeToFit()
 
 ```
 
-##<a id="Laying out Subviews">7 Laying out Subviews
+## <a id="Laying out Subviews">7 Laying out Subviews
 
 ```swift
 /// 通知适当的时候改变layout
@@ -164,7 +164,7 @@ public var translatesAutoresizingMaskIntoConstraints: Bool
 public class func requiresConstraintBasedLayout() -> Bool
 ```
 
-##<a id="Creating Constraints Using Layout Anchors">8 Creating Constraints Using Layout Anchors
+## <a id="Creating Constraints Using Layout Anchors">8 Creating Constraints Using Layout Anchors
 
 ```swift
 /* Constraint creation conveniences. See NSLayoutAnchor.h for details. */
@@ -194,7 +194,7 @@ public var firstBaselineAnchor: NSLayoutYAxisAnchor { get }
 public var lastBaselineAnchor: NSLayoutYAxisAnchor { get }
 ```
 
-##<a id="Managing the View’s Constraints">9 Managing the View’s Constraints
+## <a id="Managing the View’s Constraints">9 Managing the View’s Constraints
 
 ```swift
 /// 当前约束集合
@@ -214,7 +214,7 @@ public func removeConstraint(constraint: NSLayoutConstraint)
 public func removeConstraints(constraints: [NSLayoutConstraint])
 ```
 
-##<a id="Working with Layout Guides">10 Working with Layout Guides
+## <a id="Working with Layout Guides">10 Working with Layout Guides
 
 ```swift
 /// 约束布局
@@ -234,7 +234,7 @@ public var layoutMarginsGuide: UILayoutGuide { get }
 public var readableContentGuide: UILayoutGuide { get }
 ```
 
-##<a id="Measuring in Auto Layout">11 Measuring in Auto Layout
+## <a id="Measuring in Auto Layout">11 Measuring in Auto Layout
 
 ```swift
 /// 返回满足约束的size
@@ -263,7 +263,7 @@ public func contentHuggingPriorityForAxis(axis: UILayoutConstraintAxis) -> UILay
 public func setContentHuggingPriority(priority: UILayoutPriority, forAxis axis: UILayoutConstraintAxis)
 ```
 
-##<a id="Aligning Views in Auto Layout">12 Aligning Views in Auto Layout
+## <a id="Aligning Views in Auto Layout">12 Aligning Views in Auto Layout
 
 ```swift
 /// 返回给定框架的视图的对齐矩阵
@@ -287,7 +287,7 @@ public var viewForFirstBaselineLayout: UIView { get }
 public var viewForLastBaselineLayout: UIView { get }
 ```
 
-##<a id="Triggering Auto Layout">13 Triggering Auto Layout
+## <a id="Triggering Auto Layout">13 Triggering Auto Layout
 
 ```swift
 /// 更新视图和其子视图的约束
@@ -304,7 +304,7 @@ public func needsUpdateConstraints() -> Bool
 public func setNeedsUpdateConstraints()
 ```
 
-##<a id="Debugging Auto Layout">14 Debugging Auto Layout
+## <a id="Debugging Auto Layout">14 Debugging Auto Layout
 
 ```swift
 /// 返回给定方向的约束
@@ -318,7 +318,7 @@ public func hasAmbiguousLayout() -> Bool
 public func exerciseAmbiguityInLayout()
 ```
 
-##<a id="Managing the User Interface Direction">15 Managing the User Interface Direction
+## <a id="Managing the User Interface Direction">15 Managing the User Interface Direction
 
 ```swift
 /// 返回视图的方向
@@ -329,7 +329,7 @@ public class func userInterfaceLayoutDirectionForSemanticContentAttribute(attrib
 public var semanticContentAttribute: UISemanticContentAttribute
 ```
 
-##<a id="Configuring Content Margins">16 Configuring Content Margins
+## <a id="Configuring Content Margins">16 Configuring Content Margins
 
 ```swift
 /// 内容到边的间隔
@@ -343,7 +343,7 @@ public var preservesSuperviewLayoutMargins: Bool
 public func layoutMarginsDidChange()
 ```
 
-##<a id="Drawing and Updating the View">17 Drawing and Updating the View
+## <a id="Drawing and Updating the View">17 Drawing and Updating the View
 
 ```swift
 /// uiview绘制
@@ -357,7 +357,7 @@ public func setNeedsDisplayInRect(rect: CGRect)
 public var contentScaleFactor: CGFloat
 ```
 
-##<a id="Formatting Printed View Content">18 Formatting Printed View Content
+## <a id="Formatting Printed View Content">18 Formatting Printed View Content
 
 ```swift
 /// 返回视图的打印格式化
@@ -366,7 +366,7 @@ public func viewPrintFormatter() -> UIViewPrintFormatter
 public func drawRect(rect: CGRect, forViewPrintFormatter formatter: UIViewPrintFormatter)
 ```
 
-##<a id="Managing Gesture Recognizers">19 Managing Gesture Recognizers
+## <a id="Managing Gesture Recognizers">19 Managing Gesture Recognizers
 
 ```swift
 /// 所有手势识别器
@@ -383,7 +383,7 @@ public func removeGestureRecognizer(gestureRecognizer: UIGestureRecognizer)
 public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool
 ```
 
-##<a id="Animating Views with Block Objects">20 Animating Views with Block Objects
+## <a id="Animating Views with Block Objects">20 Animating Views with Block Objects
 
 ```swift
 /// 指定时间间隔的动画
@@ -418,7 +418,7 @@ public class func performSystemAnimation(animation: UISystemAnimation, onViews v
 public class func performWithoutAnimation(actionsWithoutAnimation: () -> Void)
 ```
 
-##<a id="Animating Views">21 Animating Views
+## <a id="Animating Views">21 Animating Views
 
 ```swift
 /// 开始动画
@@ -455,7 +455,7 @@ public class func areAnimationsEnabled() -> Bool
 public class func inheritedAnimationDuration() -> NSTimeInterval
 ```
 
-##<a id="Using Motion Effects">22 Using Motion Effects
+## <a id="Using Motion Effects">22 Using Motion Effects
 
 ```swift
 /// 增加UIMotionEffect（运动影响视图）
@@ -469,7 +469,7 @@ public func removeMotionEffect(effect: UIMotionEffect)
 public var motionEffects: [UIMotionEffect]
 ```
 
-##<a id="Preserving and Restoring State">23 Preserving and Restoring State
+## <a id="Preserving and Restoring State">23 Preserving and Restoring State
 
 ```swift
 /// coder对应的标签
@@ -483,7 +483,7 @@ public func encodeRestorableStateWithCoder(coder: NSCoder)
 public func decodeRestorableStateWithCoder(coder: NSCoder)
 ```
 
-##<a id="Capturing a View Snapshot">24 Capturing a View Snapshot
+## <a id="Capturing a View Snapshot">24 Capturing a View Snapshot
 
 ```swift
 /// 获取当前视图的快照
@@ -496,7 +496,7 @@ public func resizableSnapshotViewFromRect(rect: CGRect, afterScreenUpdates after
 public func drawViewHierarchyInRect(rect: CGRect, afterScreenUpdates afterUpdates: Bool) -> Bool
 ```
 
-##<a id="Identifying the View at Runtime">25 Identifying the View at Runtime
+## <a id="Identifying the View at Runtime">25 Identifying the View at Runtime
 
 ```swift
 /// 标签
@@ -505,7 +505,7 @@ public var tag: Int
 public func viewWithTag(tag: Int) -> UIView? 
 ```
 
-##<a id="Converting Between View Coordinate Systems">26 Converting Between View Coordinate Systems
+## <a id="Converting Between View Coordinate Systems">26 Converting Between View Coordinate Systems
 
 ```swift
 /// 转换一个点从接受对象的坐标系到指定视图
@@ -518,7 +518,7 @@ public func convertRect(rect: CGRect, toView view: UIView?) -> CGRect
 public func convertRect(rect: CGRect, fromView view: UIView?) -> CGRect
 ```
 
-##<a id="Hit Testing in a View">27 Hit Testing in a View
+## <a id="Hit Testing in a View">27 Hit Testing in a View
 
 ```swift
 /// 在指定点上点击测试指定事件
@@ -527,14 +527,14 @@ public func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? // rec
 public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool // default returns YES if point is in bounds
 ```
 
-##<a id="Ending a View Editing Session">28 Ending a View Editing Session
+## <a id="Ending a View Editing Session">28 Ending a View Editing Session
 
 ```swift
 /// 结束视图的编辑状态（关闭键盘）
 public func endEditing(force: Bool) -> Bool
 ```
 
-##<a id="Observing View-Related Changes">29 Observing View-Related Changes
+## <a id="Observing View-Related Changes">29 Observing View-Related Changes
 
 ```swift
 /// did添加view
@@ -551,7 +551,7 @@ public func willMoveToWindow(newWindow: UIWindow?)
 public func didMoveToWindow()
 ```
 
-##<a id="Observing Focus">30 Observing Focus
+## <a id="Observing Focus">30 Observing Focus
 
 ```swift
 /// 获取焦点
@@ -566,9 +566,9 @@ public var focused: Bool { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIView Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html)
 
@@ -576,13 +576,13 @@ public var focused: Bool { get }
 
 [UIKit User Interface Catalog](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-06-02 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

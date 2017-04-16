@@ -1,6 +1,6 @@
 每个PHAsset对象代表一个照片或视频。我们可以通过它获得照片或视频的相关属性。PHAsset是PHObject的子类。
 
-#1 获取PHAsset
+# 1 获取PHAsset
 
 ```swift
 /// 从PHAssetCollection中获取PHAsset
@@ -59,7 +59,7 @@ public class func fetchAssetsWithMediaType(mediaType: PHAssetMediaType, options:
 public class func fetchAssetsWithALAssetURLs(assetURLs: [NSURL], options: PHFetchOptions?) -> PHFetchResult
 ```
 
-#2 获取资产元数据
+# 2 获取资产元数据
 
 ```swift
 /// 资产类型
@@ -93,7 +93,7 @@ public var hidden: Bool { get }
 public var favorite: Bool { get }
 ```
 
-#3 编辑资产
+# 3 编辑资产
 
 ```swift
 /// 根据PHAssetEditOperation指定的类型判断能否编辑
@@ -121,7 +121,7 @@ public func requestContentEditingInputWithOptions(options: PHContentEditingInput
 public func cancelContentEditingInputRequest(requestID: PHContentEditingInputRequestID)
 ```
 
-#4 连拍图片管理
+# 4 连拍图片管理
 
 ```swift
 /// 连拍的唯一标示
@@ -136,13 +136,13 @@ public var representsBurst: Bool { get }
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -150,13 +150,13 @@ public var representsBurst: Bool { get }
 
 [PHAsset Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-05 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 
