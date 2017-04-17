@@ -64,7 +64,7 @@ KVO (Key-Value Observing) 建立在 KVC 之上，它通过重写 KVC 和监听 s
 
 由此我们可以结合 runtime 得出如下结论。
 
-1. KVO 的底层是 runtime 编译时动态生成 NSKVONotifying_Class 对象。
+1. KVO 的底层是 runtime 编译时动态生成 NSKVONotifying_Class 对象，然后通过 object_setClass(id obj, Class cls) 动态修改当前类的 isa 指向 NSKVONotifying_Class。
 2. NSKVONotifying_Class 是一个动态类，其内部继承了 NSKVONotifying 对象。
 3. NSKVONotifying 内实现了如下操作：
 	1. 重写了 KVC 的机制，这样调用 `setValue: forKey:` 时，外部 Observer 也能接到通知。
