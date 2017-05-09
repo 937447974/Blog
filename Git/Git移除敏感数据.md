@@ -71,7 +71,7 @@ yangjundeMac-mini:Test yangjun$ git push
 
 ##2.1 移除数据
 
-移除版本库中的数据使用filter-branch命名。打开命令行敲入如下命令
+移除版本库中的数据使用filter-branch命令。打开命令行敲入如下命令
 
 ```git
 $ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch test/IMG_4933.jpg' --prune-empty --tag-name-filter cat -- --all
