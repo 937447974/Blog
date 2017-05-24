@@ -4,15 +4,16 @@
 
 #2 CocoaPods安装
 
-##2.1 使用淘宝做Ruby镜像
+##2.1 使用 Ruby China 做 Ruby 镜像
 
-下载CocoaPods需要使用翻墙，故使用淘宝做Ruby镜像。
+下载CocoaPods需要使用翻墙，故使用 [Ruby China](http://gems.ruby-china.org) 做Ruby镜像。
+
+http://gems.ruby-china.org
 
 终端输入如下命令。
 
 ```
-$ gem sources --remove https://rubygems.org/
-$ gem sources -a https://ruby.taobao.org/
+$ gem sources -r https://rubygems.org/ -a http://gems.ruby-china.org
 $ gem sources -l
 ```
 
@@ -21,7 +22,7 @@ $ gem sources -l
 ```
 *** CURRENT SOURCES ***
 
-https://ruby.taobao.org/
+http://gems.ruby-china.org
 ```
 
 ##2.2 下载CocoaPods

@@ -35,8 +35,7 @@ $ ls ~/.ssh
 查看已创建好的SSH key，使用如下命令。
 
 ```
-$ cd ~/.ssh
-$ cat id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
 ```
 
 #3 生成新的SSH key
