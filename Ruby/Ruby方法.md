@@ -73,11 +73,11 @@ puts method_name
 不过为了程序更加具有阅读性，建议写 return。
 
 
-#2 元编程
+# 2 元编程
 
 使用元编程特性，还能用另外的方式定义方法。
 
-##2.1 用 def 关键字为类添加方法
+## 2.1 用 def 关键字为类添加方法
 
 ```ruby
 class Quote
@@ -93,7 +93,7 @@ end
 2. 使用当前的词法作用域来获取类或模块的指针（这种情况发生在 Ruby 执行程序的时候遇到了 def 关键字）。
 3. 在该类的方法中保存新的方法名——实际上市保存对应方法名的整数 ID 值。
 
-##2.1 使用 def self 添加类方法 
+## 2.1 使用 def self 添加类方法 
 
 ```ruby
 class Quote
@@ -135,7 +135,7 @@ end
 2. 当对象本身就是类的情况下，元类就是单类。
 
 
-##2.5 使用 class << 增加新的单类方法
+## 2.5 使用 class << 增加新的单类方法
 
 ```ruby
 class Quote
@@ -154,15 +154,15 @@ some_quote.display
 
 ----------
 
-#Appendix
+# Appendix
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2017-07-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 
