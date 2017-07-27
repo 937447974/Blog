@@ -72,6 +72,8 @@ QQ：937447974
 
 #6 [Git](https://github.com/937447974/Blog/blob/master/Git)
 
-#7 [工作](https://github.com/937447974/Blog/blob/master/工作)
+#7 [Ruby](https://github.com/937447974/Blog/blob/master/Ruby)
 
-#8 [综合](https://github.com/937447974/Blog/blob/master/综合)
+#8 [工作](https://github.com/937447974/Blog/blob/master/工作)
+
+#9 [综合](https://github.com/937447974/Blog/blob/master/综合)
