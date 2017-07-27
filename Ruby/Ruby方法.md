@@ -8,7 +8,7 @@ Ruby 通常用 def 关键字定义方法，在 def 之后是新方法的名称�
 
 ```ruby
 def method_name [( [arg [= default]]...[, * arg [, &expr ]])]
-   expr..
+	expr..
 end
 ```
 
@@ -16,7 +16,7 @@ end
 
 ```ruby
 def method_name 
-   expr..
+	expr..
 end
 ```
 
@@ -24,7 +24,7 @@ end
 
 ```
 def method_name (var1, var2)
-   expr..
+	expr..
 end
 ```
 
@@ -32,7 +32,7 @@ end
 
 ```ruby
 def method_name (var1=value1, var2=value2)
-   expr..
+	expr..
 end
 ```
 
@@ -40,9 +40,9 @@ end
 
 ```ruby
 def method_name (*var)
-   for i in 0... var.length
-      puts "#{var[i]}"
-   end
+	for i in 0... var.length
+		puts "#{var[i]}"
+	end
 end
 ```
 
@@ -65,7 +65,7 @@ Ruby 中的每个方法默认都会返回一个值。这个返回的值是最后
 
 ```ruby
 def method_name
-   "YJ"
+	"YJ"
 end
 puts method_name
 ```
@@ -144,7 +144,7 @@ end
 some_quote = Quote.new
 class << some_quote
 	def display
-	    puts "Defining methods using Singleton classes in a lexical scope."
+		puts "Defining methods using Singleton classes in a lexical scope."
 	end
 end
 some_quote.display
