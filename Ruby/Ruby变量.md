@@ -1,3 +1,5 @@
+# 1 变量
+
 Ruby 中有五种类型的变量：
 
 - 局部变量：局部变量名以小写字母或下划线(_)开头；
@@ -5,6 +7,8 @@ Ruby 中有五种类型的变量：
 - 实例变量：实例变量名以@符号开头；
 - 全局变量：全局变量名以$号开头；
 - 常数：大写字母开头。
+
+# 2 Getter & Setter
 
 Ruby属性和其他语言一样也有自动生成getter或setter方法。如下所示
 
@@ -42,15 +46,15 @@ quote.display
 
 ----------
 
-#Appendix
+# Appendix
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-28 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 
