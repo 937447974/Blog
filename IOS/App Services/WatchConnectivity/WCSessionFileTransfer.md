@@ -1,15 +1,15 @@
 WCSessionFileTransfer主要用于管理WCSession传输文件。
 
-#Symbols
+# Symbols
 
-##1 Getting the File Information
+## 1 Getting the File Information
 
 ```swift
 // 船速得文件信息
 open var file: WCSessionFile { get }
 ```
 
-##2 Managing the File Transfer
+## 2 Managing the File Transfer
 
 ```swift
 // 是否正在发送数据
@@ -22,19 +22,19 @@ open func cancel()
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [WCSessionFileTransfer](https://developer.apple.com/reference/watchconnectivity/wcsessionfiletransfer)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：[http://blog.csdn.net/y550918116j](http://blog.csdn.net/y550918116j)
 

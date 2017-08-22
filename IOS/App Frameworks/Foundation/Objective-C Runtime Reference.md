@@ -2,11 +2,11 @@
 
 > 所有const char *使用UTF-8转码
 
-#1 Functions
+# 1 Functions
 
 所有方法前带OBJC_EXPORT
 
-##1.1 Working with Classes
+## 1.1 Working with Classes
 
 ```objc
 // 获取类名
@@ -75,7 +75,7 @@ Class objc_getFutureClass(const char *name) // Do not call this function yoursel
 void objc_setFutureClass(Class cls, const char *name) // Do not call this function yourself.
 ```
 
-##1.2 Adding Classes
+## 1.2 Adding Classes
 
 ```objc
 // 创建一个新类和元类
@@ -88,7 +88,7 @@ void objc_registerClassPair(Class cls)
 Class objc_duplicateClass(Class original, const char *name, size_t extraBytes)
 ```
 
-##1.3 Instantiating Classes
+## 1.3 Instantiating Classes
 
 ```objc
 // 创建类实例
@@ -99,7 +99,7 @@ id objc_constructInstance(Class cls, void *bytes)
 void objc_destructInstance(id obj)
 ```
 
-##1.4 Working with Instances
+## 1.4 Working with Instances
 
 ```objc
 // 返回指定对象的一份拷贝
@@ -124,7 +124,7 @@ Class object_getClass(id object)
 Class object_setClass(id object, Class cls)
 ```
 
-##1.5 Obtaining Class Definitions
+## 1.5 Obtaining Class Definitions
 
 ```objc
 // 获取已注册的类定义的列表
@@ -141,7 +141,7 @@ id objc_getRequiredClass(const char *name)
 id objc_getMetaClass(const char *name)
 ```
 
-##1.6 Working with Instance Variables
+## 1.6 Working with Instance Variables
 
 ```objc
 // 获取成员变量名
@@ -152,7 +152,7 @@ const char * ivar_getTypeEncoding( Ivar ivar)
 ptrdiff_t ivar_getOffset( Ivar ivar)
 ```
 
-##1.7 Associative References
+## 1.7 Associative References
 
 ```objc
 // 设置关联对象
@@ -163,7 +163,7 @@ id objc_getAssociatedObject(id object, void *key)
 void objc_removeAssociatedObjects(id object)
 ```
 
-##1.8 Sending Messages
+## 1.8 Sending Messages
 
 ```objc
 // 消息转发 -> return id
@@ -178,7 +178,7 @@ id objc_msgSendSuper(struct objc_super *super, SEL op, ...)
 void objc_msgSendSuper_stret(struct objc_super *super, SEL op, ...)
 ```
 
-##1.9 Working with Methods
+## 1.9 Working with Methods
 
 ```objc
 // 调用指定方法的实现
@@ -209,7 +209,7 @@ IMP method_setImplementation( Method method, IMP imp)
 void method_exchangeImplementations( Method m1, Method m2)
 ```
 
-##1.10 Working with Libraries
+## 1.10 Working with Libraries
 
 ```objc
 // 获取所有加载的Objective-C框架和动态库的名称
@@ -220,7 +220,7 @@ const char *class_getImageName(Class cls)
 const char **objc_copyClassNamesForImage(const char *image, unsigned int *outCount)
 ```
 
-##1.11 Working with Selectors
+## 1.11 Working with Selectors
 
 ```objc
 // 返回给定选择器指定的方法的名称
@@ -235,7 +235,7 @@ BOOL sel_isEqual(SEL lhs, SEL rhs)
 
 >sel_registerName函数：在我们将一个方法添加到类定义时，我们必须在Objective-C Runtime系统中注册一个方法名以获取方法的选择器。
 
-##1.12 Working with Protocols
+## 1.12 Working with Protocols
 
 ```objc
 // 返回指定的协议
@@ -270,7 +270,7 @@ Protocol **protocol_copyProtocolList(Protocol *proto, unsigned int *outCount)
 BOOL protocol_conformsToProtocol(Protocol *proto, Protocol *other)
 ```
 
-##1.13 Working with Properties
+## 1.13 Working with Properties
 
 ```objc
 // 获取属性名 
@@ -283,7 +283,7 @@ char *property_copyAttributeValue(objc_property_t property, const char *attribut
 objc_property_attribute_t *property_copyAttributeList(objc_property_t property, unsigned int *outCount)
 ```
 
-##1.14 Using Objective-C Language Features
+## 1.14 Using Objective-C Language Features
 
 ```objc
 // 通过在一个foreach循环中检测到突变的编译器插入。
@@ -302,9 +302,9 @@ id objc_loadWeak(id *location)
 id objc_storeWeak(id *location, id obj)
 ```
 
-#2 Data Types
+# 2 Data Types
 
-##2.1 Class-Definition Data Structures
+## 2.1 Class-Definition Data Structures
 
 ```objc
 // Objective-C类是由Class类型来表示的，实际上是一个指向objc_class结构体的指针
@@ -312,7 +312,7 @@ typedef struct objc_class *Class;
 struct objc_class {
     Class isa  OBJC_ISA_AVAILABILITY;
  
-#if !__OBJC2__
+# if !__OBJC2__
     Class super_class                       OBJC2_UNAVAILABLE;  // 父类
     const char *name                        OBJC2_UNAVAILABLE;  // 类名
     long version                            OBJC2_UNAVAILABLE;  // 类的版本信息，默认为0
@@ -322,7 +322,7 @@ struct objc_class {
     struct objc_method_list **methodLists   OBJC2_UNAVAILABLE;  // 方法定义的链表
     struct objc_cache *cache                OBJC2_UNAVAILABLE;  // 方法缓存
     struct objc_protocol_list *protocols    OBJC2_UNAVAILABLE;  // 协议链表
-#endif
+# endif
  
 } OBJC2_UNAVAILABLE;
 
@@ -340,9 +340,9 @@ struct objc_ivar {
     char *ivar_name  OBJC2_UNAVAILABLE; // 变量名
     char *ivar_type  OBJC2_UNAVAILABLE; // 变量类型
     int ivar_offset  OBJC2_UNAVAILABLE; // 基地址偏移字节
-#ifdef __LP64__
+# ifdef __LP64__
     int space		    OBJC2_UNAVAILABLE; // 
-#endif
+# endif
 }
 
 /// An opaque type that represents a category.
@@ -393,7 +393,7 @@ typedef struct {
 } objc_property_attribute_t; // 属性的特性(attribute)
 ```
 
-##2.2 Instance Data Types
+## 2.2 Instance Data Types
 
 ```objc
 // 任何oc对象
@@ -409,24 +409,24 @@ struct objc_super {
     /// Specifies an instance of a class.
     __unsafe_unretained id receiver; // 消息的实际接收者
     /// Specifies the particular superclass of the instance to message. 
-#if !defined(__cplusplus)  &&  !__OBJC2__
+# if !defined(__cplusplus)  &&  !__OBJC2__
     /* For compatibility with old objc-runtime.h header */
     __unsafe_unretained Class class;
-#else
+# else
     __unsafe_unretained Class super_class; // 指针当前类的父类
-#endif
+# endif
     /* super_class is the first class to search */
 };
 ```
 
-##2.3 Boolean Value
+## 2.3 Boolean Value
 
 ```objc
 // YES or NO (非0,非nil皆为真)
 typedef signed char BOOL;
 ```
 
-##2.4 Associative References
+## 2.4 Associative References
 
 ```objc
 typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
@@ -442,9 +442,9 @@ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Objective-C Runtime Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html)
 
@@ -464,13 +464,13 @@ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
 
 [OC最实用的runtime总结，面试、工作你看我就足够了！](http://www.jianshu.com/p/ab966e8a82e2)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-27 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

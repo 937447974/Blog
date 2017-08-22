@@ -1,6 +1,6 @@
 PHAssetCollection是PHCollection的子类，代表照片或视频的集合，可以理解为系统“照片”App里面的相册或者其重要时刻。
 
-#1 获取资产集合
+# 1 获取资产集合
 
 ```swift
 /// 通过唯一标示符获取资产集合
@@ -54,7 +54,7 @@ public class func fetchMomentsInMomentList(momentList: PHCollectionList, options
 public class func fetchMomentsWithOptions(options: PHFetchOptions?) -> PHFetchResult
 ```
 
-#2 获取集合元数据
+# 2 获取集合元数据
 
 ```swift
 /// 集合类型
@@ -76,7 +76,7 @@ public var approximateLocation: CLLocation? { get }
 public var localizedLocationNames: [String] { get }
 ```
 
-#3 创建临时资产集合
+# 3 创建临时资产集合
 
 ```swift
 /// 通过[PHAsset]集合生成临时PHAssetCollection
@@ -100,13 +100,13 @@ public class func transientAssetCollectionWithAssetFetchResult(fetchResult: PHFe
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -116,13 +116,13 @@ public class func transientAssetCollectionWithAssetFetchResult(fetchResult: PHFe
 
 [PHAssetCollection Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-05 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

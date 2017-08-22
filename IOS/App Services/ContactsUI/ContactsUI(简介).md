@@ -1,6 +1,6 @@
 当我们想帮助用户修改用户的通讯录时，无须创建UI视图。ContactsUI Framework能够帮助我们快速增加、修改和查找联系人。
 
-#Classes
+# Classes
 
 - UIViewController
     - CNContactPickerViewController 选择联系人或联系人的属性（如电话号码）
@@ -15,19 +15,19 @@
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [ContactsUI Framework Reference](https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/ContactsUI_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-20 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

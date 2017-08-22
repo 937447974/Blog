@@ -22,7 +22,7 @@ WebKit框架也有这样的协议WKNavigationDelegate，它的功能比UIWebView
 
 这篇博文为大家带来关于WKNavigationDelegate的介绍。
 
-#1 搭建项目
+# 1 搭建项目
 
 在这里我们不在使用前面的YJBaseVC，而是使用YJSeniorVC类。因为这里开始使用高级模块了。
 
@@ -40,8 +40,8 @@ WebKit框架也有这样的协议WKNavigationDelegate，它的功能比UIWebView
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import "YJSeniorVC.h"
-#import <WebKit/WebKit.h>
+# import "YJSeniorVC.h"
+# import <WebKit/WebKit.h>
 
 /** 屏幕宽度*/
 #define UIScreenWeight [[UIScreen mainScreen] bounds].size.width
@@ -99,11 +99,11 @@ _webView.navigationDelegate = self; // 代理设置
 
 让_webView的navigationDelegate指向当前类。只是当前类还没有实现WKNavigationDelegate而已。
 
-#2 WKNavigationDelegate协议
+# 2 WKNavigationDelegate协议
 
 WKNavigationDelegate协议有两大核心部分，第一部分是导航部分，第二部分是页面内监听。
 
-##2.1 导航监听
+## 2.1 导航监听
 
 ```objc
 #pragma mark - WKNavigationDelegate 页面跳转
@@ -126,7 +126,7 @@ WKNavigationDelegate协议有两大核心部分，第一部分是导航部分，
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView;
 ```
 
-##2.2 网页监听
+## 2.2 网页监听
 
 ```objc
 #pragma mark - WKNavigationDelegate 页面加载
@@ -143,7 +143,7 @@ WKNavigationDelegate协议有两大核心部分，第一部分是导航部分，
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error;
 ```
 
-#3 实现WKNavigationDelegate
+# 3 实现WKNavigationDelegate
 
 在YJSeniorVC.m中导入如下方法。
 
@@ -217,13 +217,13 @@ WKNavigationDelegate协议有两大核心部分，第一部分是导航部分，
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
@@ -231,14 +231,14 @@ WKNavigationDelegate协议有两大核心部分，第一部分是导航部分，
 
 [WKWeb​View](http://nshipster.com/wkwebkit/?utm_campaign=iOS_Dev_Weekly_Issue_161&utm_medium=email&utm_source=iOS%2BDev%2BWeekly)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-02 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

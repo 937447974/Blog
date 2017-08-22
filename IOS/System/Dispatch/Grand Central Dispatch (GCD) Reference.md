@@ -4,9 +4,9 @@ GCD包括语言特性、运行库和系统改进，提供系统的、全面的�
 
 在ARC模式下，派遣到GCD中的对象是自动释放的。
 
-#1 Functions
+# 1 Functions
 
-##1.1 Creating and Managing Queues
+## 1.1 Creating and Managing Queues
 
 ```objc
 // 主队列
@@ -25,7 +25,7 @@ void dispatch_set_target_queue(dispatch_object_t object, dispatch_queue_t queue)
 void dispatch_main(void);
 ```
 
-##1.2 Queuing Tasks for Dispatch
+## 1.2 Queuing Tasks for Dispatch
 
 GCD为应用程序提供和管理FIFO队列让你的程序可以以block对象的形式来提交你的任务。block提交给调度队列的任务在一个完全由系统管理的线程池中执行。无法保证哪个任务在哪个线程中执行。GCD提供三种类型的队列：
 
@@ -60,7 +60,7 @@ void dispatch_once(dispatch_once_t *predicate, dispatch_block_t block);
 void dispatch_once_f(dispatch_once_t *predicate, void *context, dispatch_function_t function);
 ```
 
-##1.3 Using Dispatch Groups
+## 1.3 Using Dispatch Groups
 
 分组块允许聚合同步。你的应用可以提交多个block并跟踪它们的完成，甚至于它们在不同的队列中执行。
 
@@ -89,7 +89,7 @@ void dispatch_group_enter(dispatch_group_t group);
 void dispatch_group_leave(dispatch_group_t group);
 ```
 
-##1.4 Managing Dispatch Objects
+## 1.4 Managing Dispatch Objects
 
 GCD提供调度对象接口允许你的程序来管理诸如处理内存管理、暂停和恢复执行、定义对象环境和打印任务数据等。调度对象必须手动的持有retain和释放release，否则不会被回收。
 
@@ -124,7 +124,7 @@ void dispatch_cancel(void *object);
 long dispatch_testcancel(void *object);
 ```
 
-##1.5 Using Semaphores
+## 1.5 Using Semaphores
 
 调度信号是一个传统的计数信号量的高效实现，可用于实现同步代码。当线程需要堵塞运行时，调用信号会直接调用内核。
 
@@ -137,7 +137,7 @@ long dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout
 long dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 ```
 
-##1.6 Using Barriers
+## 1.6 Using Barriers
 
 调度障碍允许在并发队列中设置一个同步点。在同步点之前的所有代码执行完毕时，同步点后的代码才会执行。
 
@@ -153,7 +153,7 @@ void dispatch_barrier_sync(dispatch_queue_t queue, dispatch_block_t block);
 void dispatch_barrier_sync_f(dispatch_queue_t queue, void *context, dispatch_function_t work);
 ```
 
-##1.7 Managing Dispatch Sources
+## 1.7 Managing Dispatch Sources
 
 GCD提供了一系列接口用于检测GCD的相关运行状态。
 
@@ -196,7 +196,7 @@ void dispatch_source_set_registration_handler(dispatch_source_t source, dispatch
 void dispatch_source_set_registration_handler_f(dispatch_source_t source, dispatch_function_t handler);
 ```
 
-##1.8 Using the Dispatch I/O Convenience API
+## 1.8 Using the Dispatch I/O Convenience API
 
 调度I / O方便的接口，可以让您执行文件描述符的异步读写操作。此接口支持基于流的语义访问文件描述符的内容。
 
@@ -208,7 +208,7 @@ void dispatch_read(dispatch_fd_t fd, size_t length, dispatch_queue_t queue, void
 void dispatch_write(dispatch_fd_t fd, dispatch_data_t data, dispatch_queue_t queue, void (^handler)(dispatch_data_t data, int error));
 ```
 
-##1.9 Using the Dispatch I/O Channel API
+## 1.9 Using the Dispatch I/O Channel API
 
 dispatch I/O 以流的方式管理文件的相关操作。
 
@@ -244,7 +244,7 @@ void dispatch_io_set_low_water(dispatch_io_t channel, size_t low_water);
 void dispatch_io_set_interval(dispatch_io_t channel, uint64_t interval, dispatch_io_interval_flags_t flags);
 ```
 
-##1.10 Managing Dispatch Data Objects
+## 1.10 Managing Dispatch Data Objects
 
 调度数据对象提供一个接口来管理基于内存的数据缓冲区。客户端访问数据缓冲区时将它看做一个连续的内存块，但缓冲区在内部可能由多个不连续的内存块组成。
 
@@ -271,7 +271,7 @@ bool dispatch_data_apply(dispatch_data_t data, dispatch_data_applier_t applier);
 dispatch_data_t dispatch_data_copy_region(dispatch_data_t data, size_t location, size_t *offset_ptr);
 ```
 
-##1.11 Managing Time
+## 1.11 Managing Time
 
 ```objc
 // 生成时间=when+delta
@@ -281,7 +281,7 @@ dispatch_time_t dispatch_time(dispatch_time_t when, int64_t delta);
 dispatch_time_t dispatch_walltime(const struct timespec *when, int64_t delta);
 ```
 
-##1.12 Managing Queue-Specific Context Data
+## 1.12 Managing Queue-Specific Context Data
 
 ```objc
 // 为队列设置标示
@@ -298,9 +298,9 @@ void *dispatch_get_specific(const void *key);
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Grand Central Dispatch (GCD) Reference](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/tdef/dispatch_once_t)
 
@@ -310,13 +310,13 @@ void *dispatch_get_specific(const void *key);
 
 [GCD(Grand Central Dispatch)教程](http://www.dreamingwish.com/article/gcdgrand-central-dispatch-jiao-cheng.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-08-31 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

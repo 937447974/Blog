@@ -1,7 +1,7 @@
 在上一篇博文，我们讲解了[MVVM框架](https://github.com/937447974/Blog/blob/master/架构设计/MVVM框架.md)的相关知识。在这篇博文将使用ReactiveCocoa第三方库实现MVVM架构。
 
 
-#1 引入ReactiveCocoa库
+# 1 引入ReactiveCocoa库
 
 使用CocoaPods引入第三分库ReactiveCocoa。Podfile内相关内容如下：
 
@@ -11,7 +11,7 @@ platform :ios, '9.0'
 pod 'ReactiveCocoa', '~> 2.3.1'
 ```
 
-#2 界面设计
+# 2 界面设计
 
 在这里我们模拟登录功能。
 
@@ -31,10 +31,10 @@ YJViewController类代码如下。
 //  Copyright © 2016年 阳君. All rights reserved.
 //
 
-#import "YJViewController.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-#import "RACEXTScope.h"
-#import "YJViewModel.h"
+# import "YJViewController.h"
+# import <ReactiveCocoa/ReactiveCocoa.h>
+# import "RACEXTScope.h"
+# import "YJViewModel.h"
 
 @interface YJViewController ()
 
@@ -56,9 +56,9 @@ YJViewController类代码如下。
 @end
 ```
 
-#3 MVVM实现
+# 3 MVVM实现
 
-##3.1 ViewModel
+## 3.1 ViewModel
 
 我们实现一个简单的ViewModel层。
 
@@ -76,7 +76,7 @@ YJViewModel.h
 //  Copyright © 2016年 阳君. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+# import <Foundation/Foundation.h>
 
 /** ViewModel完全把Model和View进行了分离，主要的程序逻辑在ViewModel里实现*/
 @interface YJViewModel : NSObject
@@ -110,7 +110,7 @@ YJViewModel.m
 //  Copyright © 2016年 阳君. All rights reserved.
 //
 
-#import "YJViewModel.h"
+# import "YJViewModel.h"
 
 @implementation YJViewModel
 
@@ -123,7 +123,7 @@ YJViewModel.m
 @end
 ```
 
-##3.2 引入ReactiveCocoa实现MVVM
+## 3.2 引入ReactiveCocoa实现MVVM
 
 下面改造YJViewController.m完成和ViewModel层的绑定。
 
@@ -191,19 +191,19 @@ YJViewModel.m
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Framework)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-08 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

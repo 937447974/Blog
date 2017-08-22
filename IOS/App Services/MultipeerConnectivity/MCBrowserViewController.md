@@ -10,11 +10,11 @@
 
 ----
 
-#<a id="1">1 MCBrowserViewController
+# <a id="1">1 MCBrowserViewController
 
 MCBrowserViewController用于帮助用户发现附近的设备，并邀请加入会话。MCBrowserViewController是UIViewController的子类，也就意味着你可以用常用的方法完成跳转。
 
-##<a id="1.1">1.1 Initializing a Browser View Controller
+## <a id="1.1">1.1 Initializing a Browser View Controller
 
 ```swift
 /// 初始化MCBrowserViewController
@@ -41,7 +41,7 @@ public var browser: MCNearbyServiceBrowser? { get }
 public var session: MCSession { get }
 ```
 
-##<a id="1.2">1.2 Getting and Setting the Maximum and Minimum Number of Peers
+## <a id="1.2">1.2 Getting and Setting the Maximum and Minimum Number of Peers
 
 ```swift
 /// 最小连接数
@@ -50,9 +50,9 @@ public var minimumNumberOfPeers: Int
 public var maximumNumberOfPeers: Int
 ```
 
-#<a id="2">2 MCBrowserViewControllerDelegate
+# <a id="2">2 MCBrowserViewControllerDelegate
 
-##<a id="2.1">2.1 Peer Notifications
+## <a id="2.1">2.1 Peer Notifications
 
 ```swift   
 /// 是否向附近的设备发出连接请求
@@ -60,7 +60,7 @@ public var maximumNumberOfPeers: Int
 optional public func browserViewController(browserViewController: MCBrowserViewController, shouldPresentNearbyPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) -> Bool
 ```
 
-##<a id="2.2">2.2 User Action Notifications
+## <a id="2.2">2.2 User Action Notifications
 
 ```swift
 /// 完成连接
@@ -76,13 +76,13 @@ public func browserViewControllerWasCancelled(browserViewController: MCBrowserVi
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Multipeer Connectivity Framework Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/index.html)
 
@@ -90,13 +90,13 @@ public func browserViewControllerWasCancelled(browserViewController: MCBrowserVi
 
 [MCBrowserViewControllerDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCBrowserViewControllerDelegate/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

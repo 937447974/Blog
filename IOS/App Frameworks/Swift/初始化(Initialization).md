@@ -10,9 +10,9 @@
 
 &#160;
 
-#初始化
+# 初始化
 
-##初始化结构体
+## 初始化结构体
 
 下面我们定义一个结构体Size，并添加两个属性wdith和height。
 
@@ -63,7 +63,7 @@ point = Point(x: 10, y: 10) // 调用init(x: Double, y:Double)方法
 
 这就是仿照系统自带的方法实现。但是当你在结构体自定义初始化方法时，则无法在外部使用系统自带的初始化方法。
 
-##初始化枚举
+## 初始化枚举
 
 枚举和结构体一样也有一些系统自带的初始化方法，和结构体不同的是，你在枚举中自定义方法后，还是可以使用系统自带的初始化方法。下面我们以一个CompassPoint枚举举例，它的内部是String类型。
 
@@ -97,7 +97,7 @@ compassPoint = CompassPoint(symbol: "North")
 
 在这里为大家介绍了三种初始化方法：直接取值、通过原始值和通过自定义的方法获取枚举。
 
-##初始化类
+## 初始化类
 
 在Swift中，类是一个特殊的类型，它是引用类型，并且可继承。这里定义两个类：基类BaseClass和子类SubClass。
 
@@ -123,7 +123,7 @@ class BaseClass {
 }
 ```
 
-###子类调用父类初始化方法
+### 子类调用父类初始化方法
 
 在子类的初始化方法中想调用父类的初始化方法，只需使用关键字super。
 
@@ -137,7 +137,7 @@ class SubClass: BaseClass {
 }
 ```
 
-###默认初始化
+### 默认初始化
 
 类和结构体一样也有默认初始化，不同的是它只有一个默认初始化方法。
 
@@ -145,7 +145,7 @@ class SubClass: BaseClass {
 var user = SubClass()
 ```
 
-###自定义初始化
+### 自定义初始化
 
 有的时候我们希望定制一些初始化方法方便外部调用，这里我们定制了初始化name的方法`init(name: String)`。
 
@@ -158,7 +158,7 @@ var user = SubClass()
 user = SubClass(name: "阳君")
 ```
 
-###省略外部参数
+### 省略外部参数
 
 在外部使用自定义的初始化方法时，需要使用参数名，如果你不想使用参数名，也可以在初始化的方法中参数名前加`_`,如
 
@@ -174,11 +174,11 @@ user = SubClass("阳君")
 
 &#160;
 
-#初始化失败
+# 初始化失败
 
 在开发过程中，外部使用初始化方法时，由于传入的参数不符合规范，我们需要返回nil，也就是初始化失败。类、枚举和结构体都可以初始化失败。构造可返回nil的初始化方法很简单，只需要在nil后添加“？”。
 
-##结构体初始化失败
+## 结构体初始化失败
 
 ```swift
 struct Animal {
@@ -201,7 +201,7 @@ if let giraffe = someCreature {
 
 使用Animal的init?(species: String)方法可能返回nil，也就是说someCreature为Animal或nil，接下来我们用了可选链的判断方式。当giraff不为nil时输出species属性。
 
-##初始化枚举失败
+## 初始化枚举失败
 
 ```swift
 enum TemperatureUnit:Character {
@@ -238,7 +238,7 @@ print(unit) // nil
 
 使用枚举初始化失败有两种方式：一种是自定义的可返回nil方法；一种是使用原始值获取枚举。
 
-##类初始化失败
+## 类初始化失败
 
 ```swift
 class Product {
@@ -263,7 +263,7 @@ if let qq = Product(name: "937447974") {
 
 &#160;
 
-#必须初始化
+# 必须初始化
 
 有的时候我们会碰到这样的场景，如父类提供了初始化方法，当子类继承时，希望子类也强制性的初始化这个方法。这里就用到了关键字required。
 
@@ -291,7 +291,7 @@ class SomeSubclass: SomeClass {
 
 &#160;
 
-#使用闭包或函数设置默认属性
+# 使用闭包或函数设置默认属性
 
 在类中我们可以设置属性的默认值，我们还可以通过闭包或函数设置属性的默认值。
 
@@ -314,13 +314,13 @@ print(c.someProperty) // someValue
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

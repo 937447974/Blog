@@ -1,4 +1,4 @@
-#1 RAM&ROM
+# 1 RAM&ROM
 
 RAM与ROM就是具体的存储空间，统称为存储器。
 
@@ -7,7 +7,7 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 	2. 静态SRAM，速度快，我们常说的一级缓存，二级缓存就是指它，当然价格高一点。
 2. ROM(read only memory)：存储性内存，可以掉电存储，例如SD卡。
 
-#2 内存五区
+# 2 内存五区
 
 1. 栈区（stack）
 	- 栈区地址从高到低分配；
@@ -26,7 +26,7 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017031501.png)
 
-#3 RAM&ROM协调工作
+# 3 RAM&ROM协调工作
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017031502.png)
 
@@ -35,9 +35,9 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation、
+## Related Documentation、
 
 [unix之内存管理](http://blog.csdn.net/tao546377318/article/details/51654993)
 
@@ -51,13 +51,13 @@ RAM与ROM就是具体的存储空间，统称为存储器。
 
 [iOS之CF和OC之间类型转换](http://blog.csdn.net/annkey123/article/details/8271806)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2017-03-15 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

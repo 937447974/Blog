@@ -1,13 +1,13 @@
 方法是与特定类型关联的函数。在类、结构体和枚举中都可以定义方法。方法可以是实例方法，也可以是类型方法。
 &#160;
 
-#实例方法
+# 实例方法
 
 实例方法是属于某一特定类、结构体或枚举的函数。它们提供访问和修改实例属性的方法，或者提供与实例相关的功能。实例方法和函数的功能相同，具有完全相同的语法。
 
 在实例方法的大括号内，可以访问局部变量和全局变量。实例方法同样也可以调用其他实例方法。
 
-##局部变量和全局变量
+## 局部变量和全局变量
 
 ```swift
 class Counter {
@@ -23,11 +23,11 @@ print("\(counter.count)") // 15
 
 如上所示：类Counter中有一个变量count,和一个实例方法incrementBy。在incrementBy方法内可以访问全局变量count。
 
-##修改外部参数名称
+## 修改外部参数名称
 
 如上面的例子，在外部调用方法时使用`incrementBy(5, numberOfTimes: 3)`,如果你觉得这样太麻烦，我们还可以省略numberOfTimes这个名称，只需参数名前加下划线。即修改方法体为`func incrementBy(amount: Int, _ numberOfTimes: Int)`,此时的外部访问变为`counter.incrementBy(5, 3)`。
 
-##Self属性
+## Self属性
 
 在Swift中也可以使用self访问全局属性或全局方法。
 
@@ -43,7 +43,7 @@ let somePoint = Point(x: 4.0, y: 5.0)
 print("\(somePoint.isToTheRightOfX(1.0))") // true
 ```
 
-##在实例方法中修改值类型
+## 在实例方法中修改值类型
 
 在swift中，不但可以给类添加方法，还可以在结构体和枚举中添加方法。
 
@@ -65,7 +65,7 @@ fixedPoint.moveByX(2.0, y: 3.0) // 抛错
 
 由于结构体和枚举是值类型，默认情况下，实例方法中是不可以修改值类型的属性。我们只可以在外部修改值类型中的属性。如果你想在实例中修改值类型的属性，只需在方法名前加mutating关键字。
 
-##在实例方法中修改结构体或枚举
+## 在实例方法中修改结构体或枚举
 
 在结构体和枚举内，self代表当前结构体或枚举，我们还可以通过mutating修改当前结构体或枚举。
 
@@ -102,7 +102,7 @@ print("\(ovenLight.next())") // Off
 
 &#160;
 
-#类型方法
+# 类型方法
 
 在方法中我们可以不初始化类就调用类的内部方法，这就是类型方法。
 
@@ -137,13 +137,13 @@ print("\(LevelTracker.levelIsUnlocked(2))") // false
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

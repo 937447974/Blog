@@ -31,11 +31,11 @@
 
 苹果基于不同屏幕的考虑，支持大家去做兼容性开发。所使用的类是NSLayoutConstraint，这帮助我们在基于不同的屏幕使用同一套UI。
 
-#<a id="NSLayoutConstraint">1 NSLayoutConstraint
+# <a id="NSLayoutConstraint">1 NSLayoutConstraint
 
 NSLayoutConstraint就是我们屏幕适配的核心类，你可以通过动态修改它内部数据以达到修改UI的目的。
 
-##<a id="创建约束">1.1 创建约束
+## <a id="创建约束">1.1 创建约束
 
 ```swift
 // 连续创建多个约束
@@ -58,7 +58,7 @@ public convenience init(item view1: AnyObject, attribute attr1: NSLayoutAttribut
 firstItem.firstAttribute {==,<=,>=} secondItem.secondAttribute * multiplier + constant
 ```
 
-##<a id="启用和禁用约束">1.2 启用和禁用约束
+## <a id="启用和禁用约束">1.2 启用和禁用约束
 
 ```swift
 // 启用约束
@@ -71,7 +71,7 @@ public class func activateConstraints(constraints: [NSLayoutConstraint])
 public class func deactivateConstraints(constraints: [NSLayoutConstraint])
 ```
 
-##<a id="访问约束数据">1.3 访问约束数据
+## <a id="访问约束数据">1.3 访问约束数据
 
 ```swift
 // 约束的优先级
@@ -92,23 +92,23 @@ public var multiplier: CGFloat { get }
 public var constant: CGFloat
 ```
 
-##<a id="识别约束">1.4 识别约束
+## <a id="识别约束">1.4 识别约束
 
 ```swift
 // 约束的唯一标示
 public var identifier: String?
 ```
 
-##<a id="控制约束归档">1.5 控制约束归档
+## <a id="控制约束归档">1.5 控制约束归档
 
 ```swift
 // 约束是否归档
 public var shouldBeArchived: Bool
 ```
 
-#<a id="常量">2 常量
+# <a id="常量">2 常量
 
-##<a id="NSLayoutRelation">2.1 NSLayoutRelation
+## <a id="NSLayoutRelation">2.1 NSLayoutRelation
 
 ```swift
 public enum NSLayoutRelation : Int {
@@ -118,7 +118,7 @@ public enum NSLayoutRelation : Int {
 }
 ```
 
-##<a id="NSLayoutAttribute">2.2 NSLayoutAttribute
+## <a id="NSLayoutAttribute">2.2 NSLayoutAttribute
 
 ```swift
 public enum NSLayoutAttribute : Int {
@@ -159,9 +159,9 @@ public enum NSLayoutAttribute : Int {
 }
 ```
 
-#<a id="实战演练">3 实战演练
+# <a id="实战演练">3 实战演练
 
-##<a id="效果图模型">3.1 效果图模型
+## <a id="效果图模型">3.1 效果图模型
 
 我们要实现如下效果图。
 
@@ -180,7 +180,7 @@ public enum NSLayoutAttribute : Int {
 7. Bottom Layout Guide.Top = Green View.Bottom + 20.0
 8. Yellow View.Width = Green View.Width
 
-##<a id="代码实现">3.2 代码实现
+## <a id="代码实现">3.2 代码实现
 
 在代码实现的时候，UIView是默认禁止约束的，你要通过。
 
@@ -262,7 +262,7 @@ class YJAutoLayoutAnchorVC: UIViewController {
 }
 ```
 
-##<a id="效果图">3.3 效果图
+## <a id="效果图">3.3 效果图
 
 运行项目后，在不同的屏幕上都可以看到如下效果图，还可以旋转屏幕。
 
@@ -278,25 +278,25 @@ class YJAutoLayoutAnchorVC: UIViewController {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Auto Layout Guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/LayoutUsingStackViews.html)
 
 [NSLayoutConstraint Class Reference](https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-18 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

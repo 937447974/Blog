@@ -4,7 +4,7 @@
 
 ![](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Art/page_view.png)
 
-#Creating Page View Controllers
+# Creating Page View Controllers
 
 ```swift
 // 初始化
@@ -15,7 +15,7 @@ weak public var delegate: UIPageViewControllerDelegate?
 weak public var dataSource: UIPageViewControllerDataSource?
 ```
 
-#Providing Content
+# Providing Content
 
 ```swift
 // 所有手势
@@ -26,7 +26,7 @@ public var viewControllers: [UIViewController]? { get }
 public func setViewControllers(viewControllers: [UIViewController]?, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool) -> Void)?)
 ```
 
-#Display Options
+# Display Options
 
 ```swift
 // 翻页的样式
@@ -43,21 +43,21 @@ public var doubleSided: Bool
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIPageViewController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageViewControllerClassReferenceClassRef/index.html)
 
 [View Controller Catalog for iOS](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/PageViewControllers.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-05-03 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

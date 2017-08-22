@@ -13,11 +13,11 @@
 
 ---
 
-#<a id="UITableViewCell"/>1 UITableViewCell
+# <a id="UITableViewCell"/>1 UITableViewCell
 
 UITableViewCell定义了UITableView显示时的细胞的属性和行为。UITableViewCell提供了相关属性和方法管理cell的背景和内容（text、image、和自定义的view）、选中和高亮的状态、管理附属视图和编辑模式下的视图.
 
-#<a id="搭建测试项目"/>2 搭建测试项目
+# <a id="搭建测试项目"/>2 搭建测试项目
 
 测试项目的界面可自行搭建，这里使用类YJTableViewCellTVC，为了方便，它继承了UITableViewController。
 
@@ -151,9 +151,9 @@ class YJTableViewCellTVC: UITableViewController {
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121601.jpg)
 
-#<a id="实战演练"/>3 实战演练
+# <a id="实战演练"/>3 实战演练
 
-##<a id="UITableViewCellStyle"/>3.1 UITableViewCellStyle
+## <a id="UITableViewCellStyle"/>3.1 UITableViewCellStyle
 
 系统自带的Cell有四种样式，使用的枚举UITableViewCellStyle。
 
@@ -184,7 +184,7 @@ func tableViewCellWithStyle(tableView: UITableView, cellForRowAtIndexPath indexP
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121602.jpg)
 
-##<a id="UITableViewCellSelectionStyle"/>3.2 UITableViewCellSelectionStyle
+## <a id="UITableViewCellSelectionStyle"/>3.2 UITableViewCellSelectionStyle
 
 UITableViewCellSelectionStyle管理用户点击cell的背景色
 
@@ -221,7 +221,7 @@ if cell == nil {
 }
 ```
 
-##<a id="UITableViewCellAccessoryType"/>3.3 UITableViewCellAccessoryType
+## <a id="UITableViewCellAccessoryType"/>3.3 UITableViewCellAccessoryType
 
 UITableViewCellAccessoryType可以设置Cell的附属视图。
 
@@ -257,7 +257,7 @@ func tableViewCellWithAccessoryType(tableView: UITableView, cellForRowAtIndexPat
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121603.jpg)
 
-##<a id="UITableViewCellSeparatorStyle"/>3.4 UITableViewCellSeparatorStyle
+## <a id="UITableViewCellSeparatorStyle"/>3.4 UITableViewCellSeparatorStyle
 
 UITableViewCellSeparatorStyle就是设置Cell上下的横线，你还可以通过tableView.separatorColor设置横线的颜色。
 
@@ -286,7 +286,7 @@ func tableViewCellWithSeparatorStyle() {
 }
 ```
 
-##<a id="管理内容缩进"/>3.5 管理内容缩进
+## <a id="管理内容缩进"/>3.5 管理内容缩进
 
 cell中的内容也是可以缩进的，如同目录一样。
 
@@ -308,15 +308,15 @@ func tableViewCellWithManagingContentIndentation(tableView: UITableView, cellFor
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121604.jpg)
 
-##<a id="自定义Cell"/>3.6 自定义Cell
+## <a id="自定义Cell"/>3.6 自定义Cell
 
 大多数情况下，系统的Cell无法满足我们的业务需求。我们会自定义Cell，自定义Cell有两种主要的方式：一种是全代码编写；一种是通过Xib定制。这里我们使用Xib定制。
 
-###3.6.1 xib视图
+### 3.6.1 xib视图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015121606.png)
 
-###3.6.2 YJSwitchTableViewCell
+### 3.6.2 YJSwitchTableViewCell
 
 ```swift
 //
@@ -357,7 +357,7 @@ class YJSwitchTableViewCell: UITableViewCell {
 
 这里使用了handler闭包回调
 
-###3.6.3 界面展示
+### 3.6.3 界面展示
 
 首先注册cell。
 
@@ -398,23 +398,23 @@ public func registerClass(cellClass: AnyClass?, forCellReuseIdentifier identifie
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UITableViewCell Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-16 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -37,7 +37,7 @@ class Person {
 
 下面给大家介绍可选链的使用。
 
-##可选获得
+## 可选获得
 
 ```Swift
 let john = Person()
@@ -47,7 +47,7 @@ john.residence = Residence()
 var roomCount = john.residence?.numberOfRooms
 ```
 
-##强制获得
+## 强制获得
 
 如果你已经确定这个属性有值是，你可以使用‘!’强制获得。
 ```Swift
@@ -56,7 +56,7 @@ roomCount = john.residence!.numberOfRooms
 print(roomCount) // Optional(1) Optional代表可选
 ```
 
-##if获得
+## if获得
 
 在上面两种方式都比较麻烦，第一种方式，当你去使用的时候，你还需要去if判断;第二种方式，不是每一次都能强制调用成功的,当为nil时强制调用，会引起程序崩溃。处于这种情况，我们可以结合if使用更优雅的方式获得。
 
@@ -71,13 +71,13 @@ if let roomCount = john.residence?.numberOfRooms {
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

@@ -24,11 +24,11 @@
 
 ----
 
-#<a id="UICollectionViewDataSource"\>1 UICollectionViewDataSource
+# <a id="UICollectionViewDataSource"\>1 UICollectionViewDataSource
 
 UICollectionViewDataSource是UICollectionView的数据源协议，管理UICollectionView显示用的相关视图配置。
 
-##<a id="获取Item和Section数量"\>1.1 获取Item和Section数量
+## <a id="获取Item和Section数量"\>1.1 获取Item和Section数量
 
 ```swift
 // MARK: 分组
@@ -38,7 +38,7 @@ optional func numberOfSectionsInCollectionView(collectionView: UICollectionView)
 func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
 ```
 
-##<a id="获取显示的视图"\>1.2 获取显示的视图
+## <a id="获取显示的视图"\>1.2 获取显示的视图
 
 ```swift
 // MARK: 生成Cell
@@ -48,7 +48,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath i
 optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
 ```
 
-##<a id="移动Item"\>1.3 移动Item
+## <a id="移动Item"\>1.3 移动Item
 
 ```swift
 // MARK: 能否移动
@@ -58,9 +58,9 @@ optional func collectionView(_ collectionView: UICollectionView, canMoveItemAtIn
 collectionView(_:moveItemAtIndexPath:toIndexPath:)
 ```
 
-#<a id="实战演练"\>2 实战演练
+# <a id="实战演练"\>2 实战演练
 
-##<a id="项目搭建"\>2.1 项目搭建
+## <a id="项目搭建"\>2.1 项目搭建
 
 这里使用storyboard搭建项目。主布局如图所示
 
@@ -78,7 +78,7 @@ collectionView(_:moveItemAtIndexPath:toIndexPath:)
 
 这里主要控制界面的相关布局。
 
-##<a id="源代码"\>2.2 源代码
+## <a id="源代码"\>2.2 源代码
 
 这里使用了类YJCollectionViewDataSourceVC
 
@@ -123,7 +123,7 @@ class YJCollectionViewDataSourceVC: UIViewController, UICollectionViewDataSource
 
 这里只是填充了相关测试数据，其中`self.collectionView.allowsMoveItem()`是一个自定义的扩展方法，主要用于手势移动cell。
 
-##<a id="实现UICollectionViewDataSource"\>2.3 实现UICollectionViewDataSource
+## <a id="实现UICollectionViewDataSource"\>2.3 实现UICollectionViewDataSource
 
 接下来我们就实现UICollectionViewDataSource让主界面显示相关视图。
 
@@ -195,25 +195,25 @@ func collectionView(collectionView: UICollectionView, moveItemAtIndexPath source
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
 [UICollectionViewDataSource Protocol Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewDataSource_protocol/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-23 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

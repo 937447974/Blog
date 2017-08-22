@@ -8,13 +8,13 @@
 2. 点击Button按钮打开主APP；
 3. 和主APP共享数据
 
-#1 显示TodayExtension
+# 1 显示TodayExtension
 
-##1.1 创建项目
+## 1.1 创建项目
 
 和常规创建项目一样，你也可以使用你目前的项目，这里不做详细说明。
 
-##1.2 创建Today Extension
+## 1.2 创建Today Extension
 
 打开项目后，点击Editor-Add Target
 
@@ -24,7 +24,7 @@
 
 运行即可看见效果图。
 
-#2 点击Button按钮打开主APP
+# 2 点击Button按钮打开主APP
 
 修改布局文件，添加button按钮，并修改源代码，如下。
 
@@ -108,7 +108,7 @@ func application(app: UIApplication, openURL url: NSURL, options: [String : AnyO
 }
 ```
 
-#3 共享数据
+# 3 共享数据
 
 共享数据可运用App Groups。开启App Groups如下所示。
 
@@ -129,23 +129,23 @@ if let user = NSUserDefaults(suiteName: "group.com.YJNotificationCenter") {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Notification Center Framework Reference](https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NotificationCenter_Framework/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-20 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

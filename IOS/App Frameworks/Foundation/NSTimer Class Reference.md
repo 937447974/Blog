@@ -1,6 +1,6 @@
 NSTimer是一个计时器，可通过它快速实现相关倒计时需求。
 
-##1 Creating a Timer
+## 1 Creating a Timer
 
 ```swift
 public /*not inherited*/ init(timeInterval ti: NSTimeInterval, invocation: NSInvocation, repeats yesOrNo: Bool)
@@ -12,21 +12,21 @@ public class func scheduledTimerWithTimeInterval(ti: NSTimeInterval, target aTar
 public init(fireDate date: NSDate, interval ti: NSTimeInterval, target t: AnyObject, selector s: Selector, userInfo ui: AnyObject?, repeats rep: Bool)
 ```
 
-##2 Firing a Timer
+## 2 Firing a Timer
 
 ```swift
 // 发送消息
 public func fire()
 ```
 
-##3 Stopping a Timer
+## 3 Stopping a Timer
 
 ```swift
 // 失效
 public func invalidate()
 ```
 
-##4 Information About a Timer
+## 4 Information About a Timer
 
 ```swift
 // 是否有效
@@ -39,7 +39,7 @@ public var userInfo: AnyObject? { get }
 public var timeInterval: NSTimeInterval { get }
 ```
 
-##5 Firing Tolerance
+## 5 Firing Tolerance
 
 ```swift
 // 因为NSTimer并不完全精准，通过这个值设置误差范围
@@ -51,13 +51,13 @@ public var tolerance: NSTimeInterval
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSTimer Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/index.html)
 
@@ -65,13 +65,13 @@ public var tolerance: NSTimeInterval
 
 [Threading Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-08-05 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

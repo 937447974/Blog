@@ -19,13 +19,13 @@
 
 介绍函数之前想简单介绍一下dual表。该表是数据库中真实存在的一个表，任何用户都可以读取，多数情况下可以用在没有目标的select查询语句中。该表很重要，千万不要删除，一旦删除，数据库将无法启动。
 
-#1 数值型函数
+# 1 数值型函数
 
 数值类型函数可以输入数字，并返回一个数值。大多数可以达到小数点后38位。一部分则支持30位或36位小数。
 
-##1.1 绝对值、取余、判断数值正负函数
+## 1.1 绝对值、取余、判断数值正负函数
 
-###1.1.1 ABS(n)函数
+### 1.1.1 ABS(n)函数
 
 abs(n)函数用于返回绝对值。该函数输入一个参数，参数类型为数值型，如果参数是可以转化为数值型的字符串，也可以。
 
@@ -33,7 +33,7 @@ abs(n)函数用于返回绝对值。该函数输入一个参数，参数类型�
 select abs(100), abs(-100), abs('-100') from dual;
 ```
 
-###1.1.2 mod(n2,n1)函数
+### 1.1.2 mod(n2,n1)函数
 
 mod(n2,n1)函数表示返回n2除以n1的余数。参数为任意数值或可以隐式转成数值的类型。如果n1为0，那么该函数将返回n2。
 
@@ -43,7 +43,7 @@ select mod(5,2), mod(8/3,5), mod(10,'5'), mod(1,0) from dual;
 
 >在mysql中，遇到字符串结果为0；遇到n1为0结果为null。
 
-###1.1.3 sign(n)函数
+### 1.1.3 sign(n)函数
 
 sign(n)函数返回参数n的符号。正输返回1，0返回0，负数返回-1。
 
@@ -51,7 +51,7 @@ sign(n)函数返回参数n的符号。正输返回1，0返回0，负数返回-1�
 select sign('9'), sign(-9), sign(0),sign(2*'3') from dual;
 ```
 
-##1.2 三角函数
+## 1.2 三角函数
 
 cos(n)函数。用于返回参数的余弦，n为弧度表示的角度。
 
@@ -70,9 +70,9 @@ select cos(3.1415926), cos('3.1415926') from dual;
 - tanh(n)：返回n的双曲正切值。
 - atan(n)：返回n的反正切值。
 
-##1.3 返回以指定数值为准整数的函数
+## 1.3 返回以指定数值为准整数的函数
 
-###1.3.1 ceil(n)函数
+### 1.3.1 ceil(n)函数
 
 ceil(n)函数，其返回结果大于等于输入参数的最小整数。
 
@@ -80,7 +80,7 @@ ceil(n)函数，其返回结果大于等于输入参数的最小整数。
 select ceil(10), ceil('10.5'), ceil(-10.2) from dual;
 ```
 
-###1.3.2 floor(n)函数
+### 1.3.2 floor(n)函数
 
 floor(n)函数，其返回结果是小于或等于参数的最大整数。同ceil(n)函数相反。
 
@@ -88,9 +88,9 @@ floor(n)函数，其返回结果是小于或等于参数的最大整数。同cei
 select floor(10), floor('10.5'), floor(-10.2) from dual;
 ```
 
-##1.4 指数、对数函数
+## 1.4 指数、对数函数
 
-###1.4.1 sqrt(n)函数。
+### 1.4.1 sqrt(n)函数。
 
 该函数返回n的平方根。n<0时oralce返回nan，mysql返回null。
 
@@ -98,7 +98,7 @@ select floor(10), floor('10.5'), floor(-10.2) from dual;
 select sqrt(100), sqrt('53.0'), sqrt(-100) from dual; 
 ```
 
-###1.4.2 power(n2,n1)函数
+### 1.4.2 power(n2,n1)函数
 
 利用该函数可以得到n2的n1次冥的结果。
 
@@ -108,7 +108,7 @@ select power(5,2), power('5',2), power(-5,2) from dual;
 
 与其相近的函数有：exp(n)函数。表示返回e的n次冥。
 
-###1.4.3 log(n1,n2)函数
+### 1.4.3 log(n1,n2)函数
 
 该函数可以返回以n1为底n2的对数，n1是除1和0以外的任意正数。n2为正数。
 
@@ -118,9 +118,9 @@ select log(10,100), log(10.5,'100') from dual;
 
 与其相近的函数有：ln(n)函数，表示返回n的自然对数。n要求大于0。
 
-##1.5 四色五入截取函数
+## 1.5 四色五入截取函数
 
-###1.5.1 round(for number)函数
+### 1.5.1 round(for number)函数
 
 该函数的具体原型是round(n,integer)。它将数值n四色五入成第二个参数指定的形式的十进制数。参数integer为正整数时，表示n被四色五入为integer位小数。如果该参数为负数，则n被四色五入至小数点向左integer位。
 
@@ -128,7 +128,7 @@ select log(10,100), log(10.5,'100') from dual;
 select round(100.23456789, 4), round(100.23456789,4.565), round(100.23456789,-4.56) from dual;
 ```
 
-###1.5.2 trunc(for number)函数
+### 1.5.2 trunc(for number)函数
 
 该函数的具体原型是trunc(n,integer)。它把数值n根据integer的值进行截取，截取时和integer的正负有关。参数integer要求是整数，如果不是整数，那么它将自动截取为整数部分。当integer为正整数时，表示n将截取到integer位小数；如果integer为负数，则截取到小数点左第integer位，被截取部分用0代替。
 
@@ -138,13 +138,13 @@ select trunc(100.23456,4), trunc(100.23456,2.56), trunc(155.234,-2) from dual;
 
 > mysql中无此函数
 
-#2 字符型函数
+# 2 字符型函数
 
 以下函数全部接受的是字符型类型的参数，其中大部分返回字符类型数据，小部分返回数字类型数据。
 
-##2.1 ASCII码与字符转换函数
+## 2.1 ASCII码与字符转换函数
 
-###2.1.1 chr(n[using nchar_cs])函数
+### 2.1.1 chr(n[using nchar_cs])函数
 
 根据相应的字符集，把给定的ASCII码转换为字符。using nchar_cs指明字符集。
 
@@ -158,7 +158,7 @@ mysql使用char代替
 select char(65), char(66), char(67) from dual;
 ```
 
-###2.1.2 ASCII(char)函数
+### 2.1.2 ASCII(char)函数
 
 返回参数首字母的ASCII码值。与chr函数相反。参数char的类型可以是char、varchar2、nchar或nvchar2。该返回值总是以用户使用的字符集为基础的，如果用户的数据库字符集是7位的ASCII值，那就得到一ASCII码。
 
@@ -166,7 +166,7 @@ select char(65), char(66), char(67) from dual;
 select ascii('阳'), ascii('君') from dual;
 ```
 
-##2.2 截取字符串长度函数
+## 2.2 截取字符串长度函数
 
 length函数。该函数可以得到指定字符串的字符长度，返回类型是数字。
 
@@ -174,7 +174,7 @@ length函数。该函数可以得到指定字符串的字符长度，返回类�
 select length('阳君') from dual;
 ```
 
-##2.3 字符串截取函数
+## 2.3 字符串截取函数
 
 substr函数。该函数提供截取字符串的给你，而且该函数有很多的扩展形式，其具体语句结构是`[substr](char, position[, substring_length])`。各项参数表示含义如下：
 
@@ -191,7 +191,7 @@ substr函数。该函数提供截取字符串的给你，而且该函数有很�
 select substr('阳君937447974',5,2), substr('阳君937447974',-5,2) from dual;
 ```
 
-##2.4 字符串连接函数
+## 2.4 字符串连接函数
 
 concat(char1, char2)函数。该函数连接两个参数并返回。char2将连接到char1的尾部。效果和连接符“||”相似。
 
@@ -201,7 +201,7 @@ select concat('阳','君'), '阳'||'君' from dual;
 
 >Mysql没有’||‘连接符，只能使用concat连接两个字符串。
 
-##2.5 字符串搜索函数
+## 2.5 字符串搜索函数
 
 instr函数。该函数可以让我们在指定的字符串中搜索是否存在另一个字符串。其具体语句结构是`[instr](string, substring[position[,occurrence]])`。各项参数表示含义如下：
 
@@ -221,9 +221,9 @@ select instr('阳君阳君937447974','阳君'), instr('阳君阳君937447974','�
 > mysql中无法使用`instr('阳君阳君937447974','阳君',-1)`搜索，只支持`
 select `搜索。
 
-##2.6 字母大小写转换函数
+## 2.6 字母大小写转换函数
 
-###2.6.1 upper(char)函数
+### 2.6.1 upper(char)函数
 
 该函数将指定的参数全部转换成大写字母。
 
@@ -231,7 +231,7 @@ select `搜索。
 select upper('Yang Jun') from dual;
 ```
 
-###2.6.2 lower(char)函数
+### 2.6.2 lower(char)函数
 
 该函数将指定的参数全部转换成小写字母。
 
@@ -239,7 +239,7 @@ select upper('Yang Jun') from dual;
 select lower('Yang Jun') from dual;
 ```
 
-###2.6.3 initcap(char)函数
+### 2.6.3 initcap(char)函数
 
 该函数将参数的所有单词首字母转换成大写字母。
 
@@ -249,7 +249,7 @@ select initcap('yang jun') from dual;
 
 >mysql无此函数。
 
-##2.7 替换字符串函数
+## 2.7 替换字符串函数
 
 replace函数。函数具体语法结构是`replace(char,search_string[,replacement_string])`,是一个替换字符串的函数。函数中有三个参数，具体代表的含义如下：
 
@@ -263,9 +263,9 @@ select replace('阳君：qq','qq','937447974'), replace('阳君：qq','qq') from
 
 >在mysql中必须设置replacement_string参数。
 
-##2.8 字符串填充函数
+## 2.8 字符串填充函数
 
-###2.8.1 rpad函数
+### 2.8.1 rpad函数
 
 函数具体语法结构是`rpad(expr1,n[,expr2])`,该函数功能是在字符串expr1的右边用字符串expr2填充，直到整个字符串长度为n时为至。如果expr2不存在，则以空格填充。
 
@@ -273,7 +273,7 @@ select replace('阳君：qq','qq','937447974'), replace('阳君：qq','qq') from
 select rpad('阳君',18,'937447974') from dual;
 ```
 
-###2.8.2 lpad函数
+### 2.8.2 lpad函数
 
 函数具体语法结构是`lpad(expr1,n[,expr2])`,该函数功能是在字符串expr1的左边用字符串expr2填充，直到整个字符串长度为n时为至。如果expr2不存在，则以空格填充。
 
@@ -281,9 +281,9 @@ select rpad('阳君',18,'937447974') from dual;
 select lpad('阳君',20,'937447974') from dual;
 ```
 
-##2.9 删除字符串首尾指定字符的函数
+## 2.9 删除字符串首尾指定字符的函数
 
-###2.9.1 trim函数
+### 2.9.1 trim函数
 
 该函数将删除指定的前缀和尾随的字符，默认删除空格。其具体语法结构是trim([leading|trailing|both][trim_character from]trim_source),各参数介绍如下：
 
@@ -297,7 +297,7 @@ select lpad('阳君',20,'937447974') from dual;
 select trim(trailing '7974' from '阳君937447974'), trim(' 阳君937447974 ') from dual;
 ```
 
-###2.9.2 rtrim(char[,set])函数
+### 2.9.2 rtrim(char[,set])函数
 
 与rpad函数相反，该函数会提供将char右边出现在set中的字符删除掉。如果set没有，则默认删除空格。
 
@@ -307,7 +307,7 @@ select rtrim(' 阳君937447974 '), rtrim(' 阳君937447974 ','74') from dual;
 
 >mysql中，rtrim只能删除右边空格。
 
-###2.9.3 ltrim(char[,set])函数
+### 2.9.3 ltrim(char[,set])函数
 
 与rpad函数相反，该函数会提供将char左边出现在set中的字符删除掉。如果set没有，则默认删除空格。
 
@@ -317,13 +317,13 @@ select ltrim(' 阳君937447974 ') from dual;
 
 >mysql中，ltrim只能删除左边空格。
 
-#3日期型函数
+# 3日期型函数
 
 日期类型的函数操作日期、时间类型的相关数据，并返回日期或数字类型的数据。
 
-##3.1 系统时间、时间函数
+## 3.1 系统时间、时间函数
 
-###3.1.1 sysdate函数
+### 3.1.1 sysdate函数
 
 该函数没有参数，可以得到系统的当前日期，是很常用的函数。下面示例演示了将得到的系统时间进行格式化。
 
@@ -337,7 +337,7 @@ mysql用now()获取当前系统时间，也可以使用sysdate()获得。获取�
 select now(), sysdate(), curdate(),curtime() from dual;
 ```
 
-###3.1.2 systimestamp函数
+### 3.1.2 systimestamp函数
 
 该函数没有参数，返回系统时间，该时间包含时区信息，精确到微秒。返回类型为带时区信息的timestamp类型。
 
@@ -347,9 +347,9 @@ select systimestamp from dual;
 
 >mysql无此函数。
 
-##3.2 为日期加上指定月份函数
+## 3.2 为日期加上指定月份函数
 
-###3.2.1 add_months(date,integer)函数
+### 3.2.1 add_months(date,integer)函数
 
 该函数返回在指定日期上加一个月份数后的日期。各参数具体含义如下：
 
@@ -383,7 +383,7 @@ date_add(now(), interval 1 year) as 增加一年
 from dual;
 ```
 
-##3.3 返回指定月份最后一天函数
+## 3.3 返回指定月份最后一天函数
 
 last_day(date)函数。该函数返回参数指定日期对应月份的最后一天。
 
@@ -399,7 +399,7 @@ mysql
 select last_day(now()) from dual;
 ```
 
-##3.4 返回指定日期后一周的日期函数
+## 3.4 返回指定日期后一周的日期函数
 
 next_day(date,char)函数。该函数返回当前日期向后的一周char的对应日期，char表示的是星期几。
 
@@ -409,7 +409,7 @@ select sysdate, next_day(sysdate,'星期一') from dual;
 
 >mysql无此函数
 
-##3.5 提取指定日期特定部分的函数
+## 3.5 提取指定日期特定部分的函数
 
 extract(datetime)函数。该函数可以从指定的时间当中提取到指定的日期部分，例如从给定的日期得到年、月、日等。
 
@@ -430,9 +430,9 @@ from dual;
 
 只需将上面的sysdate改为now(),即可在mysql中执行。
 
-##3.6 MySql 相关函数
+## 3.6 MySql 相关函数
 
-###3.6.1 UTC日期时间函数
+### 3.6.1 UTC日期时间函数
 
 获取当前UTC日期时间函数有utc_date()、utc_time()和utc_timestamp()。因为我国位于东八时区，所以本地时间 = UTC 时间 + 8 小时。UTC 时间在业务涉及多个国家和地区的时候，非常有用。
 
@@ -440,7 +440,7 @@ from dual;
 select utc_date(), utc_time(), utc_timestamp() from dual;
 ```
 
-###3.6.2 获取星期和月份名称
+### 3.6.2 获取星期和月份名称
 
 在mysql中可以获取某个时间对应的星期和月份名称。
 
@@ -451,7 +451,7 @@ select utc_date(), utc_time(), utc_timestamp() from dual;
 select dayname(now()), monthname(now()) from dual;
 ```
 
-###3.6.3 周位置函数
+### 3.6.3 周位置函数
 
 在mysql中关于周的函数有：
 
@@ -462,7 +462,7 @@ select dayname(now()), monthname(now()) from dual;
 select now(), week(now()), yearweek(now()) from dual;
 ```
 
-###3.6.4 天位置函数
+### 3.6.4 天位置函数
 
 在mysql中关于天位置的函数有：
 
@@ -474,11 +474,11 @@ select now(), week(now()), yearweek(now()) from dual;
 select now(), dayofweek(now()), dayofmonth(now()), dayofyear(now()) from dual;
 ```
 
-##4 集合函数
+## 4 集合函数
 
 集合函数经常配合group by和having子句使用，当然它们也可以单独使用。该类型的函数都会忽略列值为null的值。
 
-##4.1 测试数据
+## 4.1 测试数据
 
 这里用到的测试数据，是上一篇博客的user表。下面就是相关介绍，如果你没看《[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)》的博文，你可以重新导入。
 
@@ -512,7 +512,7 @@ insert into user(name) values('yangjun');
 insert into user(name) values('yangjun');
 ```
 
-##4.2 求平均值函数
+## 4.2 求平均值函数
 
 avg(expr)函数。该函数可求取指定列的平均值，表示某组的平均值，返回数值类型。
 
@@ -521,7 +521,7 @@ avg(expr)函数。该函数可求取指定列的平均值，表示某组的平�
 select avg(age) from user;
 ```
 
-##4.3 求记录数量函数
+## 4.3 求记录数量函数
 
 count(expr)函数。该函数可以用来记录的数量或某列的个数。函数必须指定列名，或全选使用‘*’号。
 
@@ -532,7 +532,7 @@ select count(age) from user;
 
 运行两行代码会发现结果不一样，这是因为count(age)会忽略age=null的数据。
 
-##4.4 返回最大、最小值函数
+## 4.4 返回最大、最小值函数
 
 - max(expr)：返回指定列的最大值。
 - min(expr)：返回指定列的最小值。
@@ -543,7 +543,7 @@ select count(age) from user;
 select min(age), max(age) from user;
 ```
 
-##4.5 求和函数
+## 4.5 求和函数
 
 sum(expr)函数。该函数会计算指定列的和，如果不使用分组，则函数默认把整个表作为一组。
 
@@ -557,15 +557,15 @@ select sum(age) from user;
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
 [ORACLE从入门到精通](https://github.com/937447974/LearningMaterials/blob/master/ORACLE从入门到精通.pdf)
 
 [MySQL 获得当前日期时间(以及时间的转换)](http://blog.sina.com.cn/s/blog_6d39dc6f0100m7eo.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -573,7 +573,7 @@ select sum(age) from user;
 | 2015-11-14 | 博文完成 |
 | 2015-11-14 | 增加博文[MAC系统安装MySql](https://github.com/937447974/Blog/blob/master/数据库/MAC系统安装MySql.md)、[数据库的准则(范式)](https://github.com/937447974/Blog/blob/master/数据库/数据库的准则(范式).md)、[SQL基础](https://github.com/937447974/Blog/blob/master/数据库/SQL基础.md)、[利用SELECT检索数据](https://github.com/937447974/Blog/blob/master/数据库/利用SELECT检索数据.md)、[SQL内置函数](https://github.com/937447974/Blog/blob/master/数据库/SQL内置函数.md)的相关链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -25,24 +25,24 @@
 
 ---
 
-#<a id="简介"/>1 简介
+# <a id="简介"/>1 简介
 
 在开发app的过程中任何一个项目都会用到UINavigationController，这是一个很有用的控件，它主要控制界面的跳转和导航。
 
-##<a id="导航效果图"/>1.1 导航效果图
+## <a id="导航效果图"/>1.1 导航效果图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016010802.png)
 
-##<a id="导航控制器的对象管理"/>1.2 导航控制器的对象管理
+## <a id="导航控制器的对象管理"/>1.2 导航控制器的对象管理
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016010801.jpg)
 
-##<a id="导航控制器内的视图"/>1.3 导航控制器内的视图
+## <a id="导航控制器内的视图"/>1.3 导航控制器内的视图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016010803.png)
 
 
-#<a id="Creating_Navigation_Controllers"/>2 Creating Navigation Controllers
+# <a id="Creating_Navigation_Controllers"/>2 Creating Navigation Controllers
 
 ```swift
 /// 使用自定义的navigationBar和toolbar
@@ -62,7 +62,7 @@ public init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?)
 public init(rootViewController: UIViewController)
 ```
 
-#<a id="Accessing_Items_on_the_Navigation_Stack"/>3 Accessing Items on the Navigation Stack
+# <a id="Accessing_Items_on_the_Navigation_Stack"/>3 Accessing Items on the Navigation Stack
 
 ```swift
 /// 顶部UIViewController
@@ -83,7 +83,7 @@ public var viewControllers: [UIViewController] // The current view controller st
 public func setViewControllers(viewControllers: [UIViewController], animated: Bool)
 ```
 
-#<a id="Pushing_and_Popping_Stack_Items"/>4 Pushing and Popping Stack Items
+# <a id="Pushing_and_Popping_Stack_Items"/>4 Pushing and Popping Stack Items
 
 ```swift
 /// push进入下一个VC
@@ -120,7 +120,7 @@ public func popToRootViewControllerAnimated(animated: Bool) -> [UIViewController
 public var interactivePopGestureRecognizer: UIGestureRecognizer? { get }
 ```
 
-#<a id="Configuring_Navigation_Bars"/>5 Configuring Navigation Bars
+# <a id="Configuring_Navigation_Bars"/>5 Configuring Navigation Bars
 
 ```swift
 /// 获取UINavigationBar
@@ -138,7 +138,7 @@ public var navigationBarHidden: Bool
 public func setNavigationBarHidden(hidden: Bool, animated: Bool)
 ```
 
-#<a id="Configuring_Custom_Toolbars"/>6 Configuring Custom Toolbars
+# <a id="Configuring_Custom_Toolbars"/>6 Configuring Custom Toolbars
 
 ```swift
 /// 获取UIToolbar
@@ -158,7 +158,7 @@ public var toolbarHidden: Bool // Defaults to YES, i.e. hidden.
 public func setToolbarHidden(hidden: Bool, animated: Bool)
 ```
 
-#<a id="Hiding_the_Navigation_Bar"/>7 Hiding the Navigation Bar
+# <a id="Hiding_the_Navigation_Bar"/>7 Hiding the Navigation Bar
 
 ```swift
 /// 是否点击屏幕隐藏UINavigationBar
@@ -184,7 +184,7 @@ public var hidesBarsWhenKeyboardAppears: Bool
 public var hidesBarsWhenVerticallyCompact: Bool
 ```
 
-#<a id="Accessing_the_Delegate"/>8 Accessing the Delegate
+# <a id="Accessing_the_Delegate"/>8 Accessing the Delegate
 
 ```swift
 /// 跳转监听
@@ -192,7 +192,7 @@ weak var delegate: UINavigationControllerDelegate?
 ```
 
 
-#<a id="ActionMethodforDisplayingViewControllers"/>9 Action Method for Displaying View Controllers
+# <a id="ActionMethodforDisplayingViewControllers"/>9 Action Method for Displaying View Controllers
 
 ```swift
 /// 和pushViewController:animated:相同的功能，可携带参数传递
@@ -208,25 +208,25 @@ func showViewController(_ vc: UIViewController, sender sender: AnyObject?)
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
 [UINavigationController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationController_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-09 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

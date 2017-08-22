@@ -30,14 +30,14 @@ UINavigationBar受UINavigationController控制，显示在屏幕的最上方，�
 >}
 >```
  
-#<a id="Assigning_the_Delegate">1 Assigning the Delegate
+# <a id="Assigning_the_Delegate">1 Assigning the Delegate
 
 ```swift
 /// 代理监听UINavigationItem的push和pop
 weak public var delegate: UINavigationBarDelegate?
 ```
 
-#<a id="Pushing_and_Popping_Items">2 Pushing and Popping Items
+# <a id="Pushing_and_Popping_Items">2 Pushing and Popping Items
 
 ```swift
 /// 是否动画压入UINavigationItem
@@ -72,7 +72,7 @@ public var items: [UINavigationItem]?
 public func setItems(items: [UINavigationItem]?, animated: Bool)
 ```
 
-#<a id="Customizing_the_Bar_Appearance">3 Customizing the Bar Appearance
+# <a id="Customizing_the_Bar_Appearance">3 Customizing the Bar Appearance
 
 ```swift
 /// 后退按钮的图片
@@ -129,13 +129,13 @@ public func titleVerticalPositionAdjustmentForBarMetrics(barMetrics: UIBarMetric
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
@@ -143,13 +143,13 @@ public func titleVerticalPositionAdjustmentForBarMetrics(barMetrics: UIBarMetric
 
 [UINavigationBar Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-09 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

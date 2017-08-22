@@ -15,25 +15,25 @@
 
 ----
 
-#<a id="">1 CNContactPickerViewController
+# <a id="">1 CNContactPickerViewController
 
 CNContactPickerViewController支持快速选中联系人或联系人的属性，支持单选和多选。
 
-##<a id="1.1">1.1 Displaying Contacts Properties
+## <a id="1.1">1.1 Displaying Contacts Properties
 
 ```swift
 /// 联系人名片可展示的信息
 public var displayedPropertyKeys: [String]?
 ```
 
-##<a id="1.2">1.2 Notifying Delegate
+## <a id="1.2">1.2 Notifying Delegate
 
 ```swift
 /// 通过代理控制选择的联系人或联系人属性
 weak public var delegate: CNContactPickerDelegate?
 ```
 
-##<a id="1.3">1.3 Predicates For Selecting Contacts
+## <a id="1.3">1.3 Predicates For Selecting Contacts
 
 ```swift
 /// 晒选联系人
@@ -46,9 +46,9 @@ weak public var delegate: CNContactPickerDelegate?
 @NSCopying public var predicateForSelectionOfProperty: NSPredicate? // e.g. (key == 'emailAddresses') AND (value LIKE '*@apple.com')
 ```
 
-#<a id="2">2 实战演练
+# <a id="2">2 实战演练
 
-##<a id="2.1">2.1 源代码
+## <a id="2.1">2.1 源代码
 
 ```swift
 //
@@ -95,7 +95,7 @@ class YJContactsUIVC: UIViewController, CNContactPickerDelegate {
 }
 ```
 
-##<a id="2.2">2.2 效果图
+## <a id="2.2">2.2 效果图
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016012003.jpg)
 
@@ -103,25 +103,25 @@ class YJContactsUIVC: UIViewController, CNContactPickerDelegate {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Contacts Framework Reference](https://developer.apple.com/library/ios/documentation/Contacts/Reference/Contacts_Framework/index.html)
 
 [CNContactPickerViewController Class Reference](https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-20 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

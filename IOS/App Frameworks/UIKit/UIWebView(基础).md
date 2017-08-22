@@ -11,8 +11,8 @@
 本篇博文主要介绍关于UIWebView的基础，包括：加载网页、实现代理以及JS和OC的互相调用。
 &#160;
 
-#1 准备工作
-##1.1 Html页面
+# 1 准备工作
+## 1.1 Html页面
 
 我已经为大家创建了html页面的源代码，只需要复制到记事本，并将文件名改为index.html。
 
@@ -86,7 +86,7 @@
 
 ![浏览器](http://img.blog.csdn.net/20151103175907757)
 
-##1.2 搭建项目
+## 1.2 搭建项目
 
 这个地方就不详细描述了，创建一个简单项目->拉一个UIWebView到界面->UIWebView指向UIViewController的属性名。
 
@@ -101,7 +101,7 @@
 //  Copyright © 2015年 六月. All rights reserved.
 //
 
-#import "BaseVC.h"
+# import "BaseVC.h"
 
 @interface BaseVC () <UIWebViewDelegate>
 
@@ -121,7 +121,7 @@
 
 &#160;
 
-#2 显示Web页面
+# 2 显示Web页面
 
 将我们创建好的index.html拉到项目中，至于位置就随你高兴了。
 
@@ -149,7 +149,7 @@ url = [NSURL URLWithString:@"www.baidu.com"];
 
 &#160;
 
-#3 代理UIWebViewDelegate
+# 3 代理UIWebViewDelegate
 
 UIWebView也有代理，如果你不懂什么是代理模式，查阅我的博文《[ 23设计模式之代理模式(Proxy)](http://blog.csdn.net/y550918116j/article/details/48605595)》。我们在UIWebViewDelegate发现了四个方法。
 
@@ -227,7 +227,7 @@ webViewDidFinishLoad:
 
 &#160;
 
-#4 JS和OC互动
+# 4 JS和OC互动
 
 js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。oc调js很简单，js回调oc就比较麻烦了。
 
@@ -325,13 +325,13 @@ js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。o
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [UIWebView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
@@ -340,7 +340,7 @@ js和oc互动是一件很麻烦的事，毕竟是两种不同的开发语言。o
 | 2015-12-11 | 更新相关博文链接 |
 | 2015-12-12 | 更新博文名 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

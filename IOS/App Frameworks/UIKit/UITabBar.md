@@ -21,14 +21,14 @@ UITabBar是UITabBarController管理的控件，是系统级的VC导航控件
 
 当你想要定制UITabBar时，只需通过`UITabBar.appearance()`获取共享的UITabBar，并修改其相关属性即可。
 
-#<a id="Setting_the_Delegate">1 Setting the Delegate
+# <a id="Setting_the_Delegate">1 Setting the Delegate
 
 ```swift
 /// 相关点击代理
 unowned(unsafe) public var delegate: UITabBarDelegate?
 ```
 
-#<a id="Configuring_Tab_Bar_Items">2 Configuring Tab Bar Items
+# <a id="Configuring_Tab_Bar_Items">2 Configuring Tab Bar Items
 
 ```swift
 /// 所有UITabBarItem
@@ -45,7 +45,7 @@ unowned(unsafe) public var selectedItem: UITabBarItem?
 public func setItems(items: [UITabBarItem]?, animated: Bool)
 ```
 
-#<a id="Supporting_User_Customization_of_Tab_Bars">3 Supporting User Customization of Tab Bars
+# <a id="Supporting_User_Customization_of_Tab_Bars">3 Supporting User Customization of Tab Bars
 
 ```swift
 /// 开始定制UITabBarItem，即更多按钮中的导航
@@ -56,7 +56,7 @@ public func endCustomizingAnimated(animated: Bool) -> Bool
 public func isCustomizing() -> Bool
 ```
 
-#<a id="Customizing_Tab_Bar_Appearance">4 Customizing Tab Bar Appearance
+# <a id="Customizing_Tab_Bar_Appearance">4 Customizing Tab Bar Appearance
 
 ```swift
 /// bar的样色
@@ -97,13 +97,13 @@ public var selectionIndicatorImage: UIImage?
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
@@ -111,13 +111,13 @@ public var selectionIndicatorImage: UIImage?
 
 [UITabBar Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBar_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-10 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

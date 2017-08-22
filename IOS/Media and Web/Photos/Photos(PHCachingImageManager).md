@@ -1,6 +1,6 @@
 PHCachingImageManager是PHImageManager的子类，主要用于缓存PHAsset，这样可以快速获取照片或视频。
 
-#1 准备图片
+# 1 准备图片
 
 ```swift
 /// 开始缓存请求
@@ -29,7 +29,7 @@ public func stopCachingImagesForAssets(assets: [PHAsset], targetSize: CGSize, co
 public func stopCachingImagesForAllAssets()
 ```
 
-#2 设置缓存模式
+# 2 设置缓存模式
 
 ```swift
 /// 是否缓存高质量照片，默认true
@@ -40,13 +40,13 @@ public var allowsCachingHighQualityImages: Bool
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [Photos Framework Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/Photos_Framework/index.html)
 
@@ -54,13 +54,13 @@ public var allowsCachingHighQualityImages: Bool
 
 [PHCachingImageManager Class Reference](https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCachingImageManager_Class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-05 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

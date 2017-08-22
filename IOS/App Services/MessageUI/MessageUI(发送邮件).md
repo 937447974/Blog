@@ -1,9 +1,9 @@
 在MessageUI库中发送邮件使用MFMailComposeViewController。
 
 
-#1 相关API
+# 1 相关API
 
-##1.1 Determining Mail Availability
+## 1.1 Determining Mail Availability
 
 ```swift
 /// 能否发送邮件
@@ -11,7 +11,7 @@
 public class func canSendMail() -> Bool
 ```
 
-##1.2 Setting Mail Fields Programmatically
+## 1.2 Setting Mail Fields Programmatically
 
 ```swift
 /// 设置主题
@@ -39,16 +39,16 @@ public func setMessageBody(body: String, isHTML: Bool)
 public func addAttachmentData(attachment: NSData, mimeType: String, fileName filename: String)
 ```
 
-##1.3 Accessing the Delegate
+## 1.3 Accessing the Delegate
 
 ```swift
 /// 监听发送结果
 unowned(unsafe) public var mailComposeDelegate: MFMailComposeViewControllerDelegate?
 ```
 
-#2 实战演练
+# 2 实战演练
 
-##2.1 源代码
+## 2.1 源代码
 
 ```swift
 //
@@ -132,25 +132,25 @@ class ViewController: UIViewController,  MFMailComposeViewControllerDelegate, MF
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Message UI Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
 [MFMailComposeViewController Class Reference](https://developer.apple.com/library/ios/documentation/MessageUI/Reference/MFMailComposeViewController_class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-12 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

@@ -20,9 +20,9 @@
 
 在WKWebView中OC和JS交互也非常简单，WebKit库中有个代理WKScriptMessageHandler就是专门来做交互的。
 
-#1 WKScriptMessageHandler
+# 1 WKScriptMessageHandler
 
-##1.1 WKScriptMessageHandler协议
+## 1.1 WKScriptMessageHandler协议
 
 WKScriptMessageHandler其实就是一个遵循的协议，它能让网页通过JS把消息发送给OC。其中协议方法。
 
@@ -37,14 +37,14 @@ WKScriptMessageHandler其实就是一个遵循的协议，它能让网页通过J
 
 从协议中我们可以看出这里使用了两个类WKUserContentController和WKScriptMessage。WKUserContentController可以理解为调度器，WKScriptMessage则是携带的数据。
 
-##1.2 WKUserContentController
+## 1.2 WKUserContentController
 
 WKUserContentController有两个核心方法，也是它的核心功能。
 
 1. `- (void)addUserScript:(WKUserScript *)userScript;`: js注入，即向网页中注入我们的js方法，这是一个非常强大的功能，开发中要慎用。
 2. `- (void)addScriptMessageHandler:(id <WKScriptMessageHandler>)scriptMessageHandler name:(NSString *)name;`：添加供js调用oc的桥梁。这里的name对应WKScriptMessage中的name，多数情况下我们认为它就是方法名。
 
-##1.3 WKScriptMessage
+## 1.3 WKScriptMessage
 
 WKScriptMessage就是js通知oc的数据。其中有两个核心属性用的很多。
 
@@ -59,9 +59,9 @@ window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
 
 这里的name就是我们添加的name，是不是感觉很爽，就是这么简单，下面我们就来具体实现。
 
-#2 JS调用OC
+# 2 JS调用OC
 
-##2.1 配置WKUserContentController
+## 2.1 配置WKUserContentController
 
 要想使用WKUserContentController为web页面添加桥梁，只需配置到WKWebViewConfiguration即可。
 
@@ -89,7 +89,7 @@ window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
 }
 ```
 
-##2.2 实现WKScriptMessageHandler
+## 2.2 实现WKScriptMessageHandler
 
 在当前页面引入WKScriptMessageHandler，并实现WKScriptMessageHandler协议即可。
 
@@ -112,7 +112,7 @@ window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
 }
 ```
 
-##2.3 改造index.html页面
+## 2.3 改造index.html页面
 
 修改index.html的onClickButton()方法。
 
@@ -132,7 +132,7 @@ function onClickButton() {
 
 这里使用了`window.webkit.messageHandlers.jsCallOC.postMessage(dict);`通知oc，jsCallOC这个属性就是前面我们通过WKUserContentController注入的。
 
-##2.4 测试交互
+## 2.4 测试交互
 
 我们在viewDidLoad使用index.html页面完成测试。
 
@@ -148,9 +148,9 @@ function onClickButton() {
 
 运行项目后，在页面的输入框中输入相应信息，点击确定按钮。即可在xcode中看见相关打印信息。
 
-#3 OC调用JS
+# 3 OC调用JS
 
-##3.1 OC通知JS
+## 3.1 OC通知JS
 
 oc调用js就特别简单了，只需WKWebView调用`- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^ __nullable)(__nullable id, NSError * __nullable error))completionHandler;`方法即可。
 
@@ -172,7 +172,7 @@ oc调用js就特别简单了，只需WKWebView调用`- (void)evaluateJavaScript:
 }
 ```
 
-##3.2 JS响应
+## 3.2 JS响应
 
 OC将通知发送给JS后，JS要响应这个ocCallJS方法。我们在index.html中的onClickButton()方法下添加ocCallJS方法。
 
@@ -203,9 +203,9 @@ function ocCallJS(params) {
 }
 ```
 
-#4 WKUserScript JS注入
+# 4 WKUserScript JS注入
 
-##4.1 WKUserScript核心方法
+## 4.1 WKUserScript核心方法
 
 在WebKit框架中，我们还可以预先添加JS方法，供其他人员调用。WKUserScript就是帮助我们完成JS注入的类，它能帮助我们在页面填充前或js填充完成后调用。核心方法。
 
@@ -218,14 +218,14 @@ function ocCallJS(params) {
 - (instancetype)initWithSource:(NSString *)source injectionTime:(WKUserScriptInjectionTime)injectionTime forMainFrameOnly:(BOOL)forMainFrameOnly;
 ```
 
-##4.2 WKUserScriptInjectionTime枚举
+## 4.2 WKUserScriptInjectionTime枚举
 
 在WKUserScriptInjectionTime枚举中有两个状态。
 
 1. WKUserScriptInjectionTimeAtDocumentStart：js加载前执行。
 2. WKUserScriptInjectionTimeAtDocumentEnd：js加载后执行。
 
-##4.3 js注入
+## 4.3 js注入
 
 WKUserScript的运行需依托WKUserContentController，接下来我们就为WKWebView注入一个js执行完毕后执行的alert方法。
 
@@ -259,13 +259,13 @@ WKUserScript的运行需依托WKUserContentController，接下来我们就为WKW
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
@@ -273,14 +273,14 @@ WKUserScript的运行需依托WKUserContentController，接下来我们就为WKW
 
 [WKWeb​View](http://nshipster.com/wkwebkit/?utm_campaign=iOS_Dev_Weekly_Issue_161&utm_medium=email&utm_source=iOS%2BDev%2BWeekly)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-11-30 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

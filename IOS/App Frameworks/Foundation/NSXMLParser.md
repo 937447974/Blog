@@ -20,11 +20,11 @@
 
 ----
 
-#<a id="1">1 NSXMLParser
+# <a id="1">1 NSXMLParser
 
 使用NSXMLParser，我们可以解析XML文档。NSXMLParser通过委托代理的方式，将XML中的元素通过代理返回
 
-##<a id="1.1">1.1 Initializing a Parser Object
+## <a id="1.1">1.1 Initializing a Parser Object
 
 ```swift
 /// 通过xml路径生成
@@ -38,14 +38,14 @@ public init(data: NSData)
 public convenience init(stream: NSInputStream)
 ```
 
-##<a id="1.2">1.2 Managing Delegates
+## <a id="1.2">1.2 Managing Delegates
 
 ```swift
 /// 代理
 unowned(unsafe) public var delegate: NSXMLParserDelegate?
 ```
 
-##<a id="1.3">1.3 Managing Parser Behavior
+## <a id="1.3">1.3 Managing Parser Behavior
 
 ```swift
 /// 是否显示限定名称（parser:didStartElement:namespaceURI:qualifiedName:attributes: and parser:didEndElement:namespaceURI:qualifiedName:）
@@ -58,7 +58,7 @@ public var shouldReportNamespacePrefixes: Bool
 public var shouldResolveExternalEntities: Bool
 ```
 
-##<a id="1.4">1.4 Parsing
+## <a id="1.4">1.4 Parsing
 
 ```swift
 /// 开始解析
@@ -71,7 +71,7 @@ public func abortParsing()
 @NSCopying public var parserError: NSError? { get }
 ```
 
-##<a id="1.5">1.5 Obtaining Parser State
+## <a id="1.5">1.5 Obtaining Parser State
 
 ```swift
 /// 外部实体的公共标识符
@@ -84,7 +84,7 @@ public var lineNumber: Int { get }
 public var columnNumber: Int { get }
 ```
 
-#<a id="2">2 NSXMLParserDelegate
+# <a id="2">2 NSXMLParserDelegate
 
 关于NSXMLParserDelegate多数情况下，我们只使用下面几个协议。
 
@@ -102,9 +102,9 @@ optional public func parser(parser: NSXMLParser, parseErrorOccurred parseError: 
 optional public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String])
 ```
 
-#<a id="3">3 实战演练
+# <a id="3">3 实战演练
 
-##<a id="3.1">3.1 XML文件
+## <a id="3.1">3.1 XML文件
 
 在项目中创建文件，文件名为Main.xml
 
@@ -116,7 +116,7 @@ optional public func parser(parser: NSXMLParser, didStartElement elementName: St
 </users>
 ```
 
-##<a id="3.2">3.2 测试
+## <a id="3.2">3.2 测试
 
 ```swift
 //
@@ -174,13 +174,13 @@ class YJXMLParserVC: UIViewController, NSXMLParserDelegate {
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [NSXMLParser Class Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSXMLParser_Class/index.html)
 
@@ -188,14 +188,14 @@ class YJXMLParserVC: UIViewController, NSXMLParserDelegate {
 
 [Event-Driven XML Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/XMLParsing/XMLParsing.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-08 | 博文完成 |
 | 2016-03-10 | 博文更新，增加NSXMLParser的相关说明 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

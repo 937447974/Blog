@@ -1,8 +1,8 @@
 WCSessionFile主要用于记录WCSession传输文件的相关信息。
 
-#Symbols
+# Symbols
 
-##1 Getting the File Information
+## 1 Getting the File Information
 
 ```swift
 // 文件路径
@@ -15,19 +15,19 @@ open var metadata: [String : Any]? { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [WCSessionFile](https://developer.apple.com/reference/watchconnectivity/wcsessionfile)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：[http://blog.csdn.net/y550918116j](http://blog.csdn.net/y550918116j)
 

@@ -4,7 +4,7 @@
 
 除了已有的协议，你还可以像扩展类一样扩展协议。这些扩展的协议可以实现也可以直接使用。
 
-#语法
+# 语法
 
 协议语法使用了关键字protocol，和其他类型不同的是，它是规范的指定者，无须去实现。下面是一个空得协议。
 
@@ -30,7 +30,7 @@ class SomeClass: SomeSuperclass, FirstProtocol, AnotherProtocol {
 }
 ```
 
-##协议
+## 协议
 
 这里我们设计一个协议，并实现一个简单方法。我们在这里使用了一个简单方法。
 
@@ -71,12 +71,12 @@ protocol YJSomeProtocol: class
 
 &#160;
 
-#代理
+# 代理
 
 在Swift中有各种各样的代理，这些代理都是通过协议来规范的，想知道更多关于代理模式的实现详见我的博文《[23设计模式之代理模式(Proxy)](http://blog.csdn.net/y550918116j/article/details/48605595)》。
 &#160;
 
-#继承
+# 继承
 
 协议也支持继承。
 
@@ -91,7 +91,7 @@ protocol YJAnotherProtocol: YJSomeProtocol {
 继承的好处就是我们可以在一些公共的协议上，添加我们的协议，使之具有延伸性。 
 &#160;
 
-#可选
+# 可选
 
 在swift中又可选链，也就是‘？’和'!'。在这里我们考虑到这种情况，有一个协议里面有5个方法，其中两个方法是必须的，其他3个方法，继承的类不必强制去实现。
 
@@ -124,7 +124,7 @@ class YJSomeClass:NSObject, YJSomeProtocol {
 
 &#160;
 
-#扩展
+# 扩展
 
 协议也支持扩展extension，这也相当于可选。只是在扩展的协议中，需要实现方法。
 
@@ -144,13 +144,13 @@ extension YJSomeProtocol {
 
 ----------
 
-#其他
+# 其他
 
-##参考资料
+## 参考资料
 
  [The Swift Programming Language (Swift 2.1)](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |

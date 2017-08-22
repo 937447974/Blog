@@ -2,7 +2,7 @@ UIViewController 是控制器的基类。生命周期如图所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016062001.png)
 
-##1 Configuring a View Controller Using Nib Files
+## 1 Configuring a View Controller Using Nib Files
 
 ```swift
 /// 通过xib初始化
@@ -14,7 +14,7 @@ public var nibName: String? { get } // The name of the nib to be loaded to insta
 public var nibBundle: NSBundle? { get } // The bundle from which to load the nib.
 ```
 
-##2 Interacting with Storyboards and Segues
+## 2 Interacting with Storyboards and Segues
 
 ```swift
 /// 所在的storyboard
@@ -50,7 +50,7 @@ public func canPerformUnwindSegueAction(action: Selector, fromViewController: UI
 public func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController)
 ```
 
-##3 Managing the View
+## 3 Managing the View
 
 ```swift
 /// 显示的view
@@ -75,7 +75,7 @@ public var title: String?
 public var preferredContentSize: CGSize
 ```
 
-##4 Presenting View Controllers
+## 4 Presenting View Controllers
 
 ```swift
 /// 专场动画的风格
@@ -110,7 +110,7 @@ public var providesPresentationContextTransitionStyle: Bool
 public func disablesAutomaticKeyboardDismissal() -> Bool
 ```
 
-##5 Supporting Custom Transitions and Presentations
+## 5 Supporting Custom Transitions and Presentations
 
 ```swift
 // 转场的代理
@@ -130,7 +130,7 @@ public var presentationController: UIPresentationController? { get }
 public var popoverPresentationController: UIPopoverPresentationController? { get }
 ```
 
-##6 Responding to View Events
+## 6 Responding to View Events
 
 ```swift
 // 视图将要显示
@@ -143,7 +143,7 @@ public func viewWillDisappear(animated: Bool)
 public func viewDidDisappear(animated: Bool)
 ```
 
-##7 Configuring the View’s Layout Behavior
+## 7 Configuring the View’s Layout Behavior
 
 ```swift
 // 布局将要发生改变
@@ -172,7 +172,7 @@ public var extendedLayoutIncludesOpaqueBars: Bool
 public var automaticallyAdjustsScrollViewInsets: Bool
 ```
 
-##8 Testing for Specific Kinds of View Transitions
+## 8 Testing for Specific Kinds of View Transitions
 
 ```swift
 // 是否从父视图移除
@@ -189,7 +189,7 @@ public func isBeingPresented() -> Bool
 public func isBeingDismissed() -> Bool
 ```
 
-##9 Configuring the View Rotation Settings
+## 9 Configuring the View Rotation Settings
 
 ```swift
 // 内容是否自动旋转
@@ -206,7 +206,7 @@ public func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrienta
 public class func attemptRotationToDeviceOrientation()
 ```
 
-##10 Adapting to Environment Changes
+## 10 Adapting to Environment Changes
 
 ```swift
 // 显示副视图
@@ -217,7 +217,7 @@ public func collapseSecondaryViewController(secondaryViewController: UIViewContr
 public func separateSecondaryViewControllerForSplitViewController(splitViewController: UISplitViewController) -> UIViewController?
 ```
 
-##11 Managing Child View Controllers in a Custom Container
+## 11 Managing Child View Controllers in a Custom Container
 
 ```swift
 // 子控制器
@@ -249,7 +249,7 @@ public func setOverrideTraitCollection(collection: UITraitCollection?, forChildV
 public func overrideTraitCollectionForChildViewController(childViewController: UIViewController) -> UITraitCollection?
 ```
 
-##12 Responding to Containment Events
+## 12 Responding to Containment Events
 
 ```swift
 // 将要移动到父VC
@@ -260,7 +260,7 @@ public func willMoveToParentViewController(parent: UIViewController?)
 public func didMoveToParentViewController(parent: UIViewController?)
 ```
 
-##13 Getting Other Related View Controllers
+## 13 Getting Other Related View Controllers
 
 ```swift
 // 父控制器
@@ -279,14 +279,14 @@ public var splitViewController: UISplitViewController? { get }
 public var tabBarController: UITabBarController? { get }
 ```
 
-##14 Handling Memory Warnings
+## 14 Handling Memory Warnings
 
 ```swift
 // 内存警告
 public func didReceiveMemoryWarning()
 ```
 
-##15 Managing State Restoration
+## 15 Managing State Restoration
 
 ```swift
 // 状态标示符
@@ -306,7 +306,7 @@ public func decodeRestorableStateWithCoder(coder: NSCoder)
 public func applicationFinishedRestoringState()
 ```
 
-##16 Supporting App Extensions
+## 16 Supporting App Extensions
 
 ```swift
 // request的上下文
@@ -314,7 +314,7 @@ public func applicationFinishedRestoringState()
 public var extensionContext: NSExtensionContext? { get }
 ```
 
-##17 Working With 3D Touch Previews and Preview Quick Actions
+## 17 Working With 3D Touch Previews and Preview Quick Actions
 
 ```swift
 // 注册3D Touch的显示view
@@ -328,7 +328,7 @@ public func unregisterForPreviewingWithContext(previewing: UIViewControllerPrevi
 public func previewActionItems() -> [UIPreviewActionItem]
 ```
 
-##18 Managing the Status Bar
+## 18 Managing the Status Bar
 
 ```swift
 // 状态栏样式控制器
@@ -354,7 +354,7 @@ public func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation
 public func setNeedsStatusBarAppearanceUpdate()
 ```
 
-##19 Configuring a Navigation Interface
+## 19 Configuring a Navigation Interface
 
 ```swift
 // 导航按钮
@@ -369,14 +369,14 @@ public var toolbarItems: [UIBarButtonItem]?
 public func setToolbarItems(toolbarItems: [UIBarButtonItem]?, animated: Bool)
 ```
 
-##20 Configuring Tab Bar Items
+## 20 Configuring Tab Bar Items
 
 ```swift
 // tabbar的按钮
 public var tabBarItem: UITabBarItem!
 ```
 
-##21 Adding Editing Behaviors to Your View Controller
+## 21 Adding Editing Behaviors to Your View Controller
 
 ```swift
 // 是否编辑模式
@@ -387,7 +387,7 @@ public func setEditing(editing: Bool, animated: Bool)
 public func editButtonItem() -> UIBarButtonItem
 ```
 
-##22 Accessing the Available Key Commands
+## 22 Accessing the Available Key Commands
 
 ```swift
 // 添加UIKeyCommand
@@ -398,7 +398,7 @@ public func addKeyCommand(keyCommand: UIKeyCommand)
 public func removeKeyCommand(keyCommand: UIKeyCommand)
 ```
 
-##23 Managing Banner Ads
+## 23 Managing Banner Ads
 
 ```swift
 // 能否显示广告位
@@ -409,7 +409,7 @@ public var canDisplayBannerAds: Bool
 public var originalContentView: UIView! { get }
 ```
 
-##24 Determining Whether the View Controller is Displaying an Ad
+## 24 Determining Whether the View Controller is Displaying an Ad
 
 ```swift
 // 是否满屏幕显示
@@ -420,7 +420,7 @@ public var presentingFullScreenAd: Bool { get }
 public var displayingBannerAd: Bool { get }
 ```
 
-##25 Managing Interstitial Ads
+## 25 Managing Interstitial Ads
 
 ```swift
 // 准备显示广告资产
@@ -439,20 +439,20 @@ public var shouldPresentInterstitialAd: Bool { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIViewController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-20 | 博文创建 |
 | 2016-07-21 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

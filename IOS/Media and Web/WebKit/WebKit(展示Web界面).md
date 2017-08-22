@@ -20,9 +20,9 @@
 
 > WebKit的核心就是WKWebView控件。
 
-#1 项目
+# 1 项目
 
-##1.1 搭建项目
+## 1.1 搭建项目
 
 这次启用了和讲解UIWebView相类似的项目。完整项目各位可自行搭建，我这里搭建的项目图如下。
 
@@ -42,7 +42,7 @@
 //  Copyright © 2015年 阳君. All rights reserved.
 //
 
-#import "YJBaseVC.h"
+# import "YJBaseVC.h"
 
 @interface YJBaseVC ()
 
@@ -62,17 +62,17 @@
 
 这里只有一个全局属性webView，它指向一个强引用的WKWebView类。
 
-##1.2 初始化WKWebView
+## 1.2 初始化WKWebView
 
-###1.2.1 增加WebKit库
+### 1.2.1 增加WebKit库
 
 WKWebView的运行都要基于WKWebView库，故我们添加WKWebView库。
 
 ```objc
-#import <WebKit/WebKit.h>
+# import <WebKit/WebKit.h>
 ```
 
-###1.2.2 懒加载WKWebView
+### 1.2.2 懒加载WKWebView
 
 在这里我们使用懒加载的方式加载WKWebView，即使用的时候才添加到View中。
 
@@ -94,9 +94,9 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 }
 ```
 
-#2 显示本地Html页面
+# 2 显示本地Html页面
 
-##2.1 搭建本地Html页面
+## 2.1 搭建本地Html页面
 
 下面就是我为大家搭建的网页源码。
 
@@ -168,7 +168,7 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120101.png)
 
-##2.2 加载Html页面
+## 2.2 加载Html页面
 
 在WKWebView加载页面时常用方法`- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;`。还有其他几种加载方法，可自行研究，这里不在描述。
 
@@ -197,9 +197,9 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015120102.jpg)
 
-#2 网络页面展示
+# 2 网络页面展示
 
-##2.1 加载百度首页
+## 2.1 加载百度首页
 
 在这里我们使用百度首页作为我们要显示的页面。
 
@@ -222,7 +222,7 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 运行项目发现百度首页无法显示。
 
-##2.2 解决网络页面无法显示问题
+## 2.2 解决网络页面无法显示问题
 
 由于IOS9的安全机制更高，苹果不再允许http连接和没有ssl验证的https运行。
 
@@ -244,13 +244,13 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
@@ -258,14 +258,14 @@ WKWebView有一个核心配置器WKWebViewConfiguration，你可以理解它是W
 
 [WKWeb​View](http://nshipster.com/wkwebkit/?utm_campaign=iOS_Dev_Weekly_Issue_161&utm_medium=email&utm_source=iOS%2BDev%2BWeekly)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-01 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

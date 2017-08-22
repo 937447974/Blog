@@ -13,14 +13,14 @@ Social Services各自文档网站链接
 | Twitter | https://dev.twitter.com/docs |
 | LinkedIn | https://developer.linkedin.com/rest |
 
-#1 Initializing Requests
+# 1 Initializing Requests
 
 ```swift
 // 根据具体的参数，初始化一个新的请求对象。
 public /*not inherited*/ init!(forServiceType serviceType: String!, requestMethod: SLRequestMethod, URL url: NSURL!, parameters: [NSObject : AnyObject]!)
 ```
 
-#2 Accessing Properties
+# 2 Accessing Properties
 
 ```swift
 /// 用于授权请求的账号信息
@@ -36,7 +36,7 @@ public var URL: NSURL! { get }
 public var parameters: [NSObject : AnyObject]! { get }
 ```
 
-#3 Sending Requests
+# 3 Sending Requests
 
 ```swift
 // 为请求指定多字段POST body
@@ -53,21 +53,21 @@ public func performRequestWithHandler(handler: SLRequestHandler!)
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Social Framework Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/Social_Framework/index.html)
 
 [SLRequest Class Reference](https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

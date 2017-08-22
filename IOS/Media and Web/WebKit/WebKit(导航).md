@@ -18,7 +18,7 @@
 
 在上一篇博文《[WebKit(刷新)](https://github.com/937447974/Blog/blob/master/WebKit/WebKit(刷新).md)》讲解了刷新网页。接下来讲解网页前进和后退功能。
 
-#1 WekWebView导航相关
+# 1 WekWebView导航相关
 
 在WekWebView中有管理页面前进后后退的属性和方法。
 
@@ -36,9 +36,9 @@
 - (nullable WKNavigation *)goForward;
 ```
 
-#2 实现导航
+# 2 实现导航
 
-##2.1 强引用导航按钮
+## 2.1 强引用导航按钮
 
 我们还是在UINavigationController添加相关按钮。
 
@@ -49,7 +49,7 @@
 @property (nonatomic, strong) UIBarButtonItem *goForwardBarButtonItem; ///< 下一页按钮
 ```
 
-##2.2 创建导航按钮
+## 2.2 创建导航按钮
 
 改造initUIBarButtonItem()方法。
 
@@ -68,7 +68,7 @@
 }
 ```
 
-##2.3 实现导航方法
+## 2.3 实现导航方法
 
 在导航的时候，为了安全，我们先判断一下能否跳转，再执行跳转操作。
 
@@ -88,7 +88,7 @@
 }
 ```
 
-##2.4 导航按钮能否点击
+## 2.4 导航按钮能否点击
 
 为了给用户更好的感觉，我们应该让用户直观的感觉到按钮能否点击。
 
@@ -114,24 +114,24 @@
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Objective-C](https://github.com/937447974/Objective-C)
 
-##参考资料
+## 参考资料
 
 [WebKit Framework Reference](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/WebKit/ObjC_classic/index.html#//apple_ref/doc/uid/TP30000745)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-02 | 博文完成 |
 | 2015-12-12 | 更改链接 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

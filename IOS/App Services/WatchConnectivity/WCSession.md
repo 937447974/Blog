@@ -1,6 +1,6 @@
 WCSession主要用于促进iOS和watchkit中的app交流信息，可快速立刻传递信息。当一边处于后台状态时，另一端传输数据，此时所有业务会在后台执行。
 
-##Configuring and Activating the Session
+## Configuring and Activating the Session
 
 创建和启动session可使用如下代码
 
@@ -14,7 +14,7 @@ if WCSession.isSupported() {
 
 然后通过delegate获取相关信息。
 
-##Supporting Communication with Multiple Apple Watches
+## Supporting Communication with Multiple Apple Watches
 
 当用户切换watch时会发生如下生命周期变化。
 
@@ -22,9 +22,9 @@ if WCSession.isSupported() {
 
 ------
 
-#Symbols
+# Symbols
 
-##1 Getting the Default Session
+## 1 Getting the Default Session
 
 ```swift
 // 是否支持
@@ -33,7 +33,7 @@ open class func isSupported() -> Bool
 open class func `default`() -> WCSession
 ```
 
-##2 Configuring the Session
+## 2 Configuring the Session
 
 ```swift
 // 代理
@@ -45,7 +45,7 @@ open func activate()
 open var activationState: WCSessionActivationState { get }
 ```
 
-##3 Getting the Paired Device Information
+## 3 Getting the Paired Device Information
 
 
 ```swift
@@ -59,14 +59,14 @@ open var isComplicationEnabled: Bool { get }
 open var watchDirectoryURL: URL? { get }
 ```
 
-##4 Determining the Session’s Reachability
+## 4 Determining the Session’s Reachability
 
 ```swift
 // 能否传递信息
 open var isReachable: Bool { get }
 ```
 
-##5 Managing Background Updates
+## 5 Managing Background Updates
 
 ```swift
 // 获取信息
@@ -77,7 +77,7 @@ open func updateApplicationContext(_ applicationContext: [String : Any]) throws
 open var receivedApplicationContext: [String : Any] { get }
 ```
 
-##6 Sending Messages
+## 6 Sending Messages
 
 ```swift
 // 发送[String : Any]信息
@@ -86,7 +86,7 @@ open func sendMessage(_ message: [String : Any], replyHandler: (@escaping ([Stri
 open func sendMessageData(_ data: Data, replyHandler: (@escaping (Data) -> Swift.Void)?, errorHandler: (@escaping (Error) -> Swift.Void)? = nil)
 ```
 
-##7 Updating Complication Data
+## 7 Updating Complication Data
 
 ```swift
 // 剩下的未发送的并发数
@@ -96,7 +96,7 @@ open var remainingComplicationUserInfoTransfers: Int { get }
 open func transferCurrentComplicationUserInfo(_ userInfo: [String : Any] = [:]) -> WCSessionUserInfoTransfer
 ```
 
-##8 Transferring Data in the Background
+## 8 Transferring Data in the Background
 
 ```swift
 // 传输信息
@@ -105,7 +105,7 @@ open func transferUserInfo(_ userInfo: [String : Any] = [:]) -> WCSessionUserInf
 open var outstandingUserInfoTransfers: [WCSessionUserInfoTransfer] { get }
 ```
 
-##9 Transferring Files in the Background
+## 9 Transferring Files in the Background
 
 ```swift
 // 是否有未发送的数据
@@ -121,19 +121,19 @@ open var outstandingFileTransfers: [WCSessionFileTransfer] { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [WCSession](https://developer.apple.com/reference/watchconnectivity/wcsession)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-09 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：[http://blog.csdn.net/y550918116j](http://blog.csdn.net/y550918116j)
 

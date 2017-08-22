@@ -2,7 +2,7 @@ UIScrollView是一个很强大的类，它能提供比手机界面更大的空�
 
 UIScrollView向下延生了三个子类UICollectionView、UITableView和UITextView。这都是我们工作中常用的View。
 
-##1 Managing the Display of Content
+## 1 Managing the Display of Content
 
 ```swift
 // 动态设置原点，即移动
@@ -15,7 +15,7 @@ public var contentSize: CGSize
 public var contentInset: UIEdgeInsets 
 ```
 
-##2 Managing Scrolling
+## 2 Managing Scrolling
 
 ```swift
 // 能否滚动
@@ -52,7 +52,7 @@ public var dragging: Bool { get }
 public var decelerating: Bool { get }
 ```
 
-##3 Managing the Scroll Indicator
+## 3 Managing the Scroll Indicator
 
 ```swift
 // 滚动条的样式
@@ -67,7 +67,7 @@ public var showsVerticalScrollIndicator: Bool
 public func flashScrollIndicators()
 ```
 
-##4 Zooming and Panning
+## 4 Zooming and Panning
 
 ```swift
 // UIPanGestureRecognizer手势
@@ -97,14 +97,14 @@ public var zooming: Bool { get }
 public var zoomBouncing: Bool { get }
 ```
 
-##5 Managing the Delegate
+## 5 Managing the Delegate
 
 ```swift
 // 回调代理
 weak public var delegate: UIScrollViewDelegate?
 ```
 
-##6 Managing the Keyboard
+## 6 Managing the Keyboard
 
 ```swift
 // 键盘与滚动交互
@@ -116,19 +116,19 @@ public var keyboardDismissMode: UIScrollViewKeyboardDismissMode
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIScrollView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-07-25 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

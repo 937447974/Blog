@@ -1,15 +1,15 @@
 NSManagedObject即数据库中的存放每一行数据，多数情况下我们是创建它的子类使用。
 
-#Symbols
+# Symbols
 
-##1 Initializing a Managed Object
+## 1 Initializing a Managed Object
 
 ```swift
 // 初始化
 public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?)
 ```
 
-##2 Getting a Managed Object’s Identity
+## 2 Getting a Managed Object’s Identity
 
 ```swift
 // 实体描述
@@ -18,7 +18,7 @@ open var entity: NSEntityDescription { get }
 open var objectID: NSManagedObjectID { get }
 ```
 
-##3 Getting State Information
+## 3 Getting State Information
 
 ```swift
 // 获取托管对象上下文
@@ -42,7 +42,7 @@ open var faultingState: Int { get }
 open func hasFault(forRelationshipNamed key: String) -> Bool
 ```
 
-##4 Managing Life Cycle and Change Events
+## 4 Managing Life Cycle and Change Events
 
 ```swift
 // 从查询中创建
@@ -73,7 +73,7 @@ open func willTurnIntoFault()
 open func didTurnIntoFault()
 ```
 
-##5 Supporting Key-Value Coding
+## 5 Supporting Key-Value Coding
 
 ```swift
 // 获取值
@@ -86,7 +86,7 @@ open func primitiveValue(forKey key: String) -> Any?
 open func setPrimitiveValue(_ value: Any?, forKey key: String)
 ```
 
-##6 Validation
+## 6 Validation
 
 ```swift
 // 校验数据
@@ -99,7 +99,7 @@ open func validateForInsert() throws
 open func validateForUpdate() throws
 ```
 
-##7 Supporting Key-Value Observing
+## 7 Supporting Key-Value Observing
 
 ```swift
 // 键值对观察支持
@@ -113,7 +113,7 @@ open func willChangeValue(forKey inKey: String, withSetMutation inMutationKind: 
 open func didChangeValue(forKey inKey: String, withSetMutation inMutationKind: NSKeyValueSetMutationKind, using inObjects: Set<AnyHashable>)
 ```
 
-##8 Initializers
+## 8 Initializers
 
 ```swift
 // 初始化
@@ -121,7 +121,7 @@ open func didChangeValue(forKey inKey: String, withSetMutation inMutationKind: N
 public convenience init(context moc: NSManagedObjectContext)
 ```
 
-##9 Instance Properties
+## 9 Instance Properties
 
 ```swift
 // 是否瞬态变化
@@ -129,7 +129,7 @@ public convenience init(context moc: NSManagedObjectContext)
 open var hasPersistentChangedValues: Bool { get }
 ```
 
-##10 Type Properties
+## 10 Type Properties
 
 ```swift
 // Distinguish between changes that should and should not dirty the object for any key unknown to Core Data.
@@ -137,7 +137,7 @@ open var hasPersistentChangedValues: Bool { get }
 open class var contextShouldIgnoreUnmodeledPropertyChanges: Bool { get }
 ```
 
-##11 Instance Methods
+## 11 Instance Methods
 
 ```swift
 // 批量获取有关系的对象ID
@@ -145,7 +145,7 @@ open class var contextShouldIgnoreUnmodeledPropertyChanges: Bool { get }
 open func objectIDs(forRelationshipNamed key: String) -> [NSManagedObjectID]
 ```
 
-##12 Type Methods
+## 12 Type Methods
 
 ```swift
 // 实体描述
@@ -160,19 +160,19 @@ open class func fetchRequest() -> NSFetchRequest<NSFetchRequestResult>
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSManagedObject](https://developer.apple.com/reference/coredata/nsmanagedobject)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

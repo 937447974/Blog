@@ -25,11 +25,11 @@
 
 ---
 
-#<a id="UICollectionViewCell"/>1 UICollectionViewCell
+# <a id="UICollectionViewCell"/>1 UICollectionViewCell
 
 UICollectionViewCell就是UICollectionView显示的一个一个元素，你可以通过它定制各种精美的界面。原始样式很简单，就是常用的View。多数情况在开发中我们会自定义各种各样的通用Cell供其他人使用，这篇博文也会介绍自定义Cell。
 
-##<a id="Cell中的View"/>1.1 Cell中的View
+## <a id="Cell中的View"/>1.1 Cell中的View
 
 ```
 /// 自定义控件的父View
@@ -40,7 +40,7 @@ var backgroundView: UIView?
 var selectedBackgroundView: UIView?
 ```
 
-##<a id="管理Cell的状态"/>1.2 管理Cell的状态
+## <a id="管理Cell的状态"/>1.2 管理Cell的状态
 
 ```swift
 /// 是否选中
@@ -49,7 +49,7 @@ var selected: Bool
 var highlighted: Bool
 ```
 
-#<a id="自定义UICollectionViewCell"/>2 自定义UICollectionViewCell
+# <a id="自定义UICollectionViewCell"/>2 自定义UICollectionViewCell
 
 我们知道UICollectionViewCell是UICollectionReusableView的子类，而UICollectionReusableView是UICollectionView的Header和Footer。也就意味着自定义UICollectionViewCell的方式也同样适用于自定义Header和Footer。
 
@@ -57,19 +57,19 @@ var highlighted: Bool
 
 这里我讲解通过xib自定义UICollectionViewCell，这也是我最喜欢的方式。
 
-##<a id="创建xib"/>2.1 创建xib
+## <a id="创建xib"/>2.1 创建xib
 
 创建类YJCollectionViewCell继承UICollectionViewCell，同时勾选"Also create XIB file"。这样同时创建类和xib，并且二者已经关联上了，无须我们做其他配置。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122306.png)
 
-##<a id="配置xib"/>2.2 配置xib
+## <a id="配置xib"/>2.2 配置xib
 
 在YJCollectionViewCell.xib上UILable控件，如下所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015122307.png)
 
-##<a id="类YJCollectionViewCell"/>2.3 类YJCollectionViewCell
+## <a id="类YJCollectionViewCell"/>2.3 类YJCollectionViewCell
 
 类YJCollectionViewCell的源码如下所示。
 
@@ -103,7 +103,7 @@ class YJCollectionViewCell: UICollectionViewCell {
 
 这样就定制了一个通用的UICollectionViewCell。
 
-#<a id="实战演练"/>3 实战演练
+# <a id="实战演练"/>3 实战演练
 
 为了简单点演示效果，这里我使用YJCollectionViewCellVC，并且继承UICollectionViewController。
 
@@ -156,13 +156,13 @@ class YJCollectionViewCellVC: UICollectionViewController {
 
 ----------
 
-#其他
+# 其他
 
-##源代码
+## 源代码
 
 [Swift](https://github.com/937447974/Swift)
 
-##参考资料
+## 参考资料
 
 [UICollectionView Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/index.html)
 
@@ -172,13 +172,13 @@ class YJCollectionViewCellVC: UICollectionViewController {
 
 [UICollectionViewCell Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html)
 
-##文档修改记录
+## 文档修改记录
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2015-12-23 | 博文完成 |
 
-##版权所有
+## 版权所有
 
 CSDN：http://blog.csdn.net/y550918116j
 

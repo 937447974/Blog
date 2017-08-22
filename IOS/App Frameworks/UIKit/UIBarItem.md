@@ -10,7 +10,7 @@ UIBarItem是一个抽象类，我们在开发过程中主要使用其子类UIBar
 
 我们同样可以自定义UIBarButtonItem和UITabBarItem的展示样式，只需通过`UIBarItem.appearance()`获取共享的item即可。
 
-#1 Getting and Setting Properties
+# 1 Getting and Setting Properties
 
 ```swift
 /// 是否可点
@@ -31,7 +31,7 @@ public var landscapeImagePhoneInsets: UIEdgeInsets
 public var tag: Int
 ```
 
-#2 Customizing Appearance
+# 2 Customizing Appearance
 
 ```swift
 /// 根据点击状态设置不同的字体样式
@@ -47,21 +47,21 @@ public func titleTextAttributesForState(state: UIControlState) -> [String : AnyO
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [UIKit Framework Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/index.html)
 
 [UITabBarController Class Reference](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-11 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

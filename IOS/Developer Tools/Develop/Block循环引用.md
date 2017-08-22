@@ -1,4 +1,4 @@
-#1 block循环引用问题
+# 1 block循环引用问题
 
 ```objc
 //
@@ -9,7 +9,7 @@
 //  Copyright © 2016年 阳君. All rights reserved.
 //
 
-#import "DetailViewController.h"
+# import "DetailViewController.h"
 
 @interface DetailViewController ()
 
@@ -40,7 +40,7 @@
 
 当DetailViewController返回上个VC时，发现DetailViewController没有执行dealloc方法释放内存，这就形成了内存泄露。主要由于NSNotificationCenter的block一直持有self，形成了强引用。
 
-#2 ARC模式解决循环引用
+# 2 ARC模式解决循环引用
 
 ARC模式下使用__weak解决循环引用。
 
@@ -55,7 +55,7 @@ ARC模式下使用__weak解决循环引用。
 }
 ```
 
-#3 MRC模式解决循环引用
+# 3 MRC模式解决循环引用
 
 MRC模式下使用__blcok解决循环引用。
 
@@ -70,12 +70,12 @@ MRC模式下使用__blcok解决循环引用。
 }
 ```
 
-#4 ReactiveCocoa解决循环引用。
+# 4 ReactiveCocoa解决循环引用。
 
 我们可以使用第三方库ReactiveCocoa解决循环引用。
 
 ```objc
-#import "RACEXTScope.h"
+# import "RACEXTScope.h"
 
 - (void)viewDidLoad
 {
@@ -93,9 +93,9 @@ MRC模式下使用__blcok解决循环引用。
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Blocks Programming Topics](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html)
 
@@ -103,13 +103,13 @@ MRC模式下使用__blcok解决循环引用。
 
 [ReactiveCocoa Weak-Strong Dance](http://blog.csdn.net/likendsl/article/details/37764813)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-03 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

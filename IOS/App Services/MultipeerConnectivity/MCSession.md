@@ -11,11 +11,11 @@
 
 ----
 
-#<a id="1">1 MCSession
+# <a id="1">1 MCSession
 
 MCSession用于保存MultipeerConnectivity框架通信过程中的会话，并发送相关数据。
 
-##<a id="1.1">1.1 Creating a Session
+## <a id="1.1">1.1 Creating a Session
 
 ```swift
 /// 通过当前设备的MCPeerID初始化MCSession
@@ -34,7 +34,7 @@ public var securityIdentity: [AnyObject]? { get }
 public var encryptionPreference: MCEncryptionPreference { get }
 ```
 
-##<a id="1.2">1.2 Managing Peers Manually
+## <a id="1.2">1.2 Managing Peers Manually
 
 ```swift
 /// 手动连接某台设备
@@ -50,7 +50,7 @@ public var connectedPeers: [MCPeerID] { get }
 public func nearbyConnectionDataForPeer(peerID: MCPeerID, withCompletionHandler completionHandler: (NSData, NSError?) -> Void)
 ```
 
-##<a id="1.3">1.3 Sending Data and Resources
+## <a id="1.3">1.3 Sending Data and Resources
 
 ```swift
 /// 发送NSData数据到其他设备
@@ -63,18 +63,18 @@ public func sendResourceAtURL(resourceURL: NSURL, withName resourceName: String,
 public func startStreamWithName(streamName: String, toPeer peerID: MCPeerID) throws -> NSOutputStream
 ```
 
-##<a id="1.4">1.4 Leaving a Session
+## <a id="1.4">1.4 Leaving a Session
 
 ```swift
 /// 从会话中断开连接
 public func disconnect()
 ```
 
-#<a id="2">2 MCSessionDelegate
+# <a id="2">2 MCSessionDelegate
 
 MCSessionDelegate用于监听处理MCSession的相关事件。
 
-##<a id="2.1">2.1 MCSession Delegate Methods
+## <a id="2.1">2.1 MCSession Delegate Methods
 
 ```swift
 // 附近设备的会话状态发生变化
@@ -106,13 +106,13 @@ public func session(session: MCSession, didReceiveStream stream: NSInputStream, 
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Multipeer Connectivity Framework Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/index.html)
 
@@ -120,13 +120,13 @@ public func session(session: MCSession, didReceiveStream stream: NSInputStream, 
 
 [MCSessionDelegate Protocol Reference](https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-22 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

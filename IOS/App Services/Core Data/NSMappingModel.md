@@ -2,9 +2,9 @@ NSMappingModel是映射模型，用于比较两个托管对象模型之间的差
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2016102601.png)
 
-#Symbols
+# Symbols
 
-##1 Creating a Mapping
+## 1 Creating a Mapping
 
 ```swift
 // 通过托管对象模型初始化
@@ -16,7 +16,7 @@ open class func inferredMappingModel(forSourceModel sourceModel: NSManagedObject
 public init?(contentsOf url: URL?)
 ```
 
-##2 Managing Entity Mappings
+## 2 Managing Entity Mappings
 
 ```swift
 // 映射数组
@@ -29,19 +29,19 @@ open var entityMappingsByName: [String : NSEntityMapping] { get }
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSMappingModel](https://developer.apple.com/reference/coredata/nsmappingmodel)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-26 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

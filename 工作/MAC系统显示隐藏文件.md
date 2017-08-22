@@ -2,7 +2,7 @@
 
 ```
 defaults write com.apple.finder AppleShowAllFiles -bool true
-#或
+# 或
 defaults write com.apple.finder AppleShowAllFiles YES
 ```
 
@@ -10,7 +10,7 @@ defaults write com.apple.finder AppleShowAllFiles YES
 
 ```
 defaults write com.apple.finder AppleShowAllFiles -bool false
-#或
+# 或
 defaults write com.apple.finder AppleShowAllFiles NO
 ```
 

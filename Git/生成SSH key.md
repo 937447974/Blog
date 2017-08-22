@@ -1,6 +1,6 @@
 使用git的过程中，我们会初始化创建关联服务器的SSH key.
 
-#1 设置用户名和邮箱
+# 1 设置用户名和邮箱
 
 开发过程中，提交的时候会在log中显示用户名和密码，便于管理。
 
@@ -9,7 +9,7 @@ $ git config --global user.name "阳君"
 $ git config --global user.email "937447974@qq.com"
 ```
 
-#2 检查现有的SSH keys
+# 2 检查现有的SSH keys
 
 在创建SSH keys之前，我们可以看看电脑内是否有SSH keys秘钥。
 
@@ -38,7 +38,7 @@ $ ls ~/.ssh
 $ cat ~/.ssh/id_rsa.pub
 ```
 
-#3 生成新的SSH key
+# 3 生成新的SSH key
 
 如果没创建SSH key，我们可以创建新的SSH key。
 
@@ -63,7 +63,7 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
-#4 添加SSH key到ssh-agent
+# 4 添加SSH key到ssh-agent
 
 ```
 # start the ssh-agent in the background
@@ -79,19 +79,19 @@ $ssh-add ~/.ssh/id_rsa
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [Generating an SSH key](https://help.github.com/articles/generating-an-ssh-key/)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-03-01 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

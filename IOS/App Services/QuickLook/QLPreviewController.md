@@ -14,7 +14,7 @@
 
 ----
 
-#<a id="1">1 QLPreviewController
+# <a id="1">1 QLPreviewController
 
 QLPreviewController是预览文件的UIViewController。其支持的文件类型有：
 
@@ -26,7 +26,7 @@ QLPreviewController是预览文件的UIViewController。其支持的文件类型
 6. Text files whose uniform type identifier (UTI) conforms to the public.text type (see Uniform Type Identifiers Reference)
 7. Comma-separated value (csv) files
 
-##<a id="1.1">1.1 Configuring a Quick Look Preview Controller
+## <a id="1.1">1.1 Configuring a Quick Look Preview Controller
 
 ```swift
 /// QLPreviewControllerDataSource代理
@@ -35,7 +35,7 @@ weak public var dataSource: QLPreviewControllerDataSource?
 weak public var delegate: QLPreviewControllerDelegate?
 ```
 
-##<a id="1.2">1.2 Managing Item Previews
+## <a id="1.2">1.2 Managing Item Previews
 
 ```swift
 /// 文件能否显示
@@ -54,11 +54,11 @@ public var currentPreviewItemIndex: Int
 public var currentPreviewItem: QLPreviewItem? { get }
 ```
 
-#<a id="2">2 QLPreviewControllerDataSource
+# <a id="2">2 QLPreviewControllerDataSource
 
 QLPreviewControllerDataSource用于显示文件。
 
-##<a id="2.1">2.1 Providing Data to a Quick Look Preview Controller
+## <a id="2.1">2.1 Providing Data to a Quick Look Preview Controller
 
 ```swift
 /// 可显示的Item数量
@@ -70,11 +70,11 @@ public func numberOfPreviewItemsInPreviewController(controller: QLPreviewControl
 public func previewController(controller: QLPreviewController, previewItemAtIndex index: Int) -> QLPreviewItem
 ```
 
-#<a id="3">3 QLPreviewControllerDelegate
+# <a id="3">3 QLPreviewControllerDelegate
 
 QLPreviewControllerDelegate用于操作文件。
 
-##<a id="3.1">3.1 Responding to Preview Requests
+## <a id="3.1">3.1 Responding to Preview Requests
 
 ```swift
 /// QLPreviewController将要关闭
@@ -94,7 +94,7 @@ optional public func previewController(controller: QLPreviewController, frameFor
 optional public func previewController(controller: QLPreviewController, transitionImageForPreviewItem item: QLPreviewItem, contentRect: UnsafeMutablePointer<CGRect>) -> UIImage
 ```
 
-##<a id="3.2">3.2 Responding to User Actions
+## <a id="3.2">3.2 Responding to User Actions
 
 ```swift
 /// 能否打开URL
@@ -106,13 +106,13 @@ optional public func previewController(controller: QLPreviewController, shouldOp
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Quick Look Framework Reference for iOS](https://developer.apple.com/library/ios/documentation/QuickLook/Reference/QuickLookFrameworkReference_iPhoneOS/index.html)
 
@@ -122,13 +122,13 @@ optional public func previewController(controller: QLPreviewController, shouldOp
 
 [QLPreviewControllerDataSource Protocol Reference](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/QLPreviewControllerDataSource_Protocol/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-24 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

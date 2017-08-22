@@ -2,7 +2,7 @@
 
 现在有了第三种方案，使用SafariServices库，它能帮助我们在App中快速继承Safari的界面而无需跳转到Safari App。
 
-#Classes
+# Classes
 
 - NSObject
     - SFContentBlockerManager 通知Safari加载过滤规则。
@@ -19,23 +19,23 @@
 
 ----------
 
-#Appendix
+# Appendix
 
-##Sample Code
+## Sample Code
 
 [Swift](https://github.com/937447974/Swift)
 
-##Related Documentation
+## Related Documentation
 
 [Safari Services Framework Reference](https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SafariServicesFramework_Ref/index.html)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-01-21 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 

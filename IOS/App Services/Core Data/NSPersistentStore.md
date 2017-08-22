@@ -1,15 +1,15 @@
 NSPersistentStore是持久化存储核心数据的抽象类，可以理解为持久化存储区。持久化存储区支持的数据类型为SQLite、二进制、XML和内存。
 
-#Symbols
+# Symbols
 
-##1 Initializing a Persistent Store
+## 1 Initializing a Persistent Store
 
 ```swift
 // 初始化
 public init(persistentStoreCoordinator root: NSPersistentStoreCoordinator?, configurationName name: String?, at url: URL, options: [AnyHashable : Any]? = nil)
 ```
 
-##2 Working with State Information
+## 2 Working with State Information
 
 ```swift
 // 类型
@@ -28,7 +28,7 @@ open var identifier: String!
 open var isReadOnly: Bool
 ```
 
-##3 Managing Metadata
+## 3 Managing Metadata
 
 ```swift
 // 根据地址获取持久化存储区的元数据
@@ -41,7 +41,7 @@ open var metadata: [String : Any]!
 open var metadata: [String : Any]!
 ```
 
-##4 Setup and Teardown
+## 4 Setup and Teardown
 
 ```swift
 // 关联到持久化存储协调器
@@ -50,7 +50,7 @@ open func didAdd(to coordinator: NSPersistentStoreCoordinator)
 open func willRemove(from coordinator: NSPersistentStoreCoordinator?)
 ```
 
-##5 Supporting Migration
+## 5 Supporting Migration
 
 ```swift
 // 获取商店的迁移管理器类
@@ -62,19 +62,19 @@ open class func migrationManagerClass() -> Swift.AnyClass
 
 ----------
 
-#Appendix
+# Appendix
 
-##Related Documentation
+## Related Documentation
 
 [NSPersistentStore](https://developer.apple.com/reference/coredata/nspersistentstore)
 
-##Revision History
+## Revision History
 
 | 时间 | 描述 |
 | ---- | ---- |
 | 2016-10-24 | 博文完成 |
 
-##Copyright
+## Copyright
 
 CSDN：http://blog.csdn.net/y550918116j
 
