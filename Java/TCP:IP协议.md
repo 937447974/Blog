@@ -115,6 +115,12 @@ Https协议=http+通信加密+证书+完整性保护=http+ssl/tls协议。https�
 
 # Appendix
 
+## Related Documentation
+
+[List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
+[就是要你懂 TCP](http://jm.taobao.org/2017/06/08/20170608/)
+
 ## Revision History
 
 | 时间 | 描述 |
