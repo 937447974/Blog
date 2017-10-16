@@ -1,48 +1,48 @@
-Bean 在 Spring中，由 Spring IoC 容器管理的，构成程序骨架的这些对象叫做Bean。 Bean对象是指经过IoC容器实例化，组装和管理的对象。此外，Bean 就是应用程序中诸多对象之一。Bean 和 Bean 的依赖被容器所使用的配置元数据所反射。
+Bean 在 Spring 中，由 Spring IoC 容器管理的，构成程序骨架的这些对象叫做 Bean。 Bean 对象是指经过IoC容器实例化，组装和管理的对象。此外，Bean 就是应用程序中诸多对象之一。Bean 和 Bean 的依赖被容器所使用的配置元数据所反射。
 
-#1 Bean overview
+# 1 Bean overview
 
-Spring IoC 容器管理一个或者多个 bean。 bean 主要通过 xml 和 java 的形式配置元数据创建。实际开发中，我们会两种方式结合使用。
+Spring IoC 容器管理一个或者多个 Bean。 Bean 主要通过 xml 和 java 的形式配置元数据创建。实际开发中，我们会两种方式结合使用。
 
 Bean 提供给我们的配置主要有以下几个方面。
 
-1. 限定包类名称:典型的实际实现是定义 bean 的类。
-2. bean 行为配置元素，定义了容器中的 Bean 应该如何行为(范围、生命周期回调,等等)。
-3. bean 需要引用其他 bean 来完成工作,这些引用也称为合作者或依赖关系。
-4. 其他配置设置来设置新创建的对象,例如,连接使用 bean 的数量管理连接池,或者池的大小限制。
+1. 限定包类名称:典型的实际实现是定义 Bean 的类。
+2. Bean 行为配置元素，定义了容器中的 Bean 应该如何行为(范围、生命周期回调,等等)。
+3. Bean 需要引用其他 Bean 来完成工作，这些引用也称为合作者或依赖关系。
+4. 其他配置设置来设置新创建的对象，例如，连接使用 Bean 的数量管理连接池，或者池的大小限制。
 
 这些配置主要通过以下属性控制。
 
 | 属性 | 描述 |
 | --- | --- |
-| id | bean 的唯一标识符 |
-| class | bean的具体实现类 |
-| name | bean 的名称，多个名称时用逗号或分号隔开 |
-| scope | bean 的作用域，其属性值有 singleton、prototype、request、session、application 和 websocket。默认值为 singleton。|
-| constructor arguments | <bean> 的子元素，可以使用此元素传入构造参数进行实例化。该元素的index是从0开始的，type 指定构造参数的类型。|
-| properties | <bean> 的子元素，通过它可直接对 bean 中属性赋值。 |
+| id | Bean 的唯一标识符 |
+| class | Bean的具体实现类 |
+| name | Bean 的名称，多个名称时用逗号或分号隔开 |
+| scope | Bean 的作用域，其属性值有 singleton、prototype、request、session、application 和 websocket。默认值为 singleton。|
+| constructor arguments | `<bean>` 的子元素，可以使用此元素传入构造参数进行实例化。该元素的index是从0开始的，type 指定构造参数的类型。|
+| properties | `<bean>` 的子元素，通过它可直接对 Bean 中属性赋值。 |
 | autowiring mode | 自动装配的方式，可以通过类型、名称或构造方法等装配 |
 | lazy-initialization mode | 是否延迟初始化 |
 | initialization method | 初始化的方法 |
-| destruction method | 销毁bean的回调 |
+| destruction method | 销毁Bean的回调 |
 
-> 如果在 bean 中为指定 id 和 name，则 spring 会将 class 值当作 id 使用。
+> 如果在 Bean 中为指定 id 和 name，则 spring 会将 class 值当作 id 使用。
 
 ## 1.1 Naming beans
 
-每个 bean 都有一个或多个标识符。这些标识符在容器托管 bean 必须是唯一的。bean 通常只有一个标识符，但如果它需要不止一个，多个名称时用逗号(,),分号(;),或白色空格进行分隔。我们还可以考虑额外的别名命名。别名的方式如下。
+每个 Bean 都有一个或多个标识符。这些标识符在容器托管 Bean 必须是唯一的。Bean 通常只有一个标识符，但如果它需要不止一个，多个名称时用逗号(,),分号(;),或白色空格进行分隔。我们还可以考虑额外的别名命名。别名的方式如下。
 
 ```java
 <alias name="fromName" alias="toName"/>
 ```
 
-通过这样的方式， fromName 和 toName 则指向同一个 bean 对象。
+通过这样的方式， fromName 和 toName 则指向同一个 Bean 对象。
 
 spring 也提供了java注解(`@Bean`)的方式命名。
 
 ## 1.2 Instantiating beans
 
-spring 为 bean 的初始化提供了三种方式，分别是构造函数、静态工厂和实例工厂方式。
+Spring 为 Bean 的初始化提供了三种方式，分别是构造函数、静态工厂和实例工厂方式。
 
 ### 1.2.1 构造函数实例化
 
@@ -54,11 +54,11 @@ spring 为 bean 的初始化提供了三种方式，分别是构造函数、静�
 <bean name="anotherExample" class="examples.ExampleBeanTwo"/>
 ```
 
-spring 默认会调用无参数的构造方式初始化bean，这种方式简洁优雅，我们无需要添加任何代码。
+Spring 默认会调用无参数的构造方式初始化 Bean，这种方式简洁优雅，我们无需要添加任何代码。
 
 ### 1.2.2 静态工厂方式实例化
 
-当采用静态工厂方法创建 bean 时，除了需要指定 class 属性外，还需要通过 factory-method 属性来指定创建 bean 实例的工厂方法。
+当采用静态工厂方法创建 Bean 时，除了需要指定 class 属性外，还需要通过 factory-method 属性来指定创建 Bean 实例的工厂方法。
 
 ```xml
 <bean id="clientService"
@@ -66,7 +66,7 @@ spring 默认会调用无参数的构造方式初始化bean，这种方式简洁
         factory-method="createInstance"/>
 ```
 
-下面直接使用 ClientService 的 createInstance 方法初始化bean。
+下面直接使用 ClientService 的 createInstance 方法初始化Bean。
 
 ```java
 public class ClientService {
@@ -81,9 +81,9 @@ public class ClientService {
 
 ### 1.2.3 工厂方式实例化
 
-与通过静态工厂方式实例化类似，通过调用工厂实例的非静态方法进行实例化。 使用这种方式时，class属性置为空，而factory-bean属性必须指定为当前(或其祖先)容器中包含工厂方法的bean的名称，而该工厂bean的工厂方法本身必须通过factory-method属性来设定。
+与通过静态工厂方式实例化类似，通过调用工厂实例的非静态方法进行实例化。 使用这种方式时，class属性置为空，而 factory-bean 属性必须指定为当前(或其祖先)容器中包含工厂方法的 Bean 的名称，而该工厂 Bean 的工厂方法本身必须通过 factory-method 属性来设定。
 
-这里演示一个工厂创建多个bean的方式。
+这里演示一个工厂创建多个 Bean 的方式。
 
 ```xml
 <bean id="serviceLocator" class="examples.DefaultServiceLocator">
@@ -99,7 +99,7 @@ public class ClientService {
     factory-method="createAccountServiceInstance"/>
 ```
 
-使用 DefaultServiceLocator 创建了 clientService 和 accountService 两个bean。
+使用 DefaultServiceLocator 创建了 clientService 和 accountService 两个Bean。
 
 ```java
 public class DefaultServiceLocator {
@@ -122,7 +122,7 @@ public class DefaultServiceLocator {
 
 # 2 Dependencies
 
-一般情况下企业应用不会只有一个对象（或者是Spring Bean）。多个 bean 协同工作时会产生了依赖关系。
+一般情况下企业应用不会只有一个对象（Spring Bean）。多个 Bean 协同工作时会产生了依赖关系。
 
 ```xml
 <bean id="exampleBean" class="examples.ExampleBean">
@@ -148,13 +148,13 @@ spring 通过 java 和注解的方式为我们提供了优雅的解决方案，�
 
 spring 中定义了一系列的注解，常用的注解如下：
 
-1. @Component：表示一个组件 bean，存在于项目中的任何层；
-2. @Repository：表示 dao 层的bean；
-3. @Service：表示业务层的 bean；
-4. @Controller：表示 控制层的 bean，如 spring mvc 的控制器；
-5. @Autowired: 用于对 bean 属性变量、属性的setter方法及构造方法进行标注，配合对应的处理器完成 bean 的自动配置工作;
-6. @Resource: 指定装配方式，其中 name 代表安装名称装配，type 代表按照类型装配;
-7. @Qualifier: 与 @Autowired 配合使用，会将默认的按 bean 类型装配修改为按bean的实例名称装配，实例名称由 @Qualifier 定义;
+1. @Component：表示一个组件 Bean，存在于项目中的任何层；
+2. @Repository：表示 dao 层的Bean；
+3. @Service：表示业务层的 Bean；
+4. @Controller：表示 控制层的 Bean，如 spring mvc 的控制器；
+5. @Autowired: 用于对 Bean 属性变量、属性的setter方法及构造方法进行标注，配合对应的处理器完成 Bean 的自动配置工作;
+6. @Resource: 指定装配方式，其中 name 代表按照名称装配，type 代表按照类型装配;
+7. @Qualifier: 与 @Autowired 配合使用，会将默认的按 Bean 类型装配修改为按Bean的实例名称装配，实例名称由 @Qualifier 定义;
 8. @Value：通过 @Value 加载的属性，可以通过资源文件读取相关信息，如`@Value("${customer.type}")`，主要用于定义配置参数。
 
 下面介绍一个特殊的业务场景，一个接口有多个实现。这样的业务场景下，我们可以按照名称装配。
@@ -169,7 +169,7 @@ public class BeanServiceImpl2 implements BeanService {
 private BeanService service2;
 ```
 
-这里建议名称加上包名，保证bean在项目中唯一。如果类移动后，我们修改了 bean 名称，又不想引起外部的更改，也很简单。取一个别名即可。
+这里建议名称加上包名，保证Bean在项目中唯一。如果类移动后，我们修改了 Bean 名称，又不想引起外部的更改，也很简单。取一个别名即可。
 
 ```java
 @Service("BeanServiceImpl2")
@@ -184,14 +184,14 @@ public class BeanServiceImpl2 implements BeanService {
 
 # 3 Bean scopes
 
-在开发 bean 的过程中，我们不仅可以自定义创建的方式，相互之间的依赖关系。我们还可以定制 bean 的作用域，这使得我们可以更进一步掌控项目。
+在开发 Bean 的过程中，我们不仅可以自定义创建的方式，相互之间的依赖关系。我们还可以定制 Bean 的作用域，这使得我们可以更进一步掌控项目。
 
-spring 为 bean 定制了 6 种作用域。
+spring 为 Bean 定制了 6 种作用域。
 
 | 作用域 | 注解 | 说明 |
 | ---- | ---- | ---- |
 | singleton |  | 默认单例模式，项目中只会有一个实例。 |
-| prototype | @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) | 原型模式，每次依赖注入都会创建一个新的 bean |
+| prototype | @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) | 原型模式，每次依赖注入都会创建一个新的 Bean |
 | request | @RequestScope | 一个HTTP请求会产生一个Bean对象，也就是说，每一个HTTP请求都有自己的Bean实例。只在基于web的Spring ApplicationContext中可用 |
 | session | @SessionScope | 限定一个Bean的作用域为HTTPsession的生命周期。同样，只有基于web的Spring ApplicationContext才能使用 | 
 | application |@ApplicationScope | 限定一个Bean的作用域为ServletContext的生命周期。同样，只有基于web的Spring ApplicationContext可用 |
@@ -207,11 +207,11 @@ spring 为 bean 定制了 6 种作用域。
 
 ## 3.2 The prototype scope
 
-非单例的，原型的Bean指的就是每次请求Bean实例的时候，返回的都是新实例的Bean对象。对需要保持会话状态的 Bean 应该使用 prototype 作用域。
+非单例的，原型的 Bean 指的就是每次请求 Bean 实例的时候，返回的都是新实例的 Bean 对象。对需要保持会话状态的 Bean 应该使用 prototype 作用域。
 
 ![](https://docs.spring.io/spring/docs/5.0.0.RELEASE/spring-framework-reference/images/prototype.png)
 
-下面的例子展示了XML中如何定义一个原型的Bean：
+下面的例子展示了XML中如何定义一个原型的 Bean：
 
 ```xml
 <bean id="accountService" class="com.foo.DefaultAccountService" scope="prototype"/>
@@ -219,19 +219,17 @@ spring 为 bean 定制了 6 种作用域。
 
 ## 3.3 Request, session, application, and WebSocket scopes
 
-request, session, application, 和 websocket 这四个作用域都是只有在基于 web 的 Spring ApplicationContext实现的（比如XmlWebApplicationContext）中才能使用。 如果仅仅在常规的Spring IoC 容器中（ClassPathXmlApplicationContext）使用这些作用域，那么将会抛出一个IllegalStateException 来说明使用了未知的作用域。
+request, session, application, 和 websocket 这四个作用域都是只有在基于 web 的 Spring ApplicationContext 实现的（比如XmlWebApplicationContext）中才能使用。 如果仅仅在常规的Spring IoC 容器中（ClassPathXmlApplicationContext）使用这些作用域，那么将会抛出一个IllegalStateException 来说明使用了未知的作用域。
 
-如果使用了 Spring Web MVC 框架的话，每一个请求会通过 Spring 的 DispatcherServlet 或者DispatcherPortlet 来处理的，也就不需要其他特殊的初始化配置。DispatcherServlet和DispatcherPortlet 已经包含了相关的状态。
+如果使用了 Spring Web MVC 框架的话，每一个请求会通过 Spring 的 DispatcherServlet 或者DispatcherPortlet 来处理的，也就不需要其他特殊的初始化配置。DispatcherServlet 和DispatcherPortlet 已经包含了相关的状态。
 
 # 4 Customizing the nature of a bean
-
-
 
 ## 4.1 Lifecycle callbacks
 
 Spring 允许我们通过三种方式监听 Bean 的创建与销毁。
 
-1. 接口：通过实现 Spring 的 InitializeingBean 和 DisposableBean 接口，就可以让容器来管理 Bean 的生命周期。容器会在调用afterPropertiesSet()之后和destroy()之前会允许Bean在初始化和销毁Bean的时候执行一些操作；
+1. 接口：通过实现 Spring 的 InitializeingBean 和 DisposableBean 接口，就可以让容器来管理 Bean 的生命周期。容器会在调用afterPropertiesSet()之后和destroy()之前会允许Bean在初始化和销毁 Bean 的时候执行一些操作；
 2. 注解：使用 JSR-250 的 @PostConstruct 和 @PreDestroy，使用这些注解意味着Bean不会再耦合在Spring特定的接口上
 3. xml 定制：Spring 支持 xml 定制回调，使用 init-method 和 destroy-method 指定方法即可，这种方式可以定制整个项目中统一的回调方法。
 
@@ -249,7 +247,7 @@ public interface ApplicationContextAware {
 
 这样我们就可以通过 applicationContext 获取其他 Bean 并完成依赖注入。
 
-通过 BeanNameAware 可以获取设置的 bean 名称。
+通过 BeanNameAware 可以获取设置的 Bean 名称。
 
 ## 4.3 Other Aware interfaces
 
@@ -274,21 +272,24 @@ public interface ApplicationContextAware {
 
 ## 4.4 Bean Lifecycle
 
-Spring 容器可以管理 singleton 作用域的 bean 的生命周期，在此作用域下，Spring 能够精确地知道该 Bean 何时被创建，何时初始化完成以及何时销毁。对于 prototype 作用域的 Bean, Spring 只负责创建，当容器创建了 Bean 实例后，Bean 的实例就交给客户端代码来管理， Spring 容器将不再跟踪其生命周期。
+Spring 容器可以管理 singleton 作用域的 Bean 的生命周期，在此作用域下，Spring 能够精确地知道该 Bean 何时被创建，何时初始化完成以及何时销毁。对于 prototype 作用域的 Bean, Spring 只负责创建，当容器创建了 Bean 实例后，Bean 的实例就交给客户端代码来管理， Spring 容器将不再跟踪其生命周期。如 request、session、application 和 websocket 则由 Spring ApplicationContext 上下文管理，这里不再详细说明。
 
 在 Spring 中，Bean 生命周期是一个很复杂的过程，其核心的生命周期流程如下。
 
 1. 根据配置情况调用 Bean 构造方法或工厂方法实例化 Bean。
 2. 利用依赖注入完成 Bean 中所有属性值的配置注入。
-3. BeanNameAware 接口回调 setBeanName() 方法传入 bean 的 name 值。
+3. BeanNameAware 接口回调 setBeanName() 方法传入 Bean 的 name 值。
 4. BeanFactoryAware 接口回调 setBeanFactory() 方法传入当前工厂实例的引用。
 5. ApplicationContextAware 接口回调 setApplicationContext() 传入当前 ApplicationContext 实例的引用。
-6. 如果有 BeanPostProcessor 和 Bean 相互关联，则调用 postProcessBeforeInitialization() 对 bean 进行预初始化，Spring 的 AOP 则是在用它实现的。
+6. 如果有 BeanPostProcessor 和 Bean 相互关联，则调用 postProcessBeforeInitialization() 对 Bean 进行预初始化，Spring 的 AOP 则是在用它实现的。
 7.  @PostConstruct 回调初始化方法。
 8. InitializingBean 接口回调 afterPropertiesSet() 初始化方法。
 9. xml 配置文件 init-method 定制初始化方法调用。
 10. 如果有 BeanPostProcessor 和 Bean 相互关联，则调用 postProcessAfterInitialization() 后初始化方法。
-11. 根据 bean 的
+11. 根据 Bean 的作用范围，如果是 singleton，则将改 Bean 放入 IoC 的缓存池中，将触发 Spring 对该 Bean 的生命周期管理；如果是其他作用范围，则将该 Bean 交给调用者，调用者管理该 Bean 的生命周期， Spring 不载管理该 Bean。
+12. 销毁阶段：@PreDestroy 回调销毁方法。
+13. DisposableBean 接口回调 destory() 销毁方法。
+14. xml 配置文件 destory-method 定制销毁方法调用。
 
 ## 4.5 Test
 
