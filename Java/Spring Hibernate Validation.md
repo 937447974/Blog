@@ -1,6 +1,6 @@
-数据校验是 Web 应用必须处理的内容，Spring MVC 提供了两种方法来对用户的输入数据进行校验，一种是 Spring 自带的 Validation 校验框架，另一种是利用 JRS-303 验证框架进行验证。
+数据校验是 Web 应用为了安全必须处理的步骤，Spring MVC 提供了两种方法来对用户的输入数据进行校验，一种是 Spring 自带的 Validation 校验框架，另一种是利用 JRS-303 验证框架进行验证。
 
-在实际开发中我们不是使用 Spring 自带的框架，而是使用 JRS 相关验证框架（Hibernate validator）完成开发。 [Hibernate-validator](http://hibernate.org/validator/) 是 [Bean Validation](http://beanvalidation.org) 的参考实现，遵循 Bean Validation 2.0 规范，基于 JSR 380 实现。
+在实际开发中我们不是使用 Spring 自带的框架，而是使用 JRS 相关验证框架（Hibernate validator）完成开发。 [Hibernate-validator](http://hibernate.org/validator/) 是根据 [Bean Validation](http://beanvalidation.org) 的参考实现，遵循 Bean Validation 2.0 规范，基于 JSR 380 实现。
 
 # 1 Bean Validation website
 
@@ -66,7 +66,7 @@ Hibernate Validator 完全遵循了 Bean Validation 的规范，并在其基础�
         <artifactId>spring-webmvc</artifactId>
         <version>5.0.0.RELEASE</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+    <!-- hibernate-validator -->
     <dependency>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
@@ -77,7 +77,7 @@ Hibernate Validator 完全遵循了 Bean Validation 的规范，并在其基础�
 
 ## 3.2 国际化配置
 
-Hibernate Validator 默认国际化文件是 ValidationMessages.properties，存放的位置在 org.hibernate.validator。我们可以在项目根目录修改此默认文件达到国际化的目的，多数情况项目时插件开发的，各大业务线是自定义国际化文件的。这里我们添加一个文件 ValidationMessages_zh_CN.properties。
+Hibernate Validator 默认国际化文件是 ValidationMessages.properties，存放的位置在 org.hibernate.validator，我们可以在项目根目录增加此默认文件自动替换达 Hibernate 的资源文件达到国际化的目的。多数情况项目是插件开发，各大业务线是自定义国际化文件的。这里我们添加一个文件 ValidationMessages_zh_CN.properties。
 
 ```xml
 username.NotEmpty = 用户名不能为空
@@ -175,7 +175,7 @@ password.Size = 密码长度应在{min}-{max}个字符
 </beans>
 ```
 
-除了对实例类的属性校验，我们还可以通过 MethodValidationPostProcess 对方法参数的校验。这样我们就不需要分组校验，只需要自定义方法即可达到分组校验的效果，并精简了代码。Spring 衔接 Hibernate Validator 只需配置一个 validator Bean 元素即可，并制定 bean 名称 validator，这个是 spring mvc 默认加载的校验器。国际化主要通过 ResourceBundleMessageSource 加载资源文件并注入 LocalValidatorFactoryBean 中。
+除了对实例类的属性校验，我们还可以通过 MethodValidationPostProcess 对方法参数进行校验。这样我们就不需要分组校验，只需要自定义方法即可达到分组校验的效果，进一步精简了代码。Spring 衔接 Hibernate Validator 只需配置一个 validator Bean 元素即可，并制定 bean 名称 validator，spring mvc 会默认加载 validator 校验器。国际化主要通过 ResourceBundleMessageSource 加载资源文件并注入 LocalValidatorFactoryBean 中。
 
 ## 3.4 JSP 页面
 
@@ -243,8 +243,6 @@ public class User {
 这里可直接看到注解校验的好处，开发简单，可维护性很高。国际化资源文件的写法使用了 `{key}` 的方式。
 
 ### 3.5.2 控制器
-
-核心控制器，也很简单。
 
 ```java
 package com.springmvc.controller;
@@ -363,7 +361,7 @@ public class ValidatorService {
 
 ## Sample Code
 
-[Swift](https://github.com/937447974/Swift)
+[Java](https://github.com/937447974/Java)
 
 ## Related Documentation
 
@@ -377,7 +375,7 @@ public class ValidatorService {
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2017-10-26 | 博文完成 |
+| 2017-10-17 | 博文完成 |
 
 ## Copyright
 
