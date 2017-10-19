@@ -134,6 +134,119 @@ UserVO 包装了 User对象，则 From 提交调用的方法如下所示。
 public String editUsers(UserVO userList);
 ```
 
+# 6 绑定自定义数据
+
+多数情况，前面的绑定已经满足我们的需求，但是有的时候，我们会碰到特殊类型的转换，如日期数据的转换。数据的转换有三种方式，格式化（Formatter）、转换器（Converter）和注解（@DateTimeFormat）。三者的加载过程中，前面一旦转换成功，则不会调用后面的转换方法。
+
+## 6.1 Formatter 
+
+Formatter 的源类型必须是一个 String 类型，而 Converter 可以试任何类型。我们通过实现接口 Formatter 完成转换器的指定。
+
+```java
+public interface Formatter<T> extends Printer<T>, Parser<T> {
+
+}
+```
+
+创建日期转换类 DateFormatter。
+
+```java
+public class DateFormatter implements Formatter<Date> {
+
+    // 定义日期格式
+    String datePattern = "yyyy-MM-dd HH:mm:ss";
+
+    public String print(Date date, Locale locale) {
+        return new SimpleDateFormat().format(date);
+    }
+
+    public Date parse(String source, Locale locale) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(datePattern);
+        return simpleDateFormat.parse(source);
+    }
+}
+```
+
+在 xml 中配置如下：
+
+```java
+<mvc:annotation-driven conversion-service="conversionService"/>
+<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="formatters">
+        <set>
+            <bean class="DateFormatter" />
+        </set>
+    </property>
+</bean>
+```
+
+请求网络 `http://localhost:8080/customDate?date=2017-10-18 17:09:00` 则会请求如下方法，并完成自动转换。
+
+```java
+@RequestMapping("/customDate")
+public String customDate(Model model, Date date);
+```
+
+## 6.2 Converter
+
+Converter 转换类主要实现 org.springframework.core.convert.converter.Converter接口。接口如下，它可以接受任何参数类型并转换任何参数类型。
+
+```java
+@FunctionalInterface
+public interface Converter<S, T> {
+	@Nullable
+	T convert(S source);
+}
+```
+
+定义一个 DateConverter 日期转换器。
+
+```java
+public class DateConverter implements Converter<String, Date> {
+
+    private String datePattern = "yyyy-MM-dd HH:mm:ss";
+    
+    public Date convert(String source) {
+        SimpleDateFormat sdf = new SimpleDateFormat(datePattern);
+        try {
+            return sdf.parse(source);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException(
+                    "无效的日期格式，请使用这种格式:" + datePattern);
+        }
+    }
+}
+```
+
+xml 的配置和 Formatter 类似。
+
+```xml
+<mvc:annotation-driven conversion-service="conversionService"/>
+<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="converters">
+        <set>
+            <bean class="DateConverter"/>
+        </set>
+    </property>
+</bean>
+```
+
+请求网络 `http://localhost:8080/customDate?date=2017-10-18 17:09:00` 则会请求如下方法，并完成自动转换。
+
+```java
+@RequestMapping("/customDate")
+public String customDate(Model model, Date date);
+```
+
+## 6.3 注解
+
+@DateTimeFormat 是一个很简单的日期转换注解，它大大的减少了我们的开发量，并提供了更多的格式支持。 只需在方法中如下所示，即可完成日期类型的转换。
+
+```java
+@RequestMapping("/customDate")
+public String customDate(Model model, @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date date)
+```
+
 &#160;
 
 ----------
