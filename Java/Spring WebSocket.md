@@ -1,26 +1,24 @@
-# 1 介绍
+# 1 WebSocket 介绍
 
-WebSocket 是 HTML5开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。
+WebSocket 是 HTML5 开始提供的一种在 TCP 上进行的全双工通讯协议，可以实现客户端与服务器端的通信，实现服务器的推送功能。WebSocket 和 Http 的区别如下所示。
 
-在 WebSocket API 中，浏览器和服务器只需要做一个握手的动作，然后，浏览器和服务器之间就形成了一条快速通道。两者之间就直接可以数据互相传送。
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102301.png)
+
+WebSocket 是基于 TCP 通信，浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，首次的请求是使用的 HTTP 连接，连接之后浏览器和服务器之间就形成了一条快速通道。两者之间就可以通过 TCP 通道进行数据互相传送。
+
+WebSocket 传输的数据格式比较轻量，可以发送纯文本，也可以直接发送二进制数据。和传统的 Http 长连接相比，性能开销小，通信高效。如图所示 和 http 一样它有有加密方式 ws(不加密) 和 wss(加密)。
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102302.png)
+
+# 2 Spring WebSocket
+
+在Spring 中开发 WebSocket 框架主要基于 spring-websocket 和 spring-messaging 库。
+
+
+
+1. 客户端
 
 浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，连接建立以后，客户端和服务器端就可以通过 TCP 连接直接交换数据。
-
-WebSocket 和 http 的
-
-在HTML5规范中，我最喜欢的Web技术就是正迅速变得流行的WebSocket API。WebSocket提供了一个受欢迎的技术，以替代我们过去几年一直在用的Ajax技术。这个新的API提供了一个方法，从客户端使用简单的语法有效地推动消息到服务器。让我们看一看HTML5的WebSocket API：它可用于客户端、服务器端。而且有一个优秀的第三方API，名为Socket.IO。
-
-一、什么是WebSocket API?
-
-WebSocket API是下一代客户端-服务器的异步通信方法。该通信取代了单个的TCP套接字，使用ws或wss协议，可用于任意的客户端和服务器程序。WebSocket目前由W3C进行标准化。WebSocket已经受到Firefox 4、Chrome 4、Opera 10.70以及Safari 5等浏览器的支持。
-
-
-
-当你获取 Web Socket 连接后，你可以通过 send() 方法来向服务器发送数据，并通过 onmessage 事件来接收服务器返回的数据。
-以下 API 用于创建 WebSocket 对象。
-
-
-![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2015111101.png)
 
 &#160;
 
