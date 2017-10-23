@@ -16,9 +16,21 @@ WebSocket 传输的数据格式比较轻量，可以发送纯文本，也可以�
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102303.png)
 
+在 WebSocket 设计如下主要信息。
+
+1. Message消息，包含消息头和负载。消息头中包含，信息id、优先级等；负载是传输的信息，可以放任何数据。
+2. Channel 是一个管道，服务器上产一个 Message 放入 Channel，消费者通过Subscribe(订阅)从 Message 消费一个 Message。Channel 上可以加设拦截器拦截非法请求。
+3. EndPoint 是服务器的接入点，客户端通过这个接入点建立 WebSocket 通信。
+
+# 3 实战
+
+## 3.1 JSP页面
+
 1. 客户端
 
 浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，连接建立以后，客户端和服务器端就可以通过 TCP 连接直接交换数据。
+
+
 
 &#160;
 
