@@ -1,16 +1,16 @@
 # 1 WebSocket 介绍
 
-WebSocket 是 HTML5 开始提供的一种在 TCP 上进行的套接字全双工通讯协议，可以实现客户端与服务器端的异步通信，实现服务器的推送功能。WebSocket 和 Http 的区别如下所示。
+WebSocket 是 HTML5 开始提供的一种在 TCP 上进行的套接字全双工通讯协议，可以实现客户端与服务器端的异步通信，服务器的推送功能。WebSocket 和 Http 的区别如下所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102301.png)
 
-WebSocket 是基于 TCP 通信，浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，首次的请求是使用的 HTTP 连接，连接之后浏览器和服务器之间就形成了一条快速通道。两者之间就可以通过 TCP 通道进行数据互相传送。
+WebSocket 是基于 TCP 通信，浏览器通过 JavaScript 向服务器发出建立 WebSocket 连接的请求，首次的请求是使用的 HTTP 连接，连接之后浏览器和服务器之间就形成了一条快速通道。两者之间就可以通过 TCP 通道进行数据交互。
 
 WebSocket 传输的数据格式比较轻量，可以发送纯文本，也可以直接发送二进制数据。和传统的 Http 长连接相比，性能开销小，通信高效。如图所示 和 http 一样它有有加密方式 ws(不加密) 和 wss(加密)。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102302.png)
 
-WebSocket 是 HTML5 增加的通信协议，并不是所有的浏览器都支持，相关可支持的版本如下所示。
+WebSocket 是 HTML5 增加的通信协议，并不是所有的浏览器都支持，目前可支持的版本如下所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017102304.png)
 
@@ -23,14 +23,14 @@ WebSocket 是 HTML5 增加的通信协议，并不是所有的浏览器都支持
 在 WebSocket 中，主要包含如下信息。
 
 1. Message消息，包含消息头和负载。消息头中包含，信息id、优先级等；负载是传输的信息，可以放任何数据。
-2. Channel 是一个管道，服务器上产一个 Message 放入 Channel，消费者通过Subscribe(订阅)从 Message 消费一个 Message。Channel 上可以加设拦截器拦截非法请求。
+2. Channel 是一个管道，服务器生产一个 Message 放入 Channel，消费者通过Subscribe(订阅)从 Channel 消费一个 Message。Channel 上可以加设拦截器，拦截非法请求。
 3. EndPoint 是服务器的接入点，客户端通过这个接入点建立 WebSocket 通信。
 
-在浏览器我们并不是直接使用原生的的 WebSocket 协议，而是使用更高级的 SockJS 和 StompJS，SockJS 是 WebSocketJS 的。StompJS 是 SockJS 的高级封装，它对集群架构有更好的支持。
+在浏览器我们并不是直接使用原生的的 WebSocket 协议，而是使用更高级的 SockJS 和 StompJS。
 
 ## 2.1 SockJS
 
-为了应对许多浏览器不支持 WebSocket 协议的问题，Spring 提供了备选协议 [SockJS](https://github.com/sockjs/sockjs-client/) 的支持。
+为了应对许多浏览器不支持 WebSocket 协议的问题，Spring 对备选协议 [SockJS](https://github.com/sockjs/sockjs-client/) 提供了支持。
 
 SockJS 的请求格式如下：
 
@@ -44,7 +44,7 @@ STOMP 是一种简单的面向文本的消息传递协议，其前身是 TTMP �
 
 同 HTTP 在 TCP 套接字上添加请求-响应模型层一样，STOMP 在 WebSocket 之上提供了一个基于帧的线路格式层，用来定义消息语义。
 
-STOMP 帧由命令，一个或多个头信息以及负载所组成。如下就是发送数据的一个 STOMP 帧：
+STOMP 帧由命令，一个或多个头信息以及负载所组成。如下就是一个发送数据的 STOMP 帧：
 
 ```
 SEND
@@ -59,7 +59,7 @@ content-length:44
 
 ## 3.1 JSP页面
 
-JS 使用 SockJS 和 Stomp 完成开发。
+WebSocket 的 javascript 开发使用 SockJS 和 Stomp。
 
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -167,11 +167,11 @@ JS 使用 SockJS 和 Stomp 完成开发。
 </html>
 ```
 
-可以看到客户端开发只需要建立连接，添加订阅，发送消息和断开连接相关功能。
+可以看到客户端开发只需要建立连接，添加订阅，发送消息和断开连接等相关功能。
 
 ## 3.2 WebSocket 配置
 
-xml 中 配置 SpringMVC 的相关配置。WebSocket 配置使用 Java 的方式开发，这有利于模块独立化。
+在 xml 中 配置 SpringMVC 的相关配置。WebSocket 配置使用 Java 的方式开发，这有利于模块独立化。
 
 ```java
 package com.websocket.config;
@@ -234,31 +234,23 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         super.configureMessageBroker(registry);
         registry.enableSimpleBroker("/topic", "/user"); // 推送消息前缀
-        registry.setApplicationDestinationPrefixes("/app")                // 应用请求前缀
-                .setUserDestinationPrefix("/user/");                      // 推送用户前缀
+        registry.setApplicationDestinationPrefixes("/app") // 应用请求前缀
+                .setUserDestinationPrefix("/user/");  // 推送用户前缀
     }
 
 }
 ```
 
-&#160;
+WebSocketConfig 有丰富的配置，我们可以定义很多的操作。
 
 ## 3.3 拦截器
 
 ### 3.3.1 握手拦截
 
-WebSocket 首次连接时，会使用 http 的连接方式，默认使用了 OriginHandshakeInterceptor 拦截，它主要对可访问的域名拦截，我们可以通过继承它做连接处理。
+WebSocket 首次连接时，会使用 Http 的连接方式，默认使用了 OriginHandshakeInterceptor 拦截，它主要做域名拦截，我们可以通过继承它做其他连接处理。
 
 ```java
 package com.websocket.config;
-
-import org.springframework.http.server.ServerHttpRequest;
-import org.springframework.http.server.ServerHttpResponse;
-import org.springframework.lang.Nullable;
-import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.server.support.OriginHandshakeInterceptor;
-
-import java.util.Map;
 
 /**
  * AuthHandshakeInterceptor.java
@@ -289,23 +281,10 @@ public class AuthHandshakeInterceptor extends OriginHandshakeInterceptor {
 
 ### 3.3.2 通道拦截
 
-WebSockt 是通过 Channel 传输数据，通过继承 ChannelInterceptorAdapter 可做到对输入和输出数据的处理。
-
-这里做了输入通道的拦截，通过拦截我们可以自定义相关命令的实现。
+WebSockt 是通过 Channel 传输数据，通过继承 ChannelInterceptorAdapter 可做到对输入和输出数据的拦截处理。
 
 ```java
 package com.websocket.config;
-
-import com.websocket.service.WebSocketService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.simp.stomp.StompCommand;
-import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
-import org.springframework.messaging.support.ChannelInterceptorAdapter;
-import org.springframework.messaging.support.MessageHeaderAccessor;
-import org.springframework.stereotype.Component;
 
 /**
  * InboundChannelInterceptor.java
@@ -348,25 +327,14 @@ public class InboundChannelInterceptor extends ChannelInterceptorAdapter {
 }
 ```
 
-&#160;
+输入通道的拦截可以自定义相关命令的实现，如连接和断开。
 
 ## 3.4 控制器
 
-控制器写法和 SpringMVC，主要是使用 @MessageMapping 做匹配处理。@SendTo 和 @SendToUser 可以做返回数据处理，但实际开发中，多数会自定义返回操作。
+控制器写法和 SpringMVC 类似，主要是使用 @MessageMapping 做匹配处理。
 
 ```java
 package com.websocket.controller;
-
-import com.websocket.po.TextMessage;
-import com.websocket.service.WebSocketService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.Header;
-import org.springframework.messaging.handler.annotation.Headers;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 /**
  * WebSocketController.java
@@ -399,25 +367,14 @@ public class WebSocketController {
 }
 ```
 
-&#160;
+@SendTo 和 @SendToUser 可以做返回数据处理，但实际开发中，多数会自定义返回操作。
 
 ## 3.5 业务层
 
-业务层使用了 WebSocketService ，这里我们实现了登录、断开、群发和定点发送消息的吹。
+业务层 WebSocketService 实现了登录、断开、群发和定点发送消息的功能。
 
 ```java
 package com.websocket.service;
-
-import com.websocket.po.TextMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.MessagingException;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
-import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * WebSocketService.java
@@ -494,7 +451,7 @@ public class WebSocketService {
 }
 ```
 
-4
+WebSocketService 是一个简单的实现，数据的回调使用了 SimpMessagingTemplate 。
 
 ## 3.6 数据模型
 
