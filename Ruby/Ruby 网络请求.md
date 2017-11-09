@@ -5,6 +5,7 @@ Ruby 访问服务器时，也可以通过 get 或 post 请求。
 ```ruby
 require 'net/https'
 require 'uri'
+require 'json'
 
 params = {}
 params["username"] = 'yangjun'
@@ -14,7 +15,8 @@ base_path = 'http://www.yjcocoa.com/prod_feige_service'
 uri = URI.parse("#{base_path}/feige")
 res = Net::HTTP.post_form(uri, params)
 
-puts res.body
+resbody = JSON.parse(res.body)
+puts resbody
 ```
 
 # 2 Post 请求
@@ -37,7 +39,8 @@ res = Net::HTTP.new(uri.host, uri.port).start{|http|
     http.request(req)
 }
 
-puts res.body
+resbody = JSON.parse(res.body)
+puts resbody
 ```
 
 &#160;
