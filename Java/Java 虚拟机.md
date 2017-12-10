@@ -41,7 +41,7 @@ JVM 堆栈的错误操作会引起下面的异常：
 
 ## 1.4 Heap (堆)
 
-JVM 内控制一个堆，被所有 Java 虚拟机线程共享。堆随JVM的创建和结束而建立和销毁，主要用于存储所有类实例和数组。
+JVM 内控制一个堆，被所有 Java 虚拟机线程共享。堆随 JVM 的创建和结束而建立和销毁，主要用于存储所有类实例和数组。
 
 ### 1.4.1 垃圾回收
 
@@ -343,7 +343,7 @@ field_info {
 
 ## 2.9 方法
 
-methods 记录当前类中包含的方法。Test.class 中的方法个数是4，实际源码中的方法个数是2，这是因为编译器编译的时候会默认添加 `static{}` 静态初始化（类中有静态变量）和类初始化方法。 methods 内由 methods_info 保存变量的详细详细。
+methods 记录当前类中包含的方法。Test.class 中的方法个数是4，实际源码中的方法个数是2，这是因为编译器编译的时候会默认添加 `static{}` 静态初始化（类中有静态变量）和类实例化的初始化方法。 methods 内由 methods_info 保存变量的详细详细。
 
 ```
 method_info {
@@ -371,36 +371,105 @@ attribute_info {
 
 一个 Java 字节码文件从加载到卸载的整个生命过程，总共要经历 5 个阶段：加载、链接、初始化、使用和卸载。其中链接又分支验证、准备和解析。前面的常量池解析、类字段解析和方法解析都属于加载阶段的一部分。
 
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017121001.png)
+
 ## 3.1 加载
 
 Java 程序的所有数据结构和算法都封装在类型之中，这也是面向对象编程语言的一大特色。当 JVM 执行一个 Java 类所封装的算法之前，首先要做的一件事便是字节码文件解析，字节码文件解析包含3个主要的过程常量池解析、类字段解析和方法解析。通过类字段解析，JVM 能够分析 Java 类的数据结构；通过方法解析，JVM 能够分析出 Java 类所封装的算法逻辑。而无论是数据结构还是方法信息，很多相关的信息都封装与常量池中，所以 JVM 会先解析常量池，后解析字段和方法信息。
 
-Loading Using the Bootstrap Class Loader
-Loading Using a User-defined Class Loader
-Creating Array Classes
-Loading Constraints
-Deriving a Class from a class File Representation
-Modules and Layers
+Java 字节码的加载主要是通过 ClassLoader(类加载器) 完成的，ClassLoader 分为 bootstrap class loader（引导类加载器）和用户自定义的类加载器。引导类加载器基本上可以加载我们使用的所有类。自定义加载器使得我们可以随意加载各种源的字节码问题，如网络下载的文件即可通过自定义类加载器加载。 
 
-使用引导类装入器装入
-使用用户定义的类装入器加载
-创建数组类
-载荷约束
-从类文件表示派生类
-模块和层
+Java 的类加载过程实际是将字节码格式的 Java 类转换成机器能够识别的内存类模板快照。
 
 ## 3.2 链接
 
+Java 运行过程中实际是这些的 class 类，前面 JVM 加载之后会生成内存类的模板，但它还不可以直接使用，还需要链接，如将符号化的引用转换为直接引用。
+
+在链接过程中需要创建新的数据结构，这个过程如果内存不足，会抛出 OutOfMemoryError 错误。
+
+经过链接操作，JVM 还是无法生成一个对应 class 类，会抛出 ClassNotFoundException 错误。多数情况下编译时，编译器会自动检测这个错误。但是自定义的类加载器，还是有可能加载失败，导致这个错误的出现。
+
 ### 3.2.1 验证
+
+验证在加载过程中也有，如验证字节码文件的数据格式、魔术、版本号等。链接过程的验证，主要是确保类或接口的二进制信息是符合当前虚拟机的规范，如符号引用的验证，确保程序能够正确执行。
+
 ### 3.2.2 准备
+
+准备包括为类或接口创建静态字段，并准备它们的默认值。这并不需要执行任何 JVM 代码，静态字段的显式初始化将在初始化阶段执行，而不是准备阶段。
+
 ### 3.2.3 解析
+
+解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程。解析动作主要针对类或接口、字段、类方法、接口方法、方法类型、方法句柄和调用点限定符7类符号引用进行。
 
 ## 3.3 初始化
 
+类初始化阶段是类加载的最后一步，初始化并非类的初始化，而是调用 Java 类的 `<clinit>()` 方法。该方法是由编译器在编译期间自动生成的，当 Java 类中出现 static 字段或 static {} 块操作时，所编译出来的字节码文件则保护一个 <clinit>() 方法，实质是执行 static() 方法。
+
+```java
+public class Test {
+    static  {
+        name = "Y";
+    }
+    private static String name = "YJ";
+}
+```
+
+编译为字节码文件后
+
+```
+static {};
+	descriptor: ()V
+	flags: (0x0008) ACC_STATIC
+	Code:
+	  stack=1, locals=0, args_size=0
+	     0: ldc           #8                  // String Y
+	     2: putstatic     #9                  // Field name:Ljava/lang/String;
+	     5: ldc           #2                  // String YJ
+	     7: putstatic     #9                  // Field name:Ljava/lang/String;
+	    10: return
+	  LineNumberTable:
+	    line 16: 0
+	    line 18: 5
+```
+
+可知执行初始化方法后，name 最后的值是 YJ。上面是种错误的写法，因为我们需要的是 name 的值为 Y。正确的写法是：
+
+```java
+public class Test {
+    private static String name = "YJ";
+    static  {
+        name = "Y";
+    }
+}
+```
+
 ## 3.4 使用
+
+我们所编写的代码，主要是使用阶段的代码。
+
+```
+import package.Test;
+Test test = new Test();
+```
+
+对类的使用主要是通过 import 导入类，new 实例化类。import 是别名操作，只在编译期起作用，运行期的时候会转换为 `Test test = new package.Test();` 执行。JVM 碰到 new 指令会判断元空间是否存在 class 类，如果不存在会执行前面的加载、链接和初始化操作。如果存在则直接使用，这就是 JVM 为了性能内存，执行的慢分配过程。
+
+主要分为如下几点
+
+1. 若 Java 类尚未被解析，则直接进入慢分配，不会使用快速分配策略。
+2. 快速分配。如果没有开启栈上分配或不符合条件则会进行 TLAB 分配。
+3. 快速分配。如果 TLAB 分配不成功，则尝试在 eden 区分配。
+4. 如果 Eden 区分配失败，则会进入慢分配流程。
+5. 如果对象满足了直接进入老年代的条件，那就直接分配在老年代。
+6. 如果开启逃逸分析，JVM 则会执行栈上分配的优化方案。
+
+JVM 启动的时候会把使用频率高的类完成预加载操作。这就是为什么启动一个空的 main(String[] args) 方法后，会通过 jconsole 看见已经加载了2000多个类。
+
+栈上分配的好处不言而喻，无须 gc 操作，但 Java 类型不能太大，包含的字段不能太多，比较栈空间是有栈顶和栈底。
 
 ## 3.5 卸载
 
+Java 类的卸载是随 ClassLoader 的回收而卸载的，实际通过静态代码绑定是跟随 JVM 的停止而卸载。
 
 &#160;
 
@@ -424,7 +493,7 @@ Modules and Layers
 
 | 时间 | 描述 |
 | ---- | ---- |
-| 2017-10-26 | 博文完成 |
+| 2017-12-10 | 博文完成 |
 
 ## Copyright
 
