@@ -1,14 +1,26 @@
-#JDK
+# JDK
 
 官网[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)下载java se sdk即可。
 
 mac上安装后命名行执行`java -version`，可查看是否安装成功，以及安装的版本号。
 
-#IDE
+# IDE
 
-IDE 工具推荐使用 [Intelli IDEA](https://www.jetbrains.com/idea/download/#section=mac)。下载安装后 Help -> Resigter 添加授权地址：http://idea.iteblog.com/key.php。
+IDE 工具推荐使用 [Intelli IDEA](https://www.jetbrains.com/idea/download/#section=mac)。
+
+下载安装后 Help -> Resigter， 添加授权信息。
+
+方式一：添加授权地址：http://idea.iteblog.com/key.php。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017090801.png)
+
+方式二：添加激活代码：
+
+```
+C0FHYYCJ22-eyJsaWNlbnNlSWQiOiJDMEZIWVlDSjIyIiwibGljZW5zZWVOYW1lIjoiV2VpIEh1YW5nIiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IiIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJmYWxsYmFja0RhdGUiOiIyMDE4LTAyLTI2IiwicGFpZFVwVG8iOiIyMDE5LTAyLTI1In1dLCJoYXNoIjoiNzczNjA4OS8wIiwiZ3JhY2VQZXJpb2REYXlzIjo3LCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-R2u+scEFoZMEx8Y/FFtIhDc89UW5Y15uocyF6fhBkSyy77fnCbN8P4ZEKbplAI3lOHzaoeVnq5vH7geDNbBzyF5YXs4XeGFRhjzpBODLzlMRvsQE5ZZgC+rgO6nQZQ7MQVvcykCacTjwxTFzww74sYQoiK3wOQhX05ZbJ1TAVtOdZP7wmDuOs4sR/U6Gb+Q2zKScorR/25O1k3K1SgnOBpEcUy0iBAZYkBhyvpXkMfzIiTkXhohNc+dwWQ5lmvKYe/gUDQx4fpGa/0iKsgVx6OL70WVGTd4dQml3VT4K4jEyPlIN5675TeKDSPLuGNvX55wP07Gb7/5X0zPJGtytBQ==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==
+```
+
+![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2018012101.png)
 
 添加完毕之后即可免费使用 Intelli IDEA。
 
@@ -17,12 +29,6 @@ IDE 工具推荐使用 [Intelli IDEA](https://www.jetbrains.com/idea/download/#s
 ----------
 
 # Appendix
-
-## Revision History
-
-| 时间 | 描述 |
-| ---- | ---- |
-| 2017-09-08 | 博文完成 |
 
 ## Copyright
 
