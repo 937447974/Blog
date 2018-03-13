@@ -4,24 +4,37 @@
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2018031301.png)
 
+podspec 修改
+
+```
+Pod::Spec.new do |s|
+
+    s.resource_bundles = {
+       'Test' => ['Pod/Assets/**/*']
+    }
+
+end
+```
+
+图片显示 cancel@2x.png
+
+```objc
+[UIImage imageNamed:@"Test.bundle/cancel"]
+```
+
+显示 `测试` 的英文国际化。
+
+```objc
+NSString *path = [@"Test.bundle" pathForResource:@"en" ofType:@"lproj"];
+NSBundle *bundle = [NSBundle bundleWithPath:path];
+NSString *localizedString = [bundle localizedStringForKey:@"测试" value:@"测试" table:@"Localizable"];
+```
+
 &#160;
 
 ----------
 
 # Appendix
-
-## Sample Code
-
-[Swift](https://github.com/937447974/Swift)
-
-## Related Documentation
-
-
-## Revision History
-
-| 时间 | 描述 |
-| ---- | ---- |
-| 2017-10-26 | 博文完成 |
 
 ## Copyright
 
