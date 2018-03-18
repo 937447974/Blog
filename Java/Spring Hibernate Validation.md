@@ -41,7 +41,7 @@ Hibernate Validator 完全遵循了 Bean Validation 的规范，并在其基础�
 | @CreditCardNumber(ignoreNonDigitCharacters=) | 被注释的字符串必须通过 Luhn 校验算法，银行卡，信用卡等号码一般都用 Luhn 计算合法性 |
 | @Currency(value=) | 被注释的 javax.money.MonetaryAmount 货币元素是否合规 |
 | @DurationMax(days=, hours=, minutes=, seconds=, millis=, nanos=, inclusive=) |  被注释的元素不能大于指定日期 |
-| @DurationMin(days=, hours=, minutes=, seconds=, millis=, nanos=, inclusive=) | 被注释的元素不能低于指定日期 | 
+| @DurationMin(days=, hours=, minutes=, seconds=, millis=, nanos=, inclusive=) | 被注释的元素不能低于指定日期 |
 | @EAN | 被注释的元素是否是一个有效的 EAN 条形码 |
 | @Length(min=, max=) | 被注释的字符串的大小必须在指定的范围内
 | @LuhnCheck(startIndex= , endIndex=, checkDigitIndex=, ignoreNonDigitCharacters=) | Luhn 算法校验字符串中指定的部分 |

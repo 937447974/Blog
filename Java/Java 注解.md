@@ -1,4 +1,4 @@
-Java 在 jdk 1.5 增加了注解，为我们的开发带来了更多的可能性。如 spring 中的注解，极大的简便了我们的开发，并提高了代码的可维护性。注解源码主要在 java.lang.annotation 包中，内部结构如下所示。
+Java 在 jdk 1.5 增加了注解，为我们的开发带来了更多的可能性。如 Spring 中的注解，极大的简便了我们的开发，并提高了代码的可维护性。注解源码主要在 java.lang.annotation 包中，内部结构如下所示。
 
 ![](https://raw.githubusercontent.com/937447974/Blog/master/Resources/2017093001.png)
 
@@ -41,7 +41,7 @@ public enum ElementType {
 ```
 ElemenType 可以多个同时使用，在后面会为大家代码演示。
 
-###1.2.2 RetentionPolicy
+### 1.2.2 RetentionPolicy
 
 RetentionPolicy 在 @Retention 中使用，主要是描述一个注解的保留阶段。
 

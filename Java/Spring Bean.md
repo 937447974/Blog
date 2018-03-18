@@ -219,7 +219,7 @@ spring 为 Bean 定制了 6 种作用域。
 
 ## 3.3 Request, session, application, and WebSocket scopes
 
-request, session, application, 和 websocket 这四个作用域都是只有在基于 web 的 Spring ApplicationContext 实现的（比如XmlWebApplicationContext）中才能使用。 如果仅仅在常规的Spring IoC 容器中（ClassPathXmlApplicationContext）使用这些作用域，那么将会抛出一个IllegalStateException 来说明使用了未知的作用域。
+Request, Session, Application 和 Websocket 这四个作用域都是只有在基于 web 的 Spring ApplicationContext 实现的（比如XmlWebApplicationContext）中才能使用。 如果仅仅在常规的Spring IoC 容器中（ClassPathXmlApplicationContext）使用这些作用域，那么将会抛出一个IllegalStateException 来说明使用了未知的作用域。
 
 如果使用了 Spring Web MVC 框架的话，每一个请求会通过 Spring 的 DispatcherServlet 或者DispatcherPortlet 来处理的，也就不需要其他特殊的初始化配置。DispatcherServlet 和DispatcherPortlet 已经包含了相关的状态。
 
