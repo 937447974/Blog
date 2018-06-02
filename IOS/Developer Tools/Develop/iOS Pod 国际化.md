@@ -20,6 +20,10 @@ end
 
 ```objc
 [UIImage imageNamed:@"Test.bundle/cancel"]
+// 
+NSBundle *bundle = [NSBundle bundleForClass:Test.class];
+bundle = [NSBundle bundleWithPath:[bundle pathForResource:@"Test" ofType:@"bundle"]];
+[UIImage imageNamed:@"cancel" inBundle:bundle compatibleWithTraitCollection:nil]
 ```
 
 显示 `测试` 的英文国际化。
