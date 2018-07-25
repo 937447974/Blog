@@ -111,6 +111,12 @@ $ git filter-branch --commit-filter '
         fi' HEAD
 ```
 
+全部更新
+
+```
+$ git filter-branch --commit-filter 'GIT_AUTHOR_NAME="阳君";GIT_AUTHOR_EMAIL="937447973@qq.com";git commit-tree "$@";fi' HEAD
+```
+
 &#160;
 
 ----------
