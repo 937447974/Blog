@@ -13,7 +13,7 @@ http://gems.ruby-china.org
 终端输入如下命令。
 
 ```
-$ gem sources -r https://rubygems.org/ -a http://gems.ruby-china.org
+$ gem sources -r https://rubygems.org/ -a https://gems.ruby-china.com
 $ gem sources -l
 ```
 
