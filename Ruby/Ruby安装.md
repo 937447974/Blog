@@ -11,7 +11,7 @@ rvm list
 安装 ruby 2.3.4。
 
 ```rvm
-rvm install 2.3.4
+rvm install 2.4.5
 ```
 
 多个 runy 指定使用 2.3.4
@@ -57,3 +57,4 @@ gem update
 CSDN：http://blog.csdn.net/y550918116j
 
 GitHub：https://github.com/937447974
+
